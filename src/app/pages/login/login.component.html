@@ -1,0 +1,127 @@
+<div nz-row nzJustify="center" nzAlign="middle" class="layout">
+    <div nz-col nzSpan="12">
+        <img style="height: 100vh;" src="../../../assets/images/welcome-children.png" alt="welcome-image">
+    </div>
+
+    <div nz-col nzSpan="12">
+        <div>
+            <div *ngIf="!selectedWichMethod" nz-row nzJustify="center" nzAlign="middle">
+                <nz-space nzSize='large'>
+                    <button *nzSpaceItem (click)="isRegisteredUser()">Já tenho cadastro</button>
+
+                    <button *nzSpaceItem (click)="isNewUser()">Sou novo aqui</button>
+                </nz-space>
+            </div>
+
+            <ng-container #registeredUser *ngIf="registeredUser">
+                <form nz-form [formGroup]="formUserLogin" (ngSubmit)="submit()">
+                    <div nz-row>
+                        <div nz-col nzSpan="24" class="title">
+                            <p>LOGIN</p>
+                        </div>
+                        <div nz-col nzSpan="24">
+                            <nz-form-item class="grid">
+                                <nz-form-label [nzNoColon]="true" class="label">Email<span
+                                        class="required-mark">*</span>
+                                </nz-form-label>
+                                <nz-form-control [nzErrorTip]="validacoes">
+                                    <input formControlName="email" nz-input placeholder="E-mail" required />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+
+                        <div nz-col nzSpan="24">
+                            <nz-form-item class="grid">
+                                <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Senha<span
+                                        class="required-mark">*</span>
+                                </nz-form-label>
+                                <nz-form-control [nzErrorTip]="validacoes">
+                                    <input formControlName="password" nz-input placeholder="Senha" required />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+
+                        <ng-template #validacoes let-control>
+                            <ng-container *ngIf="control.hasError('maxlength')">O máximo de caracteres é
+                                {{control.errors.maxlength.requiredLength}}
+                            </ng-container>
+                            <ng-container *ngIf="control.hasError('minlength')">O mínimo de caracteres é
+                                {{control.errors.minlength.requiredLength}}</ng-container>
+                            <ng-container *ngIf="control.hasError('required')">O campo é Requerido</ng-container>
+                        </ng-template>
+                    </div>
+
+                    <div nz-row nzJustify="center" nzAlign="middle">
+                        <div class="button-esquerda" nz-col nzSpan="12">
+                            <button (click)="backToTheLoginChoices()">Voltar</button>
+                        </div>
+                        <div class="button-enviar" nz-col nzSpan="12">
+                            <button type="submit"
+                                [disabled]="!formUserLogin.valid || !formUserLogin.dirty">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </ng-container>
+
+            <ng-container #newUser *ngIf="newUser">
+                <form nz-form [formGroup]="formNewUser" (ngSubmit)="submit()">
+                    <div nz-row>
+                        <div nz-col nzSpan="24" class="title">
+                            <p>LOGIN</p>
+                        </div>
+                        <div nz-col nzSpan="24">
+                            <nz-form-item class="grid">
+                                <nz-form-label [nzNoColon]="true" class="label">E-mail<span
+                                        class="required-mark">*</span>
+                                </nz-form-label>
+                                <nz-form-control [nzErrorTip]="validacoes">
+                                    <input formControlName="email" nz-input placeholder="E-mail" required />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+
+                        <div nz-col nzSpan="24">
+                            <nz-form-item class="grid">
+                                <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Senha<span
+                                        class="required-mark">*</span>
+                                </nz-form-label>
+                                <nz-form-control [nzErrorTip]="validacoes">
+                                    <input formControlName="password" nz-input placeholder="Senha" required />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+
+                        <div nz-col nzSpan="24">
+                            <nz-form-item class="grid">
+                                <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Confirmação da
+                                    Senha<span class="required-mark">*</span>
+                                </nz-form-label>
+                                <nz-form-control [nzErrorTip]="validacoes">
+                                    <input formControlName="confirmPassword" nz-input placeholder="Confirmação da Senha"
+                                        required />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+
+                        <ng-template #validacoes let-control>
+                            <ng-container *ngIf="control.hasError('maxlength')">O máximo de caracteres é
+                                {{control.errors.maxlength.requiredLength}}
+                            </ng-container>
+                            <ng-container *ngIf="control.hasError('minlength')">O mínimo de caracteres é
+                                {{control.errors.minlength.requiredLength}}</ng-container>
+                            <ng-container *ngIf="control.hasError('required')">O campo é Requerido</ng-container>
+                        </ng-template>
+                    </div>
+
+                    <div nz-row nzJustify="center" nzAlign="middle">
+                        <div nz-col nzSpan="12">
+                            <button (click)="backToTheLoginChoices()">Voltar</button>
+                        </div>
+                        <div class="button-enviar" nz-col nzSpan="12">
+                            <button type="submit" [disabled]="!formNewUser.valid || !formNewUser.dirty">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </ng-container>
+        </div>
+    </div>

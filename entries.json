@@ -1,0 +1,303 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "claim": "1",
+      "completeName": "Admin Nuki Veberrr",
+      "completeAddress": "Rua Unicórnios brilhosos, número 88, bairro glitter, Nukilândia CA",
+      "email": "nukiveber@hotmail.com",
+      "mobileNumber": "(47)9917-2654",
+      "profilePicture": "<https: //cdn.fakercloud.com/avatars/andysolomon_128.jpg>",
+      "password": "12345",
+      "confirmPassword": "12345"
+    },
+    {
+      "id": 2,
+      "claim": 2,
+      "password": "12345",
+      "confirmPassword": "12345",
+      "completeName": "User",
+      "completeAddress": "Rua X, número 8, bairro Y, XYZ",
+      "email": "user@gmail.com",
+      "notificationsNumber": 3,
+      "mobileNumber": "(47)00000-0000",
+      "profilePicture": "<https: //cdn.fakercloud.com/avatars/andysolomon_128.jpg>",
+      "notifications": [
+        {
+          "notificationTitle": "New message on product A",
+          "notificationDescription": "message or links"
+        },
+        {
+          "notificationTitle": "New message on product B",
+          "notificationDescription": "message or links"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "productCode": "#0001",
+      "title": "Blusão verde de lã",
+      "description": "Blusão verde de lã, tamanho M, nunca foi usado, perfeito estado. Medidas pra te ajudar: 100cm de busto, 60cm de comprimento, 62cm de manga.",
+      "category": "roupas",
+      "brand": "ZARA",
+      "size": "M",
+      "condition": "novo",
+      "priceTag": 44,
+      "photos": [
+        "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+      ],
+      "mainPhoto": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
+      "active": true,
+      "wishlistedCount": 3
+    },
+    {
+      "id": 2,
+      "productCode": "#0002",
+      "title": "Vestido rodado",
+      "description": "Vestidinho de tecido leve, possui elastano, tamanho G. Medidas pra te ajudar: 100cm de busto, 90cm de comprimento",
+      "category": "roupas",
+      "brand": "forever21",
+      "size": "G",
+      "condition": "novo",
+      "priceTag": 44,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/1465/PNG/512/422dress_100789.png",
+        "https://cdn.icon-icons.com/icons2/1465/PNG/512/422dress_100789.png"
+      ],
+      "mainPhoto": "../assets/clothes/vestido.png",
+      "active": true,
+      "wishlistedCount": 9
+    },
+    {
+      "id": 3,
+      "productCode": "#0003",
+      "title": "Brinco prata",
+      "description": "Brinco prata seminovo, foi usado poucas vezes, comprado na renner.",
+      "category": "acessorios",
+      "brand": "renner",
+      "size": "único",
+      "condition": "usado",
+      "priceTag": 19,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/1465/PNG/512/422dress_100789.png",
+        "https://cdn.icon-icons.com/icons2/1465/PNG/512/422dress_100789.png"
+      ],
+      "mainPhoto": "../assets/clothes/brinco.png",
+      "active": true,
+      "wishlistedCount": 2
+    },
+    {
+      "id": 4,
+      "productCode": "#0004",
+      "title": "Rasteirinha rosa",
+      "description": "Rasteirinha rosa tamanho 38, usada sem marcas de uso, solado mede 26cm.",
+      "category": "calcados",
+      "brand": "liberte",
+      "size": "38",
+      "condition": "usado",
+      "priceTag": 23,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/1465/PNG/512/422dress_100789.png",
+        "https://cdn.icon-icons.com/icons2/1465/PNG/512/422dress_100789.png"
+      ],
+      "mainPhoto": "../assets/clothes/rasteirinha.png",
+      "active": true,
+      "wishlistedCount": 17
+    },
+    {
+      "id": 5,
+      "productCode": "#0005",
+      "title": "Tênis xadrez slip on",
+      "description": "Tênis slip on da VANS, usado pouco, tamanho 36, calça um 37 também, modelagem grande, 22cm de solado.",
+      "category": "calcados",
+      "brand": "VANS",
+      "size": "M",
+      "condition": "usado",
+      "priceTag": 68,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/376/PNG/256/Vans_Checkerboard_Dirty_White_37330.png",
+        "https://cdn.icon-icons.com/icons2/376/PNG/256/Vans_Checkerboard_Dirty_White_37330.png"
+      ],
+      "mainPhoto": "../assets/clothes/vanss.png",
+      "active": true,
+      "wishlistedCount": 12
+    }
+  ],
+  "adminNotifications": [
+    {
+      "id": 1,
+      "title": "Mensagem nova!",
+      "description": "@name fez uma pergunta no produto BLUSA AZUL",
+      "routeLinkTo": "/product/1",
+      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+    },
+    {
+      "id": 2,
+      "title": "Nova Avaliação!",
+      "description": "@name fez uma avaliação do brechó!",
+      "routeLinkTo": "/product/1",
+      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+    },
+    {
+      "id": 3,
+      "title": "Mensagem nova!",
+      "description": "@name fez uma pergunta no produto MOLETOM JEANS",
+      "routeLinkTo": "/welcome",
+      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+    },
+    {
+      "id": 4,
+      "title": "Mensagem nova!",
+      "description": "@name fez uma pergunta no produto BLUSÃO VERDE",
+      "routeLinkTo": "/welcome",
+      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+    },
+    {
+      "id": 5,
+      "title": "Sobre o pedido #0153",
+      "description": "@name realizou uma compra.",
+      "routeLinkTo": "/welcome",
+      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+    }
+  ],
+  "userNotifications": [
+    {
+      "id": 1,
+      "title": "Mensagem nova!",
+      "description": "@admin respondeu sua pergunta no produto BLUSA AZUL",
+      "routeLinkTo": "/product/1",
+      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+      "userId": 1,
+      "read": false
+    },
+    {
+      "id": 2,
+      "title": "Sobre o pedido #0153",
+      "description": "está pronto para retirada!",
+      "routeLinkTo": "/welcome",
+      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+      "userId": 2,
+      "read": false
+    }
+  ],
+  "purchases": [
+    {
+      "id": 1,
+      "userName": "User Name",
+      "productsCode": [
+        1234,
+        123
+      ],
+      "confirmed": false
+    }
+  ],
+  "stars": {
+    "starsTotal": 14,
+    "starsAverage": 2.8,
+    "votersCount": 5
+  },
+  "userOrders": [
+    {
+      "orderId": 1,
+      "orderDate": "12/01/2022",
+      "orderStatusRecived": true,
+      "orderStatusProcessingPayment": true,
+      "orderStatusPaymentOk": true,
+      "orderStatusFinished": false,
+      "products": [
+        {
+          "productId": 1,
+          "productTitle": "Blusa verde de lã",
+          "productPhoto": "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+        },
+        {
+          "productId": 4,
+          "productTitle": "Blusa verde de lã",
+          "productPhoto": "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+        }
+      ]
+    },
+    {
+      "orderId": 2,
+      "orderDate": "28/01/2022",
+      "orderStatusRecived": true,
+      "orderStatusProcessingPayment": true,
+      "orderStatusPaymentOk": true,
+      "orderStatusFinished": false,
+      "products": [
+        {
+          "productId": 2,
+          "productTitle": "Calça azul",
+          "productPhoto": "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+        },
+        {
+          "productId": 3,
+          "productTitle": "Blusa verde de lã",
+          "productPhoto": "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+        }
+      ]
+    }
+  ],
+  "userCart": [
+    {
+      "cartId": 1,
+      "productsId": [
+        1,
+        3
+      ]
+    }
+  ],
+  "chat": [
+    {
+      "id": 1,
+      "productId": 1,
+      "questions": [
+        {
+          "questionId": 1,
+          "author": "Jamile",
+          "question": "what size?",
+          "answer": "large"
+        },
+        {
+          "questionId": 2,
+          "author": "Luke",
+          "question": "what color?",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "productId": 2,
+      "questions": [
+        {
+          "questionId": 1,
+          "author": "Gabriel",
+          "question": "what size?",
+          "answer": "small"
+        },
+        {
+          "questionId": 2,
+          "author": "Philip",
+          "question": "what color?",
+          "answer": "pink!"
+        },
+        {
+          "questionId": 2,
+          "author": "Philip",
+          "question": "what color?",
+          "answer": ""
+        },
+        {
+          "questionId": 3,
+          "author": "Daneu",
+          "question": "aa?",
+          "answer": ""
+        }
+      ]
+    }
+  ]
+}

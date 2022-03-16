@@ -1,0 +1,23 @@
+<nz-space>
+    <nz-card *nzSpaceItem nzHoverable style="width:240px" [nzCover]="coverTemplate">
+        <nz-card-meta [nzTitle]="templateTitile" [nzDescription]="templateDescription"></nz-card-meta>
+    </nz-card>
+</nz-space>
+
+<ng-template #coverTemplate>
+        <img alt="example" src="{{productMainPhoto}}" />
+</ng-template>
+
+<ng-template #templateTitile>
+    <nz-tag [nzColor]="'#87d068'" class="price-tag">
+        R$ {{productPrice}}
+    </nz-tag>
+
+    <p class="title-label">
+        {{productTitle}}
+    </p>
+</ng-template>
+
+<ng-template #templateDescription>
+    {{productBrand}}
+</ng-template>

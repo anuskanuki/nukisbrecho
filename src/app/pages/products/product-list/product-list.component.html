@@ -1,0 +1,58 @@
+<div nz-row [nzGutter]="[24,24]">
+    <div nz-col nzSpan="24">
+        <div nz-row>
+            <span class="page-titile">Produtos</span>
+        </div>
+    </div>
+
+    <div nz-col nzSpan="24">
+        <div nz-row>
+            <button nz-button nzType="primary" (click)="newProduct()">novo produto</button>
+        </div>
+    </div>
+
+    <div nz-col nzSpan="24">
+        <nz-table #productsTable [nzData]="productsList">
+            <thead>
+                <tr>
+                    <th>título</th>
+                    <th>descrição</th>
+                    <th>marca</th>
+                    <th>tamanho</th>
+                    <th>preço</th>
+                    <th>ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of productsTable.data">
+                    <td>{{ product.title }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.brand }}</td>
+                    <td>{{ product.size }}</td>
+                    <td>{{ product.priceTag }}</td>
+
+                    <td [nzAlign]="'center'">
+                        <nz-space>
+                            <a *nzSpaceItem (click)="edit(product.id)">
+                                <i class="edit-icon" nz-icon nzType="edit" nzTheme="outline"></i>
+                            </a>
+
+                            <ng-template #iconTpl>
+                                <i nz-icon nzType="question-circle-o" style="color: red;"></i>
+                            </ng-template>
+
+                            <a *nzSpaceItem nz-popconfirm nzPopconfirmTitle="Deseja mesmo deletar o produto?"
+                                [nzIcon]="iconTpl" (nzOnConfirm)="delete(product.id, product.title ||'selecionado')">
+                                <i class="delete-icon" nz-icon nzType="delete" nzTheme="outline"></i>
+                            </a>
+                        </nz-space>
+                    </td>
+                </tr>
+            </tbody>
+        </nz-table>
+    </div>
+</div>
+
+<div nz-row nzAlign="bottom">
+    <button nz-button nzType="primary" (click)="back()">voltar</button>
+</div>

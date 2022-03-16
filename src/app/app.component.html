@@ -1,0 +1,104 @@
+<nz-layout *ngIf="isLoggedIn" class="app-layout">
+  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null">
+
+    <div class="sidebar-logo">
+      <a (click)="goToHome()">
+        <img alt="example" src="../assets/images/shopping-cart.png" />
+        <h1>Nuki's Brechó</h1>
+      </a>
+    </div>
+
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzOpen nzTitle="Produtos" nzIcon="tag">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/product/clothes">Roupas</a>
+          </li>
+
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/product/accessories">Acessórios</a>
+          </li>
+
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/product/shoes">Calçados</a>
+          </li>
+
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/product">Todos produtos</a>
+          </li>
+        </ul>
+      </li>
+
+      <li nz-submenu nzOpen nzTitle="Gerenciamento" nzIcon="form">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/user">Usuário</a>
+          </li>
+
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/product/list">Produto</a>
+          </li>
+        </ul>
+      </li>
+
+      <li nz-submenu nzOpen nzTitle="Ajuda" nzIcon="question-circle">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/welcome/help">Ajuda e Avaliações</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <ul class="center-navbar" nz-menu nzMode="horizontal" class="header-menu">
+          <li nz-menu-item nzSelected>
+            <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+              <em class="trigger" nz-icon [nzType]="isCollapsed ? 'right' : 'left'"></em>
+            </span>
+          </li>
+
+          <li nz-menu-item>
+            <nz-input-group>
+              <input type="text" nz-input placeholder="Pesquisar..." />
+            </nz-input-group>
+          </li>
+
+          <li *ngIf="!isLoggedIn" nz-menu-item routerLink="/login">entrar</li>
+
+          <li *ngIf="isLoggedIn" nz-menu-item routerLink="/product">produtos curtidos</li>
+          <!-- wishlist -->
+
+          <li *ngIf="isLoggedIn" nz-menu-item routerLink="/user/orders">meus pedidos</li>
+
+          <li *ngIf="isLoggedIn" nz-menu-item routerLink="/user/notifications">notificações</li>
+
+          <li *ngIf="isLoggedIn" nz-menu-item routerLink="/user/1234">perfil</li>
+
+          <li *ngIf="isLoggedIn" nz-menu-item routerLink="/login">sair</li>
+        </ul>
+      </div>
+    </nz-header>
+
+    <!-- <nz-content>
+      <nz-breadcrumb>
+        <nz-breadcrumb-item>nao sei</nz-breadcrumb-item>
+        <nz-breadcrumb-item>usar</nz-breadcrumb-item>
+      </nz-breadcrumb>
+    </nz-content> -->
+
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
+
+<ng-container *ngIf="!isLoggedIn">
+  <app-login></app-login>
+</ng-container>

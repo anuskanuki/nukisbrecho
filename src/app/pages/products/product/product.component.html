@@ -1,0 +1,17 @@
+<div class="layout">
+  <section class="item1">
+    <app-product-presentation [mainPhoto]="productModel.mainPhoto"></app-product-presentation>
+  </section>
+
+  <section class="item2">
+    <app-product-actions [productActions]="productActions"></app-product-actions>
+  </section>
+
+  <section class="item3">
+    <app-product-chat [routerId]="routerId"></app-product-chat>
+  </section>
+
+  <div nz-row nzAlign="bottom">
+    <button nz-button nzType="primary" (click)="back()">voltar</button>
+  </div>
+</div>

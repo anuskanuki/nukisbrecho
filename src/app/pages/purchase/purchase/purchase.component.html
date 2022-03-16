@@ -1,0 +1,76 @@
+<h3>Opa, quase lá!</h3>
+<p>Que bom que você achou alguma peça legal!
+</p>
+<p>
+    Para confirmar a compra, precisamos da confirmação do pagamento, mas antes, confere se está tudo certinho com seu
+    pedido:
+</p>
+
+<ng-container *ngIf="loggedIn then templateLoggedInPurchase else templateLogInFirst">
+</ng-container>
+
+<ng-template #templateLoggedInPurchase>
+    <p>
+        (R$XX,00) produto 1 mini foto e preço e título
+    </p>
+
+    <p>
+        (R$XX,00) produto 2 mini foto e preço e título
+    </p>
+
+    <h3>Total: R$ <span>30,00</span></h3>
+
+    <h3>Pagamento:</h3>
+    <p>
+        <nz-collapse nzGhost nzAccordion>
+            <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name" [nzActive]="panel.active">
+                <p style="margin:0;">
+                    <ng-container *ngIf="panel.template ==0 then templatePix"></ng-container>
+                    <ng-container *ngIf="panel.template ==1 then templateTransferenciaBancaria"></ng-container>
+                </p>
+            </nz-collapse-panel>
+        </nz-collapse>
+
+        <ng-template #templatePix>
+            <h3>PIX</h3>
+            <p>Chave e-mail: nukibrecho@gmail.com</p>
+            <p>Envie seu comprovante de pagamento aqui e assim que seu pagamento for confirmado, entraremos
+                em contato para combinar envio ou retirada da compra :)</p>
+            <form>
+                <label>Abrir arquivo:</label>
+                <input type="file" accept=".jpg, .jpeg, .png" (change)="confirmPaymentReceiptAttached()">
+            </form>
+        </ng-template>
+
+        <ng-template #templateTransferenciaBancaria>
+            <h3>Transferência Bancária</h3>
+            <p>Dados da conta:</p>
+            <p>Banco: xxx</p>
+            <p>Agência: xxx</p>
+            <p>Conta: xxxx</p>
+            <p>Dígito: x</p>
+            <p>Envie seu comprovante de pagamento aqui e assim que seu pagamento for confirmado, entraremos
+                em contato para combinar envio ou retirada da compra :)</p>
+            <form>
+                <label>Abrir arquivo:</label>
+                <input type="file" accept=".jpg, .jpeg, .png" (change)="confirmPaymentReceiptAttached()">
+            </form>
+        </ng-template>
+    </p>
+</ng-template>
+
+<ng-template #templateLogInFirst>
+    <p>Ops, parece que você não está logado no sistema :/</p>
+    <p>Para que seja possível efetuar sua compra, você precisa estar logado e aí sim fazer sua compra, bele?</p>
+    <a routerLink="/login">fazer login</a>
+    <!-- ou fazer o form de cadastronovo E de login aqui mesmo pra pessoa não perder o carrinho (?) -->
+</ng-template>
+
+<div nz-row nzAlign="bottom">
+    <button nz-button nzType="primary" routerLink="confirmation" [disabled]="!paymentReceiptAttached">confirmar
+        compra</button>
+</div>
+
+<div nz-row nzAlign="bottom">
+    <button nz-button nzType="primary" (click)="back()">voltar</button>
+</div>
