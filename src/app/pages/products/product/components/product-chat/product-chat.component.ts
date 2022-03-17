@@ -19,8 +19,8 @@ export class ProductChatComponent implements OnInit, OnDestroy {
   public answerToAdminIsOpen = false;
   public messagesChatArray: ChatModel[] = [];
   public form!: FormGroup;
-  submitting = false;
   public isAdminClaim = true;
+  submitting = false;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any[] = [];
