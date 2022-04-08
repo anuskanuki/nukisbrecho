@@ -16,7 +16,7 @@ export class AccessTokenModel {
   accessToken!: string;
 }
 
-export interface NewUserModel {
+export class NewUserModel {
   name?: string;
   userName?: string;
   email?: string;
@@ -26,10 +26,10 @@ export interface NewUserModel {
 
 export interface AdressModel {
   neighborhood?: string;
-  zipCode?: string;
+  zipCode?: number;
   city?: string;
   street?: string;
-  number?: string;
+  number?: number;
   state?: string;
   addressDetails?: string;
 }

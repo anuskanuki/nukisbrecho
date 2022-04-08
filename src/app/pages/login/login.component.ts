@@ -3,10 +3,11 @@ import { Location } from '@angular/common';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { LoginService } from 'src/app/core/services/login.service';
-import { LoginModel } from 'src/app/core/models/login.model';
-import { AuthService } from 'src/app/core/services/auth.service';
+import { LoginService } from 'src/app/pages/login/services/login.service';
+import { LoginModel, NewUserModel } from 'src/app/core/models/login.model';
+
 import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./login.component.less']
 })
 export class LoginComponent implements OnInit, OnDestroy {
+
+  log = (param: any) => console.log(param);
 
   subscriptions: Subscription[] = [];
 
@@ -34,7 +37,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
     public router: Router,
     private notification: NzNotificationService,
-    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
@@ -79,14 +81,18 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   public submit() {
-    this.submitted = true;
+    // this.submitted = true;
 
-    if (this.newUser) {
-      this.submitNewUser();
-    }
-    if (this.registeredUser) {
-      this.submitRegisteredUser();
-    }
+    // if (this.newUser) {
+    //   this.submitNewUser();
+    // }
+    // if (this.registeredUser) {
+    //   this.submitRegisteredUser();
+    // }
+
+    const formNovoUsuario = Object.assign(this.formNewUser.value, new NewUserModel());
+
+    this.log(formNovoUsuario);
   }
 
   private submitNewUser() {
@@ -97,43 +103,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   public submitRegisteredUser() {
-    if (this.formUserLogin.valid && this.formUserLogin.dirty) {
 
-      const userEmail = this.formUserLogin.controls.email.value;
-      const userPassword = this.formUserLogin.controls.password.value;
-
-      const subscription = this.loginService.getUserTryingToLogIn(userEmail).subscribe(
-        response => {
-          if (response) {
-            if (userPassword == response.password) {
-              this.loginSuccess();
-              this.loggedIn = true;
-            } else {
-              this.notification.error('Oops!', 'Senha incorreta.');
-              this.loggedIn = false;
-            }
-          } else {
-            this.notification.error('Oops!', 'Este usuário não existe.');
-            this.loggedIn = false;
-          }
-        },
-        error => {
-          this.notification.error('Oops!', error);
-        }
-      )
-      this.subscriptions.push(subscription);
-    }
   }
 
   private loginSuccess() {
-    if (true) {//authservice
-      this.notification.success('Sucesso!', "Bem vindo ao Nuki's Brechó, aproveite :)");
-      this.router.navigate(['/welcome']);
-    } else {
-      // this.authService.cleanToken();
-      this.notification.error('Ops!', "Erro ao autenticar, tente novamente.");
-      this.router.navigate(['/login']);
-    }
+
   }
 
   private createformUserLogin() {
@@ -147,7 +121,16 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.formNewUser = this.formBuilder.group({
       email: [null, [Validators.required]],
       password: [null, [Validators.required]],
-      confirmPassword: [null, [Validators.required]],
+      username: [null, [Validators.required]],
+      name: [null, [Validators.required]],
+      address: this.formBuilder.group({
+        neighborhood: [null, [Validators.required]],
+        zipCode: [null, [Validators.required]],
+        street: [null, [Validators.required]],
+        number: [null, [Validators.required]],
+        state: [null, [Validators.required]],
+        addressDetails: [null, [Validators.required]]
+      })
     });
   }
 

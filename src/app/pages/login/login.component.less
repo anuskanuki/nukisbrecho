@@ -14,12 +14,12 @@
 
 .layout {
   background-color: #f5f5f8ad;
-  height: 100%;
   border-radius: 12px;
-
+  padding: 1% 30%;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100%;
 }
 
 .grid {
@@ -33,13 +33,6 @@
 .required-mark {
   color: #df2b0f;
   margin-left: 4px;
-}
-
-.ant-form {
-  margin-top: 16px;
-  margin-bottom: 32px;
-  margin-left: 13%;
-  margin-right: 13%;
 }
 
 .ant-form-item-label {
@@ -60,4 +53,10 @@ button {
   background-color: #c87bd3e8;
   line-height: 12px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .layout {
+    padding: 0% 10%;
+  }
 }

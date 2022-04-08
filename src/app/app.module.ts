@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { pt_BR } from 'ng-zorro-antd/i18n';
 import { CommonModule, registerLocaleData } from '@angular/common';
@@ -16,7 +16,9 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NgZorroAntdModule } from './core/modules/ng-zorro-antd.module';
 import { RouterModule } from '@angular/router';
 import { LoginModule } from './pages/login/login.module';
-import { AuthService } from './core/services/auth.service';
+import { AppComponent } from './app.component';
+import { TokenService } from './core/services/token.service';
+
 
 registerLocaleData(pt);
 
@@ -38,7 +40,7 @@ registerLocaleData(pt);
     RouterModule,
     LoginModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: pt_BR }, AuthService],
+  providers: [{ provide: NZ_I18N, useValue: pt_BR }, TokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
