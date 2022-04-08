@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
     public router: Router,
     private notification: NzNotificationService,
-    private authService: AuthService,
+    // private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
@@ -62,7 +62,20 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.selectedWichMethod = true;
     this.newUser = true;
     this.registeredUser = false;
-    this.createformNewUser();
+
+
+    // this.createformNewUser();
+
+
+    // const subscription = this.loginService.newUser().subscribe(
+    //   response => {
+    //     this. = response;
+    //   },
+    //   error => {
+    //     this.notification.error('Oops!', error);
+    //   }
+    // )
+    // this.subscriptions.push(subscription);
   }
 
   public isRegisteredUser() {
