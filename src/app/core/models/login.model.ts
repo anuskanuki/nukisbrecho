@@ -1,21 +1,35 @@
-
-export class UserWithTokenModel {
-  sub?: string;
+export class LoggedUserModel {
+  unique_name?: string;
   email?: string;
-  jti?: string;
+  isAdmin?: boolean;
   nbf?: string;
-  iat?: string;
   exp?: string;
-  iss?: string;
-  aud?: string;
+  iat?: string;
 }
 
 export class LoginModel {
-  email?: string;
+  userName?: string;
   password?: string;
-  confirmPassword?: string;
 }
 
 export class AccessTokenModel {
   accessToken!: string;
+}
+
+export interface NewUserModel {
+  name?: string;
+  userName?: string;
+  email?: string;
+  password?: string;
+  address?: AdressModel;
+}
+
+export interface AdressModel {
+  neighborhood?: string;
+  zipCode?: string;
+  city?: string;
+  street?: string;
+  number?: string;
+  state?: string;
+  addressDetails?: string;
 }

@@ -28,7 +28,7 @@ export class AppComponent {
   public acessaSistema() {
     this.router.events.subscribe(rota => {
       if (rota instanceof NavigationEnd) {
-        if (!rota.url.includes('login') && this.authService.userLoggedIn()) {
+        if (!rota.url.includes('login')) {
           this.isLoggedIn = true;
         } else {
           this.isLoggedIn = false;

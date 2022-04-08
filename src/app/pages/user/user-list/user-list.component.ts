@@ -44,7 +44,7 @@ export class UserListComponent implements OnInit, OnDestroy {
       }
     )
     this.subscriptions.push(subscription);
-    console.log(this.userListApi);
+    console.log('userList Backend:', this.userListApi);
   }
 
   getUsersList() {

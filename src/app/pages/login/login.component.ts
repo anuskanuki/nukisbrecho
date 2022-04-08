@@ -94,36 +94,6 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.loginSuccess();
       this.loggedIn = true;
     }
-    // if (this.formNewUser.valid && this.formNewUser.dirty) {
-    //   this.loginService.newUser(this.formNewUser.value).subscribe(
-    //     isTrue => {
-    //       if (isTrue) {
-    //         // this.authService.setToken(token.accessToken);
-    //         this.loginSuccess();
-    //         this.formNewUser.reset();
-    //         this.loggedIn = true;
-    //       }
-    //     },
-    //     error => {
-    //       this.createBasicNotification('Oops! Reveja suas credenciais.', error);
-    //     }
-    //   );
-
-    // fetch("http://localhost:3000/users", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(this.formNewUser)
-    //   }).then(
-    //     this.setState({
-    //       user: {
-    //         email: this.formNewUser,
-    //         password: this.formNewUser,
-    //         confirmPassword: this.formNewUser,
-    //       }
-    //     })
-    //   );
   }
 
   public submitRegisteredUser() {
@@ -156,7 +126,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   private loginSuccess() {
-    if (this.authService.userLoggedIn()) {
+    if (true) {//authservice
       this.notification.success('Sucesso!', "Bem vindo ao Nuki's Brechó, aproveite :)");
       this.router.navigate(['/welcome']);
     } else {

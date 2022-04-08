@@ -298,6 +298,42 @@
           "answer": ""
         }
       ]
+    },
+    {
+      "id": 3,
+      "productId": 3,
+      "questions": [
+        {
+          "questionId": 1,
+          "author": "Gabriel",
+          "question": "what size?",
+          "answer": "small"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "productId": 4,
+      "questions": [
+        {
+          "questionId": 1,
+          "author": "Gabriel",
+          "question": "what size?",
+          "answer": "small"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "productId": 5,
+      "questions": [
+        {
+          "questionId": 1,
+          "author": "Gabriel",
+          "question": "what size?",
+          "answer": "small"
+        }
+      ]
     }
   ]
 }
