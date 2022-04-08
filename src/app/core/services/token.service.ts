@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { JwtHelperService } from "@auth0/angular-jwt";
-import { LoggedUserModel, UserCallBackLogin } from "../models/login.model";
+import { LoggedUserModel, UserCallBackLogin } from "../../pages/login/models/login.model";
 
 const TOKEN_NAME = "token";
 

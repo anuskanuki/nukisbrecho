@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs";
 import { catchError, tap } from "rxjs/operators";
 import { TokenService } from "src/app/core/services/token.service";
-import { LoginModel, NewUserModel, UserCallBackLogin } from "../../../core/models/login.model";
+import { LoginModel, NewUserModel, UserCallBackLogin } from "../models/login.model";
 import { BaseService } from "../../../core/services/base.service";
 
 @Injectable({

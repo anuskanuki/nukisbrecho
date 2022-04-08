@@ -4,10 +4,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { LoginService } from 'src/app/pages/login/services/login.service';
-import { LoginModel, NewUserModel } from 'src/app/core/models/login.model';
-
+import { LoginModel, NewUserModel } from 'src/app/pages/login/models/login.model';
 import { Subscription } from 'rxjs';
-
 
 @Component({
   selector: 'app-login',
@@ -16,19 +14,15 @@ import { Subscription } from 'rxjs';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  log = (param: any) => console.log(param);
-
   subscriptions: Subscription[] = [];
 
   public formNewUser!: FormGroup;
   public formUserLogin!: FormGroup;
   public model?: LoginModel;
   public submitted: boolean = false;
-
   public selectedWichMethod: boolean = false;
   public newUser: boolean = false;
   public registeredUser: boolean = false;
-
   public loggedIn = false;
 
   constructor(
@@ -82,7 +76,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   public submit() {
     this.submitted = true;
-    
+
     if (this.newUser) {
       const formNewUser = Object.assign(this.formNewUser.value, new NewUserModel());
       this.submitNewUser(formNewUser);
@@ -95,21 +89,19 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   private submitNewUser(newUser: NewUserModel) {
     if (this.formNewUser.valid && this.formNewUser.dirty) {
-     this.loginService.newUser(newUser).subscribe();
-     this.router.navigateByUrl('/welcome')
-     this.loggedIn = true;
+      const subscribeNewUser = this.loginService.newUser(newUser).subscribe();
+      this.router.navigateByUrl('/welcome')
+      this.loggedIn = true;
+      this.subscriptions.push(subscribeNewUser);
     }
   }
 
   public submitRegisteredUser(userCredentials: LoginModel) {
-    this.loginService.login(userCredentials).subscribe(() => {
+    const subscribe = this.loginService.login(userCredentials).subscribe(() => {
       this.router.navigateByUrl('/welcome')
       this.loggedIn = true;
-    })
-  }
-
-  private loginSuccess() {
-
+    });
+    this.subscriptions.push(subscribe);
   }
 
   private createformUserLogin() {
