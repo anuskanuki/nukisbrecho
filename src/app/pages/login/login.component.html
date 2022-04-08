@@ -16,11 +16,11 @@
                         </div>
                         <div nz-col nzSpan="24">
                             <nz-form-item class="grid">
-                                <nz-form-label [nzNoColon]="true" class="label">Email<span
+                                <nz-form-label [nzNoColon]="true" class="label">Usuário<span
                                         class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control [nzErrorTip]="validacoes">
-                                    <input formControlName="email" nz-input placeholder="E-mail" required />
+                                    <input formControlName="userName" nz-input placeholder="Nome de usuário" required />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>
@@ -93,7 +93,7 @@
                                 <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Apelido<span class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control [nzErrorTip]="validacoes">
-                                    <input formControlName="username" nz-input placeholder=""
+                                    <input formControlName="userName" nz-input placeholder=""
                                         required />
                                 </nz-form-control>
                             </nz-form-item>
@@ -149,6 +149,17 @@
                                 </nz-form-label>
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
                                     <input formControlName="number" type="number" nz-input placeholder=""
+                                        required />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+
+                        <div nz-col nzSpan="24">
+                            <nz-form-item class="grid">
+                                <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Cidade<span class="required-mark">*</span>
+                                </nz-form-label>
+                                <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
+                                    <input formControlName="city" nz-input placeholder=""
                                         required />
                                 </nz-form-control>
                             </nz-form-item>

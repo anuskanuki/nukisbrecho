@@ -64,20 +64,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.selectedWichMethod = true;
     this.newUser = true;
     this.registeredUser = false;
-
-
-    // this.createformNewUser();
-
-
-    // const subscription = this.loginService.newUser().subscribe(
-    //   response => {
-    //     this. = response;
-    //   },
-    //   error => {
-    //     this.notification.error('Oops!', error);
-    //   }
-    // )
-    // this.subscriptions.push(subscription);
+    this.createformNewUser();
   }
 
   public isRegisteredUser() {
@@ -94,29 +81,31 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   public submit() {
-    // this.submitted = true;
-
-    // if (this.newUser) {
-    //   this.submitNewUser();
-    // }
-    // if (this.registeredUser) {
-    //   this.submitRegisteredUser();
-    // }
-
-    const formNovoUsuario = Object.assign(this.formNewUser.value, new NewUserModel());
-
-    this.log(formNovoUsuario);
-  }
-
-  private submitNewUser() {
-    if (this.formNewUser.valid && this.formNewUser.dirty) {
-      this.loginSuccess();
-      this.loggedIn = true;
+    this.submitted = true;
+    
+    if (this.newUser) {
+      const formNewUser = Object.assign(this.formNewUser.value, new NewUserModel());
+      this.submitNewUser(formNewUser);
+    }
+    if (this.registeredUser) {
+      const formRegisterUser = Object.assign(this.formUserLogin.value, new LoginModel());
+      this.submitRegisteredUser(formRegisterUser);
     }
   }
 
-  public submitRegisteredUser() {
+  private submitNewUser(newUser: NewUserModel) {
+    if (this.formNewUser.valid && this.formNewUser.dirty) {
+     this.loginService.newUser(newUser).subscribe();
+     this.router.navigateByUrl('/welcome')
+     this.loggedIn = true;
+    }
+  }
 
+  public submitRegisteredUser(userCredentials: LoginModel) {
+    this.loginService.login(userCredentials).subscribe(() => {
+      this.router.navigateByUrl('/welcome')
+      this.loggedIn = true;
+    })
   }
 
   private loginSuccess() {
@@ -125,7 +114,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   private createformUserLogin() {
     this.formUserLogin = this.formBuilder.group({
-      email: [null, [Validators.required]],
+      userName: [null, [Validators.required]],
       password: [null, [Validators.required]],
     });
   }
@@ -134,13 +123,14 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.formNewUser = this.formBuilder.group({
       email: [null, [Validators.required]],
       password: [null, [Validators.required]],
-      username: [null, [Validators.required]],
+      userName: [null, [Validators.required]],
       name: [null, [Validators.required]],
       address: this.formBuilder.group({
         neighborhood: [null, [Validators.required]],
         zipCode: [null, [Validators.required]],
         street: [null, [Validators.required]],
         number: [null, [Validators.required]],
+        city: [null, [Validators.required]],
         state: [null, [Validators.required]],
         addressDetails: [null, [Validators.required]]
       })

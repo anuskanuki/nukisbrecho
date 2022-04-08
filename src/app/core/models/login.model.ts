@@ -1,10 +1,10 @@
-export class LoggedUserModel {
-  unique_name?: string;
-  email?: string;
-  isAdmin?: boolean;
-  nbf?: string;
-  exp?: string;
-  iat?: string;
+export interface LoggedUserModel {
+  unique_name: string;
+  email: string;
+  isAdmin: boolean;
+  nbf: string;
+  exp: string;
+  iat: string;
 }
 
 export class LoginModel {
@@ -12,8 +12,11 @@ export class LoginModel {
   password?: string;
 }
 
-export class AccessTokenModel {
-  accessToken!: string;
+export interface UserCallBackLogin {
+  name?: string;
+  username?: string;
+  email?: string;
+  token?: string;
 }
 
 export class NewUserModel {
