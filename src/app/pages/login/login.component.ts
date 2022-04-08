@@ -36,11 +36,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private loginService: LoginService,
     private formBuilder: FormBuilder,
     public router: Router,
-    private notification: NzNotificationService,
-<<<<<<< HEAD
-=======
-    // private authService: AuthService,
->>>>>>> 257f8fc29f6c1f089b533ea2c0c4a6fafe506d78
+    private notification: NzNotificationService
   ) { }
 
   ngOnInit(): void {
