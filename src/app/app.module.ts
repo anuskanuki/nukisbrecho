@@ -18,6 +18,7 @@ import { RouterModule } from '@angular/router';
 import { LoginModule } from './pages/login/login.module';
 import { AppComponent } from './app.component';
 import { TokenService } from './core/services/token.service';
+import { AuthGuard } from './core/services/auth.guard';
 
 
 registerLocaleData(pt);
@@ -40,7 +41,7 @@ registerLocaleData(pt);
     RouterModule,
     LoginModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: pt_BR }, TokenService],
+  providers: [{ provide: NZ_I18N, useValue: pt_BR }, TokenService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
