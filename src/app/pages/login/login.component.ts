@@ -50,10 +50,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       .blank(
         title,
         content
-      )
-      .onClick.subscribe(() => {
-        console.log('notification clicked!');
-      });
+      );
   }
 
   public isNewUser() {
@@ -91,18 +88,27 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   private submitNewUser(newUser: NewUserModel) {
     if (this.formNewUser.valid && this.formNewUser.dirty) {
-      const subscribeNewUser = this.loginService.newUser(newUser).subscribe();
-      this.router.navigateByUrl('/welcome')
-      this.loggedIn = true;
+      const subscribeNewUser = this.loginService.newUser(newUser).subscribe(() => {
+        this.createBasicNotification('Sucesso :)', 'Você será redirecionado ao site.');
+        this.router.navigateByUrl('/welcome');
+        this.loggedIn = true;
+      },
+        error => {
+          this.createBasicNotification('Ops!', 'Ocorreu um erro, tente novamente.' + '\n' + error);
+        });
       this.subscriptions.push(subscribeNewUser);
     }
   }
 
   public submitRegisteredUser(userCredentials: LoginModel) {
     const subscribe = this.loginService.login(userCredentials).subscribe(() => {
-      this.router.navigateByUrl('/welcome')
+      this.createBasicNotification('Sucesso :)', 'Bem-vindo!');
+      this.router.navigateByUrl('/welcome');
       this.loggedIn = true;
-    });
+    },
+      error => {
+        this.createBasicNotification('Ops!', 'Confira suas credenciais.' + '\n' + error);
+      });
     this.subscriptions.push(subscribe);
   }
 

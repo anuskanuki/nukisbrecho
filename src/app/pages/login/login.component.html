@@ -9,17 +9,19 @@
         </div>
 
         <ng-container #registeredUser *ngIf="registeredUser">
-            <form nz-form [formGroup]="formUserLogin" (ngSubmit)="submit()">
+            <form nz-form [formGroup]="formUserLogin" (ngSubmit)="submit()" (keydown.enter)="submit()">
                 <div nz-row>
                     <div nz-col nzSpan="24" class="title">
                         <p>LOGIN</p>
                     </div>
                     <div nz-col nzSpan="24">
                         <nz-form-item class="grid">
-                            <nz-form-label [nzNoColon]="true" class="label">Usuário<span class="required-mark">*</span>
+                            <nz-form-label [nzNoColon]="true" class="label">Nome de Usuário<span
+                                    class="required-mark">*</span>
                             </nz-form-label>
                             <nz-form-control [nzErrorTip]="validacoes">
-                                <input formControlName="userName" nz-input placeholder="Nome de usuário" required />
+                                <input formControlName="userName" nz-input
+                                    placeholder="Insira nome de usuário (apelido)" required />
                             </nz-form-control>
                         </nz-form-item>
                     </div>
@@ -33,7 +35,8 @@
                             <nz-form-control [nzErrorTip]="validacoes">
                                 <nz-input-group [nzSuffix]="suffixTemplate">
                                     <input formControlName="password" nz-input
-                                        [type]="passwordVisible ? 'text' : 'password'" placeholder="Senha" required />
+                                        [type]="passwordVisible ? 'text' : 'password'" placeholder="Insira Senha"
+                                        required />
                                 </nz-input-group>
                             </nz-form-control>
 
@@ -54,7 +57,7 @@
         </ng-container>
 
         <ng-container #newUser *ngIf="newUser">
-            <form nz-form [formGroup]="formNewUser" (ngSubmit)="submit()">
+            <form nz-form [formGroup]="formNewUser" (ngSubmit)="submit()" (keydown.enter)="submit()">
                 <div nz-row>
                     <div nz-col nzSpan="24" class="title">
                         <p>LOGIN</p>
@@ -66,18 +69,20 @@
                                     class="required-mark">*</span>
                             </nz-form-label>
                             <nz-form-control [nzErrorTip]="validacoes">
-                                <input formControlName="name" nz-input placeholder="" required />
+                                <input formControlName="name" nz-input placeholder="Insira seu nome completo"
+                                    required />
                             </nz-form-control>
                         </nz-form-item>
                     </div>
 
                     <div nz-col nzSpan="24">
                         <nz-form-item class="grid">
-                            <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Apelido<span
+                            <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Nome de Usuário<span
                                     class="required-mark">*</span>
                             </nz-form-label>
                             <nz-form-control [nzErrorTip]="validacoes">
-                                <input formControlName="userName" nz-input placeholder="" required />
+                                <input formControlName="userName" nz-input
+                                    placeholder="Insira nome de usuário (apelido)" required />
                             </nz-form-control>
                         </nz-form-item>
                     </div>
@@ -87,12 +92,12 @@
                             <nz-form-label [nzNoColon]="true" class="label">E-mail<span class="required-mark">*</span>
                             </nz-form-label>
                             <nz-form-control [nzErrorTip]="validacoes">
-                                <input formControlName="email" nz-input placeholder="E-mail" required />
+                                <input formControlName="email" nz-input placeholder="Insira seu E-mail" required />
                             </nz-form-control>
                         </nz-form-item>
                     </div>
 
-                    <label nz-col nzSpan="24">- Endereço -</label>
+                    <nz-divider nz-col nzSpan="24" nzText="Endereço" nzOrientation="left"></nz-divider>
 
                     <div nz-row [nzGutter]="18">
 
@@ -102,18 +107,19 @@
                                         class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
-                                    <input formControlName="street" nz-input placeholder="" required />
+                                    <input formControlName="street" nz-input placeholder="Insira sua Rua" required />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>
 
                         <div nz-col nzSpan="6">
                             <nz-form-item class="grid">
-                                <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Numero<span
+                                <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Número<span
                                         class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
-                                    <input formControlName="number" type="number" nz-input placeholder="" required />
+                                    <input formControlName="number" type="number" nz-input placeholder="Número da casa"
+                                        required />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>
@@ -124,7 +130,7 @@
                                         class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
-                                    <input formControlName="neighborhood" nz-input placeholder="" required />
+                                    <input formControlName="neighborhood" nz-input placeholder="Bairro" required />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>
@@ -135,7 +141,8 @@
                                         class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
-                                    <input formControlName="zipCode" type="number" nz-input placeholder="" required />
+                                    <input formControlName="zipCode" type="number" nz-input placeholder="CEP"
+                                        required />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>
@@ -146,7 +153,7 @@
                                         class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
-                                    <input formControlName="city" nz-input placeholder="" required />
+                                    <input formControlName="city" nz-input placeholder="Cidade" required />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>
@@ -172,7 +179,8 @@
                                         class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
-                                    <input formControlName="addressDetails" nz-input placeholder="" required />
+                                    <input formControlName="addressDetails" nz-input placeholder="Casa/Apto..."
+                                        required />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>
