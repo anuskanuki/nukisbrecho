@@ -38,6 +38,6 @@ export class TokenService {
     }
 
     public isLoggedIn(): boolean {
-        return !!this.token
+        return !!this.token;
     }
 }

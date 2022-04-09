@@ -44,6 +44,19 @@
   height: 48px;
 }
 
+:host
+  ::ng-deep
+  .ant-select-single:not(.ant-select-customize-input)
+  .ant-select-selector {
+  border-radius: 8px !important;
+  height: 48px;
+}
+
+:host ::ng-deep .ant-input-affix-wrapper {
+  border-radius: 8px !important;
+  height: inherit;
+}
+
 button {
   border-radius: 5px;
   height: 37px;
@@ -59,4 +72,8 @@ button {
   .layout {
     padding: 0% 10%;
   }
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }

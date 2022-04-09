@@ -6,6 +6,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { LoginService } from 'src/app/pages/login/services/login.service';
 import { LoginModel, NewUserModel } from 'src/app/pages/login/models/login.model';
 import { Subscription } from 'rxjs';
+import { States } from './enum/states.enum';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ import { Subscription } from 'rxjs';
 export class LoginComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription[] = [];
-
+  statesArray: Array<string> = Object.keys(States).filter(key => isNaN(+key));
+  passwordVisible = false;
   public formNewUser!: FormGroup;
   public formUserLogin!: FormGroup;
   public model?: LoginModel;

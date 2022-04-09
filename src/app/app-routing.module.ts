@@ -18,6 +18,7 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () =>
       import('./pages/user/user.module').then((m) => m.UserModule),
+    //data: { adminOnly: true },// para modulos inteiros 
     canActivate: [AuthGuard]
   },
   {
@@ -28,7 +29,8 @@ const routes: Routes = [
   {
     path: 'purchase',
     loadChildren: () =>
-      import('./pages/purchase/purchase.module').then((m) => m.PurchaseModule)
+      import('./pages/purchase/purchase.module').then((m) => m.PurchaseModule),
+    canActivate: [AuthGuard]
   },
 ];
 
