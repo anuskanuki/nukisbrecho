@@ -36,4 +36,8 @@ export class TokenService {
     public isAdmin(): boolean {
         return this.tokenData.isAdmin;
     }
+
+    public isLoggedIn(): boolean {
+        return !!this.token
+    }
 }
