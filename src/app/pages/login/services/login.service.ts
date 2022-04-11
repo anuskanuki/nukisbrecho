@@ -15,6 +15,13 @@ export class LoginService extends BaseService {
         super();
     }
 
+    public addUser(model: NewUserModel): Observable<NewUserModel> {
+        return this.http.post<NewUserModel>(this.urlAuthApiBack + 'users', model)
+            .pipe(
+                catchError(error => throwError(error))
+            );
+    }
+
     public newUser(model: NewUserModel): Observable<NewUserModel> {
         return this.http.post<NewUserModel>(this.urlAuthApiBack + 'users', model)
             .pipe(
@@ -26,7 +33,7 @@ export class LoginService extends BaseService {
     public login(model: LoginModel): Observable<UserCallBackLogin> {
         return this.http.post<UserCallBackLogin>(this.urlAuthApiBack + 'authentication/login', model)
             .pipe(
-                tap(user => {this.tokenService.setUserSeassion(user)})
+                tap(user => { this.tokenService.setUserSeassion(user) })
             )
     }
 }

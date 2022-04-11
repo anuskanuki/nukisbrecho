@@ -1,23 +1,14 @@
-<nz-space>
-    <nz-card *nzSpaceItem nzHoverable style="width:240px" [nzCover]="coverTemplate">
-        <nz-card-meta [nzTitle]="templateTitile" [nzDescription]="templateDescription"></nz-card-meta>
-    </nz-card>
-</nz-space>
-
-<ng-template #coverTemplate>
-        <img alt="example" src="{{productMainPhoto}}" />
-</ng-template>
-
-<ng-template #templateTitile>
-    <nz-tag [nzColor]="'#87d068'" class="price-tag">
-        R$ {{productPrice}}
-    </nz-tag>
-
-    <p class="title-label">
-        {{productTitle}}
-    </p>
-</ng-template>
-
-<ng-template #templateDescription>
-    {{productBrand}}
-</ng-template>
+<div class="cardContainer">
+    <div class="card">
+        <div class="side front">
+            <div class="img">
+                <img alt="example" class="img-card" src="{{productMainPhoto}}" />
+            </div>
+            <div class="info">
+                <nz-tag class="price-tag">R$ {{productPrice}}</nz-tag>
+                <p class="title-label">{{productTitle}}</p>
+                <p>{{productBrand}}</p>
+            </div>
+        </div>
+    </div>
+</div>

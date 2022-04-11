@@ -70,8 +70,8 @@
 
           <li *ngIf="!isLoggedIn" nz-menu-item routerLink="/login">entrar</li>
 
-          <li *ngIf="isLoggedIn" nz-menu-item routerLink="/product">produtos curtidos</li>
-          <!-- wishlist -->
+          <!-- <li *ngIf="isLoggedIn" nz-menu-item routerLink="/product">produtos curtidos</li> -->
+          <!-- wishlist route -->
 
           <li *ngIf="isLoggedIn" nz-menu-item routerLink="/user/orders">meus pedidos</li>
 
@@ -79,17 +79,12 @@
 
           <li *ngIf="isLoggedIn" nz-menu-item routerLink="/user/1234">perfil</li>
 
-          <li *ngIf="isLoggedIn" nz-menu-item routerLink="/login">sair</li>
+          <li *ngIf="isLoggedIn" nz-menu-item (click)="logout()">sair</li>
+
+          <label>Bem-vindo, {{userData?.unique_name ||''}}!</label>
         </ul>
       </div>
     </nz-header>
-
-    <!-- <nz-content>
-      <nz-breadcrumb>
-        <nz-breadcrumb-item>nao sei</nz-breadcrumb-item>
-        <nz-breadcrumb-item>usar</nz-breadcrumb-item>
-      </nz-breadcrumb>
-    </nz-content> -->
 
     <nz-content>
       <div class="inner-content">
@@ -100,5 +95,5 @@
 </nz-layout>
 
 <ng-container *ngIf="!isLoggedIn">
-    <app-login></app-login>
+  <app-login></app-login>
 </ng-container>

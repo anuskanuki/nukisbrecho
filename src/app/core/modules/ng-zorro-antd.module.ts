@@ -25,7 +25,7 @@ import { NzNotificationModule } from 'ng-zorro-antd/notification';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzSelectModule } from 'ng-zorro-antd/select';
-
+import { NzUploadModule } from 'ng-zorro-antd/upload';
 
 @NgModule({
   exports: [
@@ -54,7 +54,8 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
     NzNotificationModule,
     NzPopconfirmModule,
     NzRadioModule,
-    NzSelectModule
+    NzSelectModule,
+    NzUploadModule,
   ],
 })
 export class NgZorroAntdModule { }

@@ -21,7 +21,7 @@
                             </nz-form-label>
                             <nz-form-control [nzErrorTip]="validacoes">
                                 <input formControlName="userName" nz-input
-                                    placeholder="Insira nome de usuário (apelido)" required />
+                                    placeholder="Insira nome de usuário cadastrado" required />
                             </nz-form-control>
                         </nz-form-item>
                     </div>
@@ -39,10 +39,8 @@
                                         required />
                                 </nz-input-group>
                             </nz-form-control>
-
                         </nz-form-item>
                     </div>
-
                 </div>
 
                 <div nz-row nzJustify="center" nzAlign="middle">
@@ -92,7 +90,7 @@
                             <nz-form-label [nzNoColon]="true" class="label">E-mail<span class="required-mark">*</span>
                             </nz-form-label>
                             <nz-form-control [nzErrorTip]="validacoes">
-                                <input formControlName="email" nz-input placeholder="Insira seu E-mail" required />
+                                <input formControlName="email" nz-input placeholder="exemplo@gmail.com" required />
                             </nz-form-control>
                         </nz-form-item>
                     </div>
@@ -107,7 +105,8 @@
                                         class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
-                                    <input formControlName="street" nz-input placeholder="Insira sua Rua" required />
+                                    <input formControlName="street" nz-input placeholder="Ruaa Exemplo da Silva"
+                                        required />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>
@@ -118,8 +117,7 @@
                                         class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
-                                    <input formControlName="number" type="number" nz-input placeholder="Número da casa"
-                                        required />
+                                    <input formControlName="number" type="number" nz-input placeholder="123" required />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>
@@ -130,7 +128,8 @@
                                         class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
-                                    <input formControlName="neighborhood" nz-input placeholder="Bairro" required />
+                                    <input formControlName="neighborhood" nz-input placeholder="Bairro Exemplo"
+                                        required />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>
@@ -141,7 +140,7 @@
                                         class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
-                                    <input formControlName="zipCode" type="number" nz-input placeholder="CEP"
+                                    <input formControlName="zipCode" type="number" nz-input placeholder="Apenas números"
                                         required />
                                 </nz-form-control>
                             </nz-form-item>
@@ -208,7 +207,11 @@
                         <button (click)="backToTheLoginChoices()">Voltar</button>
                     </div>
                     <div class="button-enviar" nz-col nzSpan="12">
-                        <button type="submit">Enviar</button>
+                        <button *ngIf="newUser" type="submit"
+                            [disabled]="formNewUser.invalid || !formNewUser.dirty">Enviar</button>
+
+                        <button *ngIf="registeredUser" type="submit"
+                            [disabled]="formUserLogin.invalid || !formUserLogin.dirty">Enviar</button>
                     </div>
                 </div>
             </form>

@@ -116,7 +116,7 @@
       "brand": "VANS",
       "size": "M",
       "condition": "usado",
-      "priceTag": 68,
+      "priceTag": 48,
       "photos": [
         "https://cdn.icon-icons.com/icons2/376/PNG/256/Vans_Checkerboard_Dirty_White_37330.png",
         "https://cdn.icon-icons.com/icons2/376/PNG/256/Vans_Checkerboard_Dirty_White_37330.png"
@@ -124,6 +124,132 @@
       "mainPhoto": "../assets/clothes/vanss.png",
       "active": true,
       "wishlistedCount": 12
+    },
+    {
+      "id": 6,
+      "productCode": "#0006",
+      "title": "Camiseta cor musgo",
+      "description": "Camiseta cor musgo, usada, medidas: Comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm.",
+      "category": "roupas",
+      "brand": "renner",
+      "size": "M",
+      "condition": "usado",
+      "priceTag": 23,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/547/PNG/512/1455554374_line-24_icon-icons.com_53306.png",
+        "https://cdn.icon-icons.com/icons2/547/PNG/512/1455554374_line-24_icon-icons.com_53306.png"
+      ],
+      "mainPhoto": "../assets/clothes/t-shirt-cor.png",
+      "active": true,
+      "wishlistedCount": 4
+    },
+    {
+      "id": 7,
+      "productCode": "#0007",
+      "title": "Camisa floral",
+      "description": "Camiseta floral seminova, medidas: Comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm.",
+      "category": "roupas",
+      "brand": "C&A",
+      "size": "P",
+      "condition": "usado",
+      "priceTag": 22,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/3191/PNG/512/summer_t_shirt_shirt_clothes_outfit_icon_194249.png",
+        "https://cdn.icon-icons.com/icons2/3191/PNG/512/summer_t_shirt_shirt_clothes_outfit_icon_194249.png"
+      ],
+      "mainPhoto": "../assets/clothes/camiseta-flores.png",
+      "active": true,
+      "wishlistedCount": 1
+    },
+    {
+      "id": 8,
+      "productCode": "#0008",
+      "title": "Suéter felpudo listras",
+      "description": "Suéter felpudo de listras, medidas: Comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm.",
+      "category": "roupas",
+      "brand": "Youcom",
+      "size": "G",
+      "condition": "usado",
+      "priceTag": 34,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/1719/PNG/512/3856399-clothes-clothing-garment-sweater-winter_112763.png",
+        "https://cdn.icon-icons.com/icons2/1719/PNG/512/3856399-clothes-clothing-garment-sweater-winter_112763.png"
+      ],
+      "mainPhoto": "../assets/clothes/garment-sweater.png",
+      "active": true,
+      "wishlistedCount": 1
+    },
+    {
+      "id": 9,
+      "productCode": "#0009",
+      "title": "Suéter natalino com gola",
+      "description": "Suéter natalino com gola boneco de neve",
+      "category": "roupas",
+      "brand": "tricot artesanal",
+      "size": "G",
+      "condition": "novo",
+      "priceTag": 24,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/2641/PNG/512/christmas_sweater_snowman_pullover_clothes_fashion_icon_159324.png",
+        "https://cdn.icon-icons.com/icons2/2641/PNG/512/christmas_sweater_snowman_pullover_clothes_fashion_icon_159324.png"
+      ],
+      "mainPhoto": "../assets/clothes/sueternatal.png",
+      "active": true,
+      "wishlistedCount": 8
+    },
+    {
+      "id": 10,
+      "productCode": "#0010",
+      "title": "Blusa azul gola",
+      "description": "Blusa...",
+      "category": "roupas",
+      "brand": "sem marca",
+      "size": "G",
+      "condition": "usado",
+      "priceTag": 13,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/1639/PNG/512/12186womansclothes_109557.png",
+        "https://cdn.icon-icons.com/icons2/1639/PNG/512/12186womansclothes_109557.png"
+      ],
+      "mainPhoto": "../assets/clothes/blusaazul.png",
+      "active": true,
+      "wishlistedCount": 2
+    },
+    {
+      "id": 11,
+      "productCode": "#0011",
+      "title": "Moletom de coração",
+      "description": "Moletom...",
+      "category": "roupas",
+      "brand": "renner",
+      "size": "G",
+      "condition": "usado",
+      "priceTag": 31,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/2967/PNG/512/girl_hoodie_sweatshirt_clothes_clothing_icon_186772.png",
+        "https://cdn.icon-icons.com/icons2/2967/PNG/512/girl_hoodie_sweatshirt_clothes_clothing_icon_186772.png"
+      ],
+      "mainPhoto": "../assets/clothes/moletom-coracao.png",
+      "active": true,
+      "wishlistedCount": 9
+    },
+    {
+      "id": 12,
+      "productCode": "#0012",
+      "title": "T-shirt verde básica",
+      "description": "blusa...",
+      "category": "roupas",
+      "brand": "simple basic",
+      "size": "PP",
+      "condition": "usado",
+      "priceTag": 17,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/1138/PNG/512/1486395297-16-clothes_80572.png",
+        "https://cdn.icon-icons.com/icons2/1138/PNG/512/1486395297-16-clothes_80572.png"
+      ],
+      "mainPhoto": "../assets/clothes/blusaverde.png",
+      "active": true,
+      "wishlistedCount": 9
     }
   ],
   "adminNotifications": [

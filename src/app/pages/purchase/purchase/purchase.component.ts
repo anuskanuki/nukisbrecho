@@ -30,8 +30,8 @@ export class PurchaseComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  disableCartProductsUntilPayment(){
-    
+  disableCartProductsUntilPayment() {
+
   }
 
   confirmPaymentReceiptAttached() {

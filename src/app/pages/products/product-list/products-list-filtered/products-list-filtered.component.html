@@ -1,10 +1,16 @@
-<nz-content>
-    <app-product-card *ngFor="let product of productsList"
-        (click)="goToProduct(product.id!.toString() ||'0')" [productMainPhoto]="product.mainPhoto || '-'"
-        [productTitle]="product.title || '-'" [productBrand]="product.brand || '-'"
-        [productPrice]="product.priceTag!.toString() || '0'">
-    </app-product-card>
-</nz-content>
+<nz-list nzGrid>
+    <div nz-row [nzGutter]="16">
+
+        <nz-list-item class="wrap-list">
+            <app-product-card *ngFor="let product of productsList" [productMainPhoto]="product.mainPhoto || '-'"
+                [productTitle]="product.title || '-'" [productBrand]="product.brand || '-'"
+                [productPrice]="product.priceTag!.toString() || '0'"
+                (click)="goToProduct(product.id!.toString() ||'0')">
+            </app-product-card>
+        </nz-list-item>
+
+    </div>
+</nz-list>
 
 <div nz-row nzAlign="bottom">
     <button nz-button nzType="primary" (click)="back()">voltar</button>
