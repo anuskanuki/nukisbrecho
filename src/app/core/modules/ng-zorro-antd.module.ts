@@ -26,6 +26,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzBackTopModule } from 'ng-zorro-antd/back-top';
 
 @NgModule({
   exports: [
@@ -56,6 +57,7 @@ import { NzUploadModule } from 'ng-zorro-antd/upload';
     NzRadioModule,
     NzSelectModule,
     NzUploadModule,
+    NzBackTopModule,
   ],
 })
 export class NgZorroAntdModule { }
