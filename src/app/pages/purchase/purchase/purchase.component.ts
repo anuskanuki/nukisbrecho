@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { TokenService } from 'src/app/core/services/token.service';
 
 @Component({
   selector: 'app-purchase',
@@ -8,8 +9,9 @@ import { Location } from '@angular/common';
 })
 export class PurchaseComponent implements OnInit {
 
-  public loggedIn = true;
+  public loggedIn = false;
   public paymentReceiptAttached = false;
+  public userName = '';
 
   panels = [
     {
@@ -25,17 +27,27 @@ export class PurchaseComponent implements OnInit {
   ];
   constructor(
     private location: Location,
+    private tokenService: TokenService
   ) { }
 
   ngOnInit(): void {
-  }
-
-  disableCartProductsUntilPayment() {
-
+    this.verifyLoggedUser();
   }
 
   confirmPaymentReceiptAttached() {
     this.paymentReceiptAttached = true;
+  }
+
+  verifyLoggedUser() {
+    if (this.tokenService.isLoggedIn()) {
+      this.loggedIn = true;
+    } else {
+      this.loggedIn = false;
+    }
+  }
+
+  getUserAddress() {
+    this.userName = this.tokenService.tokenData.unique_name;
   }
 
   back(): void {

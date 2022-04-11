@@ -8,8 +8,10 @@ export class ProductModel {
     size?: string;
     condition?: string;
     priceTag?: number;
-    photos?: [];
     mainPhoto?: string;
+    photo2?: string;
+    photo3?: string;
+    photo4?: string;
     active?: boolean;
     wishlistedCount?: number;
 }

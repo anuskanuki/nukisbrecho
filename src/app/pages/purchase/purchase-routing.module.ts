@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { PurchaseComponent } from './purchase/purchase.component';
 import { PurchaseConfirmationComponent } from './confirmation/purchase-confirmation.component';
-import { CartComponent } from './cart/cart.component';
+// import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   { path: '', component: PurchaseComponent },
   { path: 'confirmation', component: PurchaseConfirmationComponent },
-  { path: 'cart', component: CartComponent },
+  // { path: 'cart', component: CartComponent },
 ];
 
 @NgModule({

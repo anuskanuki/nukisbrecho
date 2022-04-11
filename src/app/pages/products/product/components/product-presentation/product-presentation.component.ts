@@ -8,4 +8,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 })
 export class ProductPresentationComponent {
   @Input() mainPhoto?: string;
+  @Input() photo2?: string;
+  @Input() photo3?: string;
+  @Input() photo4?: string;
 }

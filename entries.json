@@ -45,10 +45,9 @@
       "size": "M",
       "condition": "novo",
       "priceTag": 44,
-      "photos": [
-        "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-        "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-      ],
+      "photo2": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
+      "photo3": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
+      "photo4": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
       "mainPhoto": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
       "active": true,
       "wishlistedCount": 3
@@ -63,10 +62,9 @@
       "size": "G",
       "condition": "novo",
       "priceTag": 44,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/1465/PNG/512/422dress_100789.png",
-        "https://cdn.icon-icons.com/icons2/1465/PNG/512/422dress_100789.png"
-      ],
+      "photo2": "../assets/clothes/vestido.png",
+      "photo3": "../assets/clothes/vestido.png",
+      "photo4": "../assets/clothes/vestido.png",
       "mainPhoto": "../assets/clothes/vestido.png",
       "active": true,
       "wishlistedCount": 9
@@ -81,10 +79,9 @@
       "size": "único",
       "condition": "usado",
       "priceTag": 19,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/1465/PNG/512/422dress_100789.png",
-        "https://cdn.icon-icons.com/icons2/1465/PNG/512/422dress_100789.png"
-      ],
+      "photo2": "../assets/clothes/brinco.png",
+      "photo3": "../assets/clothes/brinco.png",
+      "photo4": "../assets/clothes/brinco.png",
       "mainPhoto": "../assets/clothes/brinco.png",
       "active": true,
       "wishlistedCount": 2
@@ -92,17 +89,16 @@
     {
       "id": 4,
       "productCode": "#0004",
-      "title": "Rasteirinha rosa",
+      "title": "Sapato bico fino rosa",
       "description": "Rasteirinha rosa tamanho 38, usada sem marcas de uso, solado mede 26cm.",
       "category": "calcados",
       "brand": "liberte",
       "size": "38",
       "condition": "usado",
       "priceTag": 23,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/1465/PNG/512/422dress_100789.png",
-        "https://cdn.icon-icons.com/icons2/1465/PNG/512/422dress_100789.png"
-      ],
+      "photo2": "../assets/clothes/rasteirinha.png",
+      "photo3": "../assets/clothes/rasteirinha.png",
+      "photo4": "../assets/clothes/rasteirinha.png",
       "mainPhoto": "../assets/clothes/rasteirinha.png",
       "active": true,
       "wishlistedCount": 17
@@ -117,10 +113,9 @@
       "size": "M",
       "condition": "usado",
       "priceTag": 48,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/376/PNG/256/Vans_Checkerboard_Dirty_White_37330.png",
-        "https://cdn.icon-icons.com/icons2/376/PNG/256/Vans_Checkerboard_Dirty_White_37330.png"
-      ],
+      "photo2": "../assets/clothes/vanss.png",
+      "photo3": "../assets/clothes/vanss.png",
+      "photo4": "../assets/clothes/vanss.png",
       "mainPhoto": "../assets/clothes/vanss.png",
       "active": true,
       "wishlistedCount": 12
@@ -135,10 +130,9 @@
       "size": "M",
       "condition": "usado",
       "priceTag": 23,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/547/PNG/512/1455554374_line-24_icon-icons.com_53306.png",
-        "https://cdn.icon-icons.com/icons2/547/PNG/512/1455554374_line-24_icon-icons.com_53306.png"
-      ],
+      "photo2": "../assets/clothes/t-shirt-cor.png",
+      "photo3": "../assets/clothes/t-shirt-cor.png",
+      "photo4": "../assets/clothes/t-shirt-cor.png",
       "mainPhoto": "../assets/clothes/t-shirt-cor.png",
       "active": true,
       "wishlistedCount": 4
@@ -153,10 +147,9 @@
       "size": "P",
       "condition": "usado",
       "priceTag": 22,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/3191/PNG/512/summer_t_shirt_shirt_clothes_outfit_icon_194249.png",
-        "https://cdn.icon-icons.com/icons2/3191/PNG/512/summer_t_shirt_shirt_clothes_outfit_icon_194249.png"
-      ],
+      "photo2": "../assets/clothes/camiseta-flores.png",
+      "photo3": "../assets/clothes/camiseta-flores.png",
+      "photo4": "../assets/clothes/camiseta-flores.png",
       "mainPhoto": "../assets/clothes/camiseta-flores.png",
       "active": true,
       "wishlistedCount": 1
@@ -171,10 +164,9 @@
       "size": "G",
       "condition": "usado",
       "priceTag": 34,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/1719/PNG/512/3856399-clothes-clothing-garment-sweater-winter_112763.png",
-        "https://cdn.icon-icons.com/icons2/1719/PNG/512/3856399-clothes-clothing-garment-sweater-winter_112763.png"
-      ],
+      "photo2": "../assets/clothes/garment-sweater.png",
+      "photo3": "../assets/clothes/garment-sweater.png",
+      "photo4": "../assets/clothes/garment-sweater.png",
       "mainPhoto": "../assets/clothes/garment-sweater.png",
       "active": true,
       "wishlistedCount": 1
@@ -189,10 +181,9 @@
       "size": "G",
       "condition": "novo",
       "priceTag": 24,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/2641/PNG/512/christmas_sweater_snowman_pullover_clothes_fashion_icon_159324.png",
-        "https://cdn.icon-icons.com/icons2/2641/PNG/512/christmas_sweater_snowman_pullover_clothes_fashion_icon_159324.png"
-      ],
+      "photo2": "../assets/clothes/sueternatal.png",
+      "photo3": "../assets/clothes/sueternatal.png",
+      "photo4": "../assets/clothes/sueternatal.png",
       "mainPhoto": "../assets/clothes/sueternatal.png",
       "active": true,
       "wishlistedCount": 8
@@ -207,10 +198,9 @@
       "size": "G",
       "condition": "usado",
       "priceTag": 13,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/1639/PNG/512/12186womansclothes_109557.png",
-        "https://cdn.icon-icons.com/icons2/1639/PNG/512/12186womansclothes_109557.png"
-      ],
+      "photo2": "../assets/clothes/blusaazul.png",
+      "photo3": "../assets/clothes/blusaazul.png",
+      "photo4": "../assets/clothes/blusaazul.png",
       "mainPhoto": "../assets/clothes/blusaazul.png",
       "active": true,
       "wishlistedCount": 2
@@ -225,10 +215,9 @@
       "size": "G",
       "condition": "usado",
       "priceTag": 31,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/2967/PNG/512/girl_hoodie_sweatshirt_clothes_clothing_icon_186772.png",
-        "https://cdn.icon-icons.com/icons2/2967/PNG/512/girl_hoodie_sweatshirt_clothes_clothing_icon_186772.png"
-      ],
+      "photo2": "../assets/clothes/moletom-coracao.png",
+      "photo3": "../assets/clothes/moletom-coracao.png",
+      "photo4": "../assets/clothes/moletom-coracao.png",
       "mainPhoto": "../assets/clothes/moletom-coracao.png",
       "active": true,
       "wishlistedCount": 9
@@ -243,10 +232,9 @@
       "size": "PP",
       "condition": "usado",
       "priceTag": 17,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/1138/PNG/512/1486395297-16-clothes_80572.png",
-        "https://cdn.icon-icons.com/icons2/1138/PNG/512/1486395297-16-clothes_80572.png"
-      ],
+      "photo2": "../assets/clothes/blusaverde.png",
+      "photo3": "../assets/clothes/blusaverde.png",
+      "photo4": "../assets/clothes/blusaverde.png",
       "mainPhoto": "../assets/clothes/blusaverde.png",
       "active": true,
       "wishlistedCount": 9
@@ -261,10 +249,9 @@
       "size": "38",
       "condition": "usado",
       "priceTag": 38,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/1639/PNG/512/12197highheeledshoe_109550.png",
-        "https://cdn.icon-icons.com/icons2/1639/PNG/512/12197highheeledshoe_109550.png"
-      ],
+      "photo2": "../assets/clothes/scarpinvermelho.png",
+      "photo3": "../assets/clothes/scarpinvermelho.png",
+      "photo4": "../assets/clothes/scarpinvermelho.png",
       "mainPhoto": "../assets/clothes/scarpinvermelho.png",
       "active": true,
       "wishlistedCount": 22
@@ -279,10 +266,9 @@
       "size": "36",
       "condition": "usado",
       "priceTag": 39,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/105/PNG/256/shoe_18037.png",
-        "https://cdn.icon-icons.com/icons2/105/PNG/256/shoe_18037.png"
-      ],
+      "photo2": "../assets/clothes/shoe_18037.png",
+      "photo3": "../assets/clothes/shoe_18037.png",
+      "photo4": "../assets/clothes/shoe_18037.png",
       "mainPhoto": "../assets/clothes/shoe_18037.png",
       "active": true,
       "wishlistedCount": 26
@@ -297,10 +283,9 @@
       "size": "P",
       "condition": "usado",
       "priceTag": 29,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/2179/PNG/512/summer_swimsuit_swim_suit_bikini_swimwear_one_piece_icon_133402.png",
-        "https://cdn.icon-icons.com/icons2/2179/PNG/512/summer_swimsuit_swim_suit_bikini_swimwear_one_piece_icon_133402.png"
-      ],
+      "photo2": "../assets/clothes/summer_swimsuit.png",
+      "photo3": "../assets/clothes/summer_swimsuit.png",
+      "photo4": "../assets/clothes/summer_swimsuit.png",
       "mainPhoto": "../assets/clothes/summer_swimsuit.png",
       "active": true,
       "wishlistedCount": 16
@@ -315,10 +300,9 @@
       "size": "P",
       "condition": "novo",
       "priceTag": 10,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/2313/PNG/512/gloves_glove_fashion_clothes_clothing_winter_icon_141981.png",
-        "https://cdn.icon-icons.com/icons2/2313/PNG/512/gloves_glove_fashion_clothes_clothing_winter_icon_141981.png"
-      ],
+      "photo2": "../assets/clothes/gloves_glove_fashion.png",
+      "photo3": "../assets/clothes/gloves_glove_fashion.png",
+      "photo4": "../assets/clothes/gloves_glove_fashion.png",
       "mainPhoto": "../assets/clothes/gloves_glove_fashion.png",
       "active": true,
       "wishlistedCount": 1
@@ -333,10 +317,9 @@
       "size": "39",
       "condition": "novo",
       "priceTag": 13,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/1419/PNG/128/slipper2-128x128_98413.png",
-        "https://cdn.icon-icons.com/icons2/1419/PNG/128/slipper2-128x128_98413.png"
-      ],
+      "photo2": "../assets/clothes/slipperlilac.png",
+      "photo3": "../assets/clothes/slipperlilac.png",
+      "photo4": "../assets/clothes/slipperlilac.png",
       "mainPhoto": "../assets/clothes/slipperlilac.png",
       "active": true,
       "wishlistedCount": 1
@@ -351,10 +334,9 @@
       "size": "G",
       "condition": "novo",
       "priceTag": 26,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/924/PNG/512/Football_2-47_icon-icons.com_72082.png",
-        "https://cdn.icon-icons.com/icons2/924/PNG/512/Football_2-47_icon-icons.com_72082.png"
-      ],
+      "photo2": "../assets/clothes/pijamas-azul.png",
+      "photo3": "../assets/clothes/pijamas-azul.png",
+      "photo4": "../assets/clothes/pijamas-azul.png",
       "mainPhoto": "../assets/clothes/pijamas-azul.png",
       "active": true,
       "wishlistedCount": 23
@@ -369,10 +351,9 @@
       "size": "G",
       "condition": "usado",
       "priceTag": 65,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/924/PNG/512/Football_2-04_icon-icons.com_72115.png",
-        "https://cdn.icon-icons.com/icons2/924/PNG/512/Football_2-04_icon-icons.com_72115.png"
-      ],
+      "photo2": "../assets/clothes/camisacorinthians.png",
+      "photo3": "../assets/clothes/camisacorinthians.png",
+      "photo4": "../assets/clothes/camisacorinthians.png",
       "mainPhoto": "../assets/clothes/camisacorinthians.png",
       "active": true,
       "wishlistedCount": 11
@@ -387,10 +368,9 @@
       "size": "G",
       "condition": "usado",
       "priceTag": 24,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/2968/PNG/512/girl_backpack_bag_rucksack_icon_186801.png",
-        "https://cdn.icon-icons.com/icons2/2968/PNG/512/girl_backpack_bag_rucksack_icon_186801.png"
-      ],
+      "photo2": "../assets/clothes/girl_backpack.png",
+      "photo3": "../assets/clothes/girl_backpack.png",
+      "photo4": "../assets/clothes/girl_backpack.png",
       "mainPhoto": "../assets/clothes/girl_backpack.png",
       "active": true,
       "wishlistedCount": 19
@@ -405,10 +385,9 @@
       "size": "M",
       "condition": "novo",
       "priceTag": 16,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/2179/PNG/512/summer_swimsuit_swim_suit_bikini_swimwear_two_piece_icon_133396.png",
-        "https://cdn.icon-icons.com/icons2/2179/PNG/512/summer_swimsuit_swim_suit_bikini_swimwear_two_piece_icon_133396.png"
-      ],
+      "photo2": "../assets/clothes/summer_swimsuitrosa.png",
+      "photo3": "../assets/clothes/summer_swimsuitrosa.png",
+      "photo4": "../assets/clothes/summer_swimsuitrosa.png",
       "mainPhoto": "../assets/clothes/summer_swimsuitrosa.png",
       "active": true,
       "wishlistedCount": 6
@@ -423,10 +402,9 @@
       "size": "42",
       "condition": "usado",
       "priceTag": 41,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/924/PNG/512/Football_2-56_icon-icons.com_72083.png",
-        "https://cdn.icon-icons.com/icons2/924/PNG/512/Football_2-56_icon-icons.com_72083.png"
-      ],
+      "photo2": "../assets/clothes/chuteiraadidas.png",
+      "photo3": "../assets/clothes/chuteiraadidas.png",
+      "photo4": "../assets/clothes/chuteiraadidas.png",
       "mainPhoto": "../assets/clothes/chuteiraadidas.png",
       "active": true,
       "wishlistedCount": 16
@@ -441,11 +419,10 @@
       "size": "37",
       "condition": "usado",
       "priceTag": 43,
-      "photos": [
-        "https://cdn.icon-icons.com/icons2/1465/PNG/512/429runningshoe_100343.png",
-        "https://cdn.icon-icons.com/icons2/1465/PNG/512/429runningshoe_100343.png"
-      ],
       "mainPhoto": "../assets/clothes/tenisazulao.png",
+      "photo2": "../assets/clothes/tenisazulao.png",
+      "photo3": "../assets/clothes/tenisazulao.png",
+      "photo4": "../assets/clothes/tenisazulao.png",
       "active": true,
       "wishlistedCount": 3
     }
