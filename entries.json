@@ -250,6 +250,204 @@
       "mainPhoto": "../assets/clothes/blusaverde.png",
       "active": true,
       "wishlistedCount": 9
+    },
+    {
+      "id": 13,
+      "productCode": "#0013",
+      "title": "Sapato salto fino",
+      "description": "Salto fino vermelho de bico fino acabamento fosco, tamanho 38, 27cm de solado.",
+      "category": "calcados",
+      "brand": "Use Hitz",
+      "size": "38",
+      "condition": "usado",
+      "priceTag": 38,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/1639/PNG/512/12197highheeledshoe_109550.png",
+        "https://cdn.icon-icons.com/icons2/1639/PNG/512/12197highheeledshoe_109550.png"
+      ],
+      "mainPhoto": "../assets/clothes/scarpinvermelho.png",
+      "active": true,
+      "wishlistedCount": 22
+    },
+    {
+      "id": 14,
+      "productCode": "#0014",
+      "title": "Tênis anos 2000",
+      "description": "Tênis usado estilo de anos 2000, cano alto, tamanho 36, 23cm de solado.",
+      "category": "calcados",
+      "brand": "Use Hitz",
+      "size": "36",
+      "condition": "usado",
+      "priceTag": 39,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/105/PNG/256/shoe_18037.png",
+        "https://cdn.icon-icons.com/icons2/105/PNG/256/shoe_18037.png"
+      ],
+      "mainPhoto": "../assets/clothes/shoe_18037.png",
+      "active": true,
+      "wishlistedCount": 26
+    },
+    {
+      "id": 15,
+      "productCode": "#0015",
+      "title": "Maiô amarelo",
+      "description": "Maiô..",
+      "category": "roupas",
+      "brand": "renner",
+      "size": "P",
+      "condition": "usado",
+      "priceTag": 29,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/2179/PNG/512/summer_swimsuit_swim_suit_bikini_swimwear_one_piece_icon_133402.png",
+        "https://cdn.icon-icons.com/icons2/2179/PNG/512/summer_swimsuit_swim_suit_bikini_swimwear_one_piece_icon_133402.png"
+      ],
+      "mainPhoto": "../assets/clothes/summer_swimsuit.png",
+      "active": true,
+      "wishlistedCount": 16
+    },
+    {
+      "id": 16,
+      "productCode": "#0016",
+      "title": "Luvas vermelhas",
+      "description": "Par de luvas..",
+      "category": "acessorios",
+      "brand": "renner",
+      "size": "P",
+      "condition": "novo",
+      "priceTag": 10,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/2313/PNG/512/gloves_glove_fashion_clothes_clothing_winter_icon_141981.png",
+        "https://cdn.icon-icons.com/icons2/2313/PNG/512/gloves_glove_fashion_clothes_clothing_winter_icon_141981.png"
+      ],
+      "mainPhoto": "../assets/clothes/gloves_glove_fashion.png",
+      "active": true,
+      "wishlistedCount": 1
+    },
+    {
+      "id": 17,
+      "productCode": "#0017",
+      "title": "Chinelo lilás",
+      "description": "Par de chinelos..",
+      "category": "calcados",
+      "brand": "havaianas",
+      "size": "39",
+      "condition": "novo",
+      "priceTag": 13,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/1419/PNG/128/slipper2-128x128_98413.png",
+        "https://cdn.icon-icons.com/icons2/1419/PNG/128/slipper2-128x128_98413.png"
+      ],
+      "mainPhoto": "../assets/clothes/slipperlilac.png",
+      "active": true,
+      "wishlistedCount": 1
+    },
+    {
+      "id": 18,
+      "productCode": "#0018",
+      "title": "Conjunto pijama azul",
+      "description": "pj's..",
+      "category": "roupas",
+      "brand": "hope",
+      "size": "G",
+      "condition": "novo",
+      "priceTag": 26,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/924/PNG/512/Football_2-47_icon-icons.com_72082.png",
+        "https://cdn.icon-icons.com/icons2/924/PNG/512/Football_2-47_icon-icons.com_72082.png"
+      ],
+      "mainPhoto": "../assets/clothes/pijamas-azul.png",
+      "active": true,
+      "wishlistedCount": 23
+    },
+    {
+      "id": 19,
+      "productCode": "#0019",
+      "title": "Camisa Corinthians",
+      "description": "Camisa Corinthians..",
+      "category": "roupas",
+      "brand": "nike",
+      "size": "G",
+      "condition": "usado",
+      "priceTag": 65,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/924/PNG/512/Football_2-04_icon-icons.com_72115.png",
+        "https://cdn.icon-icons.com/icons2/924/PNG/512/Football_2-04_icon-icons.com_72115.png"
+      ],
+      "mainPhoto": "../assets/clothes/camisacorinthians.png",
+      "active": true,
+      "wishlistedCount": 11
+    },
+    {
+      "id": 20,
+      "productCode": "#0020",
+      "title": "Mochila rosa coração",
+      "description": "Mochila..",
+      "category": "acessorios",
+      "brand": "adidas",
+      "size": "G",
+      "condition": "usado",
+      "priceTag": 24,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/2968/PNG/512/girl_backpack_bag_rucksack_icon_186801.png",
+        "https://cdn.icon-icons.com/icons2/2968/PNG/512/girl_backpack_bag_rucksack_icon_186801.png"
+      ],
+      "mainPhoto": "../assets/clothes/girl_backpack.png",
+      "active": true,
+      "wishlistedCount": 19
+    },
+    {
+      "id": 21,
+      "productCode": "#0021",
+      "title": "Biquíni conjunto rosa",
+      "description": "Biquini..",
+      "category": "roupas",
+      "brand": "lolita",
+      "size": "M",
+      "condition": "novo",
+      "priceTag": 16,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/2179/PNG/512/summer_swimsuit_swim_suit_bikini_swimwear_two_piece_icon_133396.png",
+        "https://cdn.icon-icons.com/icons2/2179/PNG/512/summer_swimsuit_swim_suit_bikini_swimwear_two_piece_icon_133396.png"
+      ],
+      "mainPhoto": "../assets/clothes/summer_swimsuitrosa.png",
+      "active": true,
+      "wishlistedCount": 6
+    },
+    {
+      "id": 22,
+      "productCode": "#0022",
+      "title": "Chuteira soccer",
+      "description": "Chuteira..",
+      "category": "calcados",
+      "brand": "adidas",
+      "size": "42",
+      "condition": "usado",
+      "priceTag": 41,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/924/PNG/512/Football_2-56_icon-icons.com_72083.png",
+        "https://cdn.icon-icons.com/icons2/924/PNG/512/Football_2-56_icon-icons.com_72083.png"
+      ],
+      "mainPhoto": "../assets/clothes/chuteiraadidas.png",
+      "active": true,
+      "wishlistedCount": 16
+    },
+    {
+      "id": 23,
+      "productCode": "#0023",
+      "title": "Tênis corrida azul",
+      "description": "Tênis..",
+      "category": "calcados",
+      "brand": "fila",
+      "size": "37",
+      "condition": "usado",
+      "priceTag": 43,
+      "photos": [
+        "https://cdn.icon-icons.com/icons2/1465/PNG/512/429runningshoe_100343.png",
+        "https://cdn.icon-icons.com/icons2/1465/PNG/512/429runningshoe_100343.png"
+      ],
+      "mainPhoto": "../assets/clothes/tenisazulao.png",
+      "active": true,
+      "wishlistedCount": 3
     }
   ],
   "adminNotifications": [
