@@ -1,4 +1,5 @@
 export interface LoggedUserModel {
+  nameid: string;
   unique_name: string;
   email: string;
   isAdmin: boolean;

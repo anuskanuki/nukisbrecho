@@ -6,15 +6,29 @@
     pedido:
 </p>
 
+<p>endereço: {{userModel.address?.street || ''}} nº {{userModel.address?.number || 0}},
+    {{userModel.address?.neighborhood || ''}}</p>
+<p>CEP: {{userModel.address?.zipCode || ''}} ({{userModel.address?.city || ''}} - {{userModel.address?.state || ''}})
+</p>
+
 <ng-container *ngIf="loggedIn then templateLoggedInPurchase else templateLogInFirst">
 </ng-container>
 
 <ng-template #templateLoggedInPurchase>
     <p>
-        (R$XX,00) produto 1 mini foto e preço e título
+        {{productModel.title}} - {{productModel.size}}
     </p>
 
-    <h3>Total: R$ <span>30,00</span></h3>
+    <p>
+        {{productModel.brand}}
+    </p>
+
+    <div nz-col nzSpan="4">
+        <img class="fit-img" nz-image width="80vh" height="80vh"
+            [nzSrc]="productModel.photo1 || '../../../../assets/icons/photo-error.png'" alt="foto do produto" />
+    </div>
+
+    <h3>Total: R$<span>{{productModel.priceTag}}</span></h3>
 
     <h3>Pagamento:</h3>
     <p>

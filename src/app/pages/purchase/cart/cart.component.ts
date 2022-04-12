@@ -3,7 +3,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { Subscription } from 'rxjs';
 import { ProductModel } from '../../products/models/product.model';
 import { ProductService } from '../../products/services/product.service';
-import { CartModel } from '../models/cart.model';
+import { CartModel } from '../models/purchase.model';
 import { PurchaseService } from '../services/purchase.service';
 
 @Component({
