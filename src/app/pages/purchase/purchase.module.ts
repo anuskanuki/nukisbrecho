@@ -12,6 +12,7 @@ import { CartComponent } from './cart/cart.component';
     CommonModule,
     NgZorroAntdModule,
     PurchaseRoutingModule
-  ]
+  ],
+  exports: [PurchaseComponent, PurchaseConfirmationComponent]
 })
 export class PurchaseModule { }

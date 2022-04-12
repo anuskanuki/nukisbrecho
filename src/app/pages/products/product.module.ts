@@ -13,6 +13,7 @@ import { ProductsListFilteredComponent } from './product-list/products-list-filt
 import { ProductChatComponent } from './product/components/product-chat/product-chat.component';
 import { ProductPresentationComponent } from './product/components/product-presentation/product-presentation.component';
 import { ProductActionsComponent } from './product/components/product-actions/product-actions.component';
+import { PurchaseModule } from '../purchase/purchase.module';
 
 @NgModule({
   declarations: [ProductFormComponent, ProductComponent, ProductListComponent, ProductCardComponent, ProductsListFilteredComponent, ProductChatComponent, ProductPresentationComponent, ProductActionsComponent],
@@ -23,6 +24,7 @@ import { ProductActionsComponent } from './product/components/product-actions/pr
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    PurchaseModule,
   ],
   exports: [ProductCardComponent]
 })

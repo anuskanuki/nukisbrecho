@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { TokenService } from 'src/app/core/services/token.service';
 
@@ -12,6 +12,11 @@ export class PurchaseComponent implements OnInit {
   public loggedIn = false;
   public paymentReceiptAttached = false;
   public userName = '';
+
+  // @Input() public productPrice = 0;
+  // @Input() public productTitle = '';
+  // @Input() public productBrand = '';
+  // @Input() public productMainPhoto = '';
 
   panels = [
     {
@@ -41,12 +46,13 @@ export class PurchaseComponent implements OnInit {
   verifyLoggedUser() {
     if (this.tokenService.isLoggedIn()) {
       this.loggedIn = true;
+      this.getUserInfo();
     } else {
       this.loggedIn = false;
     }
   }
 
-  getUserAddress() {
+  getUserInfo() {
     this.userName = this.tokenService.tokenData.unique_name;
   }
 
