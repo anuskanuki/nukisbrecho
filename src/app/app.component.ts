@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { TokenService } from './core/services/token.service';
 import { LoggedUserModel } from './pages/login/models/login.model';
 
@@ -13,55 +13,35 @@ export class AppComponent {
   isCollapsed = true;
   isLoggedIn = false;
   userData?: LoggedUserModel;
+  showLayout = true;
 
   constructor(
     private router: Router,
     private authService: TokenService,
   ) {
-    // this.acessaSistema();
-    this.getUserLogedIn();
+
+     authService.LoggedIn$.subscribe(loggedIn => {
+      this.isLoggedIn = loggedIn;
+      this.userData = this.authService.tokenData;
+     });
 
     router.events.subscribe(e => {
+      if (e instanceof NavigationStart) {
+        this.showLayout = (e.url === "/login") ? false : true;
+      }
+
       if (e instanceof NavigationEnd) {
         this.isCollapsed = true;
       }
     });
   }
 
-  // public acessaSistema() {
-  //   this.router.events.subscribe(rota => {
-  //     if (rota instanceof NavigationEnd) {
-  //       if (!rota.url.includes('login') && !this.userIsLoggedIn()) {
-  //         this.isLoggedIn = true;
-  //       } else {
-  //         this.isLoggedIn = false;
-  //       }
-  //     }
-  //   });
-  // }
-
-  public getUserLogedIn() {
-    if (this.authService.isLoggedIn()) {
-      this.isLoggedIn = true;
-      this.userData = this.authService.tokenData;
-      console.log(this.userData);
-    } else {
-      this.isLoggedIn = false;
-    }
-    this.goToHome();
-  }
-
-  userIsLoggedIn(): boolean {
-    return this.authService.isLoggedIn();
-  }
-
   public logout() {
-    this.authService.clear();
-    this.getUserLogedIn();
+    this.authService.logout();
+    this.goToHome();
   }
 
   goToHome() {
     this.router.navigateByUrl('welcome');
   }
-
 }

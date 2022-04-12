@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { JwtHelperService } from "@auth0/angular-jwt";
+import { BehaviorSubject } from "rxjs";
 import { LoggedUserModel, UserCallBackLogin } from "../../pages/login/models/login.model";
 
 const TOKEN_NAME = "token";
@@ -10,10 +11,17 @@ export class TokenService {
 
     private readonly jwtHelper = new JwtHelperService();
 
-    constructor(private readonly router: Router) { }
+    private readonly isLoggedInBs = new BehaviorSubject(!!this.token);
+
+    LoggedIn$ = this.isLoggedInBs.asObservable();
 
     public setUserSeassion(userCallBackLogin: UserCallBackLogin) {
         localStorage.setItem('token', String(userCallBackLogin.token));
+        this.userLogged(true);
+    }
+
+    userLogged(isLogged: boolean){
+        this.isLoggedInBs.next(isLogged);
     }
 
     get tokenData(): LoggedUserModel {
@@ -24,13 +32,9 @@ export class TokenService {
         return localStorage.getItem(TOKEN_NAME);
     }
 
-    public clear() {
-        localStorage.removeItem(TOKEN_NAME);
-    }
-
     public logout() {
-        this.router.navigateByUrl('/login');
         localStorage.clear();
+        this.userLogged(false);
     }
 
     public isAdmin(): boolean {
@@ -40,4 +44,5 @@ export class TokenService {
     public isLoggedIn(): boolean {
         return !!this.token;
     }
+
 }
