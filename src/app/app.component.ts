@@ -28,17 +28,17 @@ export class AppComponent {
     });
   }
 
-  public acessaSistema() {
-    this.router.events.subscribe(rota => {
-      if (rota instanceof NavigationEnd) {
-        if (!rota.url.includes('login') && !this.userIsLoggedIn()) {
-          this.isLoggedIn = true;
-        } else {
-          this.isLoggedIn = false;
-        }
-      }
-    });
-  }
+  // public acessaSistema() {
+  //   this.router.events.subscribe(rota => {
+  //     if (rota instanceof NavigationEnd) {
+  //       if (!rota.url.includes('login') && !this.userIsLoggedIn()) {
+  //         this.isLoggedIn = true;
+  //       } else {
+  //         this.isLoggedIn = false;
+  //       }
+  //     }
+  //   });
+  // }
 
   public getUserLogedIn() {
     if (this.authService.isLoggedIn()) {
