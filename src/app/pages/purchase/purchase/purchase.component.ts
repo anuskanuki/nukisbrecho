@@ -16,7 +16,7 @@ export class PurchaseComponent implements OnInit {
   // @Input() public productPrice = 0;
   // @Input() public productTitle = '';
   // @Input() public productBrand = '';
-  // @Input() public productMainPhoto = '';
+  // @Input() public productPhoto1 = '';
 
   panels = [
     {

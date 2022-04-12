@@ -1,4 +1,5 @@
 export class ProductActions {
+    id: number;
     title: string;
     category?: string;
     priceTag: number;
@@ -10,6 +11,7 @@ export class ProductActions {
     description?: string;
 
     constructor(
+        id?: number,
         title?: string,
         category?: string,
         priceTag?: number,
@@ -20,6 +22,7 @@ export class ProductActions {
         productCode?: string,
         description?: string
     ) {
+        this.id = id || 0;
         this.title = title || "Não definido";
         this.category = category;
         this.priceTag = priceTag || 0;

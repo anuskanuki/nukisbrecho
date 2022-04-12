@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input, ChangeDetectorRef } from '@angular/core';
-import { ProductModel } from '../../../models/product.model';
+import { Router } from '@angular/router';
 import { ProductActions } from './model/product-actions.model';
 
 @Component({
@@ -18,10 +18,12 @@ export class ProductActionsComponent {
   buyNow = false;
 
   @Input() productActions = new ProductActions();
-  // @Input() productModel = new ProductModel();
   likeThisProduct = false;
 
-  constructor(private readonly changeDetection: ChangeDetectorRef) { }
+  constructor(
+    private readonly changeDetection: ChangeDetectorRef,
+    private router: Router,
+  ) { }
 
   likeProduct() {
     this.likeThisProduct = !this.likeThisProduct;
@@ -30,6 +32,6 @@ export class ProductActionsComponent {
   }
 
   goPurchase() {
-
+    this.router.navigate(['/purchase/', this.productActions.id.toString()]);
   }
 }

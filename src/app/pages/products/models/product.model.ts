@@ -8,7 +8,7 @@ export class ProductModel {
     size?: string;
     condition?: string;
     priceTag?: number;
-    mainPhoto?: string;
+    photo1?: string;
     photo2?: string;
     photo3?: string;
     photo4?: string;

@@ -67,8 +67,8 @@
                                     class="required-mark">*</span>
                             </nz-form-label>
                             <nz-form-control [nzErrorTip]="validacoes">
-                                <input formControlName="name" nz-input placeholder="Insira seu nome completo"
-                                    required />
+                                <input formControlName="name" nz-input placeholder="Insira seu nome completo" required
+                                    minlength="2" maxlength="40" />
                             </nz-form-control>
                         </nz-form-item>
                     </div>
@@ -80,7 +80,8 @@
                             </nz-form-label>
                             <nz-form-control [nzErrorTip]="validacoes">
                                 <input formControlName="userName" nz-input
-                                    placeholder="Insira nome de usuário (apelido)" required />
+                                    placeholder="Insira nome de usuário (apelido)" required minlength="2"
+                                    maxlength="40" />
                             </nz-form-control>
                         </nz-form-item>
                     </div>
@@ -90,7 +91,8 @@
                             <nz-form-label [nzNoColon]="true" class="label">E-mail<span class="required-mark">*</span>
                             </nz-form-label>
                             <nz-form-control [nzErrorTip]="validacoes">
-                                <input formControlName="email" nz-input placeholder="exemplo@gmail.com" required />
+                                <input formControlName="email" nz-input placeholder="exemplo@gmail.com" minlength="10"
+                                    maxlength="50" required />
                             </nz-form-control>
                         </nz-form-item>
                     </div>
@@ -105,8 +107,8 @@
                                         class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
-                                    <input formControlName="street" nz-input placeholder="Ruaa Exemplo da Silva"
-                                        required />
+                                    <input formControlName="street" nz-input placeholder="Rua Exemplo da Silva" required
+                                        minlength="1" maxlength="70" />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>
@@ -117,7 +119,8 @@
                                         class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
-                                    <input formControlName="number" type="number" nz-input placeholder="123" required />
+                                    <input formControlName="number" type="number" nz-input placeholder="123" required
+                                        minlength="1" maxlength="10" />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>
@@ -128,8 +131,8 @@
                                         class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
-                                    <input formControlName="neighborhood" nz-input placeholder="Bairro Exemplo"
-                                        required />
+                                    <input formControlName="neighborhood" nz-input placeholder="Bairro Exemplo" required
+                                        minlength="1" maxlength="30" />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>
@@ -152,7 +155,8 @@
                                         class="required-mark">*</span>
                                 </nz-form-label>
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
-                                    <input formControlName="city" nz-input placeholder="Cidade" required />
+                                    <input formControlName="city" nz-input placeholder="Cidade" required minlength="1"
+                                        maxlength="40" />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>

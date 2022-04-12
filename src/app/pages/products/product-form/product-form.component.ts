@@ -87,7 +87,7 @@ export class ProductFormComponent implements OnInit, OnDestroy {
       size: [null, [Validators.required]],
       condition: [null, [Validators.required]],
       photos: [null, [Validators.required]],
-      mainPhoto: [null],
+      photo1: [null],
     });
   }
 

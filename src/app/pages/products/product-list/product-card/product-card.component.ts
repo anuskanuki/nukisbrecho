@@ -14,7 +14,7 @@ export class ProductCardComponent implements OnInit {
   @Input() public productTitle = '';
   @Input() public productDescription = '';
   @Input() public productBrand = '';
-  @Input() public productMainPhoto = '';
+  @Input() public productPhoto1 = '';
 
   constructor() { }
 

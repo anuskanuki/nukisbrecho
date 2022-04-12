@@ -25,6 +25,7 @@ export class NewUserModel {
   email?: string;
   password?: string;
   address?: AdressModel;
+  isAdmin?: boolean;
 }
 
 export interface AdressModel {

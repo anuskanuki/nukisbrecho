@@ -7,7 +7,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductPresentationComponent {
-  @Input() mainPhoto?: string;
+  @Input() photo1?: string;
   @Input() photo2?: string;
   @Input() photo3?: string;
   @Input() photo4?: string;

@@ -88,10 +88,11 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   private submitNewUser(newUser: NewUserModel) {
     if (this.formNewUser.valid && this.formNewUser.dirty) {
+      newUser.isAdmin = false;
       const subscribeNewUser = this.loginService.newUser(newUser).subscribe(() => {
         this.createBasicNotification('Sucesso :)', 'Você será redirecionado ao site.');
-        this.router.navigateByUrl('/welcome');
         this.loggedIn = true;
+        this.router.navigateByUrl('/welcome');
       },
         error => {
           this.createBasicNotification('Ops!', 'Ocorreu um erro, tente novamente.' + '\n' + error);

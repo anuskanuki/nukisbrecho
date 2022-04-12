@@ -48,7 +48,7 @@
       "photo2": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
       "photo3": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
       "photo4": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
-      "mainPhoto": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
+      "photo1": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
       "active": true,
       "wishlistedCount": 3
     },
@@ -65,7 +65,7 @@
       "photo2": "../assets/clothes/vestido.png",
       "photo3": "../assets/clothes/vestido.png",
       "photo4": "../assets/clothes/vestido.png",
-      "mainPhoto": "../assets/clothes/vestido.png",
+      "photo1": "../assets/clothes/vestido.png",
       "active": true,
       "wishlistedCount": 9
     },
@@ -82,7 +82,7 @@
       "photo2": "../assets/clothes/brinco.png",
       "photo3": "../assets/clothes/brinco.png",
       "photo4": "../assets/clothes/brinco.png",
-      "mainPhoto": "../assets/clothes/brinco.png",
+      "photo1": "../assets/clothes/brinco.png",
       "active": true,
       "wishlistedCount": 2
     },
@@ -99,7 +99,7 @@
       "photo2": "../assets/clothes/rasteirinha.png",
       "photo3": "../assets/clothes/rasteirinha.png",
       "photo4": "../assets/clothes/rasteirinha.png",
-      "mainPhoto": "../assets/clothes/rasteirinha.png",
+      "photo1": "../assets/clothes/rasteirinha.png",
       "active": true,
       "wishlistedCount": 17
     },
@@ -116,7 +116,7 @@
       "photo2": "../assets/clothes/vanss.png",
       "photo3": "../assets/clothes/vanss.png",
       "photo4": "../assets/clothes/vanss.png",
-      "mainPhoto": "../assets/clothes/vanss.png",
+      "photo1": "../assets/clothes/vanss.png",
       "active": true,
       "wishlistedCount": 12
     },
@@ -133,7 +133,7 @@
       "photo2": "../assets/clothes/t-shirt-cor.png",
       "photo3": "../assets/clothes/t-shirt-cor.png",
       "photo4": "../assets/clothes/t-shirt-cor.png",
-      "mainPhoto": "../assets/clothes/t-shirt-cor.png",
+      "photo1": "../assets/clothes/t-shirt-cor.png",
       "active": true,
       "wishlistedCount": 4
     },
@@ -150,7 +150,7 @@
       "photo2": "../assets/clothes/camiseta-flores.png",
       "photo3": "../assets/clothes/camiseta-flores.png",
       "photo4": "../assets/clothes/camiseta-flores.png",
-      "mainPhoto": "../assets/clothes/camiseta-flores.png",
+      "photo1": "../assets/clothes/camiseta-flores.png",
       "active": true,
       "wishlistedCount": 1
     },
@@ -167,7 +167,7 @@
       "photo2": "../assets/clothes/garment-sweater.png",
       "photo3": "../assets/clothes/garment-sweater.png",
       "photo4": "../assets/clothes/garment-sweater.png",
-      "mainPhoto": "../assets/clothes/garment-sweater.png",
+      "photo1": "../assets/clothes/garment-sweater.png",
       "active": true,
       "wishlistedCount": 1
     },
@@ -184,7 +184,7 @@
       "photo2": "../assets/clothes/sueternatal.png",
       "photo3": "../assets/clothes/sueternatal.png",
       "photo4": "../assets/clothes/sueternatal.png",
-      "mainPhoto": "../assets/clothes/sueternatal.png",
+      "photo1": "../assets/clothes/sueternatal.png",
       "active": true,
       "wishlistedCount": 8
     },
@@ -201,7 +201,7 @@
       "photo2": "../assets/clothes/blusaazul.png",
       "photo3": "../assets/clothes/blusaazul.png",
       "photo4": "../assets/clothes/blusaazul.png",
-      "mainPhoto": "../assets/clothes/blusaazul.png",
+      "photo1": "../assets/clothes/blusaazul.png",
       "active": true,
       "wishlistedCount": 2
     },
@@ -218,7 +218,7 @@
       "photo2": "../assets/clothes/moletom-coracao.png",
       "photo3": "../assets/clothes/moletom-coracao.png",
       "photo4": "../assets/clothes/moletom-coracao.png",
-      "mainPhoto": "../assets/clothes/moletom-coracao.png",
+      "photo1": "../assets/clothes/moletom-coracao.png",
       "active": true,
       "wishlistedCount": 9
     },
@@ -235,7 +235,7 @@
       "photo2": "../assets/clothes/blusaverde.png",
       "photo3": "../assets/clothes/blusaverde.png",
       "photo4": "../assets/clothes/blusaverde.png",
-      "mainPhoto": "../assets/clothes/blusaverde.png",
+      "photo1": "../assets/clothes/blusaverde.png",
       "active": true,
       "wishlistedCount": 9
     },
@@ -252,7 +252,7 @@
       "photo2": "../assets/clothes/scarpinvermelho.png",
       "photo3": "../assets/clothes/scarpinvermelho.png",
       "photo4": "../assets/clothes/scarpinvermelho.png",
-      "mainPhoto": "../assets/clothes/scarpinvermelho.png",
+      "photo1": "../assets/clothes/scarpinvermelho.png",
       "active": true,
       "wishlistedCount": 22
     },
@@ -269,7 +269,7 @@
       "photo2": "../assets/clothes/shoe_18037.png",
       "photo3": "../assets/clothes/shoe_18037.png",
       "photo4": "../assets/clothes/shoe_18037.png",
-      "mainPhoto": "../assets/clothes/shoe_18037.png",
+      "photo1": "../assets/clothes/shoe_18037.png",
       "active": true,
       "wishlistedCount": 26
     },
@@ -286,7 +286,7 @@
       "photo2": "../assets/clothes/summer_swimsuit.png",
       "photo3": "../assets/clothes/summer_swimsuit.png",
       "photo4": "../assets/clothes/summer_swimsuit.png",
-      "mainPhoto": "../assets/clothes/summer_swimsuit.png",
+      "photo1": "../assets/clothes/summer_swimsuit.png",
       "active": true,
       "wishlistedCount": 16
     },
@@ -303,7 +303,7 @@
       "photo2": "../assets/clothes/gloves_glove_fashion.png",
       "photo3": "../assets/clothes/gloves_glove_fashion.png",
       "photo4": "../assets/clothes/gloves_glove_fashion.png",
-      "mainPhoto": "../assets/clothes/gloves_glove_fashion.png",
+      "photo1": "../assets/clothes/gloves_glove_fashion.png",
       "active": true,
       "wishlistedCount": 1
     },
@@ -320,7 +320,7 @@
       "photo2": "../assets/clothes/slipperlilac.png",
       "photo3": "../assets/clothes/slipperlilac.png",
       "photo4": "../assets/clothes/slipperlilac.png",
-      "mainPhoto": "../assets/clothes/slipperlilac.png",
+      "photo1": "../assets/clothes/slipperlilac.png",
       "active": true,
       "wishlistedCount": 1
     },
@@ -337,7 +337,7 @@
       "photo2": "../assets/clothes/pijamas-azul.png",
       "photo3": "../assets/clothes/pijamas-azul.png",
       "photo4": "../assets/clothes/pijamas-azul.png",
-      "mainPhoto": "../assets/clothes/pijamas-azul.png",
+      "photo1": "../assets/clothes/pijamas-azul.png",
       "active": true,
       "wishlistedCount": 23
     },
@@ -354,7 +354,7 @@
       "photo2": "../assets/clothes/camisacorinthians.png",
       "photo3": "../assets/clothes/camisacorinthians.png",
       "photo4": "../assets/clothes/camisacorinthians.png",
-      "mainPhoto": "../assets/clothes/camisacorinthians.png",
+      "photo1": "../assets/clothes/camisacorinthians.png",
       "active": true,
       "wishlistedCount": 11
     },
@@ -371,7 +371,7 @@
       "photo2": "../assets/clothes/girl_backpack.png",
       "photo3": "../assets/clothes/girl_backpack.png",
       "photo4": "../assets/clothes/girl_backpack.png",
-      "mainPhoto": "../assets/clothes/girl_backpack.png",
+      "photo1": "../assets/clothes/girl_backpack.png",
       "active": true,
       "wishlistedCount": 19
     },
@@ -388,7 +388,7 @@
       "photo2": "../assets/clothes/summer_swimsuitrosa.png",
       "photo3": "../assets/clothes/summer_swimsuitrosa.png",
       "photo4": "../assets/clothes/summer_swimsuitrosa.png",
-      "mainPhoto": "../assets/clothes/summer_swimsuitrosa.png",
+      "photo1": "../assets/clothes/summer_swimsuitrosa.png",
       "active": true,
       "wishlistedCount": 6
     },
@@ -405,7 +405,7 @@
       "photo2": "../assets/clothes/chuteiraadidas.png",
       "photo3": "../assets/clothes/chuteiraadidas.png",
       "photo4": "../assets/clothes/chuteiraadidas.png",
-      "mainPhoto": "../assets/clothes/chuteiraadidas.png",
+      "photo1": "../assets/clothes/chuteiraadidas.png",
       "active": true,
       "wishlistedCount": 16
     },
@@ -419,7 +419,7 @@
       "size": "37",
       "condition": "usado",
       "priceTag": 43,
-      "mainPhoto": "../assets/clothes/tenisazulao.png",
+      "photo1": "../assets/clothes/tenisazulao.png",
       "photo2": "../assets/clothes/tenisazulao.png",
       "photo3": "../assets/clothes/tenisazulao.png",
       "photo4": "../assets/clothes/tenisazulao.png",
@@ -496,9 +496,9 @@
     }
   ],
   "stars": {
-    "starsTotal": 24,
-    "starsAverage": 3.4285714285714284,
-    "votersCount": 7
+    "starsTotal": 44,
+    "starsAverage": 4,
+    "votersCount": 11
   },
   "userOrders": [
     {
