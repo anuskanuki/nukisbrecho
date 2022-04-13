@@ -5,7 +5,7 @@
     <div nz-row>
         <div nz-col [nzSpan]="16" class="card-div">
             <div class="mg-bottom">
-                <h3 class="titles">Opa, quase lá!</h3>
+                <h3>Opa, quase lá!</h3>
                 <p class="texts">Que bom que você achou alguma peça legal, {{userName}}!
                 </p>
                 <p class="texts">
@@ -15,7 +15,7 @@
                 </p>
             </div>
 
-            <h3 class="titles">Produto</h3>
+            <h3>Produto</h3>
 
             <div class="mg-bottom">
                 <div nz-row>
@@ -24,17 +24,17 @@
                             alt="foto do produto" /></div>
 
                     <div nz-col nzSpan="18" class="texts center">
-                        <p>
-                            {{productModel.title}} - tamanho {{productModel.size}}
+                        <p class="product-title">
+                            {{productModel.title}}
                         </p>
                         <p>
-                            {{productModel.brand}}
+                            {{productModel.brand}}, tamanho {{productModel.size}}
                         </p>
                     </div>
                 </div>
             </div>
 
-            <h3 class="titles">Endereço de entrega</h3>
+            <h3>Endereço de entrega</h3>
 
             <div class="texts mg-bottom">
                 <p>{{userModel.address?.street || ''}} nº {{userModel.address?.number || 0}},
@@ -45,7 +45,7 @@
                 </p>
             </div>
 
-            <h3 class="titles">Frete</h3>
+            <h3>Frete</h3>
 
             <div class="mg-bottom">
                 <p class="texts">
@@ -55,7 +55,7 @@
         </div>
 
         <div nz-col [nzSpan]="8" class="card-div">
-            <h3 class="titles">Pagamento</h3>
+            <h3>Pagamento</h3>
 
             <div class="mg-bottom">
                 <div nz-row class="texts">
