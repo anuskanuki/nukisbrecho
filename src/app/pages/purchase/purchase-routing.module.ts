@@ -7,7 +7,7 @@ import { PurchaseConfirmationComponent } from './confirmation/purchase-confirmat
 
 const routes: Routes = [
   { path:  ':id', component: PurchaseComponent },
-  { path: 'confirmation', component: PurchaseConfirmationComponent },
+  { path: ':id/confirmation', component: PurchaseConfirmationComponent },
   // { path: 'cart', component: CartComponent },
 ];
 

@@ -92,8 +92,6 @@
                 <p>Envie seu comprovante de pagamento aqui e assim que seu pagamento for confirmado, entraremos
                     em contato para combinar envio ou retirada da compra :)</p>
                 <form>
-                    <label>Abrir arquivo:</label>
-
                     <input type="file" accept=".jpg, .jpeg, .png" (change)="confirmPaymentReceiptAttached()">
                 </form>
             </ng-template>
@@ -108,12 +106,11 @@
                 <p>Envie seu comprovante de pagamento aqui e assim que seu pagamento for confirmado, entraremos
                     em contato para combinar envio ou retirada da compra :)</p>
                 <form>
-                    <label>Abrir arquivo:</label>
                     <input type="file" accept=".jpg, .jpeg, .png" (change)="confirmPaymentReceiptAttached()">
                 </form>
             </ng-template>
 
-            <div nz-row nzAlign="bottom">
+            <div nz-row nzAlign="bottom" class="confirm-button">
                 <button nz-button nzType="primary" routerLink="confirmation"
                     [disabled]="!paymentReceiptAttached">confirmar
                     compra</button>
@@ -129,8 +126,6 @@
     <a routerLink="/login">Entrar com minhas credenciais</a>
 </ng-template>
 
-
-
-<div nz-row nzAlign="bottom">
+<div nz-row nzAlign="bottom" class="mt-btn-return">
     <button nz-button nzType="primary" (click)="back()">voltar</button>
 </div>
