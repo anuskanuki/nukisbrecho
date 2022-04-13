@@ -1,73 +1,126 @@
-<h3>Opa, quase lá!</h3>
-<p>Que bom que você achou alguma peça legal, {{userName}}!
-</p>
-<p>
-    Para confirmar a compra, precisamos da confirmação do pagamento, mas antes, confere se está tudo certinho com seu
-    pedido:
-</p>
-
-<p>endereço: {{userModel.address?.street || ''}} nº {{userModel.address?.number || 0}},
-    {{userModel.address?.neighborhood || ''}}</p>
-<p>CEP: {{userModel.address?.zipCode || ''}} ({{userModel.address?.city || ''}} - {{userModel.address?.state || ''}})
-</p>
-
 <ng-container *ngIf="loggedIn then templateLoggedInPurchase else templateLogInFirst">
 </ng-container>
 
 <ng-template #templateLoggedInPurchase>
-    <p>
-        {{productModel.title}} - {{productModel.size}}
-    </p>
+    <div nz-row>
+        <div nz-col [nzSpan]="16" class="card-div">
+            <div class="mg-bottom">
+                <h3 class="titles">Opa, quase lá!</h3>
+                <p class="texts">Que bom que você achou alguma peça legal, {{userName}}!
+                </p>
+                <p class="texts">
+                    Para confirmar a compra, precisamos da confirmação do pagamento, mas antes, confere se está tudo
+                    certinho
+                    com seus dados:
+                </p>
+            </div>
 
-    <p>
-        {{productModel.brand}}
-    </p>
+            <h3 class="titles">Produto</h3>
 
-    <div nz-col nzSpan="4">
-        <img class="fit-img" nz-image width="80vh" height="80vh"
-            [nzSrc]="productModel.photo1 || '../../../../assets/icons/photo-error.png'" alt="foto do produto" />
+            <div class="mg-bottom">
+                <div nz-row>
+                    <div nz-col nzSpan="6"> <img class="fit-img" nz-image width="150vh" height="150vh"
+                            [nzSrc]="productModel.photo1 || '../../../../assets/icons/photo-error.png'"
+                            alt="foto do produto" /></div>
+
+                    <div nz-col nzSpan="18" class="texts center">
+                        <p>
+                            {{productModel.title}} - tamanho {{productModel.size}}
+                        </p>
+                        <p>
+                            {{productModel.brand}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="titles">Endereço de entrega</h3>
+
+            <div class="texts mg-bottom">
+                <p>{{userModel.address?.street || ''}} nº {{userModel.address?.number || 0}},
+                    {{userModel.address?.neighborhood || ''}}</p>
+                <p>CEP: {{userModel.address?.zipCode || ''}} ({{userModel.address?.city || ''}} -
+                    {{userModel.address?.state
+                    || ''}})
+                </p>
+            </div>
+
+            <h3 class="titles">Frete</h3>
+
+            <div class="mg-bottom">
+                <p class="texts">
+                    R$20,00
+                </p>
+            </div>
+        </div>
+
+        <div nz-col [nzSpan]="8" class="card-div">
+            <h3 class="titles">Pagamento</h3>
+
+            <div class="mg-bottom">
+                <div nz-row class="texts">
+                    <div nz-col nzSpan="8">produto</div>
+                    <div nz-col nzSpan="8" class="dots-align">----------------</div>
+                    <div nz-col nzSpan="8" class="price-align">R$ {{productModel.priceTag}},00</div>
+                </div>
+
+                <div nz-row class="texts">
+                    <div nz-col nzSpan="8">entrega</div>
+                    <div nz-col nzSpan="8" class="dots-align">----------------</div>
+                    <div nz-col nzSpan="8" class="price-align">R$ 20,00</div>
+                </div>
+
+                <div nz-row class="texts">
+                    <div nz-col nzSpan="8">total a pagar</div>
+                    <div nz-col nzSpan="8" class="dots-align">----------------</div>
+                    <div nz-col nzSpan="8" class="price-align">R$ {{finalPrice}},00</div>
+                </div>
+            </div>
+
+            <nz-collapse nzGhost nzAccordion>
+                <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name" [nzActive]="panel.active">
+                    <p style="margin:0;">
+                        <ng-container *ngIf="panel.template ==0 then templatePix"></ng-container>
+                        <ng-container *ngIf="panel.template ==1 then templateTransferenciaBancaria"></ng-container>
+                    </p>
+                </nz-collapse-panel>
+            </nz-collapse>
+
+            <ng-template #templatePix>
+                <h3>PIX</h3>
+                <p>Chave e-mail: nukibrecho@gmail.com</p>
+                <p>Envie seu comprovante de pagamento aqui e assim que seu pagamento for confirmado, entraremos
+                    em contato para combinar envio ou retirada da compra :)</p>
+                <form>
+                    <label>Abrir arquivo:</label>
+
+                    <input type="file" accept=".jpg, .jpeg, .png" (change)="confirmPaymentReceiptAttached()">
+                </form>
+            </ng-template>
+
+            <ng-template #templateTransferenciaBancaria>
+                <h3>Transferência Bancária</h3>
+                <p>Dados da conta:</p>
+                <p>Banco: xxx</p>
+                <p>Agência: xxx</p>
+                <p>Conta: xxxx</p>
+                <p>Dígito: x</p>
+                <p>Envie seu comprovante de pagamento aqui e assim que seu pagamento for confirmado, entraremos
+                    em contato para combinar envio ou retirada da compra :)</p>
+                <form>
+                    <label>Abrir arquivo:</label>
+                    <input type="file" accept=".jpg, .jpeg, .png" (change)="confirmPaymentReceiptAttached()">
+                </form>
+            </ng-template>
+
+            <div nz-row nzAlign="bottom">
+                <button nz-button nzType="primary" routerLink="confirmation"
+                    [disabled]="!paymentReceiptAttached">confirmar
+                    compra</button>
+            </div>
+        </div>
     </div>
 
-    <h3>Total: R$<span>{{productModel.priceTag}}</span></h3>
-
-    <h3>Pagamento:</h3>
-    <p>
-        <nz-collapse nzGhost nzAccordion>
-            <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name" [nzActive]="panel.active">
-                <p style="margin:0;">
-                    <ng-container *ngIf="panel.template ==0 then templatePix"></ng-container>
-                    <ng-container *ngIf="panel.template ==1 then templateTransferenciaBancaria"></ng-container>
-                </p>
-            </nz-collapse-panel>
-        </nz-collapse>
-
-        <ng-template #templatePix>
-            <h3>PIX</h3>
-            <p>Chave e-mail: nukibrecho@gmail.com</p>
-            <p>Envie seu comprovante de pagamento aqui e assim que seu pagamento for confirmado, entraremos
-                em contato para combinar envio ou retirada da compra :)</p>
-            <form>
-                <label>Abrir arquivo:</label>
-
-                <input type="file" accept=".jpg, .jpeg, .png" (change)="confirmPaymentReceiptAttached()">
-            </form>
-        </ng-template>
-
-        <ng-template #templateTransferenciaBancaria>
-            <h3>Transferência Bancária</h3>
-            <p>Dados da conta:</p>
-            <p>Banco: xxx</p>
-            <p>Agência: xxx</p>
-            <p>Conta: xxxx</p>
-            <p>Dígito: x</p>
-            <p>Envie seu comprovante de pagamento aqui e assim que seu pagamento for confirmado, entraremos
-                em contato para combinar envio ou retirada da compra :)</p>
-            <form>
-                <label>Abrir arquivo:</label>
-                <input type="file" accept=".jpg, .jpeg, .png" (change)="confirmPaymentReceiptAttached()">
-            </form>
-        </ng-template>
-    </p>
 </ng-template>
 
 <ng-template #templateLogInFirst>
@@ -76,10 +129,7 @@
     <a routerLink="/login">Entrar com minhas credenciais</a>
 </ng-template>
 
-<div nz-row nzAlign="bottom">
-    <button nz-button nzType="primary" routerLink="confirmation" [disabled]="!paymentReceiptAttached">confirmar
-        compra</button>
-</div>
+
 
 <div nz-row nzAlign="bottom">
     <button nz-button nzType="primary" (click)="back()">voltar</button>

@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { BehaviorSubject } from "rxjs";
 import { LoggedUserModel, UserCallBackLogin } from "../../pages/login/models/login.model";
@@ -20,7 +19,7 @@ export class TokenService {
         this.userLogged(true);
     }
 
-    userLogged(isLogged: boolean){
+    userLogged(isLogged: boolean) {
         this.isLoggedInBs.next(isLogged);
     }
 
