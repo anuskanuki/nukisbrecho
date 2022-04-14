@@ -31,7 +31,7 @@ export class WelcomeComponent implements OnInit, OnDestroy {
   }
 
   public loadTable() {
-    const subscription = this.productService.getAll().subscribe(
+    const subscription = this.productService.getFilteredByActive().subscribe(
       response => {
         if (response.length) {
           this.productsList = response;

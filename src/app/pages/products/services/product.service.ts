@@ -23,21 +23,28 @@ export class ProductService extends BaseService {
     }
 
     public getFilteredByAccessories(): Observable<ProductModel[]> {
-        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?category=acessorios')
+        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?category=acessorios&active=true')
             .pipe(
                 catchError(error => throwError(error.error.errors[0]))
             );
     }
 
     public getFilteredByClothes(): Observable<ProductModel[]> {
-        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?category=roupas')
+        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?category=roupas&active=true')
+            .pipe(
+                catchError(error => throwError(error.error.errors[0]))
+            );
+    }
+
+    public getFilteredByActive(): Observable<ProductModel[]> {
+        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?active=true')
             .pipe(
                 catchError(error => throwError(error.error.errors[0]))
             );
     }
 
     public getFilteredByShoes(): Observable<ProductModel[]> {
-        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?category=calcados')
+        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?category=calcados&active=true')
             .pipe(
                 catchError(error => throwError(error.error.errors[0]))
             );

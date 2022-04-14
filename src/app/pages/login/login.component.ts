@@ -115,7 +115,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   private createformUserLogin() {
     this.formUserLogin = this.formBuilder.group({
-      userName: [null, [Validators.required]],
+      email: [null, [Validators.required]],
       password: [null, [Validators.required]],
     });
   }
@@ -124,7 +124,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.formNewUser = this.formBuilder.group({
       email: [null, [Validators.required]],
       password: [null, [Validators.required]],
-      userName: [null, [Validators.required]],
       name: [null, [Validators.required]],
       address: this.formBuilder.group({
         neighborhood: [null, [Validators.required]],
@@ -133,7 +132,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         number: [null, [Validators.required]],
         city: [null, [Validators.required]],
         state: [null, [Validators.required]],
-        addressDetails: [null, [Validators.required]]
+        addressDetails: [null]
       })
     });
   }

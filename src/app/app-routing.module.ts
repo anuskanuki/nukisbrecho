@@ -32,6 +32,12 @@ const routes: Routes = [
       import('./pages/purchase/purchase.module').then((m) => m.PurchaseModule),
     canActivate: [AuthGuard]
   },
+  // {
+  //   path: '404',
+  //   loadChildren: () =>
+  //     import('./pages/purchase/purchase.module').then((m) => m.PurchaseModule),
+  //   canActivate: [AuthGuard]
+  // },
 ];
 
 @NgModule({

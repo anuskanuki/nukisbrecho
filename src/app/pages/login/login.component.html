@@ -16,12 +16,11 @@
                     </div>
                     <div nz-col nzSpan="24">
                         <nz-form-item class="grid">
-                            <nz-form-label [nzNoColon]="true" class="label">Nome de Usuário<span
-                                    class="required-mark">*</span>
+                            <nz-form-label [nzNoColon]="true" class="label">E_mail<span class="required-mark">*</span>
                             </nz-form-label>
                             <nz-form-control [nzErrorTip]="validacoes">
-                                <input formControlName="userName" nz-input
-                                    placeholder="Insira nome de usuário cadastrado" required />
+                                <input formControlName="email" nz-input placeholder="Insira o e-mail cadastrado"
+                                    required />
                             </nz-form-control>
                         </nz-form-item>
                     </div>
@@ -69,19 +68,6 @@
                             <nz-form-control [nzErrorTip]="validacoes">
                                 <input formControlName="name" nz-input placeholder="Insira seu nome completo" required
                                     minlength="2" maxlength="40" />
-                            </nz-form-control>
-                        </nz-form-item>
-                    </div>
-
-                    <div nz-col nzSpan="24">
-                        <nz-form-item class="grid">
-                            <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Nome de Usuário<span
-                                    class="required-mark">*</span>
-                            </nz-form-label>
-                            <nz-form-control [nzErrorTip]="validacoes">
-                                <input formControlName="userName" nz-input
-                                    placeholder="Insira nome de usuário (apelido)" required minlength="2"
-                                    maxlength="40" />
                             </nz-form-control>
                         </nz-form-item>
                     </div>
@@ -177,12 +163,11 @@
 
                         <div nz-col nzSpan="6">
                             <nz-form-item class="grid">
-                                <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Complemento<span
-                                        class="required-mark">*</span>
+                                <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Complemento
                                 </nz-form-label>
-                                <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
+                                <nz-form-control formGroupName="address">
                                     <input formControlName="addressDetails" nz-input placeholder="Casa/Apto..."
-                                        required />
+                                        maxlength="50" />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>

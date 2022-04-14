@@ -9,20 +9,18 @@ export interface LoggedUserModel {
 }
 
 export class LoginModel {
-  userName?: string;
+  email?: string;
   password?: string;
 }
 
 export interface UserCallBackLogin {
   name?: string;
-  username?: string;
   email?: string;
   token?: string;
 }
 
 export class NewUserModel {
   name?: string;
-  userName?: string;
   email?: string;
   password?: string;
   address?: AdressModel;

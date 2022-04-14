@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { TokenService } from './core/services/token.service';
 import { LoggedUserModel } from './pages/login/models/login.model';
+import { ProductModel } from './pages/products/models/product.model';
 
 @Component({
   selector: 'app-root',
@@ -14,16 +15,16 @@ export class AppComponent {
   isLoggedIn = false;
   userData?: LoggedUserModel;
   showLayout = true;
+  productsSearchBarArray: Array<string> = Object.keys(ProductModel).filter(key => isNaN(+key));
 
   constructor(
     private router: Router,
     private authService: TokenService,
   ) {
-
-     authService.LoggedIn$.subscribe(loggedIn => {
+    authService.LoggedIn$.subscribe(loggedIn => {
       this.isLoggedIn = loggedIn;
       this.userData = this.authService.tokenData;
-     });
+    });
 
     router.events.subscribe(e => {
       if (e instanceof NavigationStart) {
@@ -44,4 +45,5 @@ export class AppComponent {
   goToHome() {
     this.router.navigateByUrl('welcome');
   }
+
 }

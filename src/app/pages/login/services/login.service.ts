@@ -25,7 +25,7 @@ export class LoginService extends BaseService {
     public newUser(model: NewUserModel): Observable<NewUserModel> {
         return this.http.post<NewUserModel>(this.urlAuthApiBack + 'users', model)
             .pipe(
-                tap(() => this.login({ userName: model.userName, password: model.password }).subscribe()),
+                tap(() => this.login({ email: model.email, password: model.password }).subscribe()),
                 catchError(error => throwError(error))
             )
     }
