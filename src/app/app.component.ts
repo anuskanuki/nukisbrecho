@@ -46,12 +46,11 @@ export class AppComponent implements OnInit, OnDestroy {
         this.isCollapsed = true;
       }
     });
-
   }
 
   ngOnInit(): void {
     this.createformSearchBar();
-    this.getAllProducts();
+    this.getProducts();
   }
 
   private createformSearchBar() {
@@ -60,8 +59,8 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
 
-  getAllProducts() {
-    const subscription = this.productService.getAll().subscribe(
+  getProducts() {
+    const subscription = this.productService.getFilteredByActive().subscribe(
       response => {
         if (response.length) {
           this.productsList = response;
@@ -81,9 +80,10 @@ export class AppComponent implements OnInit, OnDestroy {
     this.goToHome();
   }
 
-
-  goToProduct(productId: number) {
-    this.router.navigateByUrl('product/' + productId.toString());
+  goToProduct(event: any) {
+    console.log('test');
+    console.log(event);
+    // this.router.navigateByUrl('product/' + productId.toString());
   }
 
   goToHome() {
