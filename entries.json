@@ -49,7 +49,7 @@
       "photo3": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
       "photo4": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
       "photo1": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
-      "active": true,
+      "active": false,
       "wishlistedCount": 3
     },
     {
@@ -66,7 +66,7 @@
       "photo3": "../assets/clothes/vestido.png",
       "photo4": "../assets/clothes/vestido.png",
       "photo1": "../assets/clothes/vestido.png",
-      "active": true,
+      "active": false,
       "wishlistedCount": 9
     },
     {
@@ -425,6 +425,74 @@
       "photo4": "../assets/clothes/tenisazulao.png",
       "active": true,
       "wishlistedCount": 3
+    },
+    {
+      "id": 24,
+      "productCode": "#0024",
+      "title": "Tênis adidas",
+      "description": "Tênis..",
+      "category": "calcados",
+      "brand": "adidas",
+      "size": "38",
+      "condition": "novo",
+      "priceTag": 39,
+      "photo1": "../assets/clothes/shoes_adidas.png",
+      "photo2": "../assets/clothes/box2-adidas.png",
+      "photo3": "../assets/clothes/box1-adidas.png",
+      "photo4": "../assets/clothes/box1-adidas.png",
+      "active": true,
+      "wishlistedCount": 25
+    },
+    {
+      "id": 25,
+      "productCode": "#0025",
+      "title": "Tênis nike",
+      "description": "Tênis..",
+      "category": "calcados",
+      "brand": "nike",
+      "size": "41",
+      "condition": "novo",
+      "priceTag": 45,
+      "photo1": "../assets/clothes/nike-dunk.png",
+      "photo2": "../assets/clothes/nike-dunk.png",
+      "photo3": "../assets/clothes/nike-dunk.png",
+      "photo4": "../assets/clothes/nike-dunk.png",
+      "active": true,
+      "wishlistedCount": 34
+    },
+    {
+      "id": 26,
+      "productCode": "#0026",
+      "title": "Tênis de velcro",
+      "description": "Tênis..",
+      "category": "calcados",
+      "brand": "nike",
+      "size": "43",
+      "condition": "usado",
+      "priceTag": 26,
+      "photo1": "../assets/clothes/sneakers1.png",
+      "photo2": "../assets/clothes/sneakers1.png",
+      "photo3": "../assets/clothes/sneakers1.png",
+      "photo4": "../assets/clothes/sneakers1.png",
+      "active": true,
+      "wishlistedCount": 4
+    },
+    {
+      "id": 27,
+      "productCode": "#0027",
+      "title": "Sapato de salto",
+      "description": "salto..",
+      "category": "calcados",
+      "brand": "via marte",
+      "size": "36",
+      "condition": "usado",
+      "priceTag": 16,
+      "photo1": "../assets/clothes/wedding-shoe.png",
+      "photo2": "../assets/clothes/wedding-shoe.png",
+      "photo3": "../assets/clothes/wedding-shoe.png",
+      "photo4": "../assets/clothes/wedding-shoe.png",
+      "active": true,
+      "wishlistedCount": 1
     }
   ],
   "adminNotifications": [
@@ -512,12 +580,7 @@
         {
           "productId": 1,
           "productTitle": "Blusa verde de lã",
-          "productPhoto": "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-        },
-        {
-          "productId": 4,
-          "productTitle": "Blusa verde de lã",
-          "productPhoto": "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+          "productPhoto": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png"
         }
       ]
     },
@@ -531,13 +594,8 @@
       "products": [
         {
           "productId": 2,
-          "productTitle": "Calça azul",
-          "productPhoto": "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-        },
-        {
-          "productId": 3,
-          "productTitle": "Blusa verde de lã",
-          "productPhoto": "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+          "productTitle": "Vestido rodado",
+          "productPhoto": "../assets/clothes/vestido.png"
         }
       ]
     }

@@ -51,6 +51,7 @@ export class ProductComponent implements OnInit, OnDestroy {
   private mapProductActionsInfo(): ProductActions {
     return new ProductActions(
       this.productModel.id,
+      this.productModel.active,
       this.productModel.title,
       this.productModel.category,
       this.productModel.priceTag,

@@ -56,8 +56,8 @@
     <span>{{productActions?.description}}</span>
   </div>
 
-  <button class="buy-button" nz-button nzType="primary" (click)="goPurchase()">comprar
+  <button *ngIf="productActions?.active" class="buy-button" nz-button nzType="primary" (click)="goPurchase()">comprar
     agora</button>
 
-  <!-- <button class="buy-button" nz-button nzType="primary" routerLink="/purchase">adicionar a sacola</button> -->
+  <h3 *ngIf="!productActions?.active">produto já vendido :/</h3>
 </div>

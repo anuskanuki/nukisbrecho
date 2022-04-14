@@ -1,55 +1,34 @@
-<div style="margin-bottom: 8px;">Meus pedidos</div>
+<h3>
+    Meus pedidos
+</h3>
 
 <ng-container *ngFor="let order of ordersList">
     <nz-card nzType="inner" nzTitle="Pedido #{{order.orderId}}" [nzExtra]="extraTemplate">
         <div *ngFor="let product of order.products" nz-row style="margin-top:16px;">
             <a routerLink="/product/{{product.productId}}">
-                <img nz-image width="80vh" height="80vh" nzSrc="{{product.productPhoto}}" alt="foto do produto" />
+                <img class="fit-img" nz-image width="80vh" height="80vh" nzSrc="{{product.productPhoto}}"
+                    alt="foto do produto" />
                 <span>{{product.productTitle}}</span>
             </a>
         </div>
 
-        <nz-divider nzPlain nzText="detalhes da compra" nzOrientation="left"></nz-divider>
-
-        <p>Compra realizada em {{order.orderDate}}</p>
+        <nz-divider nzPlain nzText="Compra realizada em {{order.orderDate}}" nzOrientation="left"></nz-divider>
 
         <nz-steps>
-            <nz-step nzTitle="realizado" nzStatus="finish" nzIcon="user"></nz-step>
+            <nz-step nzTitle="realizado" nzStatus="finish" nzIcon="shopping-cart"></nz-step>
             <nz-step nzTitle="processando pgto." nzStatus="finish" nzIcon="solution"></nz-step>
             <nz-step nzTitle="pgto. aprovado" nzStatus="process" nzIcon="solution"></nz-step>
+            <nz-step nzTitle="envio" nzStatus="wait" nzIcon="code-sandbox"></nz-step>
             <nz-step nzTitle="finalizado" nzStatus="wait" [nzIcon]="iconTemplate"></nz-step>
             <ng-template #iconTemplate><i nz-icon nzType="smile"></i></ng-template>
         </nz-steps>
     </nz-card>
 </ng-container>
-<!-- 
-<nz-card nzType="inner" style="margin-top:16px;" nzTitle="Pedido #123457" [nzExtra]="extraTemplate">
-    <div nz-row style="margin-top:16px;">
-        <a routerLink="/product/1">
-            <img nz-image width="80vh" height="80vh"
-                nzSrc="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-                alt="foto do produto" />
-            <span>Peça título</span>
-        </a>
-    </div>
-
-    <nz-divider nzPlain nzText="detalhes da compra" nzOrientation="left"></nz-divider>
-
-    <p>Compra realizada em 17/12/2021 às 09h</p>
-
-    <nz-steps>
-        <nz-step nzTitle="realizado" nzStatus="finish" nzIcon="user"></nz-step>
-        <nz-step nzTitle="processando pgto." nzStatus="finish" nzIcon="solution"></nz-step>
-        <nz-step nzTitle="pgto. aprovado" nzStatus="process" nzIcon="solution"></nz-step>
-        <nz-step nzTitle="finalizado" nzStatus="wait" [nzIcon]="iconTemplate"></nz-step>
-        <ng-template #iconTemplate><i nz-icon nzType="smile"></i></ng-template>
-    </nz-steps>
-</nz-card> -->
 
 <ng-template #extraTemplate>
     <a routerLink="/welcome/help">entrar em contato</a>
 </ng-template>
 
 <div nz-row nzAlign="bottom">
-    <button nz-button nzType="primary" (click)="back()">voltar</button>
+    <button nz-button nzType="primary" (click)="back()" class="mt-btn-return">voltar</button>
 </div>
