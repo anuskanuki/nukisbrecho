@@ -6,6 +6,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { UserModel } from '../models/user.model';
 import { UserService } from '../services/user.service';
 import { Subscription } from 'rxjs';
+import { NewUserModel } from '../../login/models/login.model';
 
 @Component({
   selector: 'app-user-form',
@@ -37,75 +38,17 @@ export class UserFormComponent implements OnInit, OnDestroy {
   ) { this.userModel = new UserModel(); }
 
   ngOnInit(): void {
-    this.buildForm();
-    this.loadForm();
-  }
-
-  private loadForm() {
-    this.routerId = this.route.snapshot.params.id;
-    if (this.routerId) {
-      this.getById(this.routerId);
-      this.edition = true;
-    } else {
-      this.edition = false;
-    }
+    this.createForm();
   }
 
   private getById(id: string) {
     const subscription = this.userService.getById(id).subscribe(
       response => {
-        this.mapModelToForm(response);
         this.userModel = response;
-        if (response.claim) {
-          this.radioValue = response.claim.toString();
-        }
       },
       error => this.notification.error('Oops!', error)
     );
     this.subscriptions.push(subscription);
-  }
-
-  private mapModelToForm(model: UserModel) {
-    this.userModel = model;
-
-    this.form.patchValue({
-      id: this.userModel.id,
-      claim: this.userModel.claim,
-      completeName: this.userModel.completeName,
-      completeAddress: this.userModel.completeAddress,
-      email: this.userModel.email,
-      mobileNumber: this.userModel.mobileNumber,
-      profilePicture: this.userModel.profilePicture,
-      password: this.userModel.password,
-      confirmPassword: this.userModel.confirmPassword,
-      notificationsNumber: this.userModel.notificationsNumber,
-    });
-  }
-
-  public submit() {
-    console.log(this.form);
-
-    if (this.form.valid && this.form.dirty) {
-      if (!this.userModel.id) {
-        this.mapFormToModel(false);
-        const subscription = this.userService.insert(this.userModel).subscribe(
-          () => this.savingSuccess('Usuário inserido!'),
-          error => {
-            this.notification.error('Oops!', error)
-          }
-        );
-        this.subscriptions.push(subscription);
-      } else {
-        this.mapFormToModel(true);
-        const subscription = this.userService.edit(this.userModel).subscribe(
-          () => this.savingSuccess('Usuário atualizado!'),
-          error => {
-            this.notification.error('Oops!', error)
-          }
-        )
-        this.subscriptions.push(subscription);
-      }
-    }
   }
 
   private savingSuccess(message: string) {
@@ -117,67 +60,37 @@ export class UserFormComponent implements OnInit, OnDestroy {
       }, 500);
   }
 
-  private mapFormToModel(editing: boolean) {
-    if (editing) {
-      this.userModel = {
-        id: this.userModel.id,
-        claim: this.form.value.claim,
-        completeName: this.form.value.completeName,
-        completeAddress: this.form.value.completeAddress,
-        email: this.form.value.email,
-        mobileNumber: this.form.value.mobileNumber,
-        profilePicture: this.form.value.profilePicture,
-        password: this.form.value.password,
-        confirmPassword: this.form.value.confirmPassword,
-      };
-    } else {
-      this.getNewUserId();
-      this.userModel = {
-        id: this.newUserId,
-        claim: this.form.value.claim,
-        completeName: this.form.value.completeName,
-        completeAddress: this.form.value.completeAddress,
-        email: this.form.value.email,
-        mobileNumber: this.form.value.mobileNumber,
-        profilePicture: this.form.value.profilePicture,
-        password: this.form.value.password,
-        confirmPassword: this.form.value.confirmPassword,
-      };
+  private submitUpdateUser(userModel: UserModel) {
+    if (this.form.valid && this.form.dirty) {
+      const subscribeNewUser = this.userService.updateUser(userModel).subscribe(() => {
+        this.notification.success('Sucesso :)', 'Dados de perfil atualizados!');
+      },
+        error => {
+          this.notification.error('Ops!', 'Ocorreu um erro, tente novamente.' + '\n' + error);
+        });
+      this.subscriptions.push(subscribeNewUser);
     }
   }
 
-  getNewUserId() {
-    const subscription = this.userService.getAll().subscribe(
-      response => {
-        this.newUserId = response.length + 1;
-      },
-      error => this.notification.error('Oops!', error)
-    );
-    this.subscriptions.push(subscription);
-    return this.newUserId;
+  private createForm() {
+    this.form = this.formBuilder.group({
+      email: [null, [Validators.required]],
+      password: [null, [Validators.required]],
+      name: [null, [Validators.required]],
+      address: this.formBuilder.group({
+        neighborhood: [null, [Validators.required]],
+        zipCode: [null, [Validators.required]],
+        street: [null, [Validators.required]],
+        number: [null, [Validators.required]],
+        city: [null, [Validators.required]],
+        state: [null, [Validators.required]],
+        addressDetails: [null]
+      })
+    });
   }
 
   back(): void {
     this.location.back();
-  }
-
-  protected buildForm() {
-    this.form = this.formBuilder.group({
-      id: [null, [Validators.required]],
-      claim: [null, [Validators.required]],
-      completeName: [null, [Validators.required]],
-      completeAddress: [null, [Validators.required]],
-      email: [null, [Validators.required]],
-      notificationsNumber: [null, [Validators.required]],
-      mobileNumber: [null, [Validators.required]],
-      profilePicture: [null, [Validators.required]],
-      password: [null, [Validators.required]],
-      confirmPassword: [null, [Validators.required]],
-    });
-  }
-
-  validateConfirmPassword(): void {
-    // setTimeout(() => this.validateForm.controls.confirm.updateValueAndValidity());
   }
 
   ngOnDestroy(): void {

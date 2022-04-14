@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, Input, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { TokenService } from 'src/app/core/services/token.service';
 import { ProductActions } from './model/product-actions.model';
 
 @Component({
@@ -16,6 +17,7 @@ export class ProductActionsComponent {
   };
 
   buyNow = false;
+  isLoggedIn = false;
 
   @Input() productActions = new ProductActions();
   likeThisProduct = false;
@@ -23,7 +25,12 @@ export class ProductActionsComponent {
   constructor(
     private readonly changeDetection: ChangeDetectorRef,
     private router: Router,
-  ) { }
+    private authService: TokenService,
+  ) {
+    authService.LoggedIn$.subscribe(loggedIn => {
+      this.isLoggedIn = loggedIn;
+    });
+  }
 
   likeProduct() {
     this.likeThisProduct = !this.likeThisProduct;

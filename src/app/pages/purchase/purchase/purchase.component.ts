@@ -105,4 +105,5 @@ export class PurchaseComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscripition => subscripition.unsubscribe());
   }
+
 }

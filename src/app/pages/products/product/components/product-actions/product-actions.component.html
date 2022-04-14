@@ -56,7 +56,9 @@
     <span>{{productActions?.description}}</span>
   </div>
 
-  <button *ngIf="productActions?.active" class="buy-button" nz-button nzType="primary" (click)="goPurchase()">comprar
+  <button *ngIf="productActions?.active" class="buy-button" nz-button nzType="primary" (click)="goPurchase()"
+    [disabled]="!isLoggedIn" nzTooltipTitle="realize login para efetuar compra" nzTooltipPlacement="top" nz-tooltip
+    [nzTooltipVisible]="!isLoggedIn">comprar
     agora</button>
 
   <h3 *ngIf="!productActions?.active">produto já vendido :/</h3>

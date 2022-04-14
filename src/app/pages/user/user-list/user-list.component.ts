@@ -26,69 +26,59 @@ export class UserListComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.getUsersList();
-    this.getUsersListApiTest();
   }
 
-  getUsersListApiTest() {
-    const subscription = this.userService.getAllTesteApi().subscribe(
-      response => {
-        if (response.length) {
-          this.userListApi = response;
-        } else {
-          this.userListApi = [];
-        }
-      },
-      error => {
-        this.notification.error('Oops!', error);
-      }
-    )
-    this.subscriptions.push(subscription);
-    console.log('userList Backend:', this.userListApi);
-  }
+  // getUsersListApiTest() {
+  //   const subscription = this.userService.getAllTesteApi().subscribe(
+  //     response => {
+  //       if (response.length) {
+  //         this.userListApi = response;
+  //       } else {
+  //         this.userListApi = [];
+  //       }
+  //     },
+  //     error => {
+  //       this.notification.error('Oops!', error);
+  //     }
+  //   )
+  //   this.subscriptions.push(subscription);
+  //   console.log('userList Backend:', this.userListApi);
+  // }
 
-  getUsersList() {
-    const subscription = this.userService.getAll().subscribe(
-      response => {
-        if (response.length) {
-          this.userList = response;
-        } else {
-          this.userList = [];
-        }
-      },
-      error => {
-        this.notification.error('Oops!', error);
-      }
-    )
-    this.subscriptions.push(subscription);
-  }
+  // getUsersList() {
+  //   const subscription = this.userService.getAll().subscribe(
+  //     response => {
+  //       if (response.length) {
+  //         this.userList = response;
+  //       } else {
+  //         this.userList = [];
+  //       }
+  //     },
+  //     error => {
+  //       this.notification.error('Oops!', error);
+  //     }
+  //   )
+  //   this.subscriptions.push(subscription);
+  // }
 
   back(): void {
     this.location.back();
   }
 
-  public delete(id: any, user: string) {
-    const subscription = this.userService.delete(id).subscribe(
-      () => {
-        this.notification.success('Usuário deletado', 'Usuário: ' + user);
-        setTimeout(() => {
-          location.reload();
-        }, 4000);
-      },
-      error => {
-        this.notification.error('Oops!', error);
-      }
-    );
-    this.subscriptions.push(subscription);
-  }
-
-  newUser() {
-    this.router.navigate(['/user/form/']);
-  }
-
-  edit(userId: number = 1) {
-    this.router.navigate(['/user/form/', userId]);
-  }
+  // public delete(id: any, user: string) {
+  //   const subscription = this.userService.delete(id).subscribe(
+  //     () => {
+  //       this.notification.success('Usuário deletado', 'Usuário: ' + user);
+  //       setTimeout(() => {
+  //         location.reload();
+  //       }, 4000);
+  //     },
+  //     error => {
+  //       this.notification.error('Oops!', error);
+  //     }
+  //   );
+  //   this.subscriptions.push(subscription);
+  // }
 
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscripition => subscripition.unsubscribe());

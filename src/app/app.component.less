@@ -98,3 +98,16 @@ app-login {
   min-width: 100vw;
   min-height: 100vh;
 }
+
+:host
+  ::ng-deep.ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  align-items: center;
+  border-radius: 8px;
+  height: 4vh;
+}
+
+:host ::ng-deep.ant-select {
+  font-size: 16px;
+  width: 35vh;
+}

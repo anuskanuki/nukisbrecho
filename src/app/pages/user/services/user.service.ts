@@ -1,11 +1,11 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs";
-import { catchError, map } from "rxjs/operators";
+import { catchError } from "rxjs/operators";
 import { BaseService } from "src/app/core/services/base.service";
 import { OrdersUserModel } from "../models/orders.model";
-import { UserModel } from "../models/user.model";
 import { NotificationModel } from "../models/notification.model";
+import { UserModel } from "../models/user.model";
 
 @Injectable({
     providedIn: 'root'
@@ -37,58 +37,65 @@ export class UserService extends BaseService {
             );
     }
 
-    public getAllTesteApi(): Observable<any[]> {
-        return this.http.get<any[]>(this.urlAuthApiBack + 'users')
+    public updateUser(model: UserModel): Observable<UserModel> {
+        return this.http.put<UserModel>(this.urlAuthApiBack + 'users', model)
             .pipe(
-                catchError(error => throwError(error.error.errors[0]))
-            );
-    }
-
-    public getAll(): Observable<UserModel[]> {
-        return this.http.get<UserModel[]>(this.UrlApiV1 + 'users')
-            .pipe(
-                catchError(error => throwError(error.error.errors[0]))
-            );
-    }
-
-    public getUser(): Observable<UserModel> {
-        return this.http.get<UserModel>(this.UrlApiV1 + 'users/1')
-            .pipe(
-                catchError(error => throwError(error.error.errors[0]))
-            );
+                catchError(error => throwError(error))
+            )
     }
 
     public getById(userId: any): Observable<UserModel> {
-        return this.http.get<UserModel>(this.UrlApiV1 + 'users/' + userId)
+        return this.http.get<UserModel>(this.UrlApiV1 + 'urlAuthApiBack/' + userId)
             .pipe(
                 catchError(error => throwError(error.error.errors[0]))
             );
     }
 
-    public insert(model: UserModel): Observable<UserModel> {
-        model.id = undefined;
-        return this.http.post<UserModel>(this.UrlApiV1 + 'users', model, super.httpJsonOptions)
-            .pipe(
-                map(super.extractData),
-                catchError(error => throwError(error.error.errors[0]))
-            );
-    }
+    // public getAll(): Observable<UserModel[]> {
+    //     return this.http.get<UserModel[]>(this.UrlApiV1 + 'users')
+    //         .pipe(
+    //             catchError(error => throwError(error.error.errors[0]))
+    //         );
+    // }
 
-    public edit(model: UserModel): Observable<UserModel> {
-        return this.http.put<UserModel>(this.UrlApiV1 + 'users/' + model.id, model, super.httpJsonOptions)
-            .pipe(
-                map(super.extractData),
-                catchError(error => throwError(error.error.errors[0]))
-            );
-    }
+    // public getUser(): Observable<UserModel> {
+    //     return this.http.get<UserModel>(this.UrlApiV1 + 'users/1')
+    //         .pipe(
+    //             catchError(error => throwError(error.error.errors[0]))
+    //         );
+    // }
 
-    public delete(id: string): Observable<UserModel> {
-        return this.http
-            .delete(this.UrlApiV1 + 'users/' + id)
-            .pipe(
-                map(super.extractData),
-                catchError(error => throwError(error.error.errors[0]))
-            );
-    }
+    // public getById(userId: any): Observable<UserModel> {
+    //     return this.http.get<UserModel>(this.UrlApiV1 + 'users/' + userId)
+    //         .pipe(
+    //             catchError(error => throwError(error.error.errors[0]))
+    //         );
+    // }
+
+    // public insert(model: UserModel): Observable<UserModel> {
+    //     model.id = undefined;
+    //     return this.http.post<UserModel>(this.UrlApiV1 + 'users', model, super.httpJsonOptions)
+    //         .pipe(
+    //             map(super.extractData),
+    //             catchError(error => throwError(error.error.errors[0]))
+    //         );
+    // }
+
+    // public edit(model: UserModel): Observable<UserModel> {
+    //     return this.http.put<UserModel>(this.UrlApiV1 + 'users/' + model.id, model, super.httpJsonOptions)
+    //         .pipe(
+    //             map(super.extractData),
+    //             catchError(error => throwError(error.error.errors[0]))
+    //         );
+    // }
+
+    // public delete(id: string): Observable<UserModel> {
+    //     return this.http
+    //         .delete(this.UrlApiV1 + 'users/' + id)
+    //         .pipe(
+    //             map(super.extractData),
+    //             catchError(error => throwError(error.error.errors[0]))
+    //         );
+    // }
 
 }
