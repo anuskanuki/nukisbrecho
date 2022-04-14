@@ -70,9 +70,16 @@
             </li>
 
             <li nz-menu-item>
-              <nz-input-group>
-                <input type="text" nz-input placeholder="Pesquisar..." />
-              </nz-input-group>
+              <form nz-form [formGroup]="formSearch">
+                <nz-form-control>
+                  <nz-select formControlName="searchParam" nzPlaceHolder="Pesquisar prouto, marca..." nzShowSearch>
+                    <nz-option nzAllowClear *ngFor="let product of productsList" [nzValue]="product"
+                      [nzLabel]="product.title || 'erro ao carregar título'" onchange="goToProduct(product.id)"
+                      onclick="goToProduct(product.id)">
+                    </nz-option>
+                  </nz-select>
+                </nz-form-control>
+              </form>
             </li>
 
             <ng-container *ngIf="isLoggedIn; then menuLoggedAccess else menuNotLoggedInAccess"></ng-container>

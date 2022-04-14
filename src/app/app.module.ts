@@ -7,7 +7,7 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { pt_BR } from 'ng-zorro-antd/i18n';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import pt from '@angular/common/locales/pt';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './core/modules/icons-provider.module';
@@ -39,6 +39,7 @@ registerLocaleData(pt);
     NzMenuModule,
     NgZorroAntdModule,
     RouterModule,
+    ReactiveFormsModule,
     LoginModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: pt_BR }, TokenService, AuthGuard],

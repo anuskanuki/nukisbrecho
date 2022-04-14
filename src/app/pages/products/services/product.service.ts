@@ -23,28 +23,28 @@ export class ProductService extends BaseService {
     }
 
     public getFilteredByAccessories(): Observable<ProductModel[]> {
-        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?category=acessorios&active=true')
+        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?category=acessorios&active=true&_sort=id&_order=desc')
             .pipe(
                 catchError(error => throwError(error.error.errors[0]))
             );
     }
 
     public getFilteredByClothes(): Observable<ProductModel[]> {
-        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?category=roupas&active=true')
+        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?category=roupas&active=true&_sort=id&_order=desc')
             .pipe(
                 catchError(error => throwError(error.error.errors[0]))
             );
     }
 
     public getFilteredByActive(): Observable<ProductModel[]> {
-        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?active=true')
+        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?active=true&_sort=id&_order=desc')
             .pipe(
                 catchError(error => throwError(error.error.errors[0]))
             );
     }
 
     public getFilteredByShoes(): Observable<ProductModel[]> {
-        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?category=calcados&active=true')
+        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?category=calcados&active=true&_sort=id&_order=desc')
             .pipe(
                 catchError(error => throwError(error.error.errors[0]))
             );
