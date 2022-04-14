@@ -1,13 +1,7 @@
-<!-- <div nz-row [nzGutter]="[24,24]">
+<div nz-row [nzGutter]="[24,24]">
     <div nz-col nzSpan="24">
         <div nz-row>
-            <span class="page-titile">Usuários</span>
-        </div>
-    </div>
-
-    <div nz-col nzSpan="24">
-        <div nz-row>
-            <button nz-button nzType="primary" (click)="newUser()">novo usuário</button>
+            <h3 class="page-titile">Usuários</h3>
         </div>
     </div>
 
@@ -15,18 +9,16 @@
         <nz-table #usersTable [nzData]="userList">
             <thead>
                 <tr>
-                    <th>claim</th>
-                    <th>completeName</th>
-                    <th>completeAddress</th>
-                    <th>email</th>
-                    <th>mobileNumber</th>
-                    <th>ações</th>
+                    <th>Nome completo</th>
+                    <th>E-mail</th>
+                    <th>Cidade - UF</th>
+                    <th>Permissão</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let product of usersTable.data">
+                <tr *ngFor="let user of usersTable.data">
                     <td>
-                        <ng-container *ngIf="product.claim==1 then templateAdminClaim else templateUserClaim">
+                        <ng-container *ngIf="user.isAdmin then templateAdminClaim else templateUserClaim">
                         </ng-container>
 
                         <ng-template #templateAdminClaim>
@@ -37,24 +29,21 @@
                             <span>Usuário</span>
                         </ng-template>
                     </td>
-                    <td>{{ product.completeName }}</td>
-                    <td>{{ product.completeAddress }}</td>
-                    <td>{{ product.email }}</td>
-                    <td>{{ product.mobileNumber }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <!-- <td>{{ user.address?.city }}-{{user.address?.state}}</td> -->
+                    <td>{{ user.isActive }}</td>
+                    <td>{{ user.isAdmin }}</td>
 
                     <td [nzAlign]="'center'">
                         <nz-space>
-                            <a *nzSpaceItem (click)="edit(product.id)">
-                                <i class="edit-icon" nz-icon nzType="edit" nzTheme="outline"></i>
-                            </a>
-
                             <ng-template #iconTpl>
                                 <i nz-icon nzType="question-circle-o" style="color: red;"></i>
                             </ng-template>
 
                             <a *nzSpaceItem nz-popconfirm nzPopconfirmTitle="Deseja mesmo deletar o usuário?"
                                 [nzIcon]="iconTpl"
-                                (nzOnConfirm)="delete(product.id, product.completeName ||'selecionado')">
+                                (nzOnConfirm)="delete(user.id, user.name ||'selecionado')">
                                 <i class="delete-icon" nz-icon nzType="delete" nzTheme="outline"></i>
                             </a>
                         </nz-space>
@@ -67,4 +56,4 @@
 
 <div nz-row nzAlign="bottom">
     <button nz-button nzType="primary" (click)="back()">voltar</button>
-</div> -->
+</div>

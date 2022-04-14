@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { UserModel } from '../models/user.model';
 import { UserService } from '../services/user.service';
 import { Subscription } from 'rxjs';
-import { NewUserModel } from '../../login/models/login.model';
+import { TokenService } from 'src/app/core/services/token.service';
+import { States } from '../../login/enum/states.enum';
 
 @Component({
   selector: 'app-user-form',
@@ -16,9 +16,10 @@ import { NewUserModel } from '../../login/models/login.model';
 export class UserFormComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription[] = [];
-
+  statesArray: Array<string> = Object.keys(States).filter(key => isNaN(+key));
   public form!: FormGroup;
   public userModel: UserModel;
+  passwordVisible = false;
   public routerId = '';
   public newUserId = 0;
   public edition = false;
@@ -32,13 +33,28 @@ export class UserFormComponent implements OnInit, OnDestroy {
   constructor(
     private location: Location,
     protected userService: UserService,
+    protected authService: TokenService,
     private notification: NzNotificationService,
     private readonly formBuilder: FormBuilder,
-    private route: ActivatedRoute,
   ) { this.userModel = new UserModel(); }
 
   ngOnInit(): void {
+    this.getById(this.authService.tokenData.nameid);
     this.createForm();
+  }
+
+  private mapModelToForm() {
+    this.form.patchValue({
+      name: this.userModel.name,
+      email: this.userModel.email,
+      zipCode: this.userModel.address?.zipCode,
+      street: this.userModel.address?.street,
+      state: this.userModel.address?.state,
+      number: this.userModel.address?.number,
+      neighborhood: this.userModel.address?.neighborhood,
+      city: this.userModel.address?.city,
+      addressDetails: this.userModel.address?.addressDetails,
+    });
   }
 
   private getById(id: string) {
@@ -48,21 +64,22 @@ export class UserFormComponent implements OnInit, OnDestroy {
       },
       error => this.notification.error('Oops!', error)
     );
+    this.mapModelToForm();
     this.subscriptions.push(subscription);
   }
 
-  private savingSuccess(message: string) {
-    this.form.reset();
-    this.userModel = {};
-    this.notification.success('Sucesso!', message),
-      setTimeout(() => {
-        this.back();
-      }, 500);
-  }
+  // private savingSuccess(message: string) {
+  //   this.form.reset();
+  //   this.userModel = {};
+  //   this.notification.success('Sucesso!', message),
+  //     setTimeout(() => {
+  //       this.back();
+  //     }, 500);
+  // }
 
-  private submitUpdateUser(userModel: UserModel) {
+  public submitUpdateUser() {
     if (this.form.valid && this.form.dirty) {
-      const subscribeNewUser = this.userService.updateUser(userModel).subscribe(() => {
+      const subscribeNewUser = this.userService.updateUser(this.userModel).subscribe(() => {
         this.notification.success('Sucesso :)', 'Dados de perfil atualizados!');
       },
         error => {
@@ -75,7 +92,7 @@ export class UserFormComponent implements OnInit, OnDestroy {
   private createForm() {
     this.form = this.formBuilder.group({
       email: [null, [Validators.required]],
-      password: [null, [Validators.required]],
+      // password: [null, [Validators.required]],
       name: [null, [Validators.required]],
       address: this.formBuilder.group({
         neighborhood: [null, [Validators.required]],

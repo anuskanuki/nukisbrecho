@@ -37,15 +37,11 @@
           </ul>
         </li>
 
-        <li nz-submenu nzOpen nzTitle="Gerenciamento" nzIcon="form">
+        <li *ngIf="isAdmin" nz-submenu nzOpen nzTitle="Gerenciamento" nzIcon="form">
           <ul>
             <li nz-menu-item nzMatchRouter>
               <a routerLink="/user">Usuário</a>
             </li>
-
-            <!-- <li nz-menu-item nzMatchRouter>
-              <a routerLink="/product/list">Produto</a>
-            </li> -->
           </ul>
         </li>
 

@@ -88,7 +88,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   private submitNewUser(newUser: NewUserModel) {
     if (this.formNewUser.valid && this.formNewUser.dirty) {
-      newUser.isAdmin = false;
+      newUser.isAdmin = true;
       const subscribeNewUser = this.loginService.newUser(newUser).subscribe(() => {
         this.createBasicNotification('Sucesso :)', 'Você será redirecionado ao site.');
         this.loggedIn = true;

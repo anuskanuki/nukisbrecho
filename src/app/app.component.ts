@@ -16,6 +16,7 @@ import { ProductService } from './pages/products/services/product.service';
 export class AppComponent implements OnInit, OnDestroy {
   isCollapsed = true;
   isLoggedIn = false;
+  isAdmin = false;
   showLayout = true;
 
   userData?: LoggedUserModel;
@@ -23,7 +24,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription[] = [];
   public productsList: ProductModel[] = [];
-  // productsSearchBarArray: Array<string> = Object.keys(ProductModel).filter(key => isNaN(+key));
 
   constructor(
     private router: Router,
@@ -49,6 +49,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.isAdmin = this.authService.tokenData.isAdmin;
     this.createformSearchBar();
     this.getProducts();
   }
