@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
@@ -13,7 +13,7 @@ import { States } from '../../login/enum/states.enum';
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.less'],
 })
-export class UserFormComponent implements OnInit, OnDestroy, AfterViewInit {
+export class UserFormComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription[] = [];
   statesArray: Array<string> = Object.keys(States).filter(key => isNaN(+key));
@@ -40,24 +40,23 @@ export class UserFormComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnInit(): void {
     this.createForm();
-  }
-
-  ngAfterViewInit(): void {
     this.getById(this.authService.tokenData.nameid);
-    this.mapModelToForm();
   }
 
   private mapModelToForm() {
     this.form.patchValue({
       name: this.userModel.name,
-      email: this.userModel.email,
+      email: this.userModel.email
+    });
+
+    this.form.controls['address'].patchValue({
       zipCode: this.userModel.address?.zipCode,
       street: this.userModel.address?.street,
       state: this.userModel.address?.state,
       number: this.userModel.address?.number,
       neighborhood: this.userModel.address?.neighborhood,
       city: this.userModel.address?.city,
-      addressDetails: this.userModel.address?.addressDetails,
+      addressDetails: this.userModel.address?.addressDetails
     });
   }
 
@@ -65,6 +64,8 @@ export class UserFormComponent implements OnInit, OnDestroy, AfterViewInit {
     const subscription = this.userService.getById(id).subscribe(
       response => {
         this.userModel = response;
+        // this.form.patchValue({ address.controls['zipcode']): response.address?.zipCode });
+        this.mapModelToForm();
       },
       error => this.notification.error('Oops!', error)
     );
@@ -95,7 +96,6 @@ export class UserFormComponent implements OnInit, OnDestroy, AfterViewInit {
   private createForm() {
     this.form = this.formBuilder.group({
       email: [null, [Validators.required]],
-      // password: [null, [Validators.required]],
       name: [null, [Validators.required]],
       address: this.formBuilder.group({
         neighborhood: [null, [Validators.required]],

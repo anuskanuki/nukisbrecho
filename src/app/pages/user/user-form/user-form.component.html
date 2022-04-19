@@ -1,7 +1,7 @@
 <div>
     <h3>Perfil</h3>
     <form nz-form [formGroup]="form" (ngSubmit)="submitUpdateUser()">
-        <div nz-row>
+        <div nz-row [nzGutter]="18">
             <div nz-col nzSpan="12">
                 <nz-form-item class="grid">
                     <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Nome<span
