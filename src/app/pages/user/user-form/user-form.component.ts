@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
@@ -11,9 +11,9 @@ import { States } from '../../login/enum/states.enum';
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.less']
+  styleUrls: ['./user-form.component.less'],
 })
-export class UserFormComponent implements OnInit, OnDestroy {
+export class UserFormComponent implements OnInit, OnDestroy, AfterViewInit {
 
   subscriptions: Subscription[] = [];
   statesArray: Array<string> = Object.keys(States).filter(key => isNaN(+key));
@@ -39,8 +39,12 @@ export class UserFormComponent implements OnInit, OnDestroy {
   ) { this.userModel = new UserModel(); }
 
   ngOnInit(): void {
-    this.getById(this.authService.tokenData.nameid);
     this.createForm();
+  }
+
+  ngAfterViewInit(): void {
+    this.getById(this.authService.tokenData.nameid);
+    this.mapModelToForm();
   }
 
   private mapModelToForm() {
@@ -64,7 +68,6 @@ export class UserFormComponent implements OnInit, OnDestroy {
       },
       error => this.notification.error('Oops!', error)
     );
-    this.mapModelToForm();
     this.subscriptions.push(subscription);
   }
 

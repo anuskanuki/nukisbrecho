@@ -5,7 +5,7 @@ import { catchError, map } from "rxjs/operators";
 import { BaseService } from "src/app/core/services/base.service";
 import { OrdersUserModel } from "../models/orders.model";
 import { NotificationModel } from "../models/notification.model";
-import { UserModel } from "../models/user.model";
+import { UserGetAllModel, UserModel } from "../models/user.model";
 
 @Injectable({
     providedIn: 'root'
@@ -51,13 +51,12 @@ export class UserService extends BaseService {
             );
     }
 
-    public getAllUsers(): Observable<UserModel[]> {
-        return this.http.get<UserModel[]>(this.urlAuthApiBack + 'users/')
+    public getAllUsers(): Observable<UserGetAllModel[]> {
+        return this.http.get<UserGetAllModel[]>(this.urlAuthApiBack + 'users/')
             .pipe(
                 catchError(error => throwError(error.error.errors[0]))
             );
     }
-
 
     public delete(id: string): Observable<UserModel> {
         return this.http

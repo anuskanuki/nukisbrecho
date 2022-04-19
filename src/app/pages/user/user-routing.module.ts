@@ -8,8 +8,6 @@ import { NotificationsComponent } from './notifications/notifications.component'
 
 const routes: Routes = [
   { path: '', component: UserListComponent, data: { adminOnly: true } },
-  // { path: '', pathMatch: 'full', redirectTo: '/form/:id' },
-  { path: '1234', component: UserFormComponent },
   { path: 'form', component: UserFormComponent },
   { path: 'form/:id', component: UserFormComponent },
   { path: 'orders', component: OrdersComponent },

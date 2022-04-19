@@ -143,7 +143,7 @@
 </div>
 
 <ng-template #validacoes let-control>
-    <ng-container *ngIf="control.hasError('maxlength')">O máximo de caracteres é
+    <ng-container *ngIf="control.hasError('maxlength')">O limite de caracteres é
         {{control.errors.maxlength.requiredLength}}
     </ng-container>
     <ng-container *ngIf="control.hasError('minlength')">O mínimo de caracteres é

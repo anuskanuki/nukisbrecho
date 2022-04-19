@@ -12,12 +12,19 @@
                     <th>Nome completo</th>
                     <th>E-mail</th>
                     <th>Cidade - UF</th>
-                    <th>Permissão</th>
+                    <th [nzAlign]="'center'">Permissão</th>
+                    <th [nzAlign]="'center'">Ativo</th>
+                    <th [nzAlign]="'center'">Ações</th>
                 </tr>
             </thead>
+
             <tbody>
                 <tr *ngFor="let user of usersTable.data">
-                    <td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.city + ' - ' + user.state}}</td>
+
+                    <td [nzAlign]="'center'">
                         <ng-container *ngIf="user.isAdmin then templateAdminClaim else templateUserClaim">
                         </ng-container>
 
@@ -29,11 +36,10 @@
                             <span>Usuário</span>
                         </ng-template>
                     </td>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.email }}</td>
-                    <!-- <td>{{ user.address?.city }}-{{user.address?.state}}</td> -->
-                    <td>{{ user.isActive }}</td>
-                    <td>{{ user.isAdmin }}</td>
+
+                    <td [nzAlign]="'center'">
+                        <span [ngClass]="user.isActive? 'valid-status' : 'invalid-status'"></span>
+                    </td>
 
                     <td [nzAlign]="'center'">
                         <nz-space>
@@ -42,8 +48,7 @@
                             </ng-template>
 
                             <a *nzSpaceItem nz-popconfirm nzPopconfirmTitle="Deseja mesmo deletar o usuário?"
-                                [nzIcon]="iconTpl"
-                                (nzOnConfirm)="delete(user.id, user.name ||'selecionado')">
+                                [nzIcon]="iconTpl" (nzOnConfirm)="delete(user.id, user.name ||'selecionado')">
                                 <i class="delete-icon" nz-icon nzType="delete" nzTheme="outline"></i>
                             </a>
                         </nz-space>

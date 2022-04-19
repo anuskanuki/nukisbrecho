@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { UserModel } from '../models/user.model';
+import { UserGetAllModel } from '../models/user.model';
 import { UserService } from '../services/user.service';
 import { Subscription } from 'rxjs';
 
@@ -9,24 +9,21 @@ import { Subscription } from 'rxjs';
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserListComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription[] = [];
-  public userList: UserModel[] = [];
+  public userList: UserGetAllModel[] = [];
   public userListApi: any = [];
 
   constructor(
     private location: Location,
     protected userService: UserService,
     private notification: NzNotificationService,
-    private cd: ChangeDetectorRef,
   ) { }
 
   ngOnInit(): void {
     this.getUsersList();
-    this.cd.detectChanges();
   }
 
   getUsersList() {
@@ -42,7 +39,6 @@ export class UserListComponent implements OnInit, OnDestroy {
         this.notification.error('Oops!', error);
       }
     )
-    this.cd.detectChanges();
     this.subscriptions.push(subscription);
   }
 

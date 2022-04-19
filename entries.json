@@ -1,39 +1,4 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "claim": "1",
-      "completeName": "Admin Nuki Veberrr",
-      "completeAddress": "Rua Unicórnios brilhosos, número 88, bairro glitter, Nukilândia CA",
-      "email": "nukiveber@hotmail.com",
-      "mobileNumber": "(47)9917-2654",
-      "profilePicture": "<https: //cdn.fakercloud.com/avatars/andysolomon_128.jpg>",
-      "password": "12345",
-      "confirmPassword": "12345"
-    },
-    {
-      "id": 2,
-      "claim": 2,
-      "password": "12345",
-      "confirmPassword": "12345",
-      "completeName": "User",
-      "completeAddress": "Rua X, número 8, bairro Y, XYZ",
-      "email": "user@gmail.com",
-      "notificationsNumber": 3,
-      "mobileNumber": "(47)00000-0000",
-      "profilePicture": "<https: //cdn.fakercloud.com/avatars/andysolomon_128.jpg>",
-      "notifications": [
-        {
-          "notificationTitle": "New message on product A",
-          "notificationDescription": "message or links"
-        },
-        {
-          "notificationTitle": "New message on product B",
-          "notificationDescription": "message or links"
-        }
-      ]
-    }
-  ],
   "products": [
     {
       "id": 1,
