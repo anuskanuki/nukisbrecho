@@ -64,7 +64,6 @@ export class UserFormComponent implements OnInit, OnDestroy {
     const subscription = this.userService.getById(id).subscribe(
       response => {
         this.userModel = response;
-        // this.form.patchValue({ address.controls['zipcode']): response.address?.zipCode });
         this.mapModelToForm();
       },
       error => this.notification.error('Oops!', error)

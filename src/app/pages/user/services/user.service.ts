@@ -38,7 +38,7 @@ export class UserService extends BaseService {
     }
 
     public updateUser(model: UserModel): Observable<UserModel> {
-        return this.http.put<UserModel>(this.urlAuthApiBack + 'users', model)
+        return this.http.put<UserModel>(this.urlAuthApiBack + 'users/' + model.id, model)
             .pipe(
                 catchError(error => throwError(error))
             )
