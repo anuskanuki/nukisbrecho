@@ -82,6 +82,18 @@ export class PurchaseComponent implements OnInit, OnDestroy {
     }
   }
 
+  buyProduct() {
+    if (this.paymentReceiptAttached) {
+      this.productModel.active = false;
+      const subscribe = this.purchaseService.updateProduct(this.productModel).subscribe(() => {
+      },
+        error => {
+          this.notification.error('Oops!', error);
+        });
+      this.subscriptions.push(subscribe);
+    }
+  }
+
   getUserInfo() {
     this.userName = this.tokenService.tokenData.unique_name;
     this.userId = this.tokenService.tokenData.nameid;

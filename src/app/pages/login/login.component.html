@@ -18,7 +18,7 @@
                         <nz-form-item class="grid">
                             <nz-form-label [nzNoColon]="true" class="label">E_mail<span class="required-mark">*</span>
                             </nz-form-label>
-                            <nz-form-control [nzErrorTip]="validacoes">
+                            <nz-form-control [nzErrorTip]="validations">
                                 <input formControlName="email" nz-input placeholder="Insira o e-mail cadastrado"
                                     required />
                             </nz-form-control>
@@ -31,7 +31,7 @@
                                     class="required-mark">*</span>
                             </nz-form-label>
 
-                            <nz-form-control [nzErrorTip]="validacoes">
+                            <nz-form-control [nzErrorTip]="validations">
                                 <nz-input-group [nzSuffix]="suffixTemplate">
                                     <input formControlName="password" nz-input
                                         [type]="passwordVisible ? 'text' : 'password'" placeholder="Insira Senha"
@@ -65,7 +65,7 @@
                             <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Nome<span
                                     class="required-mark">*</span>
                             </nz-form-label>
-                            <nz-form-control [nzErrorTip]="validacoes">
+                            <nz-form-control [nzErrorTip]="validations">
                                 <input formControlName="name" nz-input placeholder="Insira seu nome completo" required
                                     minlength="2" maxlength="40" />
                             </nz-form-control>
@@ -76,7 +76,7 @@
                         <nz-form-item class="grid">
                             <nz-form-label [nzNoColon]="true" class="label">E-mail<span class="required-mark">*</span>
                             </nz-form-label>
-                            <nz-form-control [nzErrorTip]="validacoes">
+                            <nz-form-control [nzErrorTip]="validations">
                                 <input formControlName="email" nz-input placeholder="exemplo@gmail.com" minlength="10"
                                     maxlength="50" required />
                             </nz-form-control>
@@ -91,7 +91,7 @@
                                 <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Rua<span
                                         class="required-mark">*</span>
                                 </nz-form-label>
-                                <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
+                                <nz-form-control formGroupName="address" [nzErrorTip]="validations">
                                     <input formControlName="street" nz-input placeholder="Rua Exemplo da Silva" required
                                         minlength="1" maxlength="70" />
                                 </nz-form-control>
@@ -103,7 +103,7 @@
                                 <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Número<span
                                         class="required-mark">*</span>
                                 </nz-form-label>
-                                <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
+                                <nz-form-control formGroupName="address" [nzErrorTip]="validations">
                                     <input formControlName="number" type="number" nz-input placeholder="123" required
                                         minlength="1" maxlength="10" />
                                 </nz-form-control>
@@ -115,7 +115,7 @@
                                 <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Bairro<span
                                         class="required-mark">*</span>
                                 </nz-form-label>
-                                <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
+                                <nz-form-control formGroupName="address" [nzErrorTip]="validations">
                                     <input formControlName="neighborhood" nz-input placeholder="Bairro Exemplo" required
                                         minlength="1" maxlength="30" />
                                 </nz-form-control>
@@ -127,7 +127,7 @@
                                 <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">CEP<span
                                         class="required-mark">*</span>
                                 </nz-form-label>
-                                <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
+                                <nz-form-control formGroupName="address" [nzErrorTip]="validations">
                                     <input formControlName="zipCode" type="number" nz-input placeholder="Apenas números"
                                         required />
                                 </nz-form-control>
@@ -139,7 +139,7 @@
                                 <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Cidade<span
                                         class="required-mark">*</span>
                                 </nz-form-label>
-                                <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
+                                <nz-form-control formGroupName="address" [nzErrorTip]="validations">
                                     <input formControlName="city" nz-input placeholder="Cidade" required minlength="1"
                                         maxlength="40" />
                                 </nz-form-control>
@@ -151,7 +151,7 @@
                                 <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Estado<span
                                         class="required-mark">*</span>
                                 </nz-form-label>
-                                <nz-form-control formGroupName="address" [nzErrorTip]="validacoes">
+                                <nz-form-control formGroupName="address" [nzErrorTip]="validations">
                                     <nz-select formControlName="state" nzPlaceHolder="UF" nzShowSearch>
                                         <nz-option nzAllowClear *ngFor="let uf of statesArray" [nzValue]="uf"
                                             [nzLabel]="uf">
@@ -179,7 +179,7 @@
                                     class="required-mark">*</span>
                             </nz-form-label>
 
-                            <nz-form-control [nzErrorTip]="validacoes">
+                            <nz-form-control [nzErrorTip]="validations">
                                 <nz-input-group [nzSuffix]="suffixTemplate">
                                     <input formControlName="password" nz-input
                                         [type]="passwordVisible ? 'text' : 'password'" placeholder="Senha" required />
@@ -210,7 +210,7 @@
         </ng-template>
     </div>
 
-    <ng-template #validacoes let-control>
+    <ng-template #validations let-control>
         <ng-container *ngIf="control.hasError('maxlength')">O máximo de caracteres é
             {{control.errors.maxlength.requiredLength}}
         </ng-container>

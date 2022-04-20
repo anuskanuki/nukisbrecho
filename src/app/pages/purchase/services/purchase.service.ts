@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { BaseService } from 'src/app/core/services/base.service';
+import { ProductModel } from '../../products/models/product.model';
 import { CartModel, UserByIdModel } from '../models/purchase.model';
 
 @Injectable({
@@ -19,6 +20,20 @@ export class PurchaseService extends BaseService {
       .pipe(
         catchError(error => throwError(error.error.errors[0]))
       );
+  }
+
+  // public putInactivateProduct(id: string, productModel: ProductModel): Observable<ProductModel> {
+  //   return this.http.get<ProductModel>(this.UrlApiV1 + 'product/' + id, productModel)
+  //     .pipe(
+  //       catchError(error => throwError(error))
+  //     );
+  // }
+
+  public updateProduct(model: ProductModel): Observable<ProductModel> {
+    return this.http.put<ProductModel>(this.UrlApiV1 + 'product/' + model.id, model)
+      .pipe(
+        catchError(error => throwError(error))
+      )
   }
 
   public getPurchaseAddress(id: string): Observable<UserByIdModel> {

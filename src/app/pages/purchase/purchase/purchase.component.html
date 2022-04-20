@@ -112,7 +112,7 @@
 
             <div nz-row nzAlign="bottom" class="confirm-button">
                 <button nz-button nzType="primary" routerLink="confirmation"
-                    [disabled]="!paymentReceiptAttached">confirmar
+                    [disabled]="!paymentReceiptAttached" (click)="buyProduct()">confirmar
                     compra</button>
             </div>
         </div>

@@ -27,6 +27,7 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzBackTopModule } from 'ng-zorro-antd/back-top';
+import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 
 @NgModule({
   exports: [
@@ -58,6 +59,7 @@ import { NzBackTopModule } from 'ng-zorro-antd/back-top';
     NzSelectModule,
     NzUploadModule,
     NzBackTopModule,
+    NzTimelineModule,
   ],
 })
 export class NgZorroAntdModule { }

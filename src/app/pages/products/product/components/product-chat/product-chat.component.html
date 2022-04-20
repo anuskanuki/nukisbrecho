@@ -4,23 +4,61 @@
 
     <div nz-col nzSpan="24" *ngFor="let chatItem of messagesChatArray">
 
-      <div *ngFor="let message of chatItem.questions" class="chatMessage" nz-row>
+      <div *ngFor="let message of chatItem.questions" nz-row>
 
-        <div nz-col nzSpan="24" class="clientMessage">
-          <span>
-            <i class="icons-padding-left" nz-icon nzType="question-circle" nzTheme="outline"></i>
-            {{message.question}}
-          </span>
-        </div>
+        <nz-timeline>
+          <nz-timeline-item nzColor="gray">
+            <p><span class="bold-author">Usuário: </span>{{message.question}}</p>
+          </nz-timeline-item>
 
-        <p nz-col nzSpan="12" class="authorName">
-          <i class="icons-padding-left" nz-icon nzType="user" nzTheme="outline"></i>
-          <span class="icons-padding-left">
-            {{message.author}}
-          </span>
-        </p>
+          <ng-container *ngIf="message.answer !== '' then templateRespostaAdmin">
+          </ng-container>
 
-        <div nz-col nzSpan="24" class="adminResponse">
+          <ng-container *ngIf="message.answer == '' then templateAguardandoResposta">
+          </ng-container>
+
+          <ng-template #templateAguardandoResposta>
+
+            <nz-timeline-item nzColor="gray">
+              <p>aguardando resposta</p>
+
+              <ng-container *ngIf="isAdminClaim">
+                <button (click)="openAnswerToAdmin()">responder</button>
+
+                <form *ngIf="answerToAdminIsOpen" [formGroup]="form">
+                  <div nz-col nzSpan="24">
+                    <nz-comment>
+                      <nz-avatar nz-comment-avatar nzIcon="user" [nzSrc]="user.avatar"></nz-avatar>
+                      <nz-comment-content>
+                        <nz-form-item>
+                          <textarea formControlName="answer" [(ngModel)]="inputValue" nz-input
+                            placeholder="Digite aqui a resposta!" [nzAutosize]="{ minRows: 3, maxRows: 5 }"
+                            (keydown.enter)="sendMessage()"></textarea>
+                        </nz-form-item>
+
+                        <nz-form-item class="align-submit-chat">
+                          <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!inputValue"
+                            (click)="handleSubmit()">
+                            enviar
+                          </button>
+                        </nz-form-item>
+                      </nz-comment-content>
+                    </nz-comment>
+                  </div>
+                </form>
+              </ng-container>
+            </nz-timeline-item>
+          </ng-template>
+
+          <ng-template #templateRespostaAdmin>
+            <nz-timeline-item nzColor="gray">
+              <p><span class="bold-author">Admin: </span>{{message.answer}}</p>
+            </nz-timeline-item>
+          </ng-template>
+
+        </nz-timeline>
+
+        <!-- <div nz-col nzSpan="24" class="adminResponse">
           <ng-container *ngIf="message.answer !== '' then templateRespostaAdmin">
           </ng-container>
 
@@ -43,14 +81,14 @@
               <i class="icons-padding-left" nz-icon nzType="check-circle" nzTheme="outline"></i> {{message.answer}}
             </span>
           </ng-template>
-        </div>
+        </div> 
 
         <p *ngIf="message.answer !==''" nz-col nzSpan="24" class="authorName">
           <i class="icons-padding-left" nz-icon nzType="user" nzTheme="outline"></i>
           <span class="icons-padding-left">
             Admin
           </span>
-        </p>
+        </p> -->
       </div>
     </div>
 
@@ -75,25 +113,6 @@
       </form>
     </div>
 
-    <div nz-col nzSpan="24">
-      <form *ngIf="answerToAdminIsOpen" [formGroup]="form">
-        <nz-comment>
-          <nz-avatar nz-comment-avatar nzIcon="user" [nzSrc]="user.avatar"></nz-avatar>
-          <nz-comment-content>
-            <nz-form-item>
-              <textarea formControlName="answer" [(ngModel)]="inputValue" nz-input placeholder="Digite aqui a resposta!"
-                [nzAutosize]="{ minRows: 3, maxRows: 5 }" (keydown.enter)="sendMessage()"></textarea>
-            </nz-form-item>
 
-            <nz-form-item class="align-submit-chat">
-              <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!inputValue"
-                (click)="handleSubmit()">
-                enviar
-              </button>
-            </nz-form-item>
-          </nz-comment-content>
-        </nz-comment>
-      </form>
-    </div>
   </div>
 </div>

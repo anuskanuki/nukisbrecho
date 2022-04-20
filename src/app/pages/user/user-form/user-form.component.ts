@@ -20,10 +20,11 @@ export class UserFormComponent implements OnInit, OnDestroy {
   public form!: FormGroup;
   public userModel: UserModel;
   passwordVisible = false;
-  public routerId = '';
-  public newUserId = 0;
+
+  public userIsAdmin = false;
+  public radioValueIsAdmin = false;
+
   public edition = false;
-  public radioValue?: string;
 
   gridStyle = {
     width: '33,33%',
@@ -46,7 +47,7 @@ export class UserFormComponent implements OnInit, OnDestroy {
   private mapModelToForm() {
     this.form.patchValue({
       name: this.userModel.name,
-      email: this.userModel.email
+      email: this.userModel.email,
     });
 
     this.form.controls['address'].patchValue({
@@ -64,6 +65,10 @@ export class UserFormComponent implements OnInit, OnDestroy {
     const subscription = this.userService.getById(id).subscribe(
       response => {
         this.userModel = response;
+        this.radioValueIsAdmin = response.isAdmin || false;
+        if (response.isAdmin) {
+          this.userIsAdmin = true;
+        }
         this.mapModelToForm();
       },
       error => this.notification.error('Oops!', error)
@@ -71,18 +76,13 @@ export class UserFormComponent implements OnInit, OnDestroy {
     this.subscriptions.push(subscription);
   }
 
-  // private savingSuccess(message: string) {
-  //   this.form.reset();
-  //   this.userModel = {};
-  //   this.notification.success('Sucesso!', message),
-  //     setTimeout(() => {
-  //       this.back();
-  //     }, 500);
-  // }
-
   public submitUpdateUser() {
+    this.userModel.isAdmin = true;
+    // this.userModel.isAdmin = this.radioValueIsAdmin;
+    this.userModel.password = this.form.value.password;
+
     if (this.form.valid && this.form.dirty) {
-      const subscribeNewUser = this.userService.updateUser(this.userModel).subscribe(() => {
+      const subscribeNewUser = this.userService.updateUser(this.authService.tokenData.nameid, this.userModel).subscribe(() => {
         this.notification.success('Sucesso :)', 'Dados de perfil atualizados!');
       },
         error => {
@@ -96,6 +96,7 @@ export class UserFormComponent implements OnInit, OnDestroy {
     this.form = this.formBuilder.group({
       email: [null, [Validators.required]],
       name: [null, [Validators.required]],
+      password: [null, [Validators.required]],
       address: this.formBuilder.group({
         neighborhood: [null, [Validators.required]],
         zipCode: [null, [Validators.required]],
@@ -107,6 +108,15 @@ export class UserFormComponent implements OnInit, OnDestroy {
       })
     });
   }
+
+  // private savingSuccess(message: string) {
+  //   this.form.reset();
+  //   this.userModel = {};
+  //   this.notification.success('Sucesso!', message),
+  //     setTimeout(() => {
+  //       this.back();
+  //     }, 500);
+  // }
 
   back(): void {
     this.location.back();
