@@ -6,6 +6,7 @@ import { BaseService } from "src/app/core/services/base.service";
 import { OrdersUserModel } from "../models/orders.model";
 import { NotificationModel } from "../models/notification.model";
 import { UserGetAllModel, UserModel } from "../models/user.model";
+import { NewUserModel } from "../../login/models/login.model";
 
 @Injectable({
     providedIn: 'root'
@@ -56,6 +57,13 @@ export class UserService extends BaseService {
             .pipe(
                 catchError(error => throwError(error.error.errors[0]))
             );
+    }
+
+    public newUser(model: NewUserModel): Observable<NewUserModel> {
+        return this.http.post<NewUserModel>(this.urlAuthApiBack + 'users', model)
+            .pipe(
+                catchError(error => throwError(error))
+            )
     }
 
     public delete(id: string): Observable<UserModel> {

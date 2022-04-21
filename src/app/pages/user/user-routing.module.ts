@@ -8,7 +8,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
 
 const routes: Routes = [
   { path: '', component: UserListComponent, data: { adminOnly: true } },
-  { path: 'form', component: UserFormComponent },
+  { path: 'form', component: UserFormComponent, data: { adminOnly: true } },
   { path: 'form/:id', component: UserFormComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'notifications', component: NotificationsComponent },

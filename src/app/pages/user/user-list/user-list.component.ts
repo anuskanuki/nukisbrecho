@@ -52,7 +52,7 @@ export class UserListComponent implements OnInit, OnDestroy {
         }
         setTimeout(() => {
           location.reload();
-        }, 3000);
+        }, 2000);
       },
       error => {
         this.notification.error('Oops!', error);

@@ -81,6 +81,10 @@ export class AppComponent implements OnInit, OnDestroy {
     this.goToHome();
   }
 
+  goToProfile() {
+    this.router.navigate(['/user/form/', this.authService.tokenData.nameid]);
+  }
+
   goToProduct(event: any) {
     console.log('test');
     console.log(event);

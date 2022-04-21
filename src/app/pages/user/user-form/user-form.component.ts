@@ -7,6 +7,8 @@ import { UserService } from '../services/user.service';
 import { Subscription } from 'rxjs';
 import { TokenService } from 'src/app/core/services/token.service';
 import { States } from '../../login/enum/states.enum';
+import { Router } from '@angular/router';
+import { NewUserModel } from '../../login/models/login.model';
 
 @Component({
   selector: 'app-user-form',
@@ -18,13 +20,14 @@ export class UserFormComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
   statesArray: Array<string> = Object.keys(States).filter(key => isNaN(+key));
   public form!: FormGroup;
+  public formNewUser!: FormGroup;
   public userModel: UserModel;
   passwordVisible = false;
 
-  public userIsAdmin = false;
   public radioValueIsAdmin = false;
 
-  public edition = false;
+  public isAdminNewUser = false;
+  public routerId = '';
 
   gridStyle = {
     width: '33,33%',
@@ -37,12 +40,64 @@ export class UserFormComponent implements OnInit, OnDestroy {
     protected authService: TokenService,
     private notification: NzNotificationService,
     private readonly formBuilder: FormBuilder,
+    private router: Router,
   ) { this.userModel = new UserModel(); }
 
   ngOnInit(): void {
-    this.createForm();
-    this.getById(this.authService.tokenData.nameid);
+    this.routerId = this.router.url.split('/')[2];
+
+    if (this.routerId !== '') {
+      this.isAdminNewUser = false;
+    } else {
+      this.isAdminNewUser = true;
+    }
+
+    if (this.isAdminNewUser) {
+      this.createFormNewUser();
+
+    } else {
+      this.createForm();
+      this.getById(this.authService.tokenData.nameid);
+    }
   }
+
+  //#region newUser
+
+  public submitNewUser() {
+    const formNewUser = Object.assign(this.formNewUser.value, new NewUserModel());
+
+    if (this.formNewUser.valid && this.formNewUser.dirty) {
+      const subscribeNewUser = this.userService.newUser(formNewUser).subscribe(() => {
+        this.notification.success('Sucesso :)', 'Usuário novo criado.');
+        this.router.navigateByUrl('/welcome');
+      },
+        error => {
+          this.notification.error('Ops!', 'Ocorreu um erro, tente novamente.' + '\n' + error);
+        });
+      this.subscriptions.push(subscribeNewUser);
+    }
+  }
+
+  private createFormNewUser() {
+    this.formNewUser = this.formBuilder.group({
+      email: [null, [Validators.required]],
+      password: [null, [Validators.required]],
+      name: [null, [Validators.required]],
+      isAdmin: [null, [Validators.required]],
+      address: this.formBuilder.group({
+        neighborhood: [null, [Validators.required]],
+        zipCode: [null, [Validators.required]],
+        street: [null, [Validators.required]],
+        number: [null, [Validators.required]],
+        city: [null, [Validators.required]],
+        state: [null, [Validators.required]],
+        addressDetails: [null]
+      })
+    });
+  }
+  //#endregion newUser
+
+  //#region profileMethods
 
   private mapModelToForm() {
     this.form.patchValue({
@@ -65,10 +120,6 @@ export class UserFormComponent implements OnInit, OnDestroy {
     const subscription = this.userService.getById(id).subscribe(
       response => {
         this.userModel = response;
-        this.radioValueIsAdmin = response.isAdmin || false;
-        if (response.isAdmin) {
-          this.userIsAdmin = true;
-        }
         this.mapModelToForm();
       },
       error => this.notification.error('Oops!', error)
@@ -77,18 +128,15 @@ export class UserFormComponent implements OnInit, OnDestroy {
   }
 
   public submitUpdateUser() {
-    this.userModel.isAdmin = true;
-    // this.userModel.isAdmin = this.radioValueIsAdmin;
-    this.userModel.password = this.form.value.password;
-
     if (this.form.valid && this.form.dirty) {
-      const subscribeNewUser = this.userService.updateUser(this.authService.tokenData.nameid, this.userModel).subscribe(() => {
+      const subscribeUpdateuser = this.userService.updateUser(this.authService.tokenData.nameid, this.form.value).subscribe(() => {
         this.notification.success('Sucesso :)', 'Dados de perfil atualizados!');
+        this.router.navigateByUrl('/welcome');
       },
         error => {
           this.notification.error('Ops!', 'Ocorreu um erro, tente novamente.' + '\n' + error);
         });
-      this.subscriptions.push(subscribeNewUser);
+      this.subscriptions.push(subscribeUpdateuser);
     }
   }
 
@@ -108,6 +156,8 @@ export class UserFormComponent implements OnInit, OnDestroy {
       })
     });
   }
+
+  //#endregion profileMethods
 
   // private savingSuccess(message: string) {
   //   this.form.reset();
