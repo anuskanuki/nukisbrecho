@@ -28,6 +28,8 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzBackTopModule } from 'ng-zorro-antd/back-top';
 import { NzTimelineModule } from 'ng-zorro-antd/timeline';
+import { NzResultModule } from 'ng-zorro-antd/result';
+
 
 @NgModule({
   exports: [
@@ -60,6 +62,7 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
     NzUploadModule,
     NzBackTopModule,
     NzTimelineModule,
+    NzResultModule,
   ],
 })
 export class NgZorroAntdModule { }

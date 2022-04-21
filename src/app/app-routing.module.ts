@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './core/services/auth.guard';
+import { ForbiddenComponent } from './pages/server-errors/forbidden/forbidden.component';
+import { NotFoundComponent } from './pages/server-errors/not-found/not-found.component';
+import { ServerErrorComponent } from './pages/server-errors/server-error/server-error.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/welcome' },
@@ -32,12 +35,26 @@ const routes: Routes = [
       import('./pages/purchase/purchase.module').then((m) => m.PurchaseModule),
     canActivate: [AuthGuard]
   },
-  // {
-  //   path: '404',
-  //   loadChildren: () =>
-  //     import('./pages/purchase/purchase.module').then((m) => m.PurchaseModule),
-  //   canActivate: [AuthGuard]
-  // },
+  {
+    path: '404',
+    component: NotFoundComponent
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
+  },
+  {
+    path: '500',
+    component: ServerErrorComponent
+  },
+  {
+    path: 'forbidden',
+    component: ForbiddenComponent
+  },
+  {
+    path: '403',
+    component: ForbiddenComponent
+  },
 ];
 
 @NgModule({

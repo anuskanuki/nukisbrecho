@@ -45,14 +45,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.location.back();
   }
 
-  createBasicNotification(title: string, content: string): void {
-    this.notification
-      .blank(
-        title,
-        content
-      );
-  }
-
   public isNewUser() {
     this.selectedWichMethod = true;
     this.newUser = true;
@@ -90,12 +82,12 @@ export class LoginComponent implements OnInit, OnDestroy {
     if (this.formNewUser.valid && this.formNewUser.dirty) {
       newUser.isAdmin = false;
       const subscribeNewUser = this.loginService.newUser(newUser).subscribe(() => {
-        this.createBasicNotification('Sucesso :)', 'Você será redirecionado ao site.');
+        this.notification.success('Sucesso :)', 'Você será redirecionado ao site.');
         this.loggedIn = true;
         this.router.navigateByUrl('/welcome');
       },
         error => {
-          this.createBasicNotification('Ops!', 'Ocorreu um erro, tente novamente.' + '\n' + error);
+          this.notification.error('Ops!', 'Ocorreu um erro, tente novamente.' + '\n' + error);
         });
       this.subscriptions.push(subscribeNewUser);
     }
@@ -103,12 +95,12 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   public submitRegisteredUser(userCredentials: LoginModel) {
     const subscribe = this.loginService.login(userCredentials).subscribe(() => {
-      this.createBasicNotification('Sucesso :)', 'Bem-vindo!');
+      this.notification.success('Sucesso :)', 'Bem-vindo!');
       this.router.navigateByUrl('/welcome');
       this.loggedIn = true;
     },
       error => {
-        this.createBasicNotification('Ops!', 'Confira suas credenciais.' + '\n' + error);
+        this.notification.error('Ops!', 'Confira suas credenciais.' + '\n' + error);
       });
     this.subscriptions.push(subscribe);
   }

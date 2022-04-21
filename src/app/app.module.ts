@@ -19,6 +19,7 @@ import { LoginModule } from './pages/login/login.module';
 import { AppComponent } from './app.component';
 import { TokenService } from './core/services/token.service';
 import { AuthGuard } from './core/services/auth.guard';
+import { ServerErrosPagesModule } from './pages/server-errors/serverErrosPages.module';
 
 
 registerLocaleData(pt);
@@ -41,6 +42,7 @@ registerLocaleData(pt);
     RouterModule,
     ReactiveFormsModule,
     LoginModule,
+    ServerErrosPagesModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: pt_BR }, TokenService, AuthGuard],
   bootstrap: [AppComponent]
