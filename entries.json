@@ -860,6 +860,18 @@
           "author": "Gabriel",
           "question": "Qual o tamanho?",
           "answer": ""
+        },
+        {
+          "questionId": 2,
+          "author": "Gabriel",
+          "question": "Qual o tempo de uso?",
+          "answer": "incerto"
+        },
+        {
+          "questionId": 3,
+          "author": "X",
+          "question": "Qual a marca?",
+          "answer": ""
         }
       ]
     },

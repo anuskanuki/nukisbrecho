@@ -42,14 +42,23 @@
                     </td>
 
                     <td [nzAlign]="'center'">
-                        <nz-space>
-                            <ng-template #iconTpl>
-                                <i nz-icon nzType="question-circle-o" style="color: red;"></i>
-                            </ng-template>
+                        <ng-template #iconTpl>
+                            <i nz-icon nzType="question-circle-o" style="color: rgb(3, 3, 3);"></i>
+                        </ng-template>
 
-                            <a *nzSpaceItem nz-popconfirm nzPopconfirmTitle="Deseja mesmo deletar o usuário?"
-                                [nzIcon]="iconTpl" (nzOnConfirm)="delete(user.id, user.name ||'selecionado')">
+                        <nz-space *ngIf="user.isActive">
+                            <a *nzSpaceItem nz-popconfirm nzPopconfirmTitle="Deseja mesmo inativar o usuário?"
+                                [nzIcon]="iconTpl" nzPopconfirmPlacement="left"
+                                (nzOnConfirm)="changeIsActive(user.id, user.name ||'selecionado', user.isActive || false)">
                                 <i class="delete-icon" nz-icon nzType="delete" nzTheme="outline"></i>
+                            </a>
+                        </nz-space>
+
+                        <nz-space *ngIf="!user.isActive">
+                            <a *nzSpaceItem nz-popconfirm nzPopconfirmTitle="Deseja mesmo ativar o usuário?"
+                                [nzIcon]="iconTpl" nzPopconfirmPlacement="left"
+                                (nzOnConfirm)="changeIsActive(user.id, user.name ||'selecionado', user.isActive || false)">
+                                <i class="redo-icon" nz-icon nzType="redo" nzTheme="outline"></i>
                             </a>
                         </nz-space>
                     </td>

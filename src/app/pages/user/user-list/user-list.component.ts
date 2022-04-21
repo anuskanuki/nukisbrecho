@@ -42,13 +42,17 @@ export class UserListComponent implements OnInit, OnDestroy {
     this.subscriptions.push(subscription);
   }
 
-  public delete(id: any, user: string) {
+  public changeIsActive(id: any, user: string, isActive: boolean) {
     const subscription = this.userService.delete(id).subscribe(
       () => {
-        this.notification.success('Usuário deletado', 'Usuário: ' + user);
+        if (isActive) {
+          this.notification.success('Usuário inativado', 'Usuário: ' + user);
+        } else {
+          this.notification.success('Usuário ativado', 'Usuário: ' + user);
+        }
         setTimeout(() => {
           location.reload();
-        }, 4000);
+        }, 3000);
       },
       error => {
         this.notification.error('Oops!', error);

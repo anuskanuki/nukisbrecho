@@ -20,10 +20,10 @@
           <ng-template #templateAguardandoResposta>
 
             <nz-timeline-item nzColor="gray">
-              <p>aguardando resposta</p>
+              <span>aguardando resposta</span>
 
               <ng-container *ngIf="isAdminClaim">
-                <button (click)="openAnswerToAdmin()">responder</button>
+                <button class="answer-btn" nz-button nzType="primary" (click)="openAnswerToAdmin()">responder</button>
 
                 <form *ngIf="answerToAdminIsOpen" [formGroup]="form">
                   <div nz-col nzSpan="24">
