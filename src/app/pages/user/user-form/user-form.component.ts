@@ -7,7 +7,7 @@ import { UserService } from '../services/user.service';
 import { Subscription } from 'rxjs';
 import { TokenService } from 'src/app/core/services/token.service';
 import { States } from '../../login/enum/states.enum';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NewUserModel } from '../../login/models/login.model';
 
 @Component({
@@ -19,11 +19,13 @@ export class UserFormComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription[] = [];
   statesArray: Array<string> = Object.keys(States).filter(key => isNaN(+key));
+
   public form!: FormGroup;
   public formNewUser!: FormGroup;
-  public userModel: UserModel;
-  passwordVisible = false;
 
+  public userModel: UserModel;
+
+  public passwordVisible = false;
   public radioValueIsAdmin = false;
 
   public isAdminNewUser = false;
@@ -41,23 +43,19 @@ export class UserFormComponent implements OnInit, OnDestroy {
     private notification: NzNotificationService,
     private readonly formBuilder: FormBuilder,
     private router: Router,
+    private route: ActivatedRoute,
   ) { this.userModel = new UserModel(); }
 
   ngOnInit(): void {
-    this.routerId = this.router.url.split('/')[2];
+    this.routerId = this.route.snapshot.params.id;
 
-    if (this.routerId !== '') {
+    if (this.routerId) {
       this.isAdminNewUser = false;
-    } else {
-      this.isAdminNewUser = true;
-    }
-
-    if (this.isAdminNewUser) {
-      this.createFormNewUser();
-
-    } else {
       this.createForm();
       this.getById(this.authService.tokenData.nameid);
+    } else {
+      this.isAdminNewUser = true;
+      this.createFormNewUser();
     }
   }
 
@@ -158,15 +156,6 @@ export class UserFormComponent implements OnInit, OnDestroy {
   }
 
   //#endregion profileMethods
-
-  // private savingSuccess(message: string) {
-  //   this.form.reset();
-  //   this.userModel = {};
-  //   this.notification.success('Sucesso!', message),
-  //     setTimeout(() => {
-  //       this.back();
-  //     }, 500);
-  // }
 
   back(): void {
     this.location.back();
