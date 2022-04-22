@@ -23,7 +23,7 @@
   position: relative;
   z-index: 10;
   min-height: 100vh;
-  box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+  box-shadow: 2px 0 6px #00152914;
 }
 
 .header-trigger {
@@ -44,7 +44,7 @@
   padding-left: 24px;
   overflow: hidden;
   line-height: 64px;
-  background: #001529;
+  background: #d6d6d6e0;
   transition: all 0.3s;
 }
 
@@ -57,11 +57,11 @@
 
 .sidebar-logo h1 {
   display: inline-block;
-  margin: 0 0 0 20px;
-  color: #fff;
+  margin: 4px 0 0 20px;
+  color: black;
   font-weight: 600;
-  font-size: 14px;
-  font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-family: ui-serif;
   vertical-align: middle;
 }
 
@@ -97,6 +97,56 @@ nz-content {
 app-login {
   min-width: 100vw;
   min-height: 100vh;
+}
+
+:host ::ng-deep .ant-layout-sider {
+  background: #d6d6d6e0;
+}
+
+:host ::ng-deep .ant-menu-dark .ant-menu-item:hover,
+.ant-menu-dark .ant-menu-item-active,
+.ant-menu-dark .ant-menu-submenu-active,
+.ant-menu-dark .ant-menu-submenu-open,
+.ant-menu-dark .ant-menu-submenu-selected,
+.ant-menu-dark .ant-menu-submenu-title:hover {
+  color: #7f7272;
+}
+
+:host ::ng-deep .ant-menu-dark .ant-menu-item,
+.ant-menu-dark .ant-menu-item-group-title,
+.ant-menu-dark .ant-menu-item > a,
+.ant-menu-dark .ant-menu-item > span > a {
+  color: black;
+}
+
+:host ::ng-deep .ant-menu-dark .ant-menu-item:hover,
+.ant-menu-dark .ant-menu-item-active,
+.ant-menu-dark .ant-menu-submenu-active,
+.ant-menu-dark .ant-menu-submenu-open,
+.ant-menu-dark .ant-menu-submenu-selected,
+.ant-menu-dark .ant-menu-submenu-title:hover {
+  color: black;
+}
+
+:host ::ng-deep .ant-menu.ant-menu-dark,
+.ant-menu-dark .ant-menu-sub,
+.ant-menu.ant-menu-dark .ant-menu-sub {
+  background: #d6d6d6e0;
+}
+
+:host ::ng-deep .ant-menu-dark.ant-menu-inline .ant-menu-item,
+.ant-menu-dark.ant-menu-inline .ant-menu-submenu-title {
+  color: black;
+  font-weight: 500;
+}
+
+:host ::ng-deep .ant-menu {
+  color: black;
+  background: #d6d6d6e0;
+}
+
+:host ::ng-deep .ant-menu-dark .ant-menu-inline.ant-menu-sub {
+  background: #d6d6d6e0;
 }
 
 :host

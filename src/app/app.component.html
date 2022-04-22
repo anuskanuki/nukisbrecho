@@ -11,7 +11,7 @@
 
       <div class="sidebar-logo">
         <a (click)="goToHome()">
-          <img alt="home" src="../assets/images/smiley_face.png" />
+          <img alt="home" src="../assets/images/nukislogo.png" />
           <h1>Nuki's Brechó</h1>
         </a>
       </div>
@@ -82,19 +82,19 @@
             <ng-container *ngIf="isLoggedIn; then menuLoggedAccess else menuNotLoggedInAccess"></ng-container>
 
             <ng-template #menuLoggedAccess>
-              <li nz-menu-item routerLink="/user/orders">meus pedidos</li>
+              <li nz-menu-item routerLink="/user/orders">Meus pedidos</li>
 
-              <li nz-menu-item routerLink="/user/notifications">notificações</li>
+              <li nz-menu-item routerLink="/user/notifications">Notificações</li>
 
-              <li nz-menu-item (click)="goToProfile()">perfil</li>
+              <li nz-menu-item (click)="goToProfile()">Perfil</li>
 
-              <li nz-menu-item (click)="logout()">sair</li>
+              <li nz-menu-item (click)="logout()">Sair</li>
 
-              <li> <label>Olá, {{userData?.unique_name ||'erro ao carregar nome de usuário'}} :)</label></li>
+              <li> <label>Olá, {{firstName ||'erro ao carregar nome de usuário'}} :)</label></li>
             </ng-template>
 
             <ng-template #menuNotLoggedInAccess>
-              <li nz-menu-item routerLink="/login">entrar</li>
+              <li nz-menu-item routerLink="/login">Entrar</li>
             </ng-template>
 
           </ul>
