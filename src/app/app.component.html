@@ -83,15 +83,16 @@
             <ng-container *ngIf="isLoggedIn; then menuLoggedAccess else menuNotLoggedInAccess"></ng-container>
 
             <ng-template #menuLoggedAccess>
+              <li class="padding-sides"><span>Olá, {{firstName ||'erro ao carregar nome de usuário'}} :)</span></li>
+
+              <li nz-menu-item (click)="goToProfile()">Minha conta</li>
+
               <li nz-menu-item routerLink="/user/orders">Meus pedidos</li>
 
-              <li nz-menu-item routerLink="/user/notifications">Notificações</li>
-
-              <li nz-menu-item (click)="goToProfile()">Perfil</li>
+              <!-- <li nz-menu-item routerLink="/user/notifications">Notificações</li> -->
 
               <li nz-menu-item (click)="logout()">Sair</li>
 
-              <li> <label>Olá, {{firstName ||'erro ao carregar nome de usuário'}} :)</label></li>
             </ng-template>
 
             <ng-template #menuNotLoggedInAccess>
