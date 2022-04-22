@@ -8,11 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checking out
       - uses: actions/checkout@v3
 
-      # - name: Installing dependencies
-      #   run: npm i
+      - name: Installing dependencies
+        run: npm i
 
       # - name: Deploying to Heroku
       #   run: git push heroku teste-deploy:main
