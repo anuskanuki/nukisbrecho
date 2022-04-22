@@ -91,33 +91,36 @@
                 <p>Chave e-mail: nukibrecho@gmail.com</p>
                 <p>Envie seu comprovante de pagamento aqui e assim que seu pagamento for confirmado, entraremos
                     em contato para combinar envio ou retirada da compra :)</p>
+
                 <form>
-                    <input type="file" accept=".jpg, .jpeg, .png" (change)="confirmPaymentReceiptAttached()">
+                    <input id="filePix" class="upload" type="file" accept=".jpg, .jpeg, .png"
+                        (change)="confirmPaymentReceiptAttached()" style="display:none;">
+                    <label class="upload" for="filePix">
+                        <i style="font-size: 30px;" nz-icon nzType="upload" nzTheme="outline"></i>
+                    </label>
                 </form>
             </ng-template>
 
             <ng-template #templateTransferenciaBancaria>
                 <h3>Transferência Bancária</h3>
                 <p>Dados da conta:</p>
-                <p>Banco: xxx</p>
-                <p>Agência: xxx</p>
-                <p>Conta: xxxx</p>
-                <p>Dígito: x</p>
+                <p>Banco: Banco Nukis</p>
+                <p>Agência: 0001</p>
+                <p>Conta: 1234567</p>
+                <p>Dígito: 8</p>
                 <p>Envie seu comprovante de pagamento aqui e assim que seu pagamento for confirmado, entraremos
                     em contato para combinar envio ou retirada da compra :)</p>
+
                 <form>
-                    <input type="file" accept=".jpg, .jpeg, .png" (change)="confirmPaymentReceiptAttached()">
+                    <input id="filePix" class="upload" type="file" accept=".jpg, .jpeg, .png"
+                        (change)="confirmPaymentReceiptAttached()" style="display:none;">
+                    <label class="upload" for="filePix">
+                        <i style="font-size: 30px;" nz-icon nzType="upload" nzTheme="outline"></i>
+                    </label>
                 </form>
             </ng-template>
-
-            <div nz-row nzAlign="bottom" class="confirm-button">
-                <button nz-button nzType="primary" routerLink="confirmation"
-                    [disabled]="!paymentReceiptAttached" (click)="buyProduct()">confirmar
-                    compra</button>
-            </div>
         </div>
     </div>
-
 </ng-template>
 
 <ng-template #templateLogInFirst>
@@ -126,6 +129,14 @@
     <a routerLink="/login">Entrar com minhas credenciais</a>
 </ng-template>
 
-<div nz-row nzAlign="bottom" class="mt-btn-return">
-    <button nz-button nzType="primary" (click)="back()">voltar</button>
+<div nz-row nzJustify="center" nzAlign="middle" class="mt-btn-return">
+    <div nz-col nzSpan="12">
+        <button nz-button nzType="primary" (click)="back()">voltar</button>
+    </div>
+
+    <div class="button-enviar" nz-col nzSpan="12">
+        <button nz-button nzType="primary" routerLink="confirmation" [disabled]="!paymentReceiptAttached"
+            (click)="buyProduct()" class="confirm-button">confirmar
+            compra</button>
+    </div>
 </div>

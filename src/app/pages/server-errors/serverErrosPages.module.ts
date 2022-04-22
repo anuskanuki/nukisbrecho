@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { NgZorroAntdModule } from 'src/app/core/modules/ng-zorro-antd.module';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
@@ -14,7 +15,8 @@ import { ServerErrorComponent } from './server-error/server-error.component';
   ],
   imports: [
     CommonModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    RouterModule
   ],
   exports: [
     ServerErrorComponent,

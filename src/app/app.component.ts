@@ -18,6 +18,7 @@ export class AppComponent implements OnInit, OnDestroy {
   isLoggedIn = false;
   isAdmin = false;
   showLayout = true;
+  firstName = '';
 
   userData?: LoggedUserModel;
   public formSearch!: FormGroup;
@@ -50,6 +51,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.isAdmin = this.authService.tokenData.isAdmin;
+    this.firstName = this.authService.tokenData.unique_name.split(' ')[0];
     this.createformSearchBar();
     this.getProducts();
   }

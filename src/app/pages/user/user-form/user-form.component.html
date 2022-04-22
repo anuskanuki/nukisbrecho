@@ -26,6 +26,21 @@
                         </nz-form-control>
                     </nz-form-item>
                 </div>
+
+                <div nz-col nzSpan="24">
+                    <nz-form-item class="grid">
+                        <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Permissão<span
+                                class="required-mark">*</span>
+                        </nz-form-label>
+
+                        <nz-form-control>
+                            <nz-radio-group formControlName="isAdmin" [(ngModel)]="radioValueIsAdmin">
+                                <label nz-radio [nzValue]="false">Usuário</label>
+                                <label nz-radio [nzValue]="true">Administrador</label>
+                            </nz-radio-group>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
             </div>
         </div>
 
@@ -122,19 +137,8 @@
             </div>
         </div>
 
-        <div nz-col nzSpan="24">
-            <nz-form-item class="grid">
-                <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Permissão<span
-                        class="required-mark">*</span>
-                </nz-form-label>
-
-                <nz-form-control>
-                    <nz-radio-group formControlName="isAdmin" [(ngModel)]="radioValueIsAdmin">
-                        <label nz-radio [nzValue]="false">Usuário</label>
-                        <label nz-radio [nzValue]="true">Administrador</label>
-                    </nz-radio-group>
-                </nz-form-control>
-            </nz-form-item>
+        <div nz-row>
+            <nz-divider nz-col nzSpan="12" nzText="Autenticação" nzOrientation="left"></nz-divider>
         </div>
 
         <div nz-col nzSpan="6">
@@ -286,6 +290,10 @@
                     </nz-form-control>
                 </nz-form-item>
             </div>
+        </div>
+
+        <div nz-row>
+            <nz-divider nz-col nzSpan="12" nzText="Autenticação" nzOrientation="left"></nz-divider>
         </div>
 
         <div nz-col nzSpan="6">
