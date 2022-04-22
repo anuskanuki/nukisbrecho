@@ -1,4 +1,6 @@
-<nz-collapse nzGhost nzAccordion>
+<label>Ajuda e Avaliações</label>
+
+<nz-collapse nzGhost nzAccordion class="card">
     <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name" [nzActive]="panel.active">
         <p style="margin:0;">
             <ng-container *ngIf="panel.template ==0 then templateQuemSomos"></ng-container>

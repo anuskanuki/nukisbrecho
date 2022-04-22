@@ -8,6 +8,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { Subscription } from 'rxjs';
 import { PurchaseService } from '../services/purchase.service';
 import { UserByIdModel } from '../models/purchase.model';
+import { NzUploadFile } from 'ng-zorro-antd/upload';
 
 @Component({
   selector: 'app-purchase',
@@ -95,7 +96,7 @@ export class PurchaseComponent implements OnInit, OnDestroy {
   }
 
   getUserInfo() {
-    this.userName = this.tokenService.tokenData.unique_name;
+    this.userName = this.tokenService.tokenData.unique_name.split(' ')[0];
     this.userId = this.tokenService.tokenData.nameid;
     this.getUserAddress();
   }

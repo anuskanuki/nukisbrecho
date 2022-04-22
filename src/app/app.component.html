@@ -11,7 +11,7 @@
 
       <div class="sidebar-logo">
         <a (click)="goToHome()">
-          <img alt="home" src="../assets/images/smiley_face.png" />
+          <img alt="home" src="../assets/images/nukislogo.png" />
           <h1>Nuki's Brechó</h1>
         </a>
       </div>
@@ -59,6 +59,7 @@
       <nz-header>
         <div class="app-header">
           <ul class="center-navbar" nz-menu nzMode="horizontal" class="header-menu">
+
             <li nz-menu-item nzSelected>
               <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
                 <em class="trigger" nz-icon [nzType]="isCollapsed ? 'right' : 'left'"></em>
@@ -82,19 +83,20 @@
             <ng-container *ngIf="isLoggedIn; then menuLoggedAccess else menuNotLoggedInAccess"></ng-container>
 
             <ng-template #menuLoggedAccess>
-              <li nz-menu-item routerLink="/user/orders">meus pedidos</li>
+              <li class="padding-sides"><span>Olá, {{firstName ||'erro ao carregar nome de usuário'}} :)</span></li>
 
-              <li nz-menu-item routerLink="/user/notifications">notificações</li>
+              <li nz-menu-item (click)="goToProfile()">Minha conta</li>
 
-              <li nz-menu-item (click)="goToProfile()">perfil</li>
+              <li nz-menu-item routerLink="/user/orders">Meus pedidos</li>
 
-              <li nz-menu-item (click)="logout()">sair</li>
+              <!-- <li nz-menu-item routerLink="/user/notifications">Notificações</li> -->
 
-              <label>Olá, {{userData?.unique_name ||'erro ao carregar nome de usuário'}} :)</label>
+              <li nz-menu-item (click)="logout()">Sair</li>
+
             </ng-template>
 
             <ng-template #menuNotLoggedInAccess>
-              <li nz-menu-item routerLink="/login">entrar</li>
+              <li nz-menu-item routerLink="/login">Entrar</li>
             </ng-template>
 
           </ul>
@@ -106,6 +108,7 @@
           <router-outlet></router-outlet>
         </div>
       </nz-content>
+
     </nz-layout>
   </nz-layout>
 </ng-template>
