@@ -1,0 +1,21 @@
+<div style="margin-bottom: 8px;">Notificações</div>
+
+<nz-list nzItemLayout="horizontal">
+    <nz-list-item *ngFor="let notification of notificationsList">
+        <nz-list-item-meta nzAvatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
+
+            <nz-list-item-meta-title>
+                <a [routerLink]="notification.routeLinkTo">{{ notification.title }}</a>
+            </nz-list-item-meta-title>
+
+            <nz-list-item-meta-description>
+                <a [routerLink]="notification.routeLinkTo"> {{ notification.description }}</a>
+            </nz-list-item-meta-description>
+
+        </nz-list-item-meta>
+    </nz-list-item>
+</nz-list>
+
+<div nz-row nzAlign="bottom">
+    <button nz-button nzType="primary" (click)="back()">voltar</button>
+</div>

@@ -1,0 +1,25 @@
+p {
+  margin: 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-areas:
+    "images description"
+    "chat chat";
+  grid-gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+}
+
+.item1 {
+  grid-area: images;
+}
+
+.item2 {
+  grid-area: description;
+}
+
+.item3 {
+  grid-area: chat;
+}

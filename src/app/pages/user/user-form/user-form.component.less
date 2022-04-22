@@ -1,0 +1,82 @@
+.label {
+  font-size: 15px;
+  color: black;
+  font-weight: 500;
+}
+
+.grid {
+  display: grid;
+}
+
+.button-enviar {
+  text-align: right;
+}
+
+.required-mark {
+  color: #df2b0f;
+  margin-left: 4px;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.ant-form-item-label {
+  text-align: left;
+}
+
+.ant-input {
+  border-radius: 8px !important;
+  height: 48px;
+}
+
+:host
+  ::ng-deep
+  .ant-select-single:not(.ant-select-customize-input)
+  .ant-select-selector {
+  border-radius: 8px !important;
+  height: 48px;
+}
+
+:host ::ng-deep .ant-select {
+  width: 100% !important;
+}
+
+.ant-divider-horizontal.ant-divider-with-text {
+  margin-top: 0px;
+}
+
+:host ::ng-deep .ant-input-affix-wrapper {
+  border-radius: 8px !important;
+  height: inherit;
+}
+
+button {
+  border-radius: 5px;
+  height: 37px;
+  width: 120px;
+  color: white;
+  border-color: transparent;
+  background-color: #c87bd3e8;
+  line-height: 12px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .layout {
+    padding: 0% 10%;
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #9999994f;
+  background-color: #d9d8d87a;
+  color: #928f8f;
+  cursor: default;
+}

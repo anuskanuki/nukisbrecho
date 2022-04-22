@@ -1,0 +1,77 @@
+<nz-collapse nzGhost nzAccordion>
+    <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name" [nzActive]="panel.active">
+        <p style="margin:0;">
+            <ng-container *ngIf="panel.template ==0 then templateQuemSomos"></ng-container>
+
+            <ng-container *ngIf="panel.template ==1 then templateComoComprar"></ng-container>
+
+            <ng-container *ngIf="panel.template ==2 then templateAvaliacoes"></ng-container>
+
+            <ng-container *ngIf="panel.template ==3 then templateContato"></ng-container>
+        </p>
+    </nz-collapse-panel>
+</nz-collapse>
+
+<ng-template #templateQuemSomos>
+    <h3>Informações</h3>
+    <p>Que bom te ver por aqui! O Nuki's Brechó pertence à Nuki (jura? hehehe) desde 2016, onde as vendas iniciaram pelo
+        Enjoei e
+        Instagram, e agora, temos esse site sendo desenvolvido como Trabalho de Conclusão de Curso da Nuki em Sistemas
+        de Informação na FURB!</p>
+</ng-template>
+
+<ng-template #templateComoComprar>
+    <h3>Veja bem:</h3>
+    <p>Ao comprar uma peça, você será redirecionado para o pagamento, e após seu pagamento ser confirmado, você combina
+        a retirada ou envio pelos meios de contato :)</p>
+</ng-template>
+
+<ng-template #templateAvaliacoes>
+    <h3>Avalie o Nuki's Brechó!</h3>
+
+    <p>
+        Avaliações são muito importantes para a melhoria contínua! Sinta-se a vontade para nos dar uma nota de 01 a 05 e
+        colaborar com nosso desenvolvimento!
+    </p>
+
+    <p>
+        <nz-rate [nzDisabled]="disableVoting" (ngModelChange)="rateStore($event)"
+            [ngModel]="starsHelpModel.starsAverage"></nz-rate>
+    </p>
+
+    <!-- <div nz-row>
+        <button nz-button nzType="primary" (click)="rateStore()">enviar avaliação</button>
+    </div> -->
+</ng-template>
+
+<ng-template #templateContato>
+    <h3>Contate-nos</h3>
+
+    <p>Alguma dúvida a mais? Relax! Você pode entrar em contato com o brechó pelas seguintes formas:</p>
+
+    <p>
+        <a href="mailto:anuska.rehn@gmail.com?Subject=Nuki%20Brecho%20-duvida" target="_blank">
+            <i nz-icon nzType="mail" nzTheme="outline" class="size-icons"></i>
+            <span>anuska.rehn@gmail.com</span>
+        </a>
+    </p>
+
+    <p>
+        <a href="https://api.whatsapp.com/send?phone=5547991621654&text=Oie!%20Tudo%20certinho%3F%20Preciso%20tirar%20alguma%20d%C3%BAvida%20sobre%20o%20Nuki%20Brech%C3%B3!"
+            target="_blank">
+            <i nz-icon nzType="whats-app" nzTheme="outline" class="size-icons"></i>
+            <span>+55 (47) 99162-1654</span>
+        </a>
+    </p>
+
+    <p>
+        <a href="https://www.instagram.com/brechodanuki/" target="_blank">
+            <i nz-icon nzType="instagram" nzTheme="outline" class="size-icons"></i>
+            <span>@brechodanuki</span>
+        </a>
+    </p>
+</ng-template>
+
+<div nz-row nzAlign="bottom">
+    <button nz-button nzType="primary" (click)="back()">voltar</button>
+</div>

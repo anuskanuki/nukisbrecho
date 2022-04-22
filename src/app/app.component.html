@@ -1,0 +1,111 @@
+<ng-container *ngIf="showLayout; then withLayout else withoutLayout"></ng-container>
+
+<ng-template #withoutLayout>
+  <router-outlet></router-outlet>
+</ng-template>
+
+<ng-template #withLayout>
+  <nz-layout class="app-layout">
+    <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
+      [nzTrigger]="null">
+
+      <div class="sidebar-logo">
+        <a (click)="goToHome()">
+          <img alt="home" src="../assets/images/smiley_face.png" />
+          <h1>Nuki's Brechó</h1>
+        </a>
+      </div>
+
+      <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+        <li nz-submenu nzOpen nzTitle="Produtos" nzIcon="tag">
+          <ul>
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="/product/clothes">Roupas</a>
+            </li>
+
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="/product/accessories">Acessórios</a>
+            </li>
+
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="/product/shoes">Calçados</a>
+            </li>
+
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="/product">Todos produtos</a>
+            </li>
+          </ul>
+        </li>
+
+        <li *ngIf="isAdmin" nz-submenu nzOpen nzTitle="Gerenciamento" nzIcon="form">
+          <ul>
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="/user">Usuário</a>
+            </li>
+          </ul>
+        </li>
+
+        <li nz-submenu nzOpen nzTitle="Ajuda" nzIcon="question-circle">
+          <ul>
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="/welcome/help">Ajuda e Avaliações</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nz-sider>
+
+    <nz-layout>
+      <nz-header>
+        <div class="app-header">
+          <ul class="center-navbar" nz-menu nzMode="horizontal" class="header-menu">
+            <li nz-menu-item nzSelected>
+              <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+                <em class="trigger" nz-icon [nzType]="isCollapsed ? 'right' : 'left'"></em>
+              </span>
+            </li>
+
+            <li nz-menu-item>
+              <form nz-form [formGroup]="formSearch">
+                <nz-form-control>
+                  <nz-select formControlName="title" nzPlaceHolder="Pesquisar prouto por título..." nzShowSearch
+                    onfocus="goToProduct(product.id)" onchange="goToProduct(product.id)"
+                    onkeypress="goToProduct(product.id)" nzAllowClear>
+                    <nz-option nzAllowClear *ngFor="let product of productsList" [nzValue]="product"
+                      [nzLabel]="product.title || 'erro ao carregar título'">
+                    </nz-option>
+                  </nz-select>
+                </nz-form-control>
+              </form>
+            </li>
+
+            <ng-container *ngIf="isLoggedIn; then menuLoggedAccess else menuNotLoggedInAccess"></ng-container>
+
+            <ng-template #menuLoggedAccess>
+              <li nz-menu-item routerLink="/user/orders">meus pedidos</li>
+
+              <li nz-menu-item routerLink="/user/notifications">notificações</li>
+
+              <li nz-menu-item (click)="goToProfile()">perfil</li>
+
+              <li nz-menu-item (click)="logout()">sair</li>
+
+              <label>Olá, {{userData?.unique_name ||'erro ao carregar nome de usuário'}} :)</label>
+            </ng-template>
+
+            <ng-template #menuNotLoggedInAccess>
+              <li nz-menu-item routerLink="/login">entrar</li>
+            </ng-template>
+
+          </ul>
+        </div>
+      </nz-header>
+
+      <nz-content>
+        <div class="inner-content">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+</ng-template>

@@ -1,0 +1,34 @@
+<h3>
+    Meus pedidos
+</h3>
+
+<ng-container *ngFor="let order of ordersList">
+    <nz-card nzType="inner" nzTitle="Pedido #{{order.orderId}}" [nzExtra]="extraTemplate">
+        <div *ngFor="let product of order.products" nz-row style="margin-top:16px;">
+            <a routerLink="/product/{{product.productId}}">
+                <img class="fit-img" nz-image width="80vh" height="80vh" nzSrc="{{product.productPhoto}}"
+                    alt="foto do produto" />
+                <span>{{product.productTitle}}</span>
+            </a>
+        </div>
+
+        <nz-divider nzPlain nzText="Compra realizada em {{order.orderDate}}" nzOrientation="left"></nz-divider>
+
+        <nz-steps>
+            <nz-step nzTitle="realizado" nzStatus="finish" nzIcon="shopping-cart"></nz-step>
+            <nz-step nzTitle="processando pgto." nzStatus="finish" nzIcon="solution"></nz-step>
+            <nz-step nzTitle="pgto. aprovado" nzStatus="process" nzIcon="solution"></nz-step>
+            <nz-step nzTitle="envio" nzStatus="wait" nzIcon="code-sandbox"></nz-step>
+            <nz-step nzTitle="finalizado" nzStatus="wait" [nzIcon]="iconTemplate"></nz-step>
+            <ng-template #iconTemplate><i nz-icon nzType="smile"></i></ng-template>
+        </nz-steps>
+    </nz-card>
+</ng-container>
+
+<ng-template #extraTemplate>
+    <a routerLink="/welcome/help">entrar em contato</a>
+</ng-template>
+
+<div nz-row nzAlign="bottom">
+    <button nz-button nzType="primary" (click)="back()" class="mt-btn-return">voltar</button>
+</div>

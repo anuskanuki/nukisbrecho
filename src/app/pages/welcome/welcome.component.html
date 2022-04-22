@@ -1,0 +1,17 @@
+<img class="bannerimage" src="../../../assets/images/bannernukis.png" alt="dd">
+
+<nz-list nzGrid>
+    <div nz-row [nzGutter]="16">
+
+        <nz-list-item class="wrap-list">
+            <app-product-card *ngFor="let product of productsList" [productPhoto1]="product.photo1 || '-'"
+                [productTitle]="product.title || '-'" [productBrand]="product.brand || '-'"
+                [productPrice]="product.priceTag!.toString() || '0'"
+                (click)="goToProduct(product.id!.toString() ||'0')">
+            </app-product-card>
+        </nz-list-item>
+
+    </div>
+</nz-list>
+
+<nz-back-top></nz-back-top>

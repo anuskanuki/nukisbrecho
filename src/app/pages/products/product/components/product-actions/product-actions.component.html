@@ -1,0 +1,65 @@
+<div class="action-box">
+  <div class="header">
+    <h3 class="product-title">{{productActions?.title }}</h3>
+
+    <ng-container *ngIf="likeThisProduct then templateLiked else templateNotLiked"></ng-container>
+
+    <ng-template #templateNotLiked>
+      <div>
+        <nz-badge [nzCount]="productActions.wishlistedCount">
+          <a (click)="likeProduct()">
+            <i class="size-hearts" nz-icon nzType="heart" nzTheme="outline">
+            </i>
+          </a>
+        </nz-badge>
+      </div>
+    </ng-template>
+
+    <ng-template #templateLiked>
+      <div>
+        <nz-badge [nzCount]="productActions.wishlistedCount">
+          <a (click)="likeProduct()">
+            <i class="size-hearts" nz-icon [nzType]="'heart'" [nzTheme]="'twotone'" [nzTwotoneColor]="'#eb2f96'"></i>
+          </a>
+        </nz-badge>
+      </div>
+    </ng-template>
+  </div>
+
+  <a routerLink="/product">
+    <span class="category-label">Categoria: {{productActions?.category}}</span>
+  </a>
+
+  <span class="price-tag">R$ {{productActions?.priceTag}},00</span>
+
+  <div nz-col nzSpan="24">
+    <nz-card class="center-size" nzTitle="Tamanho {{productActions?.size}}">
+      <div nz-card-grid [ngStyle]="gridStyle">
+        <span>marca:</span>
+        <p>{{productActions?.brand}}</p>
+      </div>
+
+      <div nz-card-grid [ngStyle]="gridStyle">
+        <span>condição:</span>
+        <p>{{productActions?.condition}}</p>
+      </div>
+
+      <div nz-card-grid [ngStyle]="gridStyle">
+        <span>código:</span>
+        <p>{{productActions?.productCode}}</p>
+      </div>
+    </nz-card>
+  </div>
+
+  <div nz-col nzSpan="24">
+    <p class="description-label">Descrição:</p>
+    <span>{{productActions?.description}}</span>
+  </div>
+
+  <button *ngIf="productActions?.active" class="buy-button" nz-button nzType="primary" (click)="goPurchase()"
+    [disabled]="!isLoggedIn" nzTooltipTitle="realize login para efetuar compra" nzTooltipPlacement="top" nz-tooltip
+    [nzTooltipVisible]="!isLoggedIn">comprar
+    agora</button>
+
+  <h3 *ngIf="!productActions?.active">produto já vendido :/</h3>
+</div>

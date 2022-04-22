@@ -1,0 +1,77 @@
+<div nz-row [nzGutter]="[24,24]">
+    <div nz-col nzSpan="24">
+        <div nz-row>
+            <h3 class="page-titile">Usuários</h3>
+        </div>
+
+        <div nz-row>
+            <button nz-button nzType="primary" routerLink="/user/form">novo usuário</button>
+        </div>
+    </div>
+
+    <div nz-col nzSpan="24">
+        <nz-table #usersTable [nzData]="userList">
+            <thead>
+                <tr>
+                    <th>Nome completo</th>
+                    <th>E-mail</th>
+                    <th>Cidade - UF</th>
+                    <th [nzAlign]="'center'">Permissão</th>
+                    <th [nzAlign]="'center'">Ativo</th>
+                    <th [nzAlign]="'center'">Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let user of usersTable.data">
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.city + ' - ' + user.state}}</td>
+
+                    <td [nzAlign]="'center'">
+                        <ng-container *ngIf="user.isAdmin then templateAdminClaim else templateUserClaim">
+                        </ng-container>
+
+                        <ng-template #templateAdminClaim>
+                            <span>Admin</span>
+                        </ng-template>
+
+                        <ng-template #templateUserClaim>
+                            <span>Usuário</span>
+                        </ng-template>
+                    </td>
+
+                    <td [nzAlign]="'center'">
+                        <span [ngClass]="user.isActive? 'valid-status' : 'invalid-status'"></span>
+                    </td>
+
+                    <td [nzAlign]="'center'">
+                        <ng-template #iconTpl>
+                            <i nz-icon nzType="question-circle-o" style="color: rgb(3, 3, 3);"></i>
+                        </ng-template>
+
+                        <nz-space *ngIf="user.isActive">
+                            <a *nzSpaceItem nz-popconfirm nzPopconfirmTitle="Deseja mesmo inativar o usuário?"
+                                [nzIcon]="iconTpl" nzPopconfirmPlacement="left"
+                                (nzOnConfirm)="changeIsActive(user.id, user.name ||'selecionado', user.isActive || false)">
+                                <i class="delete-icon" nz-icon nzType="delete" nzTheme="outline"></i>
+                            </a>
+                        </nz-space>
+
+                        <nz-space *ngIf="!user.isActive">
+                            <a *nzSpaceItem nz-popconfirm nzPopconfirmTitle="Deseja mesmo ativar o usuário?"
+                                [nzIcon]="iconTpl" nzPopconfirmPlacement="left"
+                                (nzOnConfirm)="changeIsActive(user.id, user.name ||'selecionado', user.isActive || false)">
+                                <i class="redo-icon" nz-icon nzType="redo" nzTheme="outline"></i>
+                            </a>
+                        </nz-space>
+                    </td>
+                </tr>
+            </tbody>
+        </nz-table>
+    </div>
+</div>
+
+<div nz-row nzAlign="bottom">
+    <button nz-button nzType="primary" (click)="back()">voltar</button>
+</div>
