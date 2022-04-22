@@ -23,7 +23,7 @@
   position: relative;
   z-index: 10;
   min-height: 100vh;
-  box-shadow: 2px 0 6px #00152914;
+  box-shadow: 2px 0 20px #00152914;
 }
 
 .header-trigger {
@@ -153,11 +153,17 @@ app-login {
   ::ng-deep.ant-select:not(.ant-select-customize-input)
   .ant-select-selector {
   align-items: center;
-  border-radius: 8px;
-  height: 4vh;
+  border-radius: 4px;
 }
 
 :host ::ng-deep.ant-select {
   font-size: 16px;
   width: 35vh;
+}
+
+:host
+  ::ng-deep.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  border-color: none;
+  box-shadow: none;
 }
