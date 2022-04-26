@@ -1,0 +1,21 @@
+name: CI Teste
+
+on:
+  push:
+    branches: [ teste-deploy ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Installing dependencies
+        run: npm i
+
+      - name: Deploying to Heroku
+        uses: AkhileshNS/heroku-deploy@v3.12.12
+        with:
+            heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+            heroku_app_name: nuki-brecho-front-teste
+            heroku_email: ${{ secrets.HEROKU_EMAIL }}
