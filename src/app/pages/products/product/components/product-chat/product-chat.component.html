@@ -23,7 +23,7 @@
               <span>aguardando resposta</span>
 
               <ng-container *ngIf="isAdminClaim">
-                <button class="answer-btn" nz-button nzType="primary" (click)="openAnswerToAdmin()">responder</button>
+                <button class="answer-btn" nz-button nzType="primary" (click)="openAnswerToAdmin()">Responder</button>
 
                 <form *ngIf="answerToAdminIsOpen" [formGroup]="form">
                   <div nz-col nzSpan="24">
@@ -39,7 +39,7 @@
                         <nz-form-item class="align-submit-chat">
                           <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!inputValue"
                             (click)="handleSubmit()">
-                            enviar
+                            Enviar
                           </button>
                         </nz-form-item>
                       </nz-comment-content>
@@ -74,7 +74,7 @@
             <nz-form-item class="align-submit-chat">
               <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!inputValue"
                 (click)="handleSubmit()">
-                enviar
+                Enviar
               </button>
             </nz-form-item>
           </nz-comment-content>

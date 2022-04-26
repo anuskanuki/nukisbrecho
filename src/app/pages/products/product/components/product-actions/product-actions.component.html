@@ -51,14 +51,14 @@
     </nz-card>
   </div>
 
-  <div nz-col nzSpan="24">
+  <div class="border-details" nz-col nzSpan="24">
     <p class="description-label">Descrição:</p>
-    <span>{{productActions?.description}}</span>
+    <span class="details-size">{{productActions?.description}}</span>
   </div>
 
-  <button *ngIf="productActions?.active" class="buy-button" nz-button nzType="primary" (click)="goPurchase()"
-    [disabled]="!isLoggedIn" nzTooltipTitle="realize login para efetuar compra" nzTooltipPlacement="top" nz-tooltip
-    [nzTooltipVisible]="!isLoggedIn">comprar
+  <button *ngIf="productActions?.active" nz-button nzType="primary" (click)="goPurchase()" [disabled]="!isLoggedIn"
+    nzTooltipTitle="Realize login para comprar" nzTooltipPlacement="top" nz-tooltip
+    [nzTooltipVisible]="!isLoggedIn">Comprar
     agora</button>
 
   <h3 *ngIf="!productActions?.active">produto já vendido :/</h3>

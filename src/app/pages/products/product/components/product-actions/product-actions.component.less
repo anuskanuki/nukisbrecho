@@ -9,6 +9,22 @@
   }
 }
 
+.details-size {
+  font-size: 15px;
+}
+
+.border-details {
+  border: 1px solid #a4a4a43b;
+  border-radius: 2px;
+  padding: 9px;
+}
+
+.description-label {
+  font-weight: 500;
+  color: #515151;
+  font-size: 19px;
+}
+
 h3 {
   margin-bottom: 0;
   user-select: none;
@@ -41,10 +57,6 @@ nz-badge {
   font-variant-caps: unicase;
 }
 
-.buy-button {
-  width: 100%;
-}
-
 .margins-buttons {
   align-items: center;
   margin-left: 0px !important;
@@ -59,6 +71,25 @@ nz-badge {
 :host ::ng-deep .ant-card-hoverable:hover {
   box-shadow: none;
   cursor: default;
+}
+
+:host ::ng-deep .ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  border-color: transparent;
+  background: #e9c0e1ab;
+}
+
+button {
+  border-radius: 3px;
+  height: 41px;
+  margin-bottom: 23px;
+  width: 100%;
+  font-weight: 500;
+  color: black;
+  border-color: transparent;
+  background-color: #e9c0e1ab;
+  line-height: 12px;
+  cursor: pointer;
 }
 
 button:disabled,
