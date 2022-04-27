@@ -2,15 +2,13 @@
 
 <nz-list nzGrid>
     <div nz-row [nzGutter]="16">
-
         <nz-list-item class="wrap-list">
             <app-product-card *ngFor="let product of productsList" [productPhoto1]="product.photo1 || '-'"
                 [productTitle]="product.title || '-'" [productBrand]="product.brand || '-'"
-                [productPrice]="product.priceTag!.toString() || '0'"
+                [productSize]="product.size || '-'" [productPrice]="product.priceTag!.toString() || '0'"
                 (click)="goToProduct(product.id!.toString() ||'0')">
             </app-product-card>
         </nz-list-item>
-
     </div>
 </nz-list>
 
