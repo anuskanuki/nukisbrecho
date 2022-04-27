@@ -535,34 +535,26 @@
   },
   "userOrders": [
     {
-      "orderId": 1,
+      "id": 1,
       "orderDate": "12/01/2022",
       "orderStatusRecived": true,
       "orderStatusProcessingPayment": true,
       "orderStatusPaymentOk": true,
       "orderStatusFinished": false,
-      "products": [
-        {
-          "productId": 1,
-          "productTitle": "Blusa verde de lã",
-          "productPhoto": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png"
-        }
-      ]
+      "productId": 1,
+      "productTitle": "Blusa verde de lã",
+      "productPhoto": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png"
     },
     {
-      "orderId": 2,
+      "id": 2,
       "orderDate": "28/01/2022",
       "orderStatusRecived": true,
       "orderStatusProcessingPayment": true,
       "orderStatusPaymentOk": true,
       "orderStatusFinished": false,
-      "products": [
-        {
-          "productId": 2,
-          "productTitle": "Vestido rodado",
-          "productPhoto": "../assets/clothes/vestido.png"
-        }
-      ]
+      "productId": 2,
+      "productTitle": "Vestido rodado",
+      "productPhoto": "../assets/clothes/vestido.png"
     }
   ],
   "userCart": [

@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { UserService } from '../services/user.service';
 import { Subscription } from 'rxjs';
+import { ProductService } from '../../products/services/product.service';
+import { ProductModel } from '../../products/models/product.model';
 
 @Component({
   selector: 'app-orders',
@@ -17,15 +19,35 @@ export class OrdersComponent implements OnInit, OnDestroy {
 
   public ordersList: OrdersUserModel[] = [];
 
+  public productsList: ProductModel[] = [];
+
   constructor(
     private location: Location,
     protected userService: UserService,
+    protected productService: ProductService,
     private notification: NzNotificationService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
     this.getOrdersList();
+    this.getInactiveProducts();
+  }
+
+  getInactiveProducts() {
+    const subscription = this.productService.getFilteredByInactive().subscribe(
+      response => {
+        if (response.length) {
+          this.productsList = response;
+        } else {
+          this.productsList = [];
+        }
+      },
+      error => {
+        this.notification.error('Oops!', error);
+      }
+    )
+    this.subscriptions.push(subscription);
   }
 
   getOrdersList() {

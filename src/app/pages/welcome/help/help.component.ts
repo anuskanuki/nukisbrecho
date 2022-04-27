@@ -63,9 +63,6 @@ export class HelpComponent implements OnInit, OnDestroy {
   }
 
   rateStore(vote: number) {
-
-    console.log(vote)
-
     const starModel = { ...this.starsHelpModel };
 
     starModel.votersCount++;

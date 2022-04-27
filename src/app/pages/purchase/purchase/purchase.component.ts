@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
+import { DatePipe, Location } from '@angular/common';
 import { TokenService } from 'src/app/core/services/token.service';
 import { Router } from '@angular/router';
 import { ProductService } from '../../products/services/product.service';
@@ -8,12 +8,13 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { Subscription } from 'rxjs';
 import { PurchaseService } from '../services/purchase.service';
 import { UserByIdModel } from '../models/purchase.model';
-import { NzUploadFile } from 'ng-zorro-antd/upload';
+import { OrdersUserModel } from '../../user/models/orders.model';
 
 @Component({
   selector: 'app-purchase',
   templateUrl: './purchase.component.html',
-  styleUrls: ['./purchase.component.less']
+  styleUrls: ['./purchase.component.less'],
+  // providers: [DatePipe]
 })
 export class PurchaseComponent implements OnInit, OnDestroy {
 
@@ -26,8 +27,11 @@ export class PurchaseComponent implements OnInit, OnDestroy {
   public finalPrice = 0;
 
   public productModel: ProductModel = {};
+  // public newUserOrder: OrdersUserModel = {};
   public userModel: UserByIdModel = {};
   subscriptions: Subscription[] = [];
+
+  // myDate = new Date();
 
   panels = [
     {
@@ -49,12 +53,14 @@ export class PurchaseComponent implements OnInit, OnDestroy {
     protected productService: ProductService,
     protected purchaseService: PurchaseService,
     private notification: NzNotificationService,
+    // private datePipe: DatePipe
   ) { }
 
   ngOnInit(): void {
     this.routerId = this.router.url.split('/')[2];
     this.verifyLoggedUser();
     this.loadProductById();
+    // this.myDate = this.datePipe.transform(this.myDate, 'dd-MM-yyyy');
   }
 
   private loadProductById() {
@@ -86,12 +92,36 @@ export class PurchaseComponent implements OnInit, OnDestroy {
   buyProduct() {
     if (this.paymentReceiptAttached) {
       this.productModel.active = false;
-      const subscribe = this.purchaseService.updateProduct(this.productModel).subscribe(() => {
-      },
+
+      // const newUserOrder: OrdersUserModel = {
+      //   orderDate: '27/02/2022',
+      //   orderStatusRecived: true,
+      //   orderStatusProcessingPayment: true,
+      //   orderStatusPaymentOk: true,
+      //   orderStatusFinished: true,
+      //   productId: this.productModel.id,
+      //   productTitle: this.productModel.title,
+      //   productPhoto: this.productModel.photo1,
+      // };
+
+      const subscription = this.purchaseService.updateProduct(this.productModel).subscribe(
+        () => {
+          this.notification.success('Sucesso!', 'Pedido de compra efetuado.');
+        },
         error => {
-          this.notification.error('Oops!', error);
-        });
-      this.subscriptions.push(subscribe);
+          this.notification.error('Oops!', error)
+        }
+      )
+      this.notification.success('Sucesso!', 'Pedido de compra efetuado.');
+
+      // const subscribeNewUserOrder = this.purchaseService.insertUserOrder(newUserOrder).subscribe(() => {
+      //   this.notification.success('Feito!', 'Pagamento em análise.');
+      // },
+      //   error => {
+      //     this.notification.error('Ops!', 'Ocorreu um erro, tente novamente.' + '\n' + error);
+      //   });
+
+      this.subscriptions.push(subscription);
     }
   }
 

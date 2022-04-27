@@ -43,6 +43,13 @@ export class ProductService extends BaseService {
             );
     }
 
+    public getFilteredByInactive(): Observable<ProductModel[]> {
+        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?active=false')
+            .pipe(
+                catchError(error => throwError(error.error.errors[0]))
+            );
+    }
+
     public getFilteredByShoes(): Observable<ProductModel[]> {
         return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?category=calcados&active=true&_sort=id&_order=desc')
             .pipe(
