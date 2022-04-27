@@ -30,7 +30,7 @@ export class OrdersComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.getOrdersList();
+    // this.getOrdersList();
     this.getInactiveProducts();
   }
 
@@ -50,21 +50,21 @@ export class OrdersComponent implements OnInit, OnDestroy {
     this.subscriptions.push(subscription);
   }
 
-  getOrdersList() {
-    const subscription = this.userService.getAllUserOrders().subscribe(
-      response => {
-        if (response.length) {
-          this.ordersList = response;
-        } else {
-          this.ordersList = [];
-        }
-      },
-      error => {
-        this.notification.error('Oops!', error);
-      }
-    )
-    this.subscriptions.push(subscription);
-  }
+  // getOrdersList() {
+  //   const subscription = this.userService.getAllUserOrders().subscribe(
+  //     response => {
+  //       if (response.length) {
+  //         this.ordersList = response;
+  //       } else {
+  //         this.ordersList = [];
+  //       }
+  //     },
+  //     error => {
+  //       this.notification.error('Oops!', error);
+  //     }
+  //   )
+  //   this.subscriptions.push(subscription);
+  // }
 
   back(): void {
     this.location.back();
