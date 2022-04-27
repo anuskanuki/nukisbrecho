@@ -26,7 +26,15 @@
     </ng-template>
   </div>
 
-  <a routerLink="/product">
+  <a *ngIf="productActions?.category =='roupas'" routerLink="/product/clothes">
+    <span class="category-label">Categoria: {{productActions?.category}}</span>
+  </a>
+
+  <a *ngIf="productActions?.category =='acessorios'" routerLink="/product/accessories">
+    <span class="category-label">Categoria: {{productActions?.category}}</span>
+  </a>
+
+  <a *ngIf="productActions?.category =='calcados'" routerLink="/product/shoes">
     <span class="category-label">Categoria: {{productActions?.category}}</span>
   </a>
 

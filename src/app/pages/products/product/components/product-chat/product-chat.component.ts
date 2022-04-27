@@ -25,11 +25,6 @@ export class ProductChatComponent implements OnInit, OnDestroy {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any[] = [];
 
-  user = {
-    author: 'Nuki Veber',
-    avatar: '../../../../assets/icons/user-icon.png'
-  };
-
   @Input() routerId = "";
 
   constructor(
@@ -75,7 +70,6 @@ export class ProductChatComponent implements OnInit, OnDestroy {
       productId: this.routerId,
       questions: [{
         questionId: "dar um jeito de pegar qual seria o id",
-        author: "pegarNomeDoUsuario",
         question: "this.form.question.value",
         answer: "resposta pegar do form"
       }]
@@ -100,22 +94,22 @@ export class ProductChatComponent implements OnInit, OnDestroy {
     this.submitting = true;
     const content = this.inputValue;
     this.inputValue = '';
-    setTimeout(() => {
-      this.sendMessage();
-      this.submitting = false;
-      this.data = [
-        ...this.data,
-        {
-          ...this.user,
-          content,
-          datetime: new Date(),
-          displayTime: formatDistance(new Date(), new Date())
-        }
-      ].map(e => ({
-        ...e,
-        displayTime: formatDistance(new Date(), e.datetime)
-      }));
-    }, 800);
+    // setTimeout(() => {
+    //   this.sendMessage();
+    //   this.submitting = false;
+    //   this.data = [
+    //     ...this.data,
+    //     {
+    //       ...this.user,
+    //       content,
+    //       datetime: new Date(),
+    //       displayTime: formatDistance(new Date(), new Date())
+    //     }
+    //   ].map(e => ({
+    //     ...e,
+    //     displayTime: formatDistance(new Date(), e.datetime)
+    //   }));
+    // }, 800);
   }
 
   ngOnDestroy(): void {

@@ -28,7 +28,6 @@
                 <form *ngIf="answerToAdminIsOpen" [formGroup]="form">
                   <div nz-col nzSpan="24">
                     <nz-comment>
-                      <nz-avatar nz-comment-avatar nzIcon="user" [nzSrc]="user.avatar"></nz-avatar>
                       <nz-comment-content>
                         <nz-form-item>
                           <textarea formControlName="answer" [(ngModel)]="inputValue" nz-input
@@ -64,7 +63,6 @@
     <div nz-col nzSpan="24">
       <form [formGroup]="form" *ngIf="!isAdminClaim">
         <nz-comment>
-          <nz-avatar nz-comment-avatar nzIcon="user" [nzSrc]="user.avatar"></nz-avatar>
           <nz-comment-content>
             <nz-form-item>
               <textarea *ngIf="!isAdminClaim" formControlName="question" [(ngModel)]="inputValue" nz-input

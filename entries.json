@@ -38,7 +38,7 @@
       "id": 3,
       "productCode": "#0003",
       "title": "Brinco prata",
-      "description": "Brinco prata seminovo, foi usado poucas vezes, comprado na renner.",
+      "description": "Brinco prata seminovo, foi usado poucas vezes, comprado na renner, possui tarracha acoplada.",
       "category": "acessorios",
       "brand": "renner",
       "size": "único",
@@ -55,7 +55,7 @@
       "id": 4,
       "productCode": "#0004",
       "title": "Sapato bico fino rosa",
-      "description": "Rasteirinha rosa tamanho 38, usada sem marcas de uso, solado mede 26cm.",
+      "description": "Rasteirinha rosa tamanho 38, usada porém sem marcas de uso, marca liberte, solado mede 26cm.",
       "category": "calcados",
       "brand": "liberte",
       "size": "38",
@@ -75,7 +75,7 @@
       "description": "Tênis slip on da VANS, usado pouco, tamanho 36, calça um 37 também, modelagem grande, 22cm de solado.",
       "category": "calcados",
       "brand": "VANS",
-      "size": "M",
+      "size": "36",
       "condition": "usado",
       "priceTag": 48,
       "photo2": "../assets/clothes/vanss.png",
@@ -140,7 +140,7 @@
       "id": 9,
       "productCode": "#0009",
       "title": "Suéter natalino com gola",
-      "description": "Suéter natalino com gola boneco de neve",
+      "description": "Suéter natalino com gola boneco de neve, artesanal, novo. Medidas: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm, mangas 19cm.",
       "category": "roupas",
       "brand": "tricot artesanal",
       "size": "G",
@@ -157,7 +157,7 @@
       "id": 10,
       "productCode": "#0010",
       "title": "Blusa azul gola",
-      "description": "Blusa...",
+      "description": "Blusa azul de gola maleável, tecido de algodão, sem marca, usada, tamanho G.  Medidas: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm, mangas 19cm.",
       "category": "roupas",
       "brand": "sem marca",
       "size": "G",
@@ -174,7 +174,7 @@
       "id": 11,
       "productCode": "#0011",
       "title": "Moletom de coração",
-      "description": "Moletom...",
+      "description": "Moletom com bolsos, capuz e estampa de coração tamanho G, usado, marca renner. Medidas: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm, mangas 19cm.",
       "category": "roupas",
       "brand": "renner",
       "size": "G",
@@ -191,7 +191,7 @@
       "id": 12,
       "productCode": "#0012",
       "title": "T-shirt verde básica",
-      "description": "blusa...",
+      "description": "T-shirt simple basic tamanho PP usada, cor verde, modelo básico, sem avarias. Medidas: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm, mangas 19cm.",
       "category": "roupas",
       "brand": "simple basic",
       "size": "PP",
@@ -208,7 +208,7 @@
       "id": 13,
       "productCode": "#0013",
       "title": "Sapato salto fino",
-      "description": "Salto fino vermelho de bico fino acabamento fosco, tamanho 38, 27cm de solado.",
+      "description": "Salto fino vermelho de bico fino acabamento fosco, tamanho 38, 27cm de solado. Produto usado, porém não possui avarias.",
       "category": "calcados",
       "brand": "Use Hitz",
       "size": "38",
@@ -225,7 +225,7 @@
       "id": 14,
       "productCode": "#0014",
       "title": "Tênis anos 2000",
-      "description": "Tênis usado estilo de anos 2000, cano alto, tamanho 36, 23cm de solado.",
+      "description": "Tênis usado estilo de anos 2000, cano alto, tamanho 36, 23cm de solado. Produto usado, porém sem avarias.",
       "category": "calcados",
       "brand": "Use Hitz",
       "size": "36",
@@ -242,7 +242,7 @@
       "id": 15,
       "productCode": "#0015",
       "title": "Maiô amarelo",
-      "description": "Maiô..",
+      "description": "Maiô amarelo, usado, veste P, possui bastante elastano, marca renner, sem avarias. Medidas: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm",
       "category": "roupas",
       "brand": "renner",
       "size": "P",
@@ -259,7 +259,7 @@
       "id": 16,
       "productCode": "#0016",
       "title": "Luvas vermelhas",
-      "description": "Par de luvas..",
+      "description": "Par novo de luvas quentinhas, tamanho P, mãos de 12 a 16 anos, marca renner.",
       "category": "acessorios",
       "brand": "renner",
       "size": "P",
@@ -276,7 +276,7 @@
       "id": 17,
       "productCode": "#0017",
       "title": "Chinelo lilás",
-      "description": "Par de chinelos..",
+      "description": "Par de chinelos lilás novo, calça 39, não possui avarias, solado mede 27,5cm do calcanhar ao dedão.",
       "category": "calcados",
       "brand": "havaianas",
       "size": "39",
@@ -293,7 +293,7 @@
       "id": 18,
       "productCode": "#0018",
       "title": "Conjunto pijama azul",
-      "description": "pj's..",
+      "description": "Conjunto de pijama de verão na cor azul, tamanho G, marca hope, novo. Medidas blusa: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm, mangas 19cm. Medidas bermuda: gancho 30cm, quadril 130cm. Possui elástico na cintura.",
       "category": "roupas",
       "brand": "hope",
       "size": "G",
@@ -310,7 +310,7 @@
       "id": 19,
       "productCode": "#0019",
       "title": "Camisa Corinthians",
-      "description": "Camisa Corinthians..",
+      "description": "Camisa Corinthians Nike usada, tamanho G, não possui defeitos, tecido em poliéster sem elastano. Medidas: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm, mangas 19cm.",
       "category": "roupas",
       "brand": "nike",
       "size": "G",
@@ -327,7 +327,7 @@
       "id": 20,
       "productCode": "#0020",
       "title": "Mochila rosa coração",
-      "description": "Mochila..",
+      "description": "Mochila grande na cor rosa, detalhe de coração, usada, sem avarias, marca adidas.",
       "category": "acessorios",
       "brand": "adidas",
       "size": "G",
@@ -344,7 +344,7 @@
       "id": 21,
       "productCode": "#0021",
       "title": "Biquíni conjunto rosa",
-      "description": "Biquini..",
+      "description": "Conjunto de biquíni rosa, novo, do mundo lolita, veste M. Medidas da calcinha: cintura 98cm, gancho 30cm. Medidas do sutiã: busto de 70cm a 130cm de circunferência. Possui elastano e regulagem por cordinhas.",
       "category": "roupas",
       "brand": "lolita",
       "size": "M",
@@ -361,7 +361,7 @@
       "id": 22,
       "productCode": "#0022",
       "title": "Chuteira soccer",
-      "description": "Chuteira..",
+      "description": "Chuteira original da adidas, tamanho 42, usada, porém não possui defeitos.",
       "category": "calcados",
       "brand": "adidas",
       "size": "42",
@@ -378,7 +378,7 @@
       "id": 23,
       "productCode": "#0023",
       "title": "Tênis corrida azul",
-      "description": "Tênis..",
+      "description": "Tênis azul de corrida da marca fila, tamanho 37, usado, solado um pouco gasto.",
       "category": "calcados",
       "brand": "fila",
       "size": "37",
@@ -395,7 +395,7 @@
       "id": 24,
       "productCode": "#0024",
       "title": "Tênis adidas",
-      "description": "Tênis..",
+      "description": "Tênis novo da adidas na caixa, tamanho 38, não possui defeitos, é original.",
       "category": "calcados",
       "brand": "adidas",
       "size": "38",
@@ -412,7 +412,7 @@
       "id": 25,
       "productCode": "#0025",
       "title": "Tênis nike",
-      "description": "Tênis..",
+      "description": "Tênis nike tamanho 41, novo, original e com o solado um pouco gasto apenas.",
       "category": "calcados",
       "brand": "nike",
       "size": "41",
@@ -429,7 +429,7 @@
       "id": 26,
       "productCode": "#0026",
       "title": "Tênis de velcro",
-      "description": "Tênis..",
+      "description": "Tênis de velcro da nike usado, tamanho 43, não possui avarias.",
       "category": "calcados",
       "brand": "nike",
       "size": "43",
@@ -446,7 +446,7 @@
       "id": 27,
       "productCode": "#0027",
       "title": "Sapato de salto",
-      "description": "salto..",
+      "description": "Salto alto da marca via marte em cor nude, tamanho 36, acabamento em verniz, usado.",
       "category": "calcados",
       "brand": "via marte",
       "size": "36",
@@ -581,15 +581,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Jamile",
           "question": "Qual o tamanho?",
-          "answer": "large"
-        },
-        {
-          "questionId": 2,
-          "author": "Luke",
-          "question": "what color?",
-          "answer": ""
+          "answer": "G"
         }
       ]
     },
@@ -599,27 +592,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
           "question": "Qual o tamanho?",
-          "answer": "small"
-        },
-        {
-          "questionId": 2,
-          "author": "Philip",
-          "question": "what color?",
-          "answer": "pink!"
-        },
-        {
-          "questionId": 2,
-          "author": "Philip",
-          "question": "what color?",
-          "answer": ""
-        },
-        {
-          "questionId": 3,
-          "author": "Daneu",
-          "question": "aa?",
-          "answer": ""
+          "answer": "Oie, é um G :)"
         }
       ]
     },
@@ -629,9 +603,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "question": "É prata pura ou prata 925?",
+          "answer": "Oie! É prata 925!"
         }
       ]
     },
@@ -641,9 +614,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
           "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "answer": "Oie! É um 38 :)"
         }
       ]
     },
@@ -653,9 +625,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
           "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "answer": "Oie, é um 36!"
         }
       ]
     },
@@ -665,9 +636,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "question": "Possui alguma avaria?",
+          "answer": "Não possui não, está novinha!"
         }
       ]
     },
@@ -677,9 +647,13 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
           "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "answer": "Ela é um P!"
+        },
+        {
+          "questionId": 2,
+          "question": "Possui elastano?",
+          "answer": "Sim! Bem pouquinho mas tem sim."
         }
       ]
     },
@@ -689,9 +663,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "question": "Vestiria um M?",
+          "answer": "Oii, acredito que sim, ficaria um pouquinho folgada, dependendo do seu estilo você vai curtir, mas confere as medidas pra ter certeza :)"
         }
       ]
     },
@@ -701,9 +674,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "question": "O tecido é lã? sabe se é pura?",
+          "answer": "Oie! É um tricot mesmo!"
         }
       ]
     },
@@ -713,9 +685,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "question": "Vestiria um P?",
+          "answer": "Oie! Acredito que não. Ficaria folgada demais, mas confere as medidas pra ter certeza!"
         }
       ]
     },
@@ -725,9 +696,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "question": "O capuz é removível?",
+          "answer": "Não é não, é somente regulável pelas cordinhas, sabe?"
         }
       ]
     },
@@ -737,9 +707,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "question": "Veste P?",
+          "answer": "Oie! Acredito que sim, mas confere as medidas pra ter certeza :)"
         }
       ]
     },
@@ -749,9 +718,13 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
           "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "answer": "Tamanho 38!"
+        },
+        {
+          "questionId": 2,
+          "question": "O solado está muito gasto?",
+          "answer": "Um pouquinho só!"
         }
       ]
     },
@@ -761,9 +734,13 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
           "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "answer": "É um 36!"
+        },
+        {
+          "questionId": 2,
+          "question": "O solado está muito gasto?",
+          "answer": "Um pouquinho só!"
         }
       ]
     },
@@ -773,9 +750,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "question": "É brilhante o tecido?",
+          "answer": "Oie! Não, é elastano normal!"
         }
       ]
     },
@@ -785,9 +761,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "question": "Ainda na etiqueta?",
+          "answer": "Não :/"
         }
       ]
     },
@@ -797,9 +772,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "question": "Qual  coleção da havaianas ele é?",
+          "answer": "Oie! Coleção Havaí :)"
         }
       ]
     },
@@ -809,9 +783,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "question": "Pelas fotos, os tons de azul do shorts para a blusa são diferentes, correto?",
+          "answer": "Oii, são sim! A blusa tem um tom mais claro que o shorts!"
         }
       ]
     },
@@ -821,9 +794,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "question": "Possui etiqueta lateral interna ainda?",
+          "answer": "Oii, possui sim :)"
         }
       ]
     },
@@ -833,9 +805,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "question": "Quanto ela mede de comprimento x largura??",
+          "answer": "Oie! Ela tem 60cm x 30cm."
         }
       ]
     },
@@ -845,9 +816,8 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
+          "question": "O valor é o conjunto, correto?",
+          "answer": "Correto!"
         }
       ]
     },
@@ -857,20 +827,17 @@
       "questions": [
         {
           "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
+          "question": "Possui alguma garrinha quebrada?",
           "answer": ""
         },
         {
           "questionId": 2,
-          "author": "Gabriel",
-          "question": "Qual o tempo de uso?",
-          "answer": "incerto"
+          "question": "Solado muito gasto?",
+          "answer": "Oie, um pouquinho gasto sim!"
         },
         {
           "questionId": 3,
-          "author": "X",
-          "question": "Qual a marca?",
+          "question": "É original?",
           "answer": ""
         }
       ]
@@ -878,7 +845,72 @@
     {
       "id": 23,
       "productId": 23,
-      "questions": []
+      "questions": [
+        {
+          "questionId": 1,
+          "question": "É original?",
+          "answer": ""
+        },
+        {
+          "questionId": 2,
+          "question": "Calça 38?",
+          "answer": "Oie! Acredito que não :/"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "productId": 24,
+      "questions": [
+        {
+          "questionId": 1,
+          "question": "É original?",
+          "answer": "Simm, é original!"
+        },
+        {
+          "questionId": 2,
+          "question": "Acompanha caixa?",
+          "answer": "Sim!"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "productId": 25,
+      "questions": [
+        {
+          "questionId": 1,
+          "question": "É original?",
+          "answer": "Sim!"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "productId": 26,
+      "questions": [
+        {
+          "questionId": 1,
+          "question": "É original?",
+          "answer": "Sim!"
+        },
+        {
+          "questionId": 1,
+          "question": "Qual o modelo?",
+          "answer": "Modelo ''Shox''!"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "productId": 27,
+      "questions": [
+        {
+          "questionId": 1,
+          "question": "Calça 35?",
+          "answer": "Não sabemos dizer... Precisaria provar para ter certeza."
+        }
+      ]
     }
   ]
 }

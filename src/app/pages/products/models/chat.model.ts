@@ -6,7 +6,6 @@ export class ChatModel {
 
 export class QuestionModel {
     public questionId?: string;
-    public author?: string;
     public question?: string;
     public answer?: string;
 }
