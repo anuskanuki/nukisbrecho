@@ -32,7 +32,7 @@ export class PurchaseService extends BaseService {
   }
 
   public updateProduct(model: ProductModel): Observable<ProductModel> {
-    return this.http.put<ProductModel>(this.UrlApiV1 + 'products/' + model.id, model, super.httpJsonOptions)
+    return this.http.put<ProductModel>('https://nuki-brecho-mock-api.herokuapp.com/' + 'products/' + model.id, model, super.httpJsonOptions)
       .pipe(
         map(super.extractData),
         catchError(error => throwError(error.error.errors[0]))
