@@ -59,19 +59,19 @@
 
             <div class="mg-bottom">
                 <div nz-row class="texts">
-                    <div nz-col nzSpan="8">produto</div>
+                    <div nz-col nzSpan="8">Produto</div>
                     <div nz-col nzSpan="8" class="dots-align">----------------</div>
                     <div nz-col nzSpan="8" class="price-align">R$ {{productModel.priceTag}},00</div>
                 </div>
 
                 <div nz-row class="texts">
-                    <div nz-col nzSpan="8">entrega</div>
+                    <div nz-col nzSpan="8">Entrega</div>
                     <div nz-col nzSpan="8" class="dots-align">----------------</div>
                     <div nz-col nzSpan="8" class="price-align">R$ 20,00</div>
                 </div>
 
                 <div nz-row class="texts">
-                    <div nz-col nzSpan="8">total a pagar</div>
+                    <div nz-col nzSpan="8">Total a pagar</div>
                     <div nz-col nzSpan="8" class="dots-align">----------------</div>
                     <div nz-col nzSpan="8" class="price-align">R$ {{finalPrice}},00</div>
                 </div>
@@ -103,7 +103,6 @@
 
             <ng-template #templateTransferenciaBancaria>
                 <h3>Transferência Bancária</h3>
-                <p>Dados da conta:</p>
                 <p>Banco: Banco Nukis</p>
                 <p>Agência: 0001</p>
                 <p>Conta: 1234567</p>
@@ -131,12 +130,12 @@
 
 <div nz-row nzJustify="center" nzAlign="middle" class="mt-btn-return">
     <div nz-col nzSpan="12">
-        <button nz-button nzType="primary" (click)="back()">voltar</button>
+        <button nz-button nzType="primary" (click)="back()">Voltar</button>
     </div>
 
     <div class="button-enviar" nz-col nzSpan="12">
         <button nz-button nzType="primary" routerLink="confirmation" [disabled]="!paymentReceiptAttached"
-            (click)="buyProduct()" class="confirm-button">confirmar
+            (click)="buyProduct()" class="confirm-button">Confirmar
             compra</button>
     </div>
 </div>

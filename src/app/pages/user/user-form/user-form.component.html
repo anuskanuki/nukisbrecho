@@ -93,7 +93,8 @@
                             class="required-mark">*</span>
                     </nz-form-label>
                     <nz-form-control formGroupName="address" [nzErrorTip]="validations">
-                        <input formControlName="zipCode" type="number" nz-input placeholder="Apenas números" required />
+                        <input formControlName="zipCode" pattern="([0-9]{8})" maxlength="8" minlength="8" nz-input
+                            placeholder="Ex: 89001234" required />
                     </nz-form-control>
                 </nz-form-item>
             </div>
@@ -247,8 +248,10 @@
                     <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">CEP<span
                             class="required-mark">*</span>
                     </nz-form-label>
+
                     <nz-form-control formGroupName="address" [nzErrorTip]="validations">
-                        <input formControlName="zipCode" type="number" nz-input placeholder="Apenas números" required />
+                        <input formControlName="zipCode" pattern="([0-9]{8})" maxlength="8" minlength="8" nz-input
+                            placeholder="Ex: 89001234" required />
                     </nz-form-control>
                 </nz-form-item>
             </div>
