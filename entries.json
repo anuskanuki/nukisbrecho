@@ -405,7 +405,7 @@
       "photo2": "../assets/clothes/box2-adidas.png",
       "photo3": "../assets/clothes/box1-adidas.png",
       "photo4": "../assets/clothes/box1-adidas.png",
-      "active": true,
+      "active": false,
       "wishlistedCount": 25
     },
     {
@@ -456,7 +456,7 @@
       "photo2": "../assets/clothes/wedding-shoe.png",
       "photo3": "../assets/clothes/wedding-shoe.png",
       "photo4": "../assets/clothes/wedding-shoe.png",
-      "active": true,
+      "active": false,
       "wishlistedCount": 1
     }
   ],

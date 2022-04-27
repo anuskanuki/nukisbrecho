@@ -104,24 +104,23 @@ export class PurchaseComponent implements OnInit, OnDestroy {
       //   productPhoto: this.productModel.photo1,
       // };
 
-      const subscription = this.purchaseService.updateProduct(this.productModel).subscribe(
-        () => {
-          this.notification.success('Sucesso!', 'Pedido de compra efetuado.');
-        },
-        error => {
-          this.notification.error('Oops!', error)
-        }
-      )
-      this.notification.success('Sucesso!', 'Pedido de compra efetuado.');
+      const subscription = this.purchaseService.updateProduct(this.productModel).subscribe();
+        //   => {
+        //     this.notification.success('Sucesso!', 'Pedido de compra efetuado.');
+        //   },
+        //   error => {
+        //     this.notification.error('Oops!', error)
+        //   }
+        // )
 
-      // const subscribeNewUserOrder = this.purchaseService.insertUserOrder(newUserOrder).subscribe(() => {
-      //   this.notification.success('Feito!', 'Pagamento em análise.');
-      // },
-      //   error => {
-      //     this.notification.error('Ops!', 'Ocorreu um erro, tente novamente.' + '\n' + error);
-      //   });
+        // const subscribeNewUserOrder = this.purchaseService.insertUserOrder(newUserOrder).subscribe(() => {
+        //   this.notification.success('Feito!', 'Pagamento em análise.');
+        // },
+        //   error => {
+        //     this.notification.error('Ops!', 'Ocorreu um erro, tente novamente.' + '\n' + error);
+        //   });
 
-      this.subscriptions.push(subscription);
+        this.subscriptions.push(subscription);
     }
   }
 
