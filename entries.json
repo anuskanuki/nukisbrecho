@@ -458,6 +458,193 @@
       "photo4": "../assets/clothes/wedding-shoe.png",
       "active": true,
       "wishlistedCount": 1
+    },
+    {
+      "id": 28,
+      "productCode": "#0028",
+      "title": "Camiseta esportiva",
+      "description": "Camiseta marsala marca nike usada pouco, tamanho GG, veste G também. Não possui defeitos.  Medidas: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm, mangas 19cm.",
+      "category": "roupas",
+      "brand": "nike",
+      "size": "GG",
+      "condition": "usado",
+      "priceTag": 26,
+      "photo1": "../assets/clothes/rednikeshirt.png",
+      "photo2": "../assets/clothes/rednikeshirt.png",
+      "photo3": "../assets/clothes/rednikeshirt.png",
+      "photo4": "../assets/clothes/rednikeshirt.png",
+      "active": true,
+      "wishlistedCount": 5
+    },
+    {
+      "id": 29,
+      "productCode": "#0029",
+      "title": "Tênis slip on verde",
+      "description": "Tênis slip on quadriculado verde da marca vans, produto original, tamanho 39, usado, porém não possui avarias ou marcas fortes de uso.",
+      "category": "calcados",
+      "brand": "vans",
+      "size": "39",
+      "condition": "usado",
+      "priceTag": 42,
+      "photo1": "../assets/clothes/vanswueba.png",
+      "photo2": "../assets/clothes/vanswueba.png",
+      "photo3": "../assets/clothes/vanswueba.png",
+      "photo4": "../assets/clothes/vanswueba.png",
+      "active": true,
+      "wishlistedCount": 31
+    },
+    {
+      "id": 30,
+      "productCode": "#0030",
+      "title": "Vestido rodado",
+      "description": "Vestido regada costas nadador e saia rodada com babados da zara, usado porém não possui avarias ou marcas fortes de uso. Tamanho P. Medidas: ombro 36cm, busto 100cm, quadril 120cm, comprimento total 80cm. Possui elastano.",
+      "category": "roupas",
+      "brand": "zara",
+      "size": "p",
+      "condition": "usado",
+      "priceTag": 18,
+      "photo1": "../assets/clothes/womanspurpleyellowdress.png",
+      "photo2": "../assets/clothes/womanspurpleyellowdress.png",
+      "photo3": "../assets/clothes/womanspurpleyellowdress.png",
+      "photo4": "../assets/clothes/womanspurpleyellowdress.png",
+      "active": true,
+      "wishlistedCount": 13
+    },
+    {
+      "id": 31,
+      "productCode": "#0031",
+      "title": "Tênis slip on pinturas",
+      "description": "Tênis slip on com estampa de pinturas coloridas da marca vans, produto original, tamanho 37, usado, porém não possui avarias ou marcas fortes de uso.",
+      "category": "calcados",
+      "brand": "vans",
+      "size": "37",
+      "condition": "usado",
+      "priceTag": 18,
+      "photo1": "../assets/clothes/vanspaintpix.png",
+      "photo2": "../assets/clothes/vanspaintpix.png",
+      "photo3": "../assets/clothes/vanspaintpix.png",
+      "photo4": "../assets/clothes/vanspaintpix.png",
+      "active": true,
+      "wishlistedCount": 17
+    },
+    {
+      "id": 32,
+      "productCode": "#0032",
+      "title": "Calça jeans",
+      "description": "Calça jeans com elastano da marca h&m (importada), cintura média, tamanho 40, usada, sem avarias, porém não possui mais etiqueta interna. Medidas: gancho 30cm, comprimento total 100cm, quadril 120cm, cintura 82,5cm. Não possui elastano.",
+      "category": "roupas",
+      "brand": "h&m",
+      "size": "40",
+      "condition": "usado",
+      "priceTag": 15,
+      "photo1": "../assets/clothes/womansjeans.png",
+      "photo2": "../assets/clothes/womansjeans.png",
+      "photo3": "../assets/clothes/womansjeans.png",
+      "photo4": "../assets/clothes/womansjeans.png",
+      "active": true,
+      "wishlistedCount": 7
+    },
+    {
+      "id": 33,
+      "productCode": "#0033",
+      "title": "Touca natalina",
+      "description": "Touca natalina de veludo e material interno em lã. Tamanho único, adulto. Produto usado.",
+      "category": "acessorios",
+      "brand": "sem marca",
+      "size": "unico",
+      "condition": "usado",
+      "priceTag": 6,
+      "photo1": "../assets/clothes/santashat.png",
+      "photo2": "../assets/clothes/santashat.png",
+      "photo3": "../assets/clothes/santashat.png",
+      "photo4": "../assets/clothes/santashat.png",
+      "active": true,
+      "wishlistedCount": 2
+    },
+    {
+      "id": 34,
+      "productCode": "#0034",
+      "title": "Tênis slip on ramos",
+      "description": "Tênis slip on com estampa de ramos preto e branco da marca vans, produto original, tamanho 43, usado, porém não possui avarias ou marcas fortes de uso.",
+      "category": "calcados",
+      "brand": "vans",
+      "size": "43",
+      "condition": "usado",
+      "priceTag": 53,
+      "photo1": "../assets/clothes/vansoldgramma.png",
+      "photo2": "../assets/clothes/vansoldgramma.png",
+      "photo3": "../assets/clothes/vansoldgramma.png",
+      "photo4": "../assets/clothes/vansoldgramma.png",
+      "active": true,
+      "wishlistedCount": 22
+    },
+    {
+      "id": 35,
+      "productCode": "#0035",
+      "title": "Bracelete ouro",
+      "description": "Bracelete em ouro da marca vivara, usado, sem avarias, nenhum risco ou arranhão. Mede 19cm de circunferência.",
+      "category": "acessorios",
+      "brand": "vivara",
+      "size": "unico",
+      "condition": "usado",
+      "priceTag": 52,
+      "photo1": "../assets/clothes/goldbracelet.png",
+      "photo2": "../assets/clothes/goldbracelet.png",
+      "photo3": "../assets/clothes/goldbracelet.png",
+      "photo4": "../assets/clothes/goldbracelet.png",
+      "active": true,
+      "wishlistedCount": 29
+    },
+    {
+      "id": 36,
+      "productCode": "#0036",
+      "title": "Casaco de moletom com capuz",
+      "description": "Casaco de moletom com touca e cordinhas para regulagem do capuz. Novo, não possui avarias. Tamanho GG. Medidas: mangas 70cm, cintura 130cm, ombro 47cm, comprimento total tronco 70cm.",
+      "category": "roupas",
+      "brand": "beagle",
+      "size": "GG",
+      "condition": "novo",
+      "priceTag": 41,
+      "photo1": "../assets/clothes/jacket.png",
+      "photo2": "../assets/clothes/jacket.png",
+      "photo3": "../assets/clothes/jacket.png",
+      "photo4": "../assets/clothes/jacket.png",
+      "active": true,
+      "wishlistedCount": 9
+    },
+    {
+      "id": 37,
+      "productCode": "#0037",
+      "title": "Anel de noivado",
+      "description": "Anel de noivado de ouro com pedra zircônia cravejada, sem avarias, tamanho 8.",
+      "category": "acessorios",
+      "brand": "pandora cof",
+      "size": "8",
+      "condition": "usado",
+      "priceTag": 88,
+      "photo1": "../assets/clothes/goldengajementring.png",
+      "photo2": "../assets/clothes/goldengajementring.png",
+      "photo3": "../assets/clothes/goldengajementring.png",
+      "photo4": "../assets/clothes/goldengajementring.png",
+      "active": true,
+      "wishlistedCount": 8
+    },
+    {
+      "id": 38,
+      "productCode": "#0038",
+      "title": "Tênis respingos",
+      "description": "Tênis slip on com estampa colorida imitando respingos de tinta em fundo preto da marca vans, produto original, tamanho 38, usado, porém não possui avarias ou marcas fortes de uso.",
+      "category": "calcados",
+      "brand": "vans",
+      "size": "38",
+      "condition": "usado",
+      "priceTag": 42,
+      "photo1": "../assets/clothes/vanstoddlergirly.png",
+      "photo2": "../assets/clothes/vanstoddlergirly.png",
+      "photo3": "../assets/clothes/vanstoddlergirly.png",
+      "photo4": "../assets/clothes/vanstoddlergirly.png",
+      "active": true,
+      "wishlistedCount": 23
     }
   ],
   "adminNotifications": [
@@ -529,9 +716,9 @@
     }
   ],
   "stars": {
-    "starsTotal": 49,
-    "starsAverage": 4.083333333333333,
-    "votersCount": 12
+    "starsTotal": 5,
+    "starsAverage": 5,
+    "votersCount": 1
   },
   "userOrders": [
     {
@@ -903,6 +1090,46 @@
           "answer": "Não sabemos dizer... Precisaria provar para ter certeza."
         }
       ]
+    },
+    {
+      "id": 28,
+      "productId": 28,
+      "questions": [
+        {
+          "questionId": 1,
+          "question": "Disponível?",
+          "answer": "Simm! Disponível :)"
+        },
+        {
+          "questionId": 2,
+          "question": "Veste M?",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "productId": 29,
+      "questions": [
+        {
+          "questionId": 1,
+          "question": "Disponível?",
+          "answer": "Simm! Disponível :)"
+        },
+        {
+          "questionId": 2,
+          "question": "Veste M?",
+          "answer": ""
+        }
+      ]
     }
-  ]
+  ],
+  "likedProducts": {
+    "totalLiked": 3,
+    "productsId": [
+      12,
+      13,
+      14
+    ]
+  }
 }

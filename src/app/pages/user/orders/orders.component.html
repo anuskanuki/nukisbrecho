@@ -1,29 +1,6 @@
 <h3>
     Meus pedidos
 </h3>
-<!-- 
-<ng-container *ngFor="let order of ordersList">
-    <nz-card nzType="inner" nzTitle="Pedido #{{order.id}}" [nzExtra]="extraTemplate">
-        <div nz-row style="margin-top:16px;">
-            <a routerLink="/product/{{order.productId}}">
-                <img class="fit-img" nz-image width="80vh" height="80vh" nzSrc="{{order.productPhoto}}"
-                    alt="foto do produto" />
-                <span>{{order.productTitle}}</span>
-            </a>
-        </div>
-
-        <nz-divider nzPlain nzText="Compra realizada em {{order.orderDate}}" nzOrientation="left"></nz-divider>
-
-        <nz-steps>
-            <nz-step nzTitle="realizado" nzStatus="finish" nzIcon="shopping-cart"></nz-step>
-            <nz-step nzTitle="processando pgto." nzStatus="finish" nzIcon="solution"></nz-step>
-            <nz-step nzTitle="pgto. aprovado" nzStatus="process" nzIcon="solution"></nz-step>
-            <nz-step nzTitle="envio" nzStatus="wait" nzIcon="code-sandbox"></nz-step>
-            <nz-step nzTitle="finalizado" nzStatus="wait" [nzIcon]="iconTemplate"></nz-step>
-            <ng-template #iconTemplate><i nz-icon nzType="smile"></i></ng-template>
-        </nz-steps>
-    </nz-card>
-</ng-container> -->
 
 <ng-container *ngFor="let soldProduct of productsList">
     <nz-card nzType="inner" nzTitle="Produto #00{{soldProduct.id}}" [nzExtra]="extraTemplate">
