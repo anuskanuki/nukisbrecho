@@ -25,7 +25,7 @@
               <ng-container *ngIf="isAdminClaim  && productIsActive">
                 <button class="answer-btn" nz-button nzType="primary" (click)="openAnswerToAdmin()">Responder</button>
 
-                <form *ngIf="answerToAdminIsOpen" [formGroup]="formAdminAnswer">
+                <form *ngIf="answerToAdminIsOpen && userLoggedIn" [formGroup]="formAdminAnswer">
                   <div nz-col nzSpan="24">
                     <nz-comment>
                       <nz-comment-content>
@@ -60,7 +60,7 @@
     </div>
 
     <div nz-col nzSpan="24" *ngIf="productIsActive">
-      <form [formGroup]="formUserQuestion" *ngIf="!isAdminClaim">
+      <form [formGroup]="formUserQuestion" *ngIf="!isAdminClaim && userLoggedIn">
         <nz-comment>
           <nz-comment-content>
             <nz-form-item>
@@ -77,6 +77,8 @@
           </nz-comment-content>
         </nz-comment>
       </form>
+      <p *ngIf="!userLoggedIn">Realize <a routerLink="/login">LOGIN</a> no sistema para usar o campo de perguntas e
+        respostas :)</p>
     </div>
   </div>
 </div>
