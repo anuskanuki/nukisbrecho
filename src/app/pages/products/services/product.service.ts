@@ -104,29 +104,4 @@ export class ProductService extends BaseService {
                 catchError(error => throwError(error.error.errors[0]))
             );
     }
-
-    public getMessagesByProductId(productId: number): Observable<ChatModel[]> {
-        return this.http.get<ChatModel[]>(this.UrlApiV1 + 'chat?productId=' + productId)
-            .pipe(
-                catchError(error => throwError(error.error.errors[0]))
-            );
-    }
-
-    public sendMessage(model: ChatModel): Observable<ChatModel> {
-        return this.http
-            .post<ChatModel>(this.UrlApiV1 + 'chat/', model, super.httpJsonOptions)
-            .pipe(
-                map(super.extractData),
-                catchError(error => throwError(error.error.errors[0]))
-            );
-    }
-
-    public updateMessage(model: ChatModel): Observable<ChatModel> {
-        return this.http
-            .put<ChatModel>(this.UrlApiV1 + `chat/${model.id}`, model, super.httpJsonOptions)
-            .pipe(
-                map(super.extractData),
-                catchError(error => throwError(error.error.errors[0]))
-            );
-    }
 }

@@ -765,6 +765,18 @@
       "question": "Teste",
       "answer": "Teste 2",
       "id": 12
+    },
+    {
+      "productId": "27",
+      "question": "Teste",
+      "answer": "Teste",
+      "id": 13
+    },
+    {
+      "productId": "27",
+      "question": "Teste 2",
+      "answer": "Teste 2",
+      "id": 14
     }
   ],
   "likedProducts": {

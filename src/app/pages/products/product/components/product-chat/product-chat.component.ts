@@ -5,6 +5,7 @@ import { ChatModel } from '../../../models/chat.model';
 import { ProductService } from '../../../services/product.service';
 import { Subscription } from 'rxjs';
 import { TokenService } from 'src/app/core/services/token.service';
+import { ChatService } from '../../../services/chat.service';
 
 @Component({
   selector: 'app-product-chat',
@@ -37,6 +38,7 @@ export class ProductChatComponent implements OnInit, OnDestroy {
 
   constructor(
     protected productService: ProductService,
+    protected chatService: ChatService,
     private formBuilder: FormBuilder,
     private authService: TokenService,
     private notification: NzNotificationService,
@@ -56,13 +58,11 @@ export class ProductChatComponent implements OnInit, OnDestroy {
   }
 
   public getMessages() {
-    const subscription = this.productService
-      .getMessagesByProductId(+this.routerId)
+    const subscription = this.chatService
+      .getByProductId(+this.routerId)
       .subscribe(
         response => {
           this.messagesChatArray = response;
-          // this.newQuestionId = response.questions.length;
-          console.log('response messagesChatArray:', response);
         },
         error => {
           this.notification.error('Oops!', error);
@@ -97,7 +97,7 @@ export class ProductChatComponent implements OnInit, OnDestroy {
     if (this.formUserQuestion.valid && this.formUserQuestion.dirty) {
       const model = this.mapQuestionToModel();
       this.inputValue = '';
-      const subscription = this.productService.sendMessage(model).subscribe(
+      const subscription = this.chatService.create(model).subscribe(
         () => {
           this.notification.success('Sucesso!', 'Mensagem enviada.');
           this.getMessages();
@@ -123,7 +123,7 @@ export class ProductChatComponent implements OnInit, OnDestroy {
     if (this.formAdminAnswer.valid && this.formAdminAnswer.dirty) {
       const model = this.mapAnswerToModel(id);
       this.inputValue = '';
-      const subscription = this.productService.updateMessage(model).subscribe(
+      const subscription = this.chatService.update(model).subscribe(
         () => {
           this.notification.success('Sucesso!', 'Mensagem enviada.');
           this.getMessages();
