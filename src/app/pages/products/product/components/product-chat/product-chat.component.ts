@@ -5,6 +5,7 @@ import { ChatModel } from '../../../models/chat.model';
 import { ProductService } from '../../../services/product.service';
 import { Subscription } from 'rxjs';
 import { TokenService } from 'src/app/core/services/token.service';
+import { ChatService } from '../../../services/chat.service';
 
 @Component({
   selector: 'app-product-chat',
@@ -37,6 +38,7 @@ export class ProductChatComponent implements OnInit, OnDestroy {
 
   constructor(
     protected productService: ProductService,
+    protected chatService: ChatService,
     private formBuilder: FormBuilder,
     private authService: TokenService,
     private notification: NzNotificationService,
@@ -56,13 +58,11 @@ export class ProductChatComponent implements OnInit, OnDestroy {
   }
 
   public getMessages() {
-    const subscription = this.productService
-      .getMessagesByProductId(+this.routerId)
+    const subscription = this.chatService
+      .getByProductId(+this.routerId)
       .subscribe(
         response => {
           this.messagesChatArray = response;
-          // this.newQuestionId = response.questions.length;
-          console.log('response messagesChatArray:', response);
         },
         error => {
           this.notification.error('Oops!', error);
@@ -83,57 +83,61 @@ export class ProductChatComponent implements OnInit, OnDestroy {
     }
   }
 
-  private mapChatFormToModel(): ChatModel {
-    return {
-      id: this.routerId,
-      productId: this.routerId,
-      questions: [{
-        questionId: "dar um jeito de pegar qual seria o id",
-        // question: this.form.question.value,
-        // answer: this.form.answer.value || ''
-      }]
-    };
+  private mapQuestionToModel(): ChatModel {
+    const chat = new ChatModel();
+    chat.productId = this.routerId;
+    chat.question = this.inputValue;
+    chat.answer = "";
+
+    return chat;
   }
 
-  public sendMessage() {
-    // if (this.form.valid && this.form.dirty) {
-    //   const subscription = this.productService.sendMessage(this.mapChatFormToModel()).subscribe(
-    //     response => {
-    //       console.log('mensagem enviada, response:', response);
-    //       this.notification.success('Sucesso!', 'Mensagem enviada.');
-    //     },
-    //     error => {
-    //       this.notification.error('Oops!', error);
-    //     }
-    //   );
-    //   this.subscriptions.push(subscription);
-    // }
-  }
-
-  handleSubmit(): void {
+  public sendQuestion() {
     this.submitting = true;
-    const content = this.inputValue;
-    this.inputValue = '';
-    // setTimeout(() => {
-    //   this.sendMessage();
-    //   this.submitting = false;
-    //   this.data = [
-    //     ...this.data,
-    //     {
-    //       ...this.user,
-    //       content,
-    //       datetime: new Date(),
-    //       displayTime: formatDistance(new Date(), new Date())
-    //     }
-    //   ].map(e => ({
-    //     ...e,
-    //     displayTime: formatDistance(new Date(), e.datetime)
-    //   }));
-    // }, 800);
+    if (this.formUserQuestion.valid && this.formUserQuestion.dirty) {
+      const model = this.mapQuestionToModel();
+      this.inputValue = '';
+      const subscription = this.chatService.create(model).subscribe(
+        () => {
+          this.notification.success('Sucesso!', 'Mensagem enviada.');
+          this.getMessages();
+        },
+        error => {
+          this.notification.error('Oops!', error);
+        }
+      );
+      this.subscriptions.push(subscription);
+    }
+    this.submitting = false;
+  }
+
+  private mapAnswerToModel(id: string): ChatModel {
+    let chat = this.messagesChatArray.filter(x => x.id === id)[0];
+    chat.answer = this.inputValue;
+
+    return chat;
+  }
+
+  public sendAnswer(id: string) {
+    this.submitting = true;
+    if (this.formAdminAnswer.valid && this.formAdminAnswer.dirty) {
+      const model = this.mapAnswerToModel(id);
+      this.inputValue = '';
+      const subscription = this.chatService.update(model).subscribe(
+        () => {
+          this.notification.success('Sucesso!', 'Mensagem enviada.');
+          this.getMessages();
+        },
+        error => {
+          this.notification.error('Oops!', error);
+        }
+      );
+      this.subscriptions.push(subscription);
+    }
+    this.submitting = false;
   }
 
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscripition => subscripition.unsubscribe());
   }
-
 }
