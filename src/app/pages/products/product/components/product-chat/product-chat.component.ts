@@ -5,6 +5,7 @@ import { ChatModel } from '../../../models/chat.model';
 import { ProductService } from '../../../services/product.service';
 import { formatDistance } from 'date-fns';
 import { Subscription } from 'rxjs';
+import { TokenService } from 'src/app/core/services/token.service';
 
 @Component({
   selector: 'app-product-chat',
@@ -30,10 +31,12 @@ export class ProductChatComponent implements OnInit, OnDestroy {
   constructor(
     protected productService: ProductService,
     private formBuilder: FormBuilder,
+    private authService: TokenService,
     private notification: NzNotificationService,
   ) { }
 
   ngOnInit(): void {
+    this.isAdminClaim = this.authService.tokenData.isAdmin;
     this.buildForm();
     this.getMessages();
   }
