@@ -114,11 +114,19 @@ export class ProductService extends BaseService {
 
     public sendMessage(model: ChatModel): Observable<ChatModel> {
         return this.http
-            .put<ChatModel>(this.UrlApiV1 + 'chat/', model, super.httpJsonOptions)
+            .post<ChatModel>(this.UrlApiV1 + 'chat/', model, super.httpJsonOptions)
             .pipe(
                 map(super.extractData),
                 catchError(error => throwError(error.error.errors[0]))
             );
     }
 
+    public updateMessage(model: ChatModel): Observable<ChatModel> {
+        return this.http
+            .put<ChatModel>(this.UrlApiV1 + `chat/${model.id}`, model, super.httpJsonOptions)
+            .pipe(
+                map(super.extractData),
+                catchError(error => throwError(error.error.errors[0]))
+            );
+    }
 }
