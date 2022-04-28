@@ -2,61 +2,55 @@
   <div nz-col nzSpan="12">
     <nz-divider nzText="Tire suas dúvidas sobre o produto" nzOrientation="left"></nz-divider>
 
-    <div nz-col nzSpan="24" *ngFor="let chatItem of messagesChatArray">
+    <div nz-col nzSpan="24" *ngFor="let chat of messagesChatArray">
+      <nz-timeline>
+        <nz-timeline-item nzColor="gray">
+          <p><span class="bold-author">Usuário: </span>{{chat.question}}</p>
+        </nz-timeline-item>
 
-      <div *ngFor="let message of chatItem.questions" nz-row>
+        <ng-container *ngIf="chat.answer !== '' then templateRespostaAdmin">
+        </ng-container>
+        <ng-container *ngIf="chat.answer === '' then templateAguardandoResposta">
+        </ng-container>
 
-        <nz-timeline>
+        <ng-template #templateAguardandoResposta>
+
           <nz-timeline-item nzColor="gray">
-            <p><span class="bold-author">Usuário: </span>{{message.question}}</p>
+            <span>aguardando resposta</span>
+
+            <ng-container *ngIf="isAdminClaim  && productIsActive">
+              <button class="answer-btn" nz-button nzType="primary" (click)="openAnswerToAdmin()">Responder</button>
+
+              <form *ngIf="answerToAdminIsOpen && userLoggedIn" [formGroup]="formAdminAnswer">
+                <div nz-col nzSpan="24">
+                  <nz-comment>
+                    <nz-comment-content>
+                      <nz-form-item>
+                        <textarea formControlName="answer" [(ngModel)]="inputValue" nz-input
+                          placeholder="Digite aqui a resposta!" [nzAutosize]="{ minRows: 3, maxRows: 5 }"
+                          [disabled]="submitting"></textarea>
+                      </nz-form-item>
+
+                      <nz-form-item class="align-submit-chat">
+                        <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!inputValue"
+                          (click)="sendAnswer(chat.id!)">
+                          Enviar
+                        </button>
+                      </nz-form-item>
+                    </nz-comment-content>
+                  </nz-comment>
+                </div>
+              </form>
+            </ng-container>
           </nz-timeline-item>
+        </ng-template>
 
-          <ng-container *ngIf="message.answer !== '' then templateRespostaAdmin">
-          </ng-container>
-
-          <ng-container *ngIf="message.answer == '' then templateAguardandoResposta">
-          </ng-container>
-
-          <ng-template #templateAguardandoResposta>
-
-            <nz-timeline-item nzColor="gray">
-              <span>aguardando resposta</span>
-
-              <ng-container *ngIf="isAdminClaim  && productIsActive">
-                <button class="answer-btn" nz-button nzType="primary" (click)="openAnswerToAdmin()">Responder</button>
-
-                <form *ngIf="answerToAdminIsOpen && userLoggedIn" [formGroup]="formAdminAnswer">
-                  <div nz-col nzSpan="24">
-                    <nz-comment>
-                      <nz-comment-content>
-                        <nz-form-item>
-                          <textarea formControlName="answer" [(ngModel)]="inputValue" nz-input
-                            placeholder="Digite aqui a resposta!" [nzAutosize]="{ minRows: 3, maxRows: 5 }"
-                            (keydown.enter)="sendMessage()"></textarea>
-                        </nz-form-item>
-
-                        <nz-form-item class="align-submit-chat">
-                          <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!inputValue"
-                            (click)="handleSubmit()">
-                            Enviar
-                          </button>
-                        </nz-form-item>
-                      </nz-comment-content>
-                    </nz-comment>
-                  </div>
-                </form>
-              </ng-container>
-            </nz-timeline-item>
-          </ng-template>
-
-          <ng-template #templateRespostaAdmin>
-            <nz-timeline-item nzColor="gray">
-              <p><span class="bold-author">Admin: </span>{{message.answer}}</p>
-            </nz-timeline-item>
-          </ng-template>
-
-        </nz-timeline>
-      </div>
+        <ng-template #templateRespostaAdmin>
+          <nz-timeline-item nzColor="gray">
+            <p><span class="bold-author">Admin: </span>{{chat.answer}}</p>
+          </nz-timeline-item>
+        </ng-template>
+      </nz-timeline>
     </div>
 
     <div nz-col nzSpan="24" *ngIf="productIsActive">
@@ -65,12 +59,11 @@
           <nz-comment-content>
             <nz-form-item>
               <textarea *ngIf="!isAdminClaim" formControlName="question" [(ngModel)]="inputValue" nz-input
-                placeholder="Digite aqui sua dúvida!" [nzAutosize]="{ minRows: 3, maxRows: 5 }"
-                (keydown.enter)="sendMessage()"></textarea>
+                placeholder="Digite aqui sua dúvida!" [nzAutosize]="{ minRows: 3, maxRows: 5 }"></textarea>
             </nz-form-item>
             <nz-form-item class="align-submit-chat">
               <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!inputValue"
-                (click)="handleSubmit()">
+                (click)="sendQuestion()">
                 Enviar
               </button>
             </nz-form-item>
