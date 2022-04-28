@@ -3,17 +3,17 @@
     {
       "id": 1,
       "productCode": "#0001",
-      "title": "Blusão verde de lã",
-      "description": "Blusão verde de lã, tamanho M, nunca foi usado, perfeito estado. Medidas pra te ajudar: 100cm de busto, 60cm de comprimento, 62cm de manga.",
+      "title": "Camiseta verde nike",
+      "description": "Camiseta manga curta Nike verde, original, nova, tamanho M. Medidas pra te ajudar: 100cm de busto, 60cm de comprimento, 62cm de manga.",
       "category": "roupas",
-      "brand": "ZARA",
+      "brand": "nike",
       "size": "M",
       "condition": "novo",
       "priceTag": 44,
-      "photo2": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
-      "photo3": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
-      "photo4": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
-      "photo1": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
+      "photo2": "../assets/clothes/greennikeshirt.png",
+      "photo3": "../assets/clothes/greennikeshirt.png",
+      "photo4": "../assets/clothes/greennikeshirt.png",
+      "photo1": "../assets/clothes/greennikeshirt.png",
       "active": false,
       "wishlistedCount": 3
     },
@@ -405,7 +405,7 @@
       "photo2": "../assets/clothes/box2-adidas.png",
       "photo3": "../assets/clothes/box1-adidas.png",
       "photo4": "../assets/clothes/box1-adidas.png",
-      "active": false,
+      "active": true,
       "wishlistedCount": 25
     },
     {
@@ -456,7 +456,7 @@
       "photo2": "../assets/clothes/wedding-shoe.png",
       "photo3": "../assets/clothes/wedding-shoe.png",
       "photo4": "../assets/clothes/wedding-shoe.png",
-      "active": false,
+      "active": true,
       "wishlistedCount": 1
     }
   ],
