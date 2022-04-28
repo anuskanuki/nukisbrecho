@@ -17,17 +17,21 @@ export class ProductChatComponent implements OnInit, OnDestroy {
 
   inputValue = '';
   public answerToAdminIsOpen = false;
+
   public messagesChatArray: ChatModel[] = [];
+
   public formAdminAnswer!: FormGroup;
   public formUserQuestion!: FormGroup;
-  public isAdminClaim = true;
+
+  public isAdminClaim = false;
+  public userLoggedIn = false;
+
   submitting = false;
 
   public newQuestionId = 0;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any[] = [];
-
   @Input() routerId = "";
   @Input() productIsActive = true;
 
@@ -39,7 +43,10 @@ export class ProductChatComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.isAdminClaim = this.authService.tokenData.isAdmin;
+    if (this.authService.isLoggedIn()) {
+      this.userLoggedIn = true;
+      this.isAdminClaim = this.authService.tokenData.isAdmin;
+    }
     this.buildForm();
     this.getMessages();
   }
