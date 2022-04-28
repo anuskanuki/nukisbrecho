@@ -1090,38 +1090,6 @@
           "answer": "Não sabemos dizer... Precisaria provar para ter certeza."
         }
       ]
-    },
-    {
-      "id": 28,
-      "productId": 28,
-      "questions": [
-        {
-          "questionId": 1,
-          "question": "Disponível?",
-          "answer": "Simm! Disponível :)"
-        },
-        {
-          "questionId": 2,
-          "question": "Veste M?",
-          "answer": ""
-        }
-      ]
-    },
-    {
-      "id": 29,
-      "productId": 29,
-      "questions": [
-        {
-          "questionId": 1,
-          "question": "Disponível?",
-          "answer": "Simm! Disponível :)"
-        },
-        {
-          "questionId": 2,
-          "question": "Veste M?",
-          "answer": ""
-        }
-      ]
     }
   ],
   "likedProducts": {
