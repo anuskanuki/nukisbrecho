@@ -22,10 +22,10 @@
             <nz-timeline-item nzColor="gray">
               <span>aguardando resposta</span>
 
-              <ng-container *ngIf="isAdminClaim">
+              <ng-container *ngIf="isAdminClaim  && productIsActive">
                 <button class="answer-btn" nz-button nzType="primary" (click)="openAnswerToAdmin()">Responder</button>
 
-                <form *ngIf="answerToAdminIsOpen" [formGroup]="form">
+                <form *ngIf="answerToAdminIsOpen" [formGroup]="formAdminAnswer">
                   <div nz-col nzSpan="24">
                     <nz-comment>
                       <nz-comment-content>
@@ -56,12 +56,11 @@
           </ng-template>
 
         </nz-timeline>
-
       </div>
     </div>
 
-    <div nz-col nzSpan="24">
-      <form [formGroup]="form" *ngIf="!isAdminClaim">
+    <div nz-col nzSpan="24" *ngIf="productIsActive">
+      <form [formGroup]="formUserQuestion" *ngIf="!isAdminClaim">
         <nz-comment>
           <nz-comment-content>
             <nz-form-item>
