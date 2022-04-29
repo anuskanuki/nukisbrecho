@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { DatePipe, Location } from '@angular/common';
+import { Location } from '@angular/common';
 import { TokenService } from 'src/app/core/services/token.service';
 import { Router } from '@angular/router';
 import { ProductService } from '../../products/services/product.service';
@@ -98,7 +98,9 @@ export class PurchaseComponent implements OnInit, OnDestroy {
       ]).then(() => {
         this.notification.success('Sucesso!', 'Pedido de compra efetuado.')
       }).then(() => {
-        this.goToConfirmation();
+        setTimeout(() => {
+          this.goToConfirmation();
+        }, 1000);
       }).catch(error => {
         this.notification.error('Oops!', error)
       });
@@ -142,7 +144,7 @@ export class PurchaseComponent implements OnInit, OnDestroy {
   }
 
   private goToConfirmation() {
-    // this.router.navigate(['/confirmation']);
+    this.router.navigate(['/confirmation']);
   }
 
   getUserInfo() {
