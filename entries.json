@@ -720,30 +720,6 @@
     "starsAverage": 5,
     "votersCount": 1
   },
-  "userOrders": [
-    {
-      "id": 1,
-      "orderDate": "12/01/2022",
-      "orderStatusRecived": true,
-      "orderStatusProcessingPayment": true,
-      "orderStatusPaymentOk": true,
-      "orderStatusFinished": false,
-      "productId": 1,
-      "productTitle": "Blusa verde de lã",
-      "productPhoto": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png"
-    },
-    {
-      "id": 2,
-      "orderDate": "28/01/2022",
-      "orderStatusRecived": true,
-      "orderStatusProcessingPayment": true,
-      "orderStatusPaymentOk": true,
-      "orderStatusFinished": false,
-      "productId": 2,
-      "productTitle": "Vestido rodado",
-      "productPhoto": "../assets/clothes/vestido.png"
-    }
-  ],
   "orders": [],
   "userCart": [
     {
