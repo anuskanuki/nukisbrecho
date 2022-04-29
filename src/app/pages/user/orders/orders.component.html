@@ -2,15 +2,18 @@
     Meus pedidos
 </h3>
 
-<ng-container *ngFor="let soldProduct of productsList">
-    <nz-card nzType="inner" nzTitle="Produto #00{{soldProduct.id}}" [nzExtra]="extraTemplate">
-        <div nz-row style="margin-top:16px; margin-bottom: 26px;">
-            <a routerLink="/product/{{soldProduct.id}}">
-                <img class="fit-img" nz-image width="80vh" height="80vh" nzSrc="{{soldProduct.photo1}}"
-                    alt="foto do produto" />
-                <span>{{soldProduct.title}}</span>
-            </a>
-        </div>
+<ng-container *ngFor="let order of orders">
+    <nz-card nzType="inner" nzTitle="Compra #00{{order.id}}" [nzExtra]="extraTemplate">
+
+        <ng-container *ngFor="let product of order.products">
+            <div nz-row style="margin-top:16px; margin-bottom: 26px;">
+                <a routerLink="/product/{{product.id}}">
+                    <img class="fit-img" nz-image width="80vh" height="80vh" nzSrc="{{product.photo}}"
+                        alt="foto do produto" />
+                    <span>{{product.title}}</span>
+                </a>
+            </div>
+        </ng-container>
 
         <nz-steps>
             <nz-step nzTitle="realizado" nzStatus="finish" nzIcon="shopping-cart"></nz-step>
