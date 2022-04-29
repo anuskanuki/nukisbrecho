@@ -4,7 +4,6 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { BaseService } from 'src/app/core/services/base.service';
 import { ProductModel } from '../../products/models/product.model';
-import { OrdersUserModel } from '../../user/models/orders.model';
 import { CartModel, UserByIdModel } from '../models/purchase.model';
 
 @Injectable({
@@ -23,14 +22,6 @@ export class PurchaseService extends BaseService {
       );
   }
 
-  public insertUserOrder(model: OrdersUserModel): Observable<OrdersUserModel> {
-    return this.http.post<OrdersUserModel>(this.UrlApiV1 + 'userOrders', model, super.httpJsonOptions)
-      .pipe(
-        map(super.extractData),
-        catchError(error => throwError(error.error.errors[0]))
-      );
-  }
-
   public updateProduct(model: ProductModel): Observable<ProductModel> {
     return this.http.put<ProductModel>(this.UrlApiV1 + 'products/' + model.id, model, super.httpJsonOptions)
       .pipe(
@@ -45,5 +36,4 @@ export class PurchaseService extends BaseService {
         catchError(error => throwError(error))
       );
   }
-
 }
