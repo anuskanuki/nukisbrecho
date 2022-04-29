@@ -24,20 +24,6 @@ export class UserService extends BaseService {
             );
     }
 
-    public getAdminNotifications(): Observable<NotificationModel[]> {
-        return this.http.get<NotificationModel[]>(this.UrlApiV1 + 'adminNotifications')
-            .pipe(
-                catchError(error => throwError(error.error.errors[0]))
-            );
-    }
-
-    public getUserNotifications(userId: number): Observable<NotificationModel[]> {
-        return this.http.get<NotificationModel[]>(this.UrlApiV1 + `userNotifications?userId=${userId}`)
-            .pipe(
-                catchError(error => throwError(error.error.errors[0]))
-            );
-    }
-
     public updateUser(id: string, model: UserModel): Observable<UserModel> {
         return this.http.put<UserModel>(this.urlAuthApiBack + 'users/' + id, model)
             .pipe(

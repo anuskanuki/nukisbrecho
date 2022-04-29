@@ -4,6 +4,8 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NotificationModel } from '../models/notification.model';
 import { UserService } from '../services/user.service';
 import { Subscription } from 'rxjs';
+import { NotificationService } from '../services/notification.service';
+import { TokenService } from 'src/app/core/services/token.service';
 
 @Component({
   selector: 'app-notifications',
@@ -14,52 +16,25 @@ export class NotificationsComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription[] = [];
 
-  public notificationsList: NotificationModel[] = [];
-  public isAdminRole = false;
-
-  private _userId: number = 1;
-
+  public notifications: NotificationModel[] = [];
 
   constructor(
     private location: Location,
-    protected notificationService: UserService,
+    protected notificationService: NotificationService,
+    protected tokenService: TokenService,
     private notification: NzNotificationService,
   ) { }
 
   ngOnInit(): void {
-    this.getNotifications();
+    this.getNotificationsByUserId();
   }
 
-  getNotifications() {
-    if (!this.isAdminRole) {
-      const subscription = this.notificationService.getUserNotifications(this._userId).subscribe(
-        response => {
-          if (response.length) {
-            this.notificationsList = response;
-          } else {
-            this.notificationsList = [];
-          }
-        },
-        error => {
-          this.notification.error('Oops!', error);
-        }
-      )
-      this.subscriptions.push(subscription);
-    } else {
-      const subscription = this.notificationService.getAdminNotifications().subscribe(
-        response => {
-          if (response.length) {
-            this.notificationsList = response;
-          } else {
-            this.notificationsList = [];
-          }
-        },
-        error => {
-          this.notification.error('Oops!', error);
-        }
-      )
-      this.subscriptions.push(subscription);
-    }
+  private getNotificationsByUserId() {
+    const subscription = this.notificationService.getNotificationsByUserId(this.tokenService.tokenData.nameid).subscribe(
+      response => this.notifications = response ?? [],
+      error => this.notification.error('Oops!', error)
+    )
+    this.subscriptions.push(subscription);
   }
 
   back(): void {
@@ -69,5 +44,4 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscripition => subscripition.unsubscribe());
   }
-
 }

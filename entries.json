@@ -647,60 +647,23 @@
       "wishlistedCount": 23
     }
   ],
-  "adminNotifications": [
+  "notifications": [
     {
       "id": 1,
-      "title": "Mensagem nova!",
-      "description": "@name fez uma pergunta no produto BLUSA AZUL",
-      "routeLinkTo": "/product/1",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-    },
-    {
-      "id": 2,
-      "title": "Nova Avaliação!",
-      "description": "@name fez uma avaliação do brechó!",
-      "routeLinkTo": "/product/1",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-    },
-    {
-      "id": 3,
-      "title": "Mensagem nova!",
-      "description": "@name fez uma pergunta no produto MOLETOM JEANS",
-      "routeLinkTo": "/welcome",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-    },
-    {
-      "id": 4,
-      "title": "Mensagem nova!",
-      "description": "@name fez uma pergunta no produto BLUSÃO VERDE",
-      "routeLinkTo": "/welcome",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-    },
-    {
-      "id": 5,
-      "title": "Sobre o pedido #0153",
-      "description": "@name realizou uma compra.",
-      "routeLinkTo": "/welcome",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-    }
-  ],
-  "userNotifications": [
-    {
-      "id": 1,
-      "title": "Mensagem nova!",
+      "title": "Mensagem antiga!",
       "description": "@admin respondeu sua pergunta no produto BLUSA AZUL",
       "routeLinkTo": "/product/1",
       "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      "userId": 1,
+      "userId": "41f37f59-e844-410b-a9ca-2f243627777a",
       "read": false
     },
     {
       "id": 2,
-      "title": "Sobre o pedido #0153",
-      "description": "está pronto para retirada!",
-      "routeLinkTo": "/welcome",
+      "title": "Mensagem nova!",
+      "description": "@admin respondeu sua pergunta no produto BLUSA AZUL",
+      "routeLinkTo": "/product/1",
       "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      "userId": 2,
+      "userId": "41f37f59-e844-410b-a9ca-2f243627777a",
       "read": false
     }
   ],
