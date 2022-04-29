@@ -3,7 +3,7 @@
 </h3>
 
 <ng-container *ngFor="let order of orders">
-    <nz-card nzType="inner" nzTitle="Compra #00{{order.id}}" [nzExtra]="extraTemplate">
+    <nz-card nzType="inner" nzTitle="Pedido #00{{order.id}}" [nzExtra]="extraTemplate">
 
         <ng-container *ngFor="let product of order.products">
             <div nz-row style="margin-top:16px; margin-bottom: 26px;">
