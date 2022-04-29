@@ -134,8 +134,8 @@
     </div>
 
     <div class="button-enviar" nz-col nzSpan="12">
-        <button nz-button nzType="primary" routerLink="confirmation" [disabled]="!paymentReceiptAttached"
-            (click)="buyProduct()" class="confirm-button">Confirmar
+        <button nz-button nzType="primary" [disabled]="!paymentReceiptAttached" (click)="buyProduct()"
+            class="confirm-button">Confirmar
             compra</button>
     </div>
 </div>

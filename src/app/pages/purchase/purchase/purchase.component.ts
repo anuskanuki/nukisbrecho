@@ -5,10 +5,11 @@ import { Router } from '@angular/router';
 import { ProductService } from '../../products/services/product.service';
 import { ProductModel } from '../../products/models/product.model';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { PurchaseService } from '../services/purchase.service';
 import { UserByIdModel } from '../models/purchase.model';
-import { OrdersUserModel } from '../../user/models/orders.model';
+import { OrderModel } from '../../user/models/orders.model';
+import { OrderService } from '../services/order.service';
 
 @Component({
   selector: 'app-purchase',
@@ -27,7 +28,6 @@ export class PurchaseComponent implements OnInit, OnDestroy {
   public finalPrice = 0;
 
   public productModel: ProductModel = {};
-  // public newUserOrder: OrdersUserModel = {};
   public userModel: UserByIdModel = {};
   subscriptions: Subscription[] = [];
 
@@ -52,6 +52,7 @@ export class PurchaseComponent implements OnInit, OnDestroy {
     private router: Router,
     protected productService: ProductService,
     protected purchaseService: PurchaseService,
+    protected orderService: OrderService,
     private notification: NzNotificationService,
     // private datePipe: DatePipe
   ) { }
@@ -89,39 +90,59 @@ export class PurchaseComponent implements OnInit, OnDestroy {
     }
   }
 
-  buyProduct() {
+  async buyProduct() {
     if (this.paymentReceiptAttached) {
-      this.productModel.active = false;
-
-      // const newUserOrder: OrdersUserModel = {
-      //   orderDate: '27/02/2022',
-      //   orderStatusRecived: true,
-      //   orderStatusProcessingPayment: true,
-      //   orderStatusPaymentOk: true,
-      //   orderStatusFinished: true,
-      //   productId: this.productModel.id,
-      //   productTitle: this.productModel.title,
-      //   productPhoto: this.productModel.photo1,
-      // };
-
-      const subscription = this.purchaseService.updateProduct(this.productModel).subscribe(
-        () => {
-          this.notification.success('Sucesso!', 'Pedido de compra efetuado.');
-        },
-        error => {
-          this.notification.error('Oops!', error)
-        }
-      )
-
-      // const subscribeNewUserOrder = this.purchaseService.insertUserOrder(newUserOrder).subscribe(() => {
-      //   this.notification.success('Feito!', 'Pagamento em análise.');
-      // },
-      //   error => {
-      //     this.notification.error('Ops!', 'Ocorreu um erro, tente novamente.' + '\n' + error);
-      //   });
-
-      this.subscriptions.push(subscription);
+      await Promise.all([
+        this.deactiveProductPromise(),
+        this.createOrderPromise()
+      ]).then(() => {
+        this.notification.success('Sucesso!', 'Pedido de compra efetuado.')
+      }).then(() => {
+        this.goToConfirmation();
+      }).catch(error => {
+        this.notification.error('Oops!', error)
+      });
     }
+  }
+
+  private deactiveProductPromise(): Observable<any> {
+    this.productModel.active = false;
+
+    const subscription = this.purchaseService.updateProduct(this.productModel);
+
+    this.subscriptions.push(subscription.subscribe());
+
+    return subscription;
+  }
+
+  private createOrderPromise(): Observable<any> {
+    const subscription = this.orderService.insert(this.mapOrderToModel());
+
+    this.subscriptions.push(subscription.subscribe());
+
+    return subscription;
+  }
+
+  private mapOrderToModel(): OrderModel {
+    return {
+      orderDate: new Date().toString(),
+      orderStatusRecived: true,
+      orderStatusProcessingPayment: true,
+      orderStatusPaymentOk: true,
+      orderStatusFinished: true,
+      userId: this.tokenService.tokenData.nameid,
+      products: [
+        {
+          id: this.productModel.id?.toString(),
+          title: this.productModel.title,
+          photo: this.productModel.photo1
+        }
+      ]
+    };
+  }
+
+  private goToConfirmation() {
+    // this.router.navigate(['/confirmation']);
   }
 
   getUserInfo() {
@@ -147,5 +168,4 @@ export class PurchaseComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscripition => subscripition.unsubscribe());
   }
-
 }
