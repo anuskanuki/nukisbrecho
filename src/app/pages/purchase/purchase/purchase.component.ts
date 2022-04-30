@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
+import { DatePipe, Location } from '@angular/common';
 import { TokenService } from 'src/app/core/services/token.service';
 import { Router } from '@angular/router';
 import { ProductService } from '../../products/services/product.service';
@@ -15,7 +15,7 @@ import { OrderService } from '../services/order.service';
   selector: 'app-purchase',
   templateUrl: './purchase.component.html',
   styleUrls: ['./purchase.component.less'],
-  // providers: [DatePipe]
+  providers: [DatePipe]
 })
 export class PurchaseComponent implements OnInit, OnDestroy {
 
@@ -26,6 +26,8 @@ export class PurchaseComponent implements OnInit, OnDestroy {
   public userId = '';
   public routerId = '';
   public finalPrice = 0;
+
+  public thisDate = new Date();
 
   public showConfirmationPage = false;
 
@@ -56,14 +58,13 @@ export class PurchaseComponent implements OnInit, OnDestroy {
     protected purchaseService: PurchaseService,
     protected orderService: OrderService,
     private notification: NzNotificationService,
-    // private datePipe: DatePipe
+    private datePipe: DatePipe
   ) { }
 
   ngOnInit(): void {
     this.routerId = this.router.url.split('/')[2];
     this.verifyLoggedUser();
     this.loadProductById();
-    // this.myDate = this.datePipe.transform(this.myDate, 'dd-MM-yyyy');
   }
 
   private loadProductById() {
@@ -111,25 +112,22 @@ export class PurchaseComponent implements OnInit, OnDestroy {
 
   private deactiveProductPromise(): Observable<any> {
     this.productModel.active = false;
-
     const subscription = this.purchaseService.updateProduct(this.productModel);
-
     this.subscriptions.push(subscription.subscribe());
-
     return subscription;
   }
 
   private createOrderPromise(): Observable<any> {
     const subscription = this.orderService.insert(this.mapOrderToModel());
-
     this.subscriptions.push(subscription.subscribe());
-
     return subscription;
   }
 
   private mapOrderToModel(): OrderModel {
+    const dateNow = this.datePipe.transform(this.thisDate, 'dd/MM/yyy')?.toString();
+
     return {
-      orderDate: new Date().toString(),
+      orderDate: dateNow,
       orderStatusRecived: true,
       orderStatusProcessingPayment: true,
       orderStatusPaymentOk: true,
