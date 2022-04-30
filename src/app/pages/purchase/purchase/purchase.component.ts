@@ -27,6 +27,8 @@ export class PurchaseComponent implements OnInit, OnDestroy {
   public routerId = '';
   public finalPrice = 0;
 
+  public showConfirmationPage = false;
+
   public productModel: ProductModel = {};
   public userModel: UserByIdModel = {};
   subscriptions: Subscription[] = [];
@@ -144,7 +146,11 @@ export class PurchaseComponent implements OnInit, OnDestroy {
   }
 
   private goToConfirmation() {
-    this.router.navigate(['/confirmation']);
+    this.showConfirmationPage = true;
+  }
+
+  goToHome() {
+    this.router.navigateByUrl('/user/orders');
   }
 
   getUserInfo() {
