@@ -1,12 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { OrdersUserModel } from '../models/orders.model';
+import { OrderModel } from '../models/orders.model';
 import { Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { UserService } from '../services/user.service';
+import { TokenService } from '../../../core/services/token.service';
 import { Subscription } from 'rxjs';
-import { ProductService } from '../../products/services/product.service';
-import { ProductModel } from '../../products/models/product.model';
+import { OrderService } from '../../purchase/services/order.service';
 
 @Component({
   selector: 'app-orders',
@@ -17,54 +16,27 @@ export class OrdersComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription[] = [];
 
-  public ordersList: OrdersUserModel[] = [];
-
-  public productsList: ProductModel[] = [];
+  public orders: OrderModel[] = [];
 
   constructor(
     private location: Location,
-    protected userService: UserService,
-    protected productService: ProductService,
+    private authService: TokenService,
+    protected orderService: OrderService,
     private notification: NzNotificationService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    // this.getOrdersList();
-    this.getInactiveProducts();
+    this.getOrdersList();
   }
 
-  getInactiveProducts() {
-    const subscription = this.productService.getFilteredByInactive().subscribe(
-      response => {
-        if (response.length) {
-          this.productsList = response;
-        } else {
-          this.productsList = [];
-        }
-      },
-      error => {
-        this.notification.error('Oops!', error);
-      }
+  getOrdersList() {
+    const subscription = this.orderService.getByUserId(this.authService.tokenData.nameid).subscribe(
+      response => this.orders = response ?? [],
+      error => this.notification.error('Oops!', error)
     )
     this.subscriptions.push(subscription);
   }
-
-  // getOrdersList() {
-  //   const subscription = this.userService.getAllUserOrders().subscribe(
-  //     response => {
-  //       if (response.length) {
-  //         this.ordersList = response;
-  //       } else {
-  //         this.ordersList = [];
-  //       }
-  //     },
-  //     error => {
-  //       this.notification.error('Oops!', error);
-  //     }
-  //   )
-  //   this.subscriptions.push(subscription);
-  // }
 
   back(): void {
     this.location.back();
@@ -77,5 +49,4 @@ export class OrdersComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscripition => subscripition.unsubscribe());
   }
-
 }
