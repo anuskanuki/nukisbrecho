@@ -609,7 +609,7 @@
       "photo2": "../assets/clothes/jacket.png",
       "photo3": "../assets/clothes/jacket.png",
       "photo4": "../assets/clothes/jacket.png",
-      "active": true,
+      "active": false,
       "wishlistedCount": 9
     },
     {
@@ -720,7 +720,24 @@
     "starsAverage": 5,
     "votersCount": 1
   },
-  "orders": [],
+  "orders": [
+    {
+      "orderDate": "Sat Apr 30 2022 17:00:55 GMT-0300 (Brasilia Standard Time)",
+      "orderStatusRecived": true,
+      "orderStatusProcessingPayment": true,
+      "orderStatusPaymentOk": true,
+      "orderStatusFinished": true,
+      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
+      "products": [
+        {
+          "id": "36",
+          "title": "Casaco de moletom com capuz",
+          "photo": "../assets/clothes/jacket.png"
+        }
+      ],
+      "id": 1
+    }
+  ],
   "userCart": [
     {
       "cartId": 1,

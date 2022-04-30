@@ -2,6 +2,14 @@
     Meus pedidos
 </h3>
 
+<ng-container *ngIf="!orders.length">
+    <a routerLink="/welcome">
+        <div class="blank-slate">
+            Você ainda não fez nenhuma compra, bora lá?
+        </div>
+    </a>
+</ng-container>
+
 <ng-container *ngFor="let order of orders">
     <nz-card nzType="inner" nzTitle="Pedido #00{{order.id}}" [nzExtra]="extraTemplate">
 
