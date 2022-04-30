@@ -1,6 +1,7 @@
 <div nz-row>
   <div nz-col nzSpan="12">
-    <nz-divider nzText="Tire suas dúvidas sobre o produto" nzOrientation="left"></nz-divider>
+    
+    <nz-divider *ngIf="productIsActive" nzText="Tire suas dúvidas sobre o produto" nzOrientation="left"></nz-divider>
 
     <div nz-col nzSpan="24" *ngFor="let chat of messagesChatArray">
       <nz-timeline>
@@ -14,7 +15,6 @@
         </ng-container>
 
         <ng-template #templateAguardandoResposta>
-
           <nz-timeline-item nzColor="gray">
             <span>aguardando resposta</span>
 
