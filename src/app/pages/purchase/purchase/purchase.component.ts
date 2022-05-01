@@ -27,6 +27,8 @@ export class PurchaseComponent implements OnInit, OnDestroy {
   public routerId = '';
   public finalPrice = 0;
 
+  public activeProduct = false;
+
   public thisDate = new Date();
 
   public showConfirmationPage = false;
@@ -71,6 +73,7 @@ export class PurchaseComponent implements OnInit, OnDestroy {
     const subscription = this.productService.getProductById(this.routerId).subscribe(
       response => {
         this.productModel = response;
+        this.activeProduct = response.active!;
         this.finalPrice = response.priceTag! + 20;
       },
       error => {
