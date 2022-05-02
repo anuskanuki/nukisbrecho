@@ -50,8 +50,10 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.isAdmin = this.authService.tokenData.isAdmin;
-    this.firstName = this.authService.tokenData.unique_name.split(' ')[0];
+    if (this.authService.isLoggedIn()) {
+      this.isAdmin = this.authService.tokenData.isAdmin;
+      this.firstName = this.authService.tokenData.unique_name.split(' ')[0];
+    }
     this.createformSearchBar();
     this.getProducts();
   }

@@ -830,6 +830,18 @@
       "question": "hi",
       "answer": "",
       "id": 15
+    },
+    {
+      "productId": "32",
+      "question": "qual o tamanho?",
+      "answer": "",
+      "id": 16
+    },
+    {
+      "productId": "35",
+      "question": "é foleado?",
+      "answer": "",
+      "id": 17
     }
   ],
   "likedProducts": {
