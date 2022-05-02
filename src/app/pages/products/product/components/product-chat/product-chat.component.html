@@ -1,7 +1,14 @@
 <div nz-row>
   <div nz-col nzSpan="12">
-    
-    <nz-divider *ngIf="productIsActive" nzText="Tire suas dúvidas sobre o produto" nzOrientation="left"></nz-divider>
+
+    <nz-divider *ngIf="productIsActive && !isAdminClaim" nzText="Tire suas dúvidas sobre o produto"
+      nzOrientation="left"></nz-divider>
+    <nz-divider *ngIf="productIsActive && isAdminClaim" nzText="Responda dúvidas sobre o produto" nzOrientation="left">
+    </nz-divider>
+
+    <div style="padding-left: 16px;">
+      <p class="blank-chat" *ngIf="!messagesChatArray.length">Ainda não surgiram dúvidas sobre este produto :)</p>
+    </div>
 
     <div nz-col nzSpan="24" *ngFor="let chat of messagesChatArray">
       <nz-timeline>
