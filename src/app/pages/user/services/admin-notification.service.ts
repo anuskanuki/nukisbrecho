@@ -23,4 +23,9 @@ export class AdminNotificationService extends BaseService {
     return this.http.get<NotificationModel[]>(`${this.UrlApiV1}admin-notifications?read=false`)
       .pipe(catchError(error => throwError(error.error.errors[0])));
   }
+
+  public insert(notification: NotificationModel): Observable<NotificationModel> {
+    return this.http.post<NotificationModel>(`${this.UrlApiV1}admin-notifications`, notification, super.httpJsonOptions)
+      .pipe(catchError(error => throwError(error.error.errors[0])));
+  }
 }
