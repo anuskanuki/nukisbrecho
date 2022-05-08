@@ -647,6 +647,16 @@
       "wishlistedCount": 23
     }
   ],
+  "admin-notifications": [
+    {
+      "id": 1,
+      "title": "Mensagem antiga!",
+      "description": "@admin respondeu sua pergunta no produto BLUSA AZUL",
+      "routeLinkTo": "/product/1",
+      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+      "read": true
+    }
+  ],
   "notifications": [
     {
       "id": 1,
