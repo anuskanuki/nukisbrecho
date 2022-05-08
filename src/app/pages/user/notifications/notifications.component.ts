@@ -6,6 +6,7 @@ import { UserService } from '../services/user.service';
 import { Subscription } from 'rxjs';
 import { NotificationService } from '../services/notification.service';
 import { TokenService } from 'src/app/core/services/token.service';
+import { AdminNotificationService } from '../services/admin-notification.service';
 
 @Component({
   selector: 'app-notifications',
@@ -21,19 +22,28 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   constructor(
     private location: Location,
     protected notificationService: NotificationService,
+    protected adminNotificationService: AdminNotificationService,
     protected tokenService: TokenService,
     private notification: NzNotificationService,
   ) { }
 
   ngOnInit(): void {
-    this.getNotificationsByUserId();
+    this.getNotifications();
   }
 
-  private getNotificationsByUserId() {
-    const subscription = this.notificationService.getNotificationsByUserId(this.tokenService.tokenData.nameid).subscribe(
-      response => this.notifications = response ?? [],
-      error => this.notification.error('Oops!', error)
-    )
+  private getNotifications() {
+    let subscription = new Subscription();
+    if (this.tokenService.tokenData.isAdmin) {
+      subscription = this.adminNotificationService.getNotifications().subscribe(
+        response => this.notifications = response ?? [],
+        error => this.notification.error('Oops!', error)
+      )
+    } else {
+      subscription = this.notificationService.getNotificationsByUserId(this.tokenService.tokenData.nameid).subscribe(
+        response => this.notifications = response ?? [],
+        error => this.notification.error('Oops!', error)
+      )
+    }
     this.subscriptions.push(subscription);
   }
 
