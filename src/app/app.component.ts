@@ -7,6 +7,7 @@ import { TokenService } from './core/services/token.service';
 import { LoggedUserModel } from './pages/login/models/login.model';
 import { ProductModel } from './pages/products/models/product.model';
 import { ProductService } from './pages/products/services/product.service';
+import { AdminNotificationService } from './pages/user/services/admin-notification.service';
 import { NotificationService } from './pages/user/services/notification.service';
 
 @Component({
@@ -34,7 +35,8 @@ export class AppComponent implements OnInit, OnDestroy {
     private notification: NzNotificationService,
     private productService: ProductService,
     private formBuilder: FormBuilder,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private adminNotificationService: AdminNotificationService
   ) {
     authService.LoggedIn$.subscribe(loggedIn => {
       this.isLoggedIn = loggedIn;
@@ -83,10 +85,18 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private getNotificationsCount() {
-    const subscription = this.notificationService.getReadNotificationsByUserId(this.authService.tokenData.nameid).subscribe(
-      response => this.notificationsCount = response?.length ?? 0,
-      error => this.notification.error('Oops!', error)
-    )
+    let subscription = new Subscription();
+    if (this.isAdmin) {
+      subscription = this.adminNotificationService.getUnreadNotifications().subscribe(
+        response => this.notificationsCount = response?.length ?? 0,
+        error => this.notification.error('Oops!', error)
+      )
+    } else {
+      subscription = this.notificationService.getUnreadNotificationsByUserId(this.authService.tokenData.nameid).subscribe(
+        response => this.notificationsCount = response?.length ?? 0,
+        error => this.notification.error('Oops!', error)
+      )
+    }
     this.subscriptions.push(subscription);
   }
 
