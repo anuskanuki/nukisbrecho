@@ -89,7 +89,9 @@
 
               <li nz-menu-item routerLink="/user/orders">Meus pedidos</li>
 
-              <!-- <li nz-menu-item routerLink="/user/notifications">Notificações</li> -->
+              <!-- <nz-badge [nzCount]="notificationsCount"> -->
+              <li nz-menu-item routerLink="/user/notifications">Notificações</li>
+              <!-- </nz-badge> -->
 
               <li nz-menu-item (click)="logout()">Sair</li>
             </ng-template>
