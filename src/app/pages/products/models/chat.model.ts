@@ -3,4 +3,5 @@ export class ChatModel {
     public productId?: string;
     public question?: string;
     public answer?: string;
+    public userId?: string;
 }
