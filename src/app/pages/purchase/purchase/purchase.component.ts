@@ -10,6 +10,8 @@ import { PurchaseService } from '../services/purchase.service';
 import { UserByIdModel } from '../models/purchase.model';
 import { OrderModel } from '../../user/models/orders.model';
 import { OrderService } from '../services/order.service';
+import { AdminNotificationService } from '../../user/services/admin-notification.service';
+import { NotificationModel } from '../../user/models/notification.model';
 
 @Component({
   selector: 'app-purchase',
@@ -60,7 +62,8 @@ export class PurchaseComponent implements OnInit, OnDestroy {
     protected purchaseService: PurchaseService,
     protected orderService: OrderService,
     private notification: NzNotificationService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private adminNotificationService: AdminNotificationService,
   ) { }
 
   ngOnInit(): void {
@@ -100,7 +103,8 @@ export class PurchaseComponent implements OnInit, OnDestroy {
     if (this.paymentReceiptAttached) {
       await Promise.all([
         this.deactiveProductPromise(),
-        this.createOrderPromise()
+        this.createOrderPromise(),
+        this.notifyAdmins()
       ]).then(() => {
         this.notification.success('Sucesso!', 'Pedido de compra efetuado.')
       }).then(() => {
@@ -143,6 +147,24 @@ export class PurchaseComponent implements OnInit, OnDestroy {
           photo: this.productModel.photo1
         }
       ]
+    };
+  }
+
+  private notifyAdmins(): Observable<any> {
+    const subscription = this.adminNotificationService.insert(this.mapNotificationToModel());
+    this.subscriptions.push(subscription.subscribe());
+    return subscription;
+  }
+
+  private mapNotificationToModel(): NotificationModel {
+    return {
+      title: "Nova compra efetuada!",
+      description: `O usuário @${this.userName} realizou a compra do produto ${this.productModel.title}`,
+      routeLinkTo: `/product/${this.productModel.id}`,
+      // TO-DO: verificar possibilidade de colocar e renderizar a imagem do asset
+      // image: this.productModel.photo1,
+      image: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+      read: false
     };
   }
 
