@@ -592,7 +592,7 @@
       "photo2": "../assets/clothes/goldbracelet.png",
       "photo3": "../assets/clothes/goldbracelet.png",
       "photo4": "../assets/clothes/goldbracelet.png",
-      "active": true,
+      "active": false,
       "wishlistedCount": 29
     },
     {
@@ -663,6 +663,22 @@
       "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
       "read": false,
       "id": 2
+    },
+    {
+      "title": "Nova compra efetuada!",
+      "description": "O usuário @Admin realizou a compra do produto Bracelete ouro",
+      "routeLinkTo": "/product/35",
+      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+      "read": false,
+      "id": 3
+    },
+    {
+      "title": "Nova compra efetuada!",
+      "description": "O usuário @Admin realizou a compra do produto Bracelete ouro",
+      "routeLinkTo": "/product/35",
+      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+      "read": false,
+      "id": 4
     }
   ],
   "notifications": [
@@ -770,6 +786,22 @@
         }
       ],
       "id": 5
+    },
+    {
+      "orderDate": "12/05/2022",
+      "orderStatusRecived": true,
+      "orderStatusProcessingPayment": true,
+      "orderStatusPaymentOk": true,
+      "orderStatusFinished": true,
+      "userId": "19ced87f-ff2d-45cb-93c7-87c015836cd7",
+      "products": [
+        {
+          "id": "35",
+          "title": "Bracelete ouro",
+          "photo": "../assets/clothes/goldbracelet.png"
+        }
+      ],
+      "id": 6
     }
   ],
   "userCart": [
