@@ -4,7 +4,6 @@ import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { ProductModel } from '../models/product.model';
 import { BaseService } from 'src/app/core/services/base.service';
-import { ChatModel } from '../models/chat.model';
 
 @Injectable({
     providedIn: 'root'
@@ -104,4 +103,5 @@ export class ProductService extends BaseService {
                 catchError(error => throwError(error.error.errors[0]))
             );
     }
+
 }

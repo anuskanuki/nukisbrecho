@@ -29,6 +29,8 @@ export class AppComponent implements OnInit, OnDestroy {
   public productsList: ProductModel[] = [];
   public notificationsCount = 0;
 
+  public productId = 0;
+
   constructor(
     private router: Router,
     private authService: TokenService,
@@ -111,10 +113,10 @@ export class AppComponent implements OnInit, OnDestroy {
     this.router.navigate(['/user/form/', this.authService.tokenData.nameid]);
   }
 
-  goToProduct(event: any) {
-    console.log('test');
-    console.log(event);
-    // this.router.navigateByUrl('product/' + productId.toString());
+  public goToProduct(product: any) {
+    if (this.formSearch.value.title) {
+      this.router.navigateByUrl('product/' + product.id);
+    }
   }
 
   goToHome() {
