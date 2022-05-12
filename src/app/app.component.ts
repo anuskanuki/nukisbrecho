@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Location } from '@angular/common';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { Subscription } from 'rxjs';
@@ -34,7 +33,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private location: Location,
     private authService: TokenService,
     private notification: NzNotificationService,
     private productService: ProductService,
@@ -123,7 +121,7 @@ export class AppComponent implements OnInit, OnDestroy {
         location.reload();
       }, 10);
     }
-    
+
     this.formSearch.reset();
   }
 
