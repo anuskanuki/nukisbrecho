@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Location } from '@angular/common';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { Subscription } from 'rxjs';
@@ -29,8 +30,11 @@ export class AppComponent implements OnInit, OnDestroy {
   public productsList: ProductModel[] = [];
   public notificationsCount = 0;
 
+  public productId = 0;
+
   constructor(
     private router: Router,
+    private location: Location,
     private authService: TokenService,
     private notification: NzNotificationService,
     private productService: ProductService,
@@ -111,10 +115,16 @@ export class AppComponent implements OnInit, OnDestroy {
     this.router.navigate(['/user/form/', this.authService.tokenData.nameid]);
   }
 
-  goToProduct(event: any) {
-    console.log('test');
-    console.log(event);
-    // this.router.navigateByUrl('product/' + productId.toString());
+  public goToProduct(product: any) {
+    this.router.navigateByUrl('product/' + product.id);
+
+    if (this.router.url.includes('/product/')) {
+      setTimeout(() => {
+        location.reload();
+      }, 10);
+    }
+    
+    this.formSearch.reset();
   }
 
   goToHome() {

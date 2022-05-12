@@ -2,7 +2,21 @@
   <div class="header">
     <h3 class="product-title">{{productActions?.title }}</h3>
 
-    <ng-container *ngIf="likeThisProduct then templateLiked else templateNotLiked"></ng-container>
+    <ng-container *ngIf="productIsActive && isLoggedIn then templateLikeEnabled else templateLikeDisabled">
+    </ng-container>
+
+    <ng-template #templateLikeDisabled>
+      <div>
+        <nz-badge [nzCount]="productActions.wishlistedCount" [nzStyle]="{ backgroundColor: '#959494'}">
+          <i class="size-disabled-hearts" nz-icon nzType="heart" nzTheme="outline">
+          </i>
+        </nz-badge>
+      </div>
+    </ng-template>
+
+    <ng-template #templateLikeEnabled>
+      <ng-container *ngIf="likeThisProduct then templateLiked else templateNotLiked"></ng-container>
+    </ng-template>
 
     <ng-template #templateNotLiked>
       <div>
