@@ -70,7 +70,8 @@
               <form nz-form [formGroup]="formSearch">
                 <nz-form-control>
                   <nz-select formControlName="title" nzPlaceHolder="Pesquisar prouto por título..." nzShowSearch
-                    nzAllowClear (click)="goToProduct(formSearch.value.title)">
+                    nzAllowClear [(ngModel)]="formSearch.value.title"
+                    (ngModelChange)="goToProduct(formSearch.value.title)">
                     <nz-option nzAllowClear *ngFor="let product of productsList" [nzValue]="product"
                       [nzLabel]="product.title || 'erro ao carregar título'">
                     </nz-option>
