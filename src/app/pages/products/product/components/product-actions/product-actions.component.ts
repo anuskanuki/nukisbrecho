@@ -20,6 +20,7 @@ export class ProductActionsComponent {
   isLoggedIn = false;
 
   @Input() productActions = new ProductActions();
+  @Input() productIsActive = true;
   likeThisProduct = false;
 
   constructor(
