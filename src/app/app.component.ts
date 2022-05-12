@@ -106,6 +106,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   public logout() {
     this.authService.logout();
+    setTimeout(() => {
+      location.reload();
+    }, 10);
     this.goToHome();
   }
 
