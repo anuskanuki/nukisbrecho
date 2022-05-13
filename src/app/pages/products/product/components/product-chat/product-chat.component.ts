@@ -5,6 +5,7 @@ import { ChatModel } from '../../../models/chat.model';
 import { Observable, Subscription } from 'rxjs';
 import { TokenService } from 'src/app/core/services/token.service';
 import { ChatService } from '../../../services/chat.service';
+import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 // import { AdminNotificationService } from 'src/app/pages/user/services/admin-notification.service';
 // import { NotificationModel } from 'src/app/pages/user/models/notification.model';
 // import { NotificationService } from 'src/app/pages/user/services/notification.service';
@@ -95,7 +96,7 @@ export class ProductChatComponent implements OnInit, OnDestroy {
         // this.notifyAdminsPromise(),
       ]).then(() => {
         this.inputValue = '';
-        this.notification.success('Sucesso!', 'Mensagem enviada');
+        this.notification.success('Sucesso!', 'Pergunta enviada');
         this.getMessages();
       }).catch(error => {
         this.notification.error('Oops!', error)
@@ -142,9 +143,9 @@ export class ProductChatComponent implements OnInit, OnDestroy {
   // }
 
   public async sendAnswer(id: string, userId: string) {
-    if (this.formAdminAnswer.valid && this.formAdminAnswer.dirty) {
-      this.submitting = true;
+    this.submitting = true;
 
+    if (this.formAdminAnswer.valid && this.formAdminAnswer.dirty) {
       await Promise.all([
         this.sendAnswerPromise(id),
         // this.notifyUserPromise(userId),

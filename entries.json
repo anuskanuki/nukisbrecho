@@ -752,9 +752,23 @@
     {
       "productId": "38",
       "question": "é original?",
-      "answer": "",
+      "answer": "ismm",
       "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
       "id": 2
+    },
+    {
+      "productId": "35",
+      "question": "pergunta?",
+      "answer": "s",
+      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
+      "id": 3
+    },
+    {
+      "productId": "36",
+      "question": "teste??\n",
+      "answer": "ss",
+      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
+      "id": 4
     }
   ],
   "likedProducts": {
