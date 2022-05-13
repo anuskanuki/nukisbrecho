@@ -17,6 +17,11 @@ export class ProductCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    if (this.productSize === 'unico') {
+      this.productSize = '';
+    } else {
+      this.productSize = ' - ' + this.productSize;
+    }
   }
 
 }

@@ -5,9 +5,10 @@ import { ChatModel } from '../../../models/chat.model';
 import { Observable, Subscription } from 'rxjs';
 import { TokenService } from 'src/app/core/services/token.service';
 import { ChatService } from '../../../services/chat.service';
-import { AdminNotificationService } from 'src/app/pages/user/services/admin-notification.service';
-import { NotificationModel } from 'src/app/pages/user/models/notification.model';
-import { NotificationService } from 'src/app/pages/user/services/notification.service';
+import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
+// import { AdminNotificationService } from 'src/app/pages/user/services/admin-notification.service';
+// import { NotificationModel } from 'src/app/pages/user/models/notification.model';
+// import { NotificationService } from 'src/app/pages/user/services/notification.service';
 
 @Component({
   selector: 'app-product-chat',
@@ -43,8 +44,8 @@ export class ProductChatComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
     private authService: TokenService,
     private notification: NzNotificationService,
-    private adminNotificationService: AdminNotificationService,
-    private notificationService: NotificationService,
+    // private adminNotificationService: AdminNotificationService,
+    // private notificationService: NotificationService,
   ) { }
 
   ngOnInit(): void {
@@ -92,10 +93,10 @@ export class ProductChatComponent implements OnInit, OnDestroy {
 
       await Promise.all([
         this.sendQuestionPromise(),
-        this.notifyAdminsPromise(),
+        // this.notifyAdminsPromise(),
       ]).then(() => {
         this.inputValue = '';
-        this.notification.success('Sucesso!', 'Mensagem enviada');
+        this.notification.success('Sucesso!', 'Pergunta enviada');
         this.getMessages();
       }).catch(error => {
         this.notification.error('Oops!', error)
@@ -122,32 +123,32 @@ export class ProductChatComponent implements OnInit, OnDestroy {
     return chat;
   }
 
-  private notifyAdminsPromise(): Observable<any> {
-    const subscription = this.adminNotificationService.insert(this.mapAdminNotificationToModel());
-    this.subscriptions.push(subscription.subscribe());
+  // private notifyAdminsPromise(): Observable<any> {
+  //   const subscription = this.adminNotificationService.insert(this.mapAdminNotificationToModel());
+  //   this.subscriptions.push(subscription.subscribe());
 
-    return subscription;
-  }
+  //   return subscription;
+  // }
 
-  private mapAdminNotificationToModel(): NotificationModel {
-    return {
-      title: "Nova pergunta recebida!",
-      description: `O usuário @${this.authService.tokenData.unique_name} fez uma pergunta!`,
-      routeLinkTo: `/product/${this.routerId}`,
-      // TO-DO: verificar possibilidade de colocar e renderizar a imagem do asset
-      // image: this.productModel.photo1,
-      image: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      read: false
-    };
-  }
+  // private mapAdminNotificationToModel(): NotificationModel {
+  //   return {
+  //     title: "Nova pergunta recebida!",
+  //     description: `O usuário @${this.authService.tokenData.unique_name} fez uma pergunta!`,
+  //     routeLinkTo: `/product/${this.routerId}`,
+  //     // TO-DO: verificar possibilidade de colocar e renderizar a imagem do asset
+  //     // image: this.productModel.photo1,
+  //     image: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+  //     read: false
+  //   };
+  // }
 
   public async sendAnswer(id: string, userId: string) {
-    if (this.formAdminAnswer.valid && this.formAdminAnswer.dirty) {
-      this.submitting = true;
+    this.submitting = true;
 
+    if (this.formAdminAnswer.valid && this.formAdminAnswer.dirty) {
       await Promise.all([
         this.sendAnswerPromise(id),
-        this.notifyUserPromise(userId),
+        // this.notifyUserPromise(userId),
       ]).then(() => {
         this.inputValue = '';
         this.notification.success('Sucesso!', 'Resposta enviada.');
@@ -174,25 +175,25 @@ export class ProductChatComponent implements OnInit, OnDestroy {
     return chat;
   }
 
-  private notifyUserPromise(id: string): Observable<any> {
-    const subscription = this.notificationService.insert(this.mapUserNotificationToModel(id));
-    this.subscriptions.push(subscription.subscribe());
+  // private notifyUserPromise(id: string): Observable<any> {
+  //   const subscription = this.notificationService.insert(this.mapUserNotificationToModel(id));
+  //   this.subscriptions.push(subscription.subscribe());
 
-    return subscription;
-  }
+  //   return subscription;
+  // }
 
-  private mapUserNotificationToModel(userId: string): NotificationModel {
-    return {
-      title: "Nova resposta recebida!",
-      description: `Sua pergunta foi respondida!`,
-      routeLinkTo: `/product/${this.routerId}`,
-      // TO-DO: verificar possibilidade de colocar e renderizar a imagem do asset
-      // image: this.productModel.photo1,
-      image: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      read: false,
-      userId: userId
-    };
-  }
+  // private mapUserNotificationToModel(userId: string): NotificationModel {
+  //   return {
+  //     title: "Nova resposta recebida!",
+  //     description: `Sua pergunta foi respondida!`,
+  //     routeLinkTo: `/product/${this.routerId}`,
+  //     // TO-DO: verificar possibilidade de colocar e renderizar a imagem do asset
+  //     // image: this.productModel.photo1,
+  //     image: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+  //     read: false,
+  //     userId: userId
+  //   };
+  // }
 
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscripition => subscripition.unsubscribe());

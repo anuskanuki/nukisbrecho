@@ -84,7 +84,7 @@ export class HelpComponent implements OnInit, OnDestroy {
 
   createBasicNotification(): void {
     this.notification
-      .blank(
+      .success(
         'Avaliação enviada :)',
         'Sua opinião é muito importante para continuarmos evoluindo! Contate-nos se necessário.'
       )

@@ -41,7 +41,7 @@
       "description": "Brinco prata seminovo, foi usado poucas vezes, comprado na renner, possui tarracha acoplada.",
       "category": "acessorios",
       "brand": "renner",
-      "size": "único",
+      "size": "unico",
       "condition": "usado",
       "priceTag": 19,
       "photo2": "../assets/clothes/brinco.png",
@@ -139,7 +139,7 @@
     {
       "id": 9,
       "productCode": "#0009",
-      "title": "Suéter natalino com gola",
+      "title": "Suéter natalino",
       "description": "Suéter natalino com gola boneco de neve, artesanal, novo. Medidas: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm, mangas 19cm.",
       "category": "roupas",
       "brand": "tricot artesanal",
@@ -330,7 +330,7 @@
       "description": "Mochila grande na cor rosa, detalhe de coração, usada, sem avarias, marca adidas.",
       "category": "acessorios",
       "brand": "adidas",
-      "size": "G",
+      "size": "unico",
       "condition": "usado",
       "priceTag": 24,
       "photo2": "../assets/clothes/girl_backpack.png",
@@ -439,7 +439,7 @@
       "photo2": "../assets/clothes/sneakers1.png",
       "photo3": "../assets/clothes/sneakers1.png",
       "photo4": "../assets/clothes/sneakers1.png",
-      "active": false,
+      "active": true,
       "wishlistedCount": 4
     },
     {
@@ -500,7 +500,7 @@
       "description": "Vestido regada costas nadador e saia rodada com babados da zara, usado porém não possui avarias ou marcas fortes de uso. Tamanho P. Medidas: ombro 36cm, busto 100cm, quadril 120cm, comprimento total 80cm. Possui elastano.",
       "category": "roupas",
       "brand": "zara",
-      "size": "p",
+      "size": "P",
       "condition": "usado",
       "priceTag": 18,
       "photo1": "../assets/clothes/womanspurpleyellowdress.png",
@@ -558,7 +558,7 @@
       "photo2": "../assets/clothes/santashat.png",
       "photo3": "../assets/clothes/santashat.png",
       "photo4": "../assets/clothes/santashat.png",
-      "active": false,
+      "active": true,
       "wishlistedCount": 2
     },
     {
@@ -575,7 +575,7 @@
       "photo2": "../assets/clothes/vansoldgramma.png",
       "photo3": "../assets/clothes/vansoldgramma.png",
       "photo4": "../assets/clothes/vansoldgramma.png",
-      "active": false,
+      "active": true,
       "wishlistedCount": 22
     },
     {
@@ -592,13 +592,13 @@
       "photo2": "../assets/clothes/goldbracelet.png",
       "photo3": "../assets/clothes/goldbracelet.png",
       "photo4": "../assets/clothes/goldbracelet.png",
-      "active": false,
+      "active": true,
       "wishlistedCount": 29
     },
     {
       "id": 36,
       "productCode": "#0036",
-      "title": "Casaco de moletom com capuz",
+      "title": "Casaco com capuz",
       "description": "Casaco de moletom com touca e cordinhas para regulagem do capuz. Novo, não possui avarias. Tamanho GG. Medidas: mangas 70cm, cintura 130cm, ombro 47cm, comprimento total tronco 70cm.",
       "category": "roupas",
       "brand": "beagle",
@@ -609,7 +609,7 @@
       "photo2": "../assets/clothes/jacket.png",
       "photo3": "../assets/clothes/jacket.png",
       "photo4": "../assets/clothes/jacket.png",
-      "active": false,
+      "active": true,
       "wishlistedCount": 9
     },
     {
@@ -626,7 +626,7 @@
       "photo2": "../assets/clothes/goldengajementring.png",
       "photo3": "../assets/clothes/goldengajementring.png",
       "photo4": "../assets/clothes/goldengajementring.png",
-      "active": true,
+      "active": false,
       "wishlistedCount": 8
     },
     {
@@ -643,8 +643,161 @@
       "photo2": "../assets/clothes/vanstoddlergirly.png",
       "photo3": "../assets/clothes/vanstoddlergirly.png",
       "photo4": "../assets/clothes/vanstoddlergirly.png",
-      "active": false,
+      "active": true,
       "wishlistedCount": 23
+    },
+    {
+      "id": 39,
+      "productCode": "#0039",
+      "title": "Bolsa rosa clutch",
+      "description": "Bolsa rosa fosca estilo clutch, usada, porém não possui avarias ou marcas fortes de uso.",
+      "category": "acessorios",
+      "brand": "mundo lolita",
+      "size": "unico",
+      "condition": "usado",
+      "priceTag": 22,
+      "photo1": "../assets/clothes/pink-purse.png",
+      "photo2": "../assets/clothes/pink-purse.png",
+      "photo3": "../assets/clothes/pink-purse.png",
+      "photo4": "../assets/clothes/pink-purse.png",
+      "active": true,
+      "wishlistedCount": 4
+    },
+    {
+      "id": 40,
+      "productCode": "#0040",
+      "title": "Calça jeans reta",
+      "description": "Calça jeans reta, usada, porém não possui avarias ou marcas fortes de uso, tamanho 40. Medidas: comprimento 100cm, cintura 80cm, quadril 120cm. ",
+      "category": "roupas",
+      "brand": "makenji",
+      "size": "40",
+      "condition": "usado",
+      "priceTag": 23,
+      "photo1": "../assets/clothes/jeansmale.png",
+      "photo2": "../assets/clothes/jeansmale.png",
+      "photo3": "../assets/clothes/jeansmale.png",
+      "photo4": "../assets/clothes/jeansmale.png",
+      "active": true,
+      "wishlistedCount": 26
+    },
+    {
+      "id": 41,
+      "productCode": "#0041",
+      "title": "Cachecol verde",
+      "description": "Cachecol verde listras novo, tamanho único, mede 50cmx200cm. ",
+      "category": "acessorios",
+      "brand": "amaro",
+      "size": "unico",
+      "condition": "novo",
+      "priceTag": 14,
+      "photo1": "../assets/clothes/greenhpscarf.png",
+      "photo2": "../assets/clothes/greenhpscarf.png",
+      "photo3": "../assets/clothes/greenhpscarf.png",
+      "photo4": "../assets/clothes/greenhpscarf.png",
+      "active": true,
+      "wishlistedCount": 3
+    },
+    {
+      "id": 42,
+      "productCode": "#0042",
+      "title": "Vestido festa roxo",
+      "description": "Vestido de festa roxo, novo, tamanho G. Medidas: comprimento total 90cm, quadril 120cm, decote 20cm, ombro a ombro 42cm.",
+      "category": "roupas",
+      "brand": "amaro",
+      "size": "G",
+      "condition": "novo",
+      "priceTag": 22,
+      "photo1": "../assets/clothes/purpledress.png",
+      "photo2": "../assets/clothes/purpledress.png",
+      "photo3": "../assets/clothes/purpledress.png",
+      "photo4": "../assets/clothes/purpledress.png",
+      "active": true,
+      "wishlistedCount": 8
+    },
+    {
+      "id": 43,
+      "productCode": "#0043",
+      "title": "Bolsa marrom",
+      "description": "Bolsa marrom com alças douradas, usada, sem marcas de uso significantes, marca capodarte.",
+      "category": "acessorios",
+      "brand": "capodarte",
+      "size": "unico",
+      "condition": "usado",
+      "priceTag": 41,
+      "photo1": "../assets/clothes/lvbag.png",
+      "photo2": "../assets/clothes/lvbag.png",
+      "photo3": "../assets/clothes/lvbag.png",
+      "photo4": "../assets/clothes/lvbag.png",
+      "active": true,
+      "wishlistedCount": 21
+    },
+    {
+      "id": 44,
+      "productCode": "#0044",
+      "title": "Lenço pashmina rosa",
+      "description": "Lenço pashmina rosa youcom, usado, sem fios puxados, mede 30cm x 100cm.",
+      "category": "acessorios",
+      "brand": "youcom",
+      "size": "unico",
+      "condition": "usado",
+      "priceTag": 17,
+      "photo1": "../assets/clothes/pinkscarf.png",
+      "photo2": "../assets/clothes/pinkscarf.png",
+      "photo3": "../assets/clothes/pinkscarf.png",
+      "photo4": "../assets/clothes/pinkscarf.png",
+      "active": true,
+      "wishlistedCount": 1
+    },
+    {
+      "id": 45,
+      "productCode": "#0045",
+      "title": "Blusa vermelha",
+      "description": "Blusa comprida vermelha, nova, nenhuma avaria. Possui detalhes bordados na parte frontal (vide foto). Medidas: comprimento tronco 50cm, mangas 60cm, ombro 40cm, busto 90cm.",
+      "category": "roupas",
+      "brand": "mundo lolita",
+      "size": "PP",
+      "condition": "novo",
+      "priceTag": 28,
+      "photo1": "../assets/clothes/sweaterred.png",
+      "photo2": "../assets/clothes/sweaterred.png",
+      "photo3": "../assets/clothes/sweaterred.png",
+      "photo4": "../assets/clothes/sweaterred.png",
+      "active": true,
+      "wishlistedCount": 9
+    },
+    {
+      "id": 46,
+      "productCode": "#0046",
+      "title": "Calça legging rosa",
+      "description": "Calça legging rosa usada, tecido com elastano e algodão, cintura alta. Medidas: comprimento 100cm, quadril 120cm, gancho 30cm.",
+      "category": "roupas",
+      "brand": "lupo",
+      "size": "36",
+      "condition": "usado",
+      "priceTag": 14,
+      "photo1": "../assets/clothes/pinkleggings.png",
+      "photo2": "../assets/clothes/pinkleggings.png",
+      "photo3": "../assets/clothes/pinkleggings.png",
+      "photo4": "../assets/clothes/pinkleggings.png",
+      "active": true,
+      "wishlistedCount": 6
+    },
+    {
+      "id": 47,
+      "productCode": "#0047",
+      "title": "Bolsa couro preto",
+      "description": "Bolsa preta de couro legítimo, usada, ótimo estado.",
+      "category": "acessorios",
+      "brand": "sem marca",
+      "size": "unico",
+      "condition": "usado",
+      "priceTag": 56,
+      "photo1": "../assets/clothes/allblackbag.png",
+      "photo2": "../assets/clothes/allblackbag.png",
+      "photo3": "../assets/clothes/allblackbag.png",
+      "photo4": "../assets/clothes/allblackbag.png",
+      "active": true,
+      "wishlistedCount": 24
     }
   ],
   "admin-notifications": [
@@ -663,22 +816,6 @@
       "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
       "read": false,
       "id": 2
-    },
-    {
-      "title": "Nova compra efetuada!",
-      "description": "O usuário @Admin realizou a compra do produto Bracelete ouro",
-      "routeLinkTo": "/product/35",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      "read": false,
-      "id": 3
-    },
-    {
-      "title": "Nova compra efetuada!",
-      "description": "O usuário @Admin realizou a compra do produto Bracelete ouro",
-      "routeLinkTo": "/product/35",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      "read": false,
-      "id": 4
     }
   ],
   "notifications": [
@@ -699,16 +836,25 @@
       "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
       "userId": "41f37f59-e844-410b-a9ca-2f243627777a",
       "read": false
+    },
+    {
+      "title": "Nova resposta recebida!",
+      "description": "Sua pergunta foi respondida!",
+      "routeLinkTo": "/product/28",
+      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+      "read": false,
+      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
+      "id": 3
     }
   ],
   "stars": {
-    "starsTotal": 5,
-    "starsAverage": 5,
-    "votersCount": 1
+    "starsTotal": 19,
+    "starsAverage": 3.8,
+    "votersCount": 5
   },
   "orders": [
     {
-      "orderDate": "30/04/2022",
+      "orderDate": "13/05/2022",
       "orderStatusRecived": true,
       "orderStatusProcessingPayment": true,
       "orderStatusPaymentOk": true,
@@ -716,92 +862,12 @@
       "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
       "products": [
         {
-          "id": "33",
-          "title": "Touca natalina",
-          "photo": "../assets/clothes/santashat.png"
+          "id": "37",
+          "title": "Anel de noivado",
+          "photo": "../assets/clothes/goldengajementring.png"
         }
       ],
-      "id": 1
-    },
-    {
-      "orderDate": "30/04/2022",
-      "orderStatusRecived": true,
-      "orderStatusProcessingPayment": true,
-      "orderStatusPaymentOk": true,
-      "orderStatusFinished": true,
-      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
-      "products": [
-        {
-          "id": "26",
-          "title": "Tênis de velcro",
-          "photo": "../assets/clothes/sneakers1.png"
-        }
-      ],
-      "id": 2
-    },
-    {
-      "orderDate": "01/05/2022",
-      "orderStatusRecived": true,
-      "orderStatusProcessingPayment": true,
-      "orderStatusPaymentOk": true,
-      "orderStatusFinished": true,
-      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
-      "products": [
-        {
-          "id": "38",
-          "title": "Tênis respingos",
-          "photo": "../assets/clothes/vanstoddlergirly.png"
-        }
-      ],
-      "id": 3
-    },
-    {
-      "orderDate": "01/05/2022",
-      "orderStatusRecived": true,
-      "orderStatusProcessingPayment": true,
-      "orderStatusPaymentOk": true,
-      "orderStatusFinished": true,
-      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
-      "products": [
-        {
-          "id": "36",
-          "title": "Casaco de moletom com capuz",
-          "photo": "../assets/clothes/jacket.png"
-        }
-      ],
-      "id": 4
-    },
-    {
-      "orderDate": "01/05/2022",
-      "orderStatusRecived": true,
-      "orderStatusProcessingPayment": true,
-      "orderStatusPaymentOk": true,
-      "orderStatusFinished": true,
-      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
-      "products": [
-        {
-          "id": "34",
-          "title": "Tênis slip on ramos",
-          "photo": "../assets/clothes/vansoldgramma.png"
-        }
-      ],
-      "id": 5
-    },
-    {
-      "orderDate": "12/05/2022",
-      "orderStatusRecived": true,
-      "orderStatusProcessingPayment": true,
-      "orderStatusPaymentOk": true,
-      "orderStatusFinished": true,
-      "userId": "19ced87f-ff2d-45cb-93c7-87c015836cd7",
-      "products": [
-        {
-          "id": "35",
-          "title": "Bracelete ouro",
-          "photo": "../assets/clothes/goldbracelet.png"
-        }
-      ],
-      "id": 6
+      "id": 8
     }
   ],
   "userCart": [
@@ -818,50 +884,7 @@
       "id": 1,
       "productId": 27,
       "question": "Qual o tamanho?",
-      "answer": "G"
-    },
-    {
-      "productId": "19",
-      "question": "Teste",
-      "answer": "Teste 2",
-      "id": 12
-    },
-    {
-      "productId": "27",
-      "question": "Teste",
-      "answer": "Teste",
-      "id": 13
-    },
-    {
-      "productId": "27",
-      "question": "Teste 2",
-      "answer": "Teste 2",
-      "id": 14
-    },
-    {
-      "productId": "38",
-      "question": "hi",
-      "answer": "",
-      "id": 15
-    },
-    {
-      "productId": "32",
-      "question": "qual o tamanho?",
-      "answer": "",
-      "id": 16
-    },
-    {
-      "productId": "35",
-      "question": "é foleado?",
-      "answer": "",
-      "id": 17
-    },
-    {
-      "productId": "37",
-      "question": "anel?",
-      "answer": "",
-      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
-      "id": 18
+      "answer": "Olá, tamanho 36!"
     }
   ],
   "likedProducts": {
