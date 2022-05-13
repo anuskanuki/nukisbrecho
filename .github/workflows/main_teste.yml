@@ -14,7 +14,7 @@ jobs:
         run: npm i
         
       - name: Deploying
-        run: git push heroku main
+        run: git push heroku teste-deploy:main
 
 
       #- name: Deploying to Heroku
