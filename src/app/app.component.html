@@ -82,7 +82,7 @@
 
               <li nz-menu-item (click)="goToProfile()">Minha conta</li>
 
-              <li nz-menu-item routerLink="/user/orders">Meus pedidos</li>
+              <li nz-menu-item *ngIf="!isAdmin" routerLink="/user/orders">Meus pedidos</li>
 
               <!-- <nz-badge [nzCount]="notificationsCount"> -->
               <li nz-menu-item routerLink="/user/notifications">Notificações</li>

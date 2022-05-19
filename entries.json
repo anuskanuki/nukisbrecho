@@ -835,6 +835,15 @@
       "read": false,
       "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
       "id": 1
+    },
+    {
+      "title": "Sua pergunta foi respondida!",
+      "description": "Clique aqui para acessar o produto",
+      "routeLinkTo": "/product/47",
+      "image": "",
+      "read": false,
+      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
+      "id": 2
     }
   ],
   "stars": {
@@ -863,10 +872,10 @@
   ],
   "chat": [
     {
-      "answering": false,
+      "answering": true,
       "productId": "47",
       "question": "Olá, quanto mede a alça?",
-      "answer": "",
+      "answer": "Oie! A alça tem 23cm!",
       "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
       "id": 1
     },

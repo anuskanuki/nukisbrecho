@@ -162,8 +162,7 @@ export class PurchaseComponent implements OnInit, OnDestroy {
       title: "Nova compra efetuada!",
       description: `O usuário @${this.userName} realizou a compra do produto ${this.productModel.title}`,
       routeLinkTo: `/product/${this.productModel.id}`,
-      // TO-DO: verificar possibilidade de colocar e renderizar a imagem do asset
-      // image: this.productModel.photo1,
+      // TO-DO: verify the possibility to pu6t in here the product image
       image: "",
       read: false
     };
@@ -173,7 +172,7 @@ export class PurchaseComponent implements OnInit, OnDestroy {
     this.showConfirmationPage = true;
   }
 
-  goToHome() {
+  goToOrders() {
     this.router.navigateByUrl('/user/orders');
   }
 
