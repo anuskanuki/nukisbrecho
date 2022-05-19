@@ -626,7 +626,7 @@
       "photo2": "../assets/clothes/goldengajementring.png",
       "photo3": "../assets/clothes/goldengajementring.png",
       "photo4": "../assets/clothes/goldengajementring.png",
-      "active": false,
+      "active": true,
       "wishlistedCount": 8
     },
     {
@@ -800,93 +800,15 @@
       "wishlistedCount": 24
     }
   ],
-  "admin-notifications": [
-    {
-      "id": 1,
-      "title": "Mensagem antiga!",
-      "description": "@admin respondeu sua pergunta no produto BLUSA AZUL",
-      "routeLinkTo": "/product/1",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      "read": true
-    },
-    {
-      "title": "Nova pergunta recebida!",
-      "description": "O usuário @Usuário Genérico fez uma pergunta!",
-      "routeLinkTo": "/product/37",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      "read": false,
-      "id": 2
-    }
-  ],
-  "notifications": [
-    {
-      "id": 1,
-      "title": "Mensagem antiga!",
-      "description": "@admin respondeu sua pergunta no produto BLUSA AZUL",
-      "routeLinkTo": "/product/1",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      "userId": "41f37f59-e844-410b-a9ca-2f243627777a",
-      "read": false
-    },
-    {
-      "id": 2,
-      "title": "Mensagem nova!",
-      "description": "@admin respondeu sua pergunta no produto BLUSA AZUL",
-      "routeLinkTo": "/product/1",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      "userId": "41f37f59-e844-410b-a9ca-2f243627777a",
-      "read": false
-    },
-    {
-      "title": "Nova resposta recebida!",
-      "description": "Sua pergunta foi respondida!",
-      "routeLinkTo": "/product/28",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      "read": false,
-      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
-      "id": 3
-    }
-  ],
+  "admin-notifications": [],
+  "notifications": [],
   "stars": {
-    "starsTotal": 19,
-    "starsAverage": 3.8,
-    "votersCount": 5
+    "starsTotal": 5,
+    "starsAverage": 5,
+    "votersCount": 1
   },
-  "orders": [
-    {
-      "orderDate": "13/05/2022",
-      "orderStatusRecived": true,
-      "orderStatusProcessingPayment": true,
-      "orderStatusPaymentOk": true,
-      "orderStatusFinished": true,
-      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
-      "products": [
-        {
-          "id": "37",
-          "title": "Anel de noivado",
-          "photo": "../assets/clothes/goldengajementring.png"
-        }
-      ],
-      "id": 8
-    }
-  ],
-  "userCart": [
-    {
-      "cartId": 1,
-      "productsId": [
-        1,
-        3
-      ]
-    }
-  ],
-  "chat": [
-    {
-      "id": 1,
-      "productId": 27,
-      "question": "Qual o tamanho?",
-      "answer": "Olá, tamanho 36!"
-    }
-  ],
+  "orders": [],
+  "chat": [],
   "likedProducts": {
     "totalLiked": 3,
     "productsId": [

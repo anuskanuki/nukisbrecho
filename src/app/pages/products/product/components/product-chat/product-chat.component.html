@@ -7,7 +7,10 @@
     </nz-divider>
 
     <div style="padding-left: 16px;">
-      <p class="blank-chat" *ngIf="!messagesChatArray.length">Ainda não surgiram dúvidas sobre este produto :)</p>
+      <p class="blank-chat" *ngIf="!messagesChatArray.length && productIsActive">Ainda não surgiram dúvidas sobre este
+        produto :)</p>
+      <p class="blank-chat" *ngIf="!productIsActive">As perguntas e respostas
+        encontram-se indisponíveis para este produto pois ele já foi vendido.</p>
     </div>
 
     <div nz-col nzSpan="24" *ngFor="let chat of messagesChatArray">
@@ -26,9 +29,10 @@
             <span>aguardando resposta</span>
 
             <ng-container *ngIf="isAdminClaim  && productIsActive">
-              <button class="answer-btn" nz-button nzType="primary" (click)="openAnswerToAdmin()">Responder</button>
+              <button class="answer-btn" nz-button nzType="primary"
+                (click)="chat.answering = !chat.answering">Responder</button>
 
-              <form *ngIf="answerToAdminIsOpen && userLoggedIn" [formGroup]="formAdminAnswer">
+              <form *ngIf="chat.answering && userLoggedIn" [formGroup]="formAdminAnswer">
                 <div nz-col nzSpan="24">
                   <nz-comment>
                     <nz-comment-content>

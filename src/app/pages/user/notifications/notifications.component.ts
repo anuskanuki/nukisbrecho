@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NotificationModel } from '../models/notification.model';
-import { UserService } from '../services/user.service';
 import { Subscription } from 'rxjs';
 import { NotificationService } from '../services/notification.service';
 import { TokenService } from 'src/app/core/services/token.service';
@@ -54,4 +53,5 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscripition => subscripition.unsubscribe());
   }
+
 }

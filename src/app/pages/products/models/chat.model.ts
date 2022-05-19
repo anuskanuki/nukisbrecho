@@ -4,4 +4,5 @@ export class ChatModel {
     public question?: string;
     public answer?: string;
     public userId?: string;
+    public answering = false;
 }

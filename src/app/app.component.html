@@ -67,17 +67,12 @@
             </li>
 
             <li nz-menu-item>
-              <form nz-form [formGroup]="formSearch">
-                <nz-form-control>
-                  <nz-select formControlName="title" nzPlaceHolder="Pesquisar prouto por título..." nzShowSearch
-                    nzAllowClear [(ngModel)]="formSearch.value.title"
-                    (ngModelChange)="goToProduct(formSearch.value.title)">
-                    <nz-option nzAllowClear *ngFor="let product of productsList" [nzValue]="product"
-                      [nzLabel]="product.title || 'erro ao carregar título'">
-                    </nz-option>
-                  </nz-select>
-                </nz-form-control>
-              </form>
+              <nz-select nzPlaceHolder="Pesquisar prouto por título..." nzShowSearch nzAllowClear
+                [(ngModel)]="selectedProductSearchBar" (ngModelChange)="goToProduct()">
+                <nz-option nzAllowClear *ngFor="let product of productsList" [nzValue]="product"
+                  [nzLabel]="product.title || 'erro ao carregar título'">
+                </nz-option>
+              </nz-select>
             </li>
 
             <ng-container *ngIf="isLoggedIn; then menuLoggedAccess else menuNotLoggedInAccess"></ng-container>
@@ -90,7 +85,7 @@
               <li nz-menu-item routerLink="/user/orders">Meus pedidos</li>
 
               <!-- <nz-badge [nzCount]="notificationsCount"> -->
-              <!-- <li nz-menu-item routerLink="/user/notifications">Notificações</li> -->
+              <li nz-menu-item routerLink="/user/notifications">Notificações</li>
               <!-- </nz-badge> -->
 
               <li nz-menu-item (click)="logout()">Sair</li>
