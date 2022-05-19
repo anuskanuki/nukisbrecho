@@ -136,7 +136,7 @@ export class ProductChatComponent implements OnInit, OnDestroy {
       routeLinkTo: `/product/${this.routerId}`,
       // TO-DO: verificar possibilidade de colocar e renderizar a imagem do asset
       // image: this.productModel.photo1,
-      image: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+      image: "",
       read: false
     };
   }
@@ -170,12 +170,12 @@ export class ProductChatComponent implements OnInit, OnDestroy {
 
   private mapUserNotificationToModel(userId: string): NotificationModel {
     return {
-      title: "Nova resposta recebida!",
-      description: `Sua pergunta foi respondida!`,
+      title: "Sua pergunta foi respondida!",
+      description: `Clique aqui para acessar o produto`,
       routeLinkTo: `/product/${this.routerId}`,
       // TO-DO: verificar possibilidade de colocar e renderizar a imagem do asset
       // image: this.productModel.photo1,
-      image: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+      image: "",
       read: false,
       userId: userId
     };

@@ -609,7 +609,7 @@
       "photo2": "../assets/clothes/jacket.png",
       "photo3": "../assets/clothes/jacket.png",
       "photo4": "../assets/clothes/jacket.png",
-      "active": true,
+      "active": false,
       "wishlistedCount": 9
     },
     {
@@ -800,15 +800,85 @@
       "wishlistedCount": 24
     }
   ],
-  "admin-notifications": [],
-  "notifications": [],
+  "admin-notifications": [
+    {
+      "title": "Nova pergunta recebida!",
+      "description": "O usuário @Usuário Genérico fez uma pergunta!",
+      "routeLinkTo": "/product/47",
+      "image": "",
+      "read": false,
+      "id": 1
+    },
+    {
+      "title": "Nova pergunta recebida!",
+      "description": "O usuário @Usuário Genérico fez uma pergunta!",
+      "routeLinkTo": "/product/36",
+      "image": "",
+      "read": false,
+      "id": 2
+    },
+    {
+      "title": "Nova compra efetuada!",
+      "description": "O usuário @Usuário realizou a compra do produto Casaco com capuz",
+      "routeLinkTo": "/product/36",
+      "image": "",
+      "read": false,
+      "id": 3
+    }
+  ],
+  "notifications": [
+    {
+      "title": "Sua pergunta foi respondida!",
+      "description": "Clique aqui para acessar o produto",
+      "routeLinkTo": "/product/36",
+      "image": "",
+      "read": false,
+      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
+      "id": 1
+    }
+  ],
   "stars": {
-    "starsTotal": 5,
-    "starsAverage": 5,
-    "votersCount": 1
+    "starsTotal": 20,
+    "starsAverage": 4,
+    "votersCount": 5
   },
-  "orders": [],
-  "chat": [],
+  "orders": [
+    {
+      "orderDate": "19/05/2022",
+      "orderStatusRecived": true,
+      "orderStatusProcessingPayment": true,
+      "orderStatusPaymentOk": true,
+      "orderStatusFinished": true,
+      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
+      "products": [
+        {
+          "id": "36",
+          "title": "Casaco com capuz",
+          "photo": "../assets/clothes/jacket.png",
+          "priceTag": "41"
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "chat": [
+    {
+      "answering": false,
+      "productId": "47",
+      "question": "Olá, quanto mede a alça?",
+      "answer": "",
+      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
+      "id": 1
+    },
+    {
+      "answering": true,
+      "productId": "36",
+      "question": "É corta vento?",
+      "answer": "Olá! Não, é moletom :)",
+      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
+      "id": 2
+    }
+  ],
   "likedProducts": {
     "totalLiked": 3,
     "productsId": [

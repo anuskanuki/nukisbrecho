@@ -164,7 +164,7 @@ export class PurchaseComponent implements OnInit, OnDestroy {
       routeLinkTo: `/product/${this.productModel.id}`,
       // TO-DO: verificar possibilidade de colocar e renderizar a imagem do asset
       // image: this.productModel.photo1,
-      image: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+      image: "",
       read: false
     };
   }
