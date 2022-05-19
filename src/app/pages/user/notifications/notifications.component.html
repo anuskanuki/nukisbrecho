@@ -1,21 +1,39 @@
 <h3>Notificações</h3>
 
-<nz-list nzItemLayout="horizontal">
-    <nz-list-item *ngFor="let notification of notifications">
-        <nz-list-item-meta>
+<ng-container *ngIf="!notifications.length">
+    <a routerLink="/welcome">
+        <div class="blank-slate">
+            <img class="logoImg" src="../../../../assets/images/nukislogo.png" alt="logo do brechó">
 
-            <nz-list-item-meta-title>
-                <a [routerLink]="notification.routeLinkTo">{{ notification.title }}</a>
-            </nz-list-item-meta-title>
+            <span>
+                Nenhuma notificação por aqui... Bora fazer umas comprinhas?
+            </span>
+        </div>
+    </a>
+</ng-container>
 
-            <nz-list-item-meta-description>
-                <a [routerLink]="notification.routeLinkTo"> {{ notification.description }}</a>
-            </nz-list-item-meta-description>
+<ng-container *ngIf="notifications.length">
+    <nz-list nzItemLayout="horizontal">
+        <nz-list-item *ngFor="let notification of notifications">
 
-        </nz-list-item-meta>
-    </nz-list-item>
-</nz-list>
+            <div style="display: contents;">
+                <i nz-icon nzType="bell" nzTheme="outline"></i>
+
+                <nz-list-item-meta style="margin-left: 20px;">
+                    <nz-list-item-meta-title>
+                        <a [routerLink]="notification.routeLinkTo">{{ notification.title }}</a>
+                    </nz-list-item-meta-title>
+
+                    <nz-list-item-meta-description>
+                        <a [routerLink]="notification.routeLinkTo"> {{ notification.description }}</a>
+                    </nz-list-item-meta-description>
+                </nz-list-item-meta>
+            </div>
+
+        </nz-list-item>
+    </nz-list>
+</ng-container>
 
 <div nz-row nzAlign="bottom">
-    <button nz-button nzType="primary" (click)="back()">voltar</button>
+    <button nz-button nzType="primary" (click)="back()" class="mt-btn-return">Voltar</button>
 </div>

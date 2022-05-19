@@ -13,4 +13,5 @@ export class OrderProductModel {
     id?: string;
     title?: string;
     photo?: string;
+    priceTag?: string;
 }

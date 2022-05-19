@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { BaseService } from 'src/app/core/services/base.service';
 import { ProductModel } from '../../products/models/product.model';
-import { CartModel, UserByIdModel } from '../models/purchase.model';
+import { UserByIdModel } from '../models/purchase.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,13 +13,6 @@ export class PurchaseService extends BaseService {
 
   constructor(private http: HttpClient) {
     super();
-  }
-
-  public getCart(): Observable<CartModel> {
-    return this.http.get<CartModel>(this.UrlApiV1 + 'userCart')
-      .pipe(
-        catchError(error => throwError(error.error.errors[0]))
-      );
   }
 
   public updateProduct(model: ProductModel): Observable<ProductModel> {

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, ChangeDetectorRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/core/services/token.service';
 import { ProductActions } from './model/product-actions.model';
@@ -9,7 +9,7 @@ import { ProductActions } from './model/product-actions.model';
   styleUrls: ['./product-actions.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductActionsComponent {
+export class ProductActionsComponent implements OnInit {
 
   gridStyle = {
     width: '33,33%',
@@ -18,6 +18,7 @@ export class ProductActionsComponent {
 
   buyNow = false;
   isLoggedIn = false;
+  isAdminPermission = false;
 
   @Input() productActions = new ProductActions();
   @Input() productIsActive = true;
@@ -31,6 +32,14 @@ export class ProductActionsComponent {
     authService.LoggedIn$.subscribe(loggedIn => {
       this.isLoggedIn = loggedIn;
     });
+  }
+
+  ngOnInit(): void {
+    this.isAdminPermission = this.isAdmin();
+  }
+
+  isAdmin() {
+    return this.authService.isAdmin();
   }
 
   likeProduct() {

@@ -5,7 +5,11 @@
 <ng-container *ngIf="!orders.length">
     <a routerLink="/welcome">
         <div class="blank-slate">
-            Você ainda não fez nenhuma compra, bora lá?
+            <img class="logoImg" src="../../../../assets/images/nukislogo.png" alt="logo do brechó">
+
+            <span>
+                Você ainda não fez nenhum pedido para exibir aqui. Vamos às compras?
+            </span>
         </div>
     </a>
 </ng-container>
@@ -14,12 +18,17 @@
     <nz-card nzType="inner" nzTitle="Pedido #00{{order.id}}" [nzExtra]="extraTemplate">
 
         <ng-container *ngFor="let product of order.products">
-            <div nz-row style="margin-top:16px; margin-bottom: 26px;">
-                <a routerLink="/product/{{product.id}}">
-                    <img class="fit-img" nz-image width="80vh" height="80vh" nzSrc="{{product.photo}}"
-                        alt="foto do produto" />
-                    <span>{{product.title}}</span>
-                </a>
+            <div nz-row style="margin-top:16px; margin-bottom: 12px;">
+                <div nz-col nzSpan="24">
+                    <a routerLink="/product/{{product.id}}">
+                        <img class="fit-img" width="80vh" height="80vh" src="{{product.photo}}" alt="foto do produto" />
+                        <span style="color: black;">{{product.title}} (R${{product.priceTag}},00)</span>
+                    </a>
+                </div>
+
+                <div nz-col nzSpan="24" class="orderDate">
+                    <span>Compra realizada em {{order.orderDate}}</span>
+                </div>
             </div>
         </ng-container>
 
