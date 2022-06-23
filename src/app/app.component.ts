@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { Subscription } from 'rxjs';
@@ -14,14 +14,13 @@ import { NotificationService } from './pages/user/services/notification.service'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnDestroy {
 
   isCollapsed?: boolean;
   isLoggedIn = false;
   isAdmin = false;
   showLayout = true;
   firstName = '';
-
   userData?: LoggedUserModel;
 
   subscriptions: Subscription[] = [];
@@ -43,6 +42,12 @@ export class AppComponent implements OnInit, OnDestroy {
     authService.LoggedIn$.subscribe(loggedIn => {
       this.isLoggedIn = loggedIn;
       this.userData = this.authService.tokenData;
+
+      if (this.authService.isLoggedIn()) {
+        this.isAdmin = this.authService.tokenData.isAdmin;
+        this.firstName = this.authService.tokenData.unique_name.split(' ')[0];
+        this.getProducts();
+      }
     });
 
     router.events.subscribe(e => {
@@ -54,15 +59,6 @@ export class AppComponent implements OnInit, OnDestroy {
         this.isCollapsed = true;
       }
     });
-  }
-
-  ngOnInit(): void {
-    if (this.authService.isLoggedIn()) {
-      this.isAdmin = this.authService.tokenData.isAdmin;
-      this.firstName = this.authService.tokenData.unique_name.split(' ')[0];
-    }
-    this.getProducts();
-    this.getNotificationsCount();
   }
 
   getProducts() {

@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   public selectedWichMethod: boolean = false;
   public newUser: boolean = false;
   public registeredUser: boolean = false;
-  public loggedIn = false;
 
   constructor(
     private location: Location,
@@ -83,11 +82,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       newUser.isAdmin = false;
       const subscribeNewUser = this.loginService.newUser(newUser).subscribe(() => {
         this.notification.success('Sucesso :)', 'Você será redirecionado ao site.');
-        this.loggedIn = true;
         this.router.navigateByUrl('/welcome');
-        setTimeout(() => {
-          location.reload();
-        }, 10);
       },
         error => {
           this.notification.error('Ops!', 'Ocorreu um erro, tente novamente.' + '\n' + error);
@@ -100,10 +95,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     const subscribe = this.loginService.login(userCredentials).subscribe(() => {
       this.notification.success('Sucesso :)', 'Bem-vindo!');
       this.router.navigateByUrl('/welcome');
-      this.loggedIn = true;
-      setTimeout(() => {
-        location.reload();
-      }, 10);
     },
       error => {
         this.notification.error('Ops!', 'Confira suas credenciais.' + '\n' + error);
