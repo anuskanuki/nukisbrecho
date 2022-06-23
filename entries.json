@@ -609,7 +609,7 @@
       "photo2": "../assets/clothes/jacket.png",
       "photo3": "../assets/clothes/jacket.png",
       "photo4": "../assets/clothes/jacket.png",
-      "active": false,
+      "active": true,
       "wishlistedCount": 9
     },
     {
@@ -745,7 +745,7 @@
       "photo2": "../assets/clothes/pinkscarf.png",
       "photo3": "../assets/clothes/pinkscarf.png",
       "photo4": "../assets/clothes/pinkscarf.png",
-      "active": true,
+      "active": false,
       "wishlistedCount": 1
     },
     {
@@ -803,49 +803,22 @@
   "admin-notifications": [
     {
       "title": "Nova pergunta recebida!",
-      "description": "O usuário @Usuário Genérico fez uma pergunta!",
-      "routeLinkTo": "/product/47",
+      "description": "O usuário @Anuska Kepler Rehn fez uma pergunta!",
+      "routeLinkTo": "/product/34",
       "image": "",
       "read": false,
       "id": 1
-    },
-    {
-      "title": "Nova pergunta recebida!",
-      "description": "O usuário @Usuário Genérico fez uma pergunta!",
-      "routeLinkTo": "/product/36",
-      "image": "",
-      "read": false,
-      "id": 2
     },
     {
       "title": "Nova compra efetuada!",
-      "description": "O usuário @Usuário realizou a compra do produto Casaco com capuz",
-      "routeLinkTo": "/product/36",
+      "description": "O usuário @Anuska realizou a compra do produto Lenço pashmina rosa",
+      "routeLinkTo": "/product/44",
       "image": "",
       "read": false,
-      "id": 3
-    }
-  ],
-  "notifications": [
-    {
-      "title": "Sua pergunta foi respondida!",
-      "description": "Clique aqui para acessar o produto",
-      "routeLinkTo": "/product/36",
-      "image": "",
-      "read": false,
-      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
-      "id": 1
-    },
-    {
-      "title": "Sua pergunta foi respondida!",
-      "description": "Clique aqui para acessar o produto",
-      "routeLinkTo": "/product/47",
-      "image": "",
-      "read": false,
-      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
       "id": 2
     }
   ],
+  "notifications": [],
   "stars": {
     "starsTotal": 20,
     "starsAverage": 4,
@@ -853,18 +826,18 @@
   },
   "orders": [
     {
-      "orderDate": "19/05/2022",
+      "orderDate": "23/06/2022",
       "orderStatusRecived": true,
       "orderStatusProcessingPayment": true,
       "orderStatusPaymentOk": true,
       "orderStatusFinished": true,
-      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
+      "userId": "8a611130-28fd-4583-8e76-04662d83b79c",
       "products": [
         {
-          "id": "36",
-          "title": "Casaco com capuz",
-          "photo": "../assets/clothes/jacket.png",
-          "priceTag": "41"
+          "id": "44",
+          "title": "Lenço pashmina rosa",
+          "photo": "../assets/clothes/pinkscarf.png",
+          "priceTag": "17"
         }
       ],
       "id": 1
@@ -872,20 +845,12 @@
   ],
   "chat": [
     {
-      "answering": true,
-      "productId": "47",
-      "question": "Olá, quanto mede a alça?",
-      "answer": "Oie! A alça tem 23cm!",
-      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
+      "answering": false,
+      "productId": "34",
+      "question": "É original?",
+      "answer": "",
+      "userId": "8a611130-28fd-4583-8e76-04662d83b79c",
       "id": 1
-    },
-    {
-      "answering": true,
-      "productId": "36",
-      "question": "É corta vento?",
-      "answer": "Olá! Não, é moletom :)",
-      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
-      "id": 2
     }
   ],
   "likedProducts": {
