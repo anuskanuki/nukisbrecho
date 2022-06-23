@@ -2,7 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { ChatModel } from '../../../models/chat.model';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { TokenService } from 'src/app/core/services/token.service';
 import { ChatService } from '../../../services/chat.service';
 import { AdminNotificationService } from 'src/app/pages/user/services/admin-notification.service';
@@ -44,7 +44,7 @@ export class ProductChatComponent implements OnInit, OnDestroy {
     private notification: NzNotificationService,
     private adminNotificationService: AdminNotificationService,
     private notificationService: NotificationService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     if (this.authService.isLoggedIn()) {
@@ -60,17 +60,17 @@ export class ProductChatComponent implements OnInit, OnDestroy {
   }
 
   public getMessages() {
-      const subscription = this.chatService
-        .getByProductId(+this.routerId)
-        .subscribe(
-          (response) => {
-            this.messagesChatArray = response;
-          },
-          (error) => {
-            this.notification.error('Oops!', error);
-          }
-        );
-      this.subscriptions.push(subscription);
+    const subscription = this.chatService
+      .getByProductId(+this.routerId)
+      .subscribe(
+        (response) => {
+          this.messagesChatArray = response;
+        },
+        (error) => {
+          this.notification.error('Oops!', error);
+        }
+      );
+    this.subscriptions.push(subscription);
   }
 
   protected buildForm() {
