@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
 import { TokenService } from './core/services/token.service';
 import { AuthGuard } from './core/services/auth.guard';
 import { ServerErrosPagesModule } from './pages/server-errors/serverErrosPages.module';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
 
 
 registerLocaleData(pt);
@@ -43,6 +44,17 @@ registerLocaleData(pt);
     ReactiveFormsModule,
     LoginModule,
     ServerErrosPagesModule,
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
+    NgxUiLoaderModule.forRoot({
+      minTime: 100,
+      pbColor: '#e9c0e1ab',
+      fgsColor: '#e9c0e1ab',
+      fgsType: 'three-strings',
+      overlayColor: '#3b3938d9',
+      blur: 5,
+      fastFadeOut: true,
+    })
+
   ],
   providers: [{ provide: NZ_I18N, useValue: pt_BR }, TokenService, AuthGuard],
   bootstrap: [AppComponent]

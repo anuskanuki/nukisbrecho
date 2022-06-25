@@ -3,18 +3,18 @@
     {
       "id": 1,
       "productCode": "#0001",
-      "title": "Blusão verde de lã",
-      "description": "Blusão verde de lã, tamanho M, nunca foi usado, perfeito estado. Medidas pra te ajudar: 100cm de busto, 60cm de comprimento, 62cm de manga.",
+      "title": "Camiseta verde nike",
+      "description": "Camiseta manga curta Nike verde, original, nova, tamanho M. Medidas pra te ajudar: 100cm de busto, 60cm de comprimento, 62cm de manga.",
       "category": "roupas",
-      "brand": "ZARA",
+      "brand": "nike",
       "size": "M",
       "condition": "novo",
       "priceTag": 44,
-      "photo2": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
-      "photo3": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
-      "photo4": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
-      "photo1": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png",
-      "active": false,
+      "photo2": "../assets/clothes/greennikeshirt.png",
+      "photo3": "../assets/clothes/greennikeshirt.png",
+      "photo4": "../assets/clothes/greennikeshirt.png",
+      "photo1": "../assets/clothes/greennikeshirt.png",
+      "active": true,
       "wishlistedCount": 3
     },
     {
@@ -31,17 +31,17 @@
       "photo3": "../assets/clothes/vestido.png",
       "photo4": "../assets/clothes/vestido.png",
       "photo1": "../assets/clothes/vestido.png",
-      "active": false,
+      "active": true,
       "wishlistedCount": 9
     },
     {
       "id": 3,
       "productCode": "#0003",
       "title": "Brinco prata",
-      "description": "Brinco prata seminovo, foi usado poucas vezes, comprado na renner.",
+      "description": "Brinco prata seminovo, foi usado poucas vezes, comprado na renner, possui tarracha acoplada.",
       "category": "acessorios",
       "brand": "renner",
-      "size": "único",
+      "size": "unico",
       "condition": "usado",
       "priceTag": 19,
       "photo2": "../assets/clothes/brinco.png",
@@ -55,7 +55,7 @@
       "id": 4,
       "productCode": "#0004",
       "title": "Sapato bico fino rosa",
-      "description": "Rasteirinha rosa tamanho 38, usada sem marcas de uso, solado mede 26cm.",
+      "description": "Rasteirinha rosa tamanho 38, usada porém sem marcas de uso, marca liberte, solado mede 26cm.",
       "category": "calcados",
       "brand": "liberte",
       "size": "38",
@@ -75,7 +75,7 @@
       "description": "Tênis slip on da VANS, usado pouco, tamanho 36, calça um 37 também, modelagem grande, 22cm de solado.",
       "category": "calcados",
       "brand": "VANS",
-      "size": "M",
+      "size": "36",
       "condition": "usado",
       "priceTag": 48,
       "photo2": "../assets/clothes/vanss.png",
@@ -139,8 +139,8 @@
     {
       "id": 9,
       "productCode": "#0009",
-      "title": "Suéter natalino com gola",
-      "description": "Suéter natalino com gola boneco de neve",
+      "title": "Suéter natalino",
+      "description": "Suéter natalino com gola boneco de neve, artesanal, novo. Medidas: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm, mangas 19cm.",
       "category": "roupas",
       "brand": "tricot artesanal",
       "size": "G",
@@ -157,7 +157,7 @@
       "id": 10,
       "productCode": "#0010",
       "title": "Blusa azul gola",
-      "description": "Blusa...",
+      "description": "Blusa azul de gola maleável, tecido de algodão, sem marca, usada, tamanho G.  Medidas: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm, mangas 19cm.",
       "category": "roupas",
       "brand": "sem marca",
       "size": "G",
@@ -174,7 +174,7 @@
       "id": 11,
       "productCode": "#0011",
       "title": "Moletom de coração",
-      "description": "Moletom...",
+      "description": "Moletom com bolsos, capuz e estampa de coração tamanho G, usado, marca renner. Medidas: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm, mangas 19cm.",
       "category": "roupas",
       "brand": "renner",
       "size": "G",
@@ -191,7 +191,7 @@
       "id": 12,
       "productCode": "#0012",
       "title": "T-shirt verde básica",
-      "description": "blusa...",
+      "description": "T-shirt simple basic tamanho PP usada, cor verde, modelo básico, sem avarias. Medidas: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm, mangas 19cm.",
       "category": "roupas",
       "brand": "simple basic",
       "size": "PP",
@@ -208,7 +208,7 @@
       "id": 13,
       "productCode": "#0013",
       "title": "Sapato salto fino",
-      "description": "Salto fino vermelho de bico fino acabamento fosco, tamanho 38, 27cm de solado.",
+      "description": "Salto fino vermelho de bico fino acabamento fosco, tamanho 38, 27cm de solado. Produto usado, porém não possui avarias.",
       "category": "calcados",
       "brand": "Use Hitz",
       "size": "38",
@@ -225,7 +225,7 @@
       "id": 14,
       "productCode": "#0014",
       "title": "Tênis anos 2000",
-      "description": "Tênis usado estilo de anos 2000, cano alto, tamanho 36, 23cm de solado.",
+      "description": "Tênis usado estilo de anos 2000, cano alto, tamanho 36, 23cm de solado. Produto usado, porém sem avarias.",
       "category": "calcados",
       "brand": "Use Hitz",
       "size": "36",
@@ -242,7 +242,7 @@
       "id": 15,
       "productCode": "#0015",
       "title": "Maiô amarelo",
-      "description": "Maiô..",
+      "description": "Maiô amarelo, usado, veste P, possui bastante elastano, marca renner, sem avarias. Medidas: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm",
       "category": "roupas",
       "brand": "renner",
       "size": "P",
@@ -259,7 +259,7 @@
       "id": 16,
       "productCode": "#0016",
       "title": "Luvas vermelhas",
-      "description": "Par de luvas..",
+      "description": "Par novo de luvas quentinhas, tamanho P, mãos de 12 a 16 anos, marca renner.",
       "category": "acessorios",
       "brand": "renner",
       "size": "P",
@@ -276,7 +276,7 @@
       "id": 17,
       "productCode": "#0017",
       "title": "Chinelo lilás",
-      "description": "Par de chinelos..",
+      "description": "Par de chinelos lilás novo, calça 39, não possui avarias, solado mede 27,5cm do calcanhar ao dedão.",
       "category": "calcados",
       "brand": "havaianas",
       "size": "39",
@@ -293,7 +293,7 @@
       "id": 18,
       "productCode": "#0018",
       "title": "Conjunto pijama azul",
-      "description": "pj's..",
+      "description": "Conjunto de pijama de verão na cor azul, tamanho G, marca hope, novo. Medidas blusa: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm, mangas 19cm. Medidas bermuda: gancho 30cm, quadril 130cm. Possui elástico na cintura.",
       "category": "roupas",
       "brand": "hope",
       "size": "G",
@@ -310,7 +310,7 @@
       "id": 19,
       "productCode": "#0019",
       "title": "Camisa Corinthians",
-      "description": "Camisa Corinthians..",
+      "description": "Camisa Corinthians Nike usada, tamanho G, não possui defeitos, tecido em poliéster sem elastano. Medidas: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm, mangas 19cm.",
       "category": "roupas",
       "brand": "nike",
       "size": "G",
@@ -327,10 +327,10 @@
       "id": 20,
       "productCode": "#0020",
       "title": "Mochila rosa coração",
-      "description": "Mochila..",
+      "description": "Mochila grande na cor rosa, detalhe de coração, usada, sem avarias, marca adidas.",
       "category": "acessorios",
       "brand": "adidas",
-      "size": "G",
+      "size": "unico",
       "condition": "usado",
       "priceTag": 24,
       "photo2": "../assets/clothes/girl_backpack.png",
@@ -344,7 +344,7 @@
       "id": 21,
       "productCode": "#0021",
       "title": "Biquíni conjunto rosa",
-      "description": "Biquini..",
+      "description": "Conjunto de biquíni rosa, novo, do mundo lolita, veste M. Medidas da calcinha: cintura 98cm, gancho 30cm. Medidas do sutiã: busto de 70cm a 130cm de circunferência. Possui elastano e regulagem por cordinhas.",
       "category": "roupas",
       "brand": "lolita",
       "size": "M",
@@ -361,7 +361,7 @@
       "id": 22,
       "productCode": "#0022",
       "title": "Chuteira soccer",
-      "description": "Chuteira..",
+      "description": "Chuteira original da adidas, tamanho 42, usada, porém não possui defeitos.",
       "category": "calcados",
       "brand": "adidas",
       "size": "42",
@@ -378,7 +378,7 @@
       "id": 23,
       "productCode": "#0023",
       "title": "Tênis corrida azul",
-      "description": "Tênis..",
+      "description": "Tênis azul de corrida da marca fila, tamanho 37, usado, solado um pouco gasto.",
       "category": "calcados",
       "brand": "fila",
       "size": "37",
@@ -395,7 +395,7 @@
       "id": 24,
       "productCode": "#0024",
       "title": "Tênis adidas",
-      "description": "Tênis..",
+      "description": "Tênis novo da adidas na caixa, tamanho 38, não possui defeitos, é original.",
       "category": "calcados",
       "brand": "adidas",
       "size": "38",
@@ -412,7 +412,7 @@
       "id": 25,
       "productCode": "#0025",
       "title": "Tênis nike",
-      "description": "Tênis..",
+      "description": "Tênis nike tamanho 41, novo, original e com o solado um pouco gasto apenas.",
       "category": "calcados",
       "brand": "nike",
       "size": "41",
@@ -429,7 +429,7 @@
       "id": 26,
       "productCode": "#0026",
       "title": "Tênis de velcro",
-      "description": "Tênis..",
+      "description": "Tênis de velcro da nike usado, tamanho 43, não possui avarias.",
       "category": "calcados",
       "brand": "nike",
       "size": "43",
@@ -446,7 +446,7 @@
       "id": 27,
       "productCode": "#0027",
       "title": "Sapato de salto",
-      "description": "salto..",
+      "description": "Salto alto da marca via marte em cor nude, tamanho 36, acabamento em verniz, usado.",
       "category": "calcados",
       "brand": "via marte",
       "size": "36",
@@ -458,427 +458,407 @@
       "photo4": "../assets/clothes/wedding-shoe.png",
       "active": true,
       "wishlistedCount": 1
+    },
+    {
+      "id": 28,
+      "productCode": "#0028",
+      "title": "Camiseta esportiva",
+      "description": "Camiseta marsala marca nike usada pouco, tamanho GG, veste G também. Não possui defeitos.  Medidas: comprimento 60cm, cintura 98cm de circunferência, ombro a ombro 40cm, mangas 19cm.",
+      "category": "roupas",
+      "brand": "nike",
+      "size": "GG",
+      "condition": "usado",
+      "priceTag": 26,
+      "photo1": "../assets/clothes/rednikeshirt.png",
+      "photo2": "../assets/clothes/rednikeshirt.png",
+      "photo3": "../assets/clothes/rednikeshirt.png",
+      "photo4": "../assets/clothes/rednikeshirt.png",
+      "active": true,
+      "wishlistedCount": 5
+    },
+    {
+      "id": 29,
+      "productCode": "#0029",
+      "title": "Tênis slip on verde",
+      "description": "Tênis slip on quadriculado verde da marca vans, produto original, tamanho 39, usado, porém não possui avarias ou marcas fortes de uso.",
+      "category": "calcados",
+      "brand": "vans",
+      "size": "39",
+      "condition": "usado",
+      "priceTag": 42,
+      "photo1": "../assets/clothes/vanswueba.png",
+      "photo2": "../assets/clothes/vanswueba.png",
+      "photo3": "../assets/clothes/vanswueba.png",
+      "photo4": "../assets/clothes/vanswueba.png",
+      "active": true,
+      "wishlistedCount": 31
+    },
+    {
+      "id": 30,
+      "productCode": "#0030",
+      "title": "Vestido rodado",
+      "description": "Vestido regada costas nadador e saia rodada com babados da zara, usado porém não possui avarias ou marcas fortes de uso. Tamanho P. Medidas: ombro 36cm, busto 100cm, quadril 120cm, comprimento total 80cm. Possui elastano.",
+      "category": "roupas",
+      "brand": "zara",
+      "size": "P",
+      "condition": "usado",
+      "priceTag": 18,
+      "photo1": "../assets/clothes/womanspurpleyellowdress.png",
+      "photo2": "../assets/clothes/womanspurpleyellowdress.png",
+      "photo3": "../assets/clothes/womanspurpleyellowdress.png",
+      "photo4": "../assets/clothes/womanspurpleyellowdress.png",
+      "active": true,
+      "wishlistedCount": 13
+    },
+    {
+      "id": 31,
+      "productCode": "#0031",
+      "title": "Tênis slip on pinturas",
+      "description": "Tênis slip on com estampa de pinturas coloridas da marca vans, produto original, tamanho 37, usado, porém não possui avarias ou marcas fortes de uso.",
+      "category": "calcados",
+      "brand": "vans",
+      "size": "37",
+      "condition": "usado",
+      "priceTag": 18,
+      "photo1": "../assets/clothes/vanspaintpix.png",
+      "photo2": "../assets/clothes/vanspaintpix.png",
+      "photo3": "../assets/clothes/vanspaintpix.png",
+      "photo4": "../assets/clothes/vanspaintpix.png",
+      "active": true,
+      "wishlistedCount": 17
+    },
+    {
+      "id": 32,
+      "productCode": "#0032",
+      "title": "Calça jeans",
+      "description": "Calça jeans com elastano da marca h&m (importada), cintura média, tamanho 40, usada, sem avarias, porém não possui mais etiqueta interna. Medidas: gancho 30cm, comprimento total 100cm, quadril 120cm, cintura 82,5cm. Não possui elastano.",
+      "category": "roupas",
+      "brand": "h&m",
+      "size": "40",
+      "condition": "usado",
+      "priceTag": 15,
+      "photo1": "../assets/clothes/womansjeans.png",
+      "photo2": "../assets/clothes/womansjeans.png",
+      "photo3": "../assets/clothes/womansjeans.png",
+      "photo4": "../assets/clothes/womansjeans.png",
+      "active": true,
+      "wishlistedCount": 7
+    },
+    {
+      "id": 33,
+      "productCode": "#0033",
+      "title": "Touca natalina",
+      "description": "Touca natalina de veludo e material interno em lã. Tamanho único, adulto. Produto usado.",
+      "category": "acessorios",
+      "brand": "sem marca",
+      "size": "unico",
+      "condition": "usado",
+      "priceTag": 6,
+      "photo1": "../assets/clothes/santashat.png",
+      "photo2": "../assets/clothes/santashat.png",
+      "photo3": "../assets/clothes/santashat.png",
+      "photo4": "../assets/clothes/santashat.png",
+      "active": true,
+      "wishlistedCount": 2
+    },
+    {
+      "id": 34,
+      "productCode": "#0034",
+      "title": "Tênis slip on ramos",
+      "description": "Tênis slip on com estampa de ramos preto e branco da marca vans, produto original, tamanho 43, usado, porém não possui avarias ou marcas fortes de uso.",
+      "category": "calcados",
+      "brand": "vans",
+      "size": "43",
+      "condition": "usado",
+      "priceTag": 53,
+      "photo1": "../assets/clothes/vansoldgramma.png",
+      "photo2": "../assets/clothes/vansoldgramma.png",
+      "photo3": "../assets/clothes/vansoldgramma.png",
+      "photo4": "../assets/clothes/vansoldgramma.png",
+      "active": true,
+      "wishlistedCount": 22
+    },
+    {
+      "id": 35,
+      "productCode": "#0035",
+      "title": "Bracelete ouro",
+      "description": "Bracelete em ouro da marca vivara, usado, sem avarias, nenhum risco ou arranhão. Mede 19cm de circunferência.",
+      "category": "acessorios",
+      "brand": "vivara",
+      "size": "unico",
+      "condition": "usado",
+      "priceTag": 52,
+      "photo1": "../assets/clothes/goldbracelet.png",
+      "photo2": "../assets/clothes/goldbracelet.png",
+      "photo3": "../assets/clothes/goldbracelet.png",
+      "photo4": "../assets/clothes/goldbracelet.png",
+      "active": true,
+      "wishlistedCount": 29
+    },
+    {
+      "id": 36,
+      "productCode": "#0036",
+      "title": "Casaco com capuz",
+      "description": "Casaco de moletom com touca e cordinhas para regulagem do capuz. Novo, não possui avarias. Tamanho GG. Medidas: mangas 70cm, cintura 130cm, ombro 47cm, comprimento total tronco 70cm.",
+      "category": "roupas",
+      "brand": "beagle",
+      "size": "GG",
+      "condition": "novo",
+      "priceTag": 41,
+      "photo1": "../assets/clothes/jacket.png",
+      "photo2": "../assets/clothes/jacket.png",
+      "photo3": "../assets/clothes/jacket.png",
+      "photo4": "../assets/clothes/jacket.png",
+      "active": true,
+      "wishlistedCount": 9
+    },
+    {
+      "id": 37,
+      "productCode": "#0037",
+      "title": "Anel de noivado",
+      "description": "Anel de noivado de ouro com pedra zircônia cravejada, sem avarias, tamanho 8.",
+      "category": "acessorios",
+      "brand": "pandora cof",
+      "size": "8",
+      "condition": "usado",
+      "priceTag": 88,
+      "photo1": "../assets/clothes/goldengajementring.png",
+      "photo2": "../assets/clothes/goldengajementring.png",
+      "photo3": "../assets/clothes/goldengajementring.png",
+      "photo4": "../assets/clothes/goldengajementring.png",
+      "active": true,
+      "wishlistedCount": 8
+    },
+    {
+      "id": 38,
+      "productCode": "#0038",
+      "title": "Tênis respingos",
+      "description": "Tênis slip on com estampa colorida imitando respingos de tinta em fundo preto da marca vans, produto original, tamanho 38, usado, porém não possui avarias ou marcas fortes de uso.",
+      "category": "calcados",
+      "brand": "vans",
+      "size": "38",
+      "condition": "usado",
+      "priceTag": 42,
+      "photo1": "../assets/clothes/vanstoddlergirly.png",
+      "photo2": "../assets/clothes/vanstoddlergirly.png",
+      "photo3": "../assets/clothes/vanstoddlergirly.png",
+      "photo4": "../assets/clothes/vanstoddlergirly.png",
+      "active": true,
+      "wishlistedCount": 23
+    },
+    {
+      "id": 39,
+      "productCode": "#0039",
+      "title": "Bolsa rosa clutch",
+      "description": "Bolsa rosa fosca estilo clutch, usada, porém não possui avarias ou marcas fortes de uso.",
+      "category": "acessorios",
+      "brand": "mundo lolita",
+      "size": "unico",
+      "condition": "usado",
+      "priceTag": 22,
+      "photo1": "../assets/clothes/pink-purse.png",
+      "photo2": "../assets/clothes/pink-purse.png",
+      "photo3": "../assets/clothes/pink-purse.png",
+      "photo4": "../assets/clothes/pink-purse.png",
+      "active": true,
+      "wishlistedCount": 4
+    },
+    {
+      "id": 40,
+      "productCode": "#0040",
+      "title": "Calça jeans reta",
+      "description": "Calça jeans reta, usada, porém não possui avarias ou marcas fortes de uso, tamanho 40. Medidas: comprimento 100cm, cintura 80cm, quadril 120cm. ",
+      "category": "roupas",
+      "brand": "makenji",
+      "size": "40",
+      "condition": "usado",
+      "priceTag": 23,
+      "photo1": "../assets/clothes/jeansmale.png",
+      "photo2": "../assets/clothes/jeansmale.png",
+      "photo3": "../assets/clothes/jeansmale.png",
+      "photo4": "../assets/clothes/jeansmale.png",
+      "active": true,
+      "wishlistedCount": 26
+    },
+    {
+      "id": 41,
+      "productCode": "#0041",
+      "title": "Cachecol verde",
+      "description": "Cachecol verde listras novo, tamanho único, mede 50cmx200cm. ",
+      "category": "acessorios",
+      "brand": "amaro",
+      "size": "unico",
+      "condition": "novo",
+      "priceTag": 14,
+      "photo1": "../assets/clothes/greenhpscarf.png",
+      "photo2": "../assets/clothes/greenhpscarf.png",
+      "photo3": "../assets/clothes/greenhpscarf.png",
+      "photo4": "../assets/clothes/greenhpscarf.png",
+      "active": true,
+      "wishlistedCount": 3
+    },
+    {
+      "id": 42,
+      "productCode": "#0042",
+      "title": "Vestido festa roxo",
+      "description": "Vestido de festa roxo, novo, tamanho G. Medidas: comprimento total 90cm, quadril 120cm, decote 20cm, ombro a ombro 42cm.",
+      "category": "roupas",
+      "brand": "amaro",
+      "size": "G",
+      "condition": "novo",
+      "priceTag": 22,
+      "photo1": "../assets/clothes/purpledress.png",
+      "photo2": "../assets/clothes/purpledress.png",
+      "photo3": "../assets/clothes/purpledress.png",
+      "photo4": "../assets/clothes/purpledress.png",
+      "active": true,
+      "wishlistedCount": 8
+    },
+    {
+      "id": 43,
+      "productCode": "#0043",
+      "title": "Bolsa marrom",
+      "description": "Bolsa marrom com alças douradas, usada, sem marcas de uso significantes, marca capodarte.",
+      "category": "acessorios",
+      "brand": "capodarte",
+      "size": "unico",
+      "condition": "usado",
+      "priceTag": 41,
+      "photo1": "../assets/clothes/lvbag.png",
+      "photo2": "../assets/clothes/lvbag.png",
+      "photo3": "../assets/clothes/lvbag.png",
+      "photo4": "../assets/clothes/lvbag.png",
+      "active": true,
+      "wishlistedCount": 21
+    },
+    {
+      "id": 44,
+      "productCode": "#0044",
+      "title": "Lenço pashmina rosa",
+      "description": "Lenço pashmina rosa youcom, usado, sem fios puxados, mede 30cm x 100cm.",
+      "category": "acessorios",
+      "brand": "youcom",
+      "size": "unico",
+      "condition": "usado",
+      "priceTag": 17,
+      "photo1": "../assets/clothes/pinkscarf.png",
+      "photo2": "../assets/clothes/pinkscarf.png",
+      "photo3": "../assets/clothes/pinkscarf.png",
+      "photo4": "../assets/clothes/pinkscarf.png",
+      "active": false,
+      "wishlistedCount": 1
+    },
+    {
+      "id": 45,
+      "productCode": "#0045",
+      "title": "Blusa vermelha",
+      "description": "Blusa comprida vermelha, nova, nenhuma avaria. Possui detalhes bordados na parte frontal (vide foto). Medidas: comprimento tronco 50cm, mangas 60cm, ombro 40cm, busto 90cm.",
+      "category": "roupas",
+      "brand": "mundo lolita",
+      "size": "PP",
+      "condition": "novo",
+      "priceTag": 28,
+      "photo1": "../assets/clothes/sweaterred.png",
+      "photo2": "../assets/clothes/sweaterred.png",
+      "photo3": "../assets/clothes/sweaterred.png",
+      "photo4": "../assets/clothes/sweaterred.png",
+      "active": true,
+      "wishlistedCount": 9
+    },
+    {
+      "id": 46,
+      "productCode": "#0046",
+      "title": "Calça legging rosa",
+      "description": "Calça legging rosa usada, tecido com elastano e algodão, cintura alta. Medidas: comprimento 100cm, quadril 120cm, gancho 30cm.",
+      "category": "roupas",
+      "brand": "lupo",
+      "size": "36",
+      "condition": "usado",
+      "priceTag": 14,
+      "photo1": "../assets/clothes/pinkleggings.png",
+      "photo2": "../assets/clothes/pinkleggings.png",
+      "photo3": "../assets/clothes/pinkleggings.png",
+      "photo4": "../assets/clothes/pinkleggings.png",
+      "active": true,
+      "wishlistedCount": 6
+    },
+    {
+      "id": 47,
+      "productCode": "#0047",
+      "title": "Bolsa couro preto",
+      "description": "Bolsa preta de couro legítimo, usada, ótimo estado.",
+      "category": "acessorios",
+      "brand": "sem marca",
+      "size": "unico",
+      "condition": "usado",
+      "priceTag": 56,
+      "photo1": "../assets/clothes/allblackbag.png",
+      "photo2": "../assets/clothes/allblackbag.png",
+      "photo3": "../assets/clothes/allblackbag.png",
+      "photo4": "../assets/clothes/allblackbag.png",
+      "active": true,
+      "wishlistedCount": 24
     }
   ],
-  "adminNotifications": [
+  "admin-notifications": [
     {
-      "id": 1,
-      "title": "Mensagem nova!",
-      "description": "@name fez uma pergunta no produto BLUSA AZUL",
-      "routeLinkTo": "/product/1",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+      "title": "Nova pergunta recebida!",
+      "description": "O usuário @Anuska Kepler Rehn fez uma pergunta!",
+      "routeLinkTo": "/product/34",
+      "image": "",
+      "read": false,
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "Nova Avaliação!",
-      "description": "@name fez uma avaliação do brechó!",
-      "routeLinkTo": "/product/1",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-    },
-    {
-      "id": 3,
-      "title": "Mensagem nova!",
-      "description": "@name fez uma pergunta no produto MOLETOM JEANS",
-      "routeLinkTo": "/welcome",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-    },
-    {
-      "id": 4,
-      "title": "Mensagem nova!",
-      "description": "@name fez uma pergunta no produto BLUSÃO VERDE",
-      "routeLinkTo": "/welcome",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-    },
-    {
-      "id": 5,
-      "title": "Sobre o pedido #0153",
-      "description": "@name realizou uma compra.",
-      "routeLinkTo": "/welcome",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+      "title": "Nova compra efetuada!",
+      "description": "O usuário @Anuska realizou a compra do produto Lenço pashmina rosa",
+      "routeLinkTo": "/product/44",
+      "image": "",
+      "read": false,
+      "id": 2
     }
   ],
-  "userNotifications": [
-    {
-      "id": 1,
-      "title": "Mensagem nova!",
-      "description": "@admin respondeu sua pergunta no produto BLUSA AZUL",
-      "routeLinkTo": "/product/1",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      "userId": 1,
-      "read": false
-    },
-    {
-      "id": 2,
-      "title": "Sobre o pedido #0153",
-      "description": "está pronto para retirada!",
-      "routeLinkTo": "/welcome",
-      "image": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      "userId": 2,
-      "read": false
-    }
-  ],
-  "purchases": [
-    {
-      "id": 1,
-      "userName": "User Name",
-      "productsCode": [
-        1234,
-        123
-      ],
-      "confirmed": false
-    }
-  ],
+  "notifications": [],
   "stars": {
-    "starsTotal": 44,
+    "starsTotal": 20,
     "starsAverage": 4,
-    "votersCount": 11
+    "votersCount": 5
   },
-  "userOrders": [
+  "orders": [
     {
-      "orderId": 1,
-      "orderDate": "12/01/2022",
+      "orderDate": "23/06/2022",
       "orderStatusRecived": true,
       "orderStatusProcessingPayment": true,
       "orderStatusPaymentOk": true,
-      "orderStatusFinished": false,
+      "orderStatusFinished": true,
+      "userId": "8a611130-28fd-4583-8e76-04662d83b79c",
       "products": [
         {
-          "productId": 1,
-          "productTitle": "Blusa verde de lã",
-          "productPhoto": "https://simg.nicepng.com/png/small/98-980274_clothing-clipart-nrilaot84-clipart-clothes.png"
+          "id": "44",
+          "title": "Lenço pashmina rosa",
+          "photo": "../assets/clothes/pinkscarf.png",
+          "priceTag": "17"
         }
-      ]
-    },
-    {
-      "orderId": 2,
-      "orderDate": "28/01/2022",
-      "orderStatusRecived": true,
-      "orderStatusProcessingPayment": true,
-      "orderStatusPaymentOk": true,
-      "orderStatusFinished": false,
-      "products": [
-        {
-          "productId": 2,
-          "productTitle": "Vestido rodado",
-          "productPhoto": "../assets/clothes/vestido.png"
-        }
-      ]
-    }
-  ],
-  "userCart": [
-    {
-      "cartId": 1,
-      "productsId": [
-        1,
-        3
-      ]
+      ],
+      "id": 1
     }
   ],
   "chat": [
     {
-      "id": 1,
-      "productId": 1,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Jamile",
-          "question": "Qual o tamanho?",
-          "answer": "large"
-        },
-        {
-          "questionId": 2,
-          "author": "Luke",
-          "question": "what color?",
-          "answer": ""
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "productId": 2,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "small"
-        },
-        {
-          "questionId": 2,
-          "author": "Philip",
-          "question": "what color?",
-          "answer": "pink!"
-        },
-        {
-          "questionId": 2,
-          "author": "Philip",
-          "question": "what color?",
-          "answer": ""
-        },
-        {
-          "questionId": 3,
-          "author": "Daneu",
-          "question": "aa?",
-          "answer": ""
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "productId": 3,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "productId": 4,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "productId": 5,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "productId": 6,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "productId": 7,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "productId": 8,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "productId": 9,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "productId": 10,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 11,
-      "productId": 11,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 12,
-      "productId": 12,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 13,
-      "productId": 13,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 14,
-      "productId": 14,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 15,
-      "productId": 15,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 16,
-      "productId": 16,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 17,
-      "productId": 17,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 18,
-      "productId": 5,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 19,
-      "productId": 19,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 20,
-      "productId": 20,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 21,
-      "productId": 21,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": "Oie! é Lorem Ipsum"
-        }
-      ]
-    },
-    {
-      "id": 22,
-      "productId": 22,
-      "questions": [
-        {
-          "questionId": 1,
-          "author": "Gabriel",
-          "question": "Qual o tamanho?",
-          "answer": ""
-        },
-        {
-          "questionId": 2,
-          "author": "Gabriel",
-          "question": "Qual o tempo de uso?",
-          "answer": "incerto"
-        },
-        {
-          "questionId": 3,
-          "author": "X",
-          "question": "Qual a marca?",
-          "answer": ""
-        }
-      ]
-    },
-    {
-      "id": 23,
-      "productId": 23,
-      "questions": []
+      "answering": false,
+      "productId": "34",
+      "question": "É original?",
+      "answer": "",
+      "userId": "8a611130-28fd-4583-8e76-04662d83b79c",
+      "id": 1
     }
-  ]
+  ],
+  "likedProducts": {
+    "totalLiked": 3,
+    "productsId": [
+      12,
+      13,
+      14
+    ]
+  }
 }

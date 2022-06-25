@@ -2,7 +2,21 @@
   <div class="header">
     <h3 class="product-title">{{productActions?.title }}</h3>
 
-    <ng-container *ngIf="likeThisProduct then templateLiked else templateNotLiked"></ng-container>
+    <ng-container *ngIf="productIsActive && isLoggedIn then templateLikeEnabled else templateLikeDisabled">
+    </ng-container>
+
+    <ng-template #templateLikeDisabled>
+      <div>
+        <nz-badge [nzCount]="productActions.wishlistedCount" [nzStyle]="{ backgroundColor: '#959494'}">
+          <i class="size-disabled-hearts" nz-icon nzType="heart" nzTheme="outline">
+          </i>
+        </nz-badge>
+      </div>
+    </ng-template>
+
+    <ng-template #templateLikeEnabled>
+      <ng-container *ngIf="likeThisProduct then templateLiked else templateNotLiked"></ng-container>
+    </ng-template>
 
     <ng-template #templateNotLiked>
       <div>
@@ -26,7 +40,15 @@
     </ng-template>
   </div>
 
-  <a routerLink="/product">
+  <a *ngIf="productActions?.category =='roupas'" routerLink="/product/clothes">
+    <span class="category-label">Categoria: {{productActions?.category}}</span>
+  </a>
+
+  <a *ngIf="productActions?.category =='acessorios'" routerLink="/product/accessories">
+    <span class="category-label">Categoria: {{productActions?.category}}</span>
+  </a>
+
+  <a *ngIf="productActions?.category =='calcados'" routerLink="/product/shoes">
     <span class="category-label">Categoria: {{productActions?.category}}</span>
   </a>
 
@@ -51,15 +73,15 @@
     </nz-card>
   </div>
 
-  <div nz-col nzSpan="24">
+  <div class="border-details" nz-col nzSpan="24">
     <p class="description-label">Descrição:</p>
-    <span>{{productActions?.description}}</span>
+    <span class="details-size">{{productActions?.description}}</span>
   </div>
 
-  <button *ngIf="productActions?.active" class="buy-button" nz-button nzType="primary" (click)="goPurchase()"
-    [disabled]="!isLoggedIn" nzTooltipTitle="realize login para efetuar compra" nzTooltipPlacement="top" nz-tooltip
-    [nzTooltipVisible]="!isLoggedIn">comprar
+  <button *ngIf="productActions?.active && !isAdminPermission" nz-button nzType="primary" (click)="goPurchase()"
+    [disabled]="!isLoggedIn" nzTooltipTitle="Realize login para comprar" nzTooltipPlacement="top" nz-tooltip
+    [nzTooltipVisible]="!isLoggedIn">Comprar
     agora</button>
 
-  <h3 *ngIf="!productActions?.active">produto já vendido :/</h3>
+  <h3 *ngIf="!productActions?.active" style="text-align: center;">produto já vendido :/</h3>
 </div>

@@ -59,10 +59,11 @@
   display: inline-block;
   margin: 4px 0 0 20px;
   color: black;
-  font-weight: 600;
-  font-size: 22px;
-  font-family: ui-serif;
+  font-weight: 500;
+  font-size: 19px;
+  font-family: ui-monospace;
   vertical-align: middle;
+  text-transform: uppercase;
 }
 
 nz-header {
@@ -142,6 +143,13 @@ app-login {
 .ant-menu-dark.ant-menu-inline .ant-menu-submenu-title {
   color: black;
   font-weight: 500;
+}
+
+:host
+  ::ng-deep
+  .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal)
+  .ant-menu-item-selected {
+  background-color: #a8a8a88a;
 }
 
 :host ::ng-deep .ant-menu {

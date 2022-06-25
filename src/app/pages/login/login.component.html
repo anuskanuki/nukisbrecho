@@ -1,18 +1,31 @@
 <div nz-row nzJustify="center" nzAlign="middle" class="layout">
-    <div nz-col nzSpan="24">
-        <div *ngIf="!selectedWichMethod" nz-row nzJustify="center" nzAlign="middle">
-            <nz-space nzSize='large'>
-                <button *nzSpaceItem (click)="isRegisteredUser()">Já tenho cadastro</button>
 
-                <button *nzSpaceItem (click)="isNewUser()">Sou novo aqui</button>
-            </nz-space>
+    <div nz-col nzSpan="24">
+        <div nz-col nzSpan="24">
+            <a routerLink="/welcome">
+                <img class="hello-image" alt="logo brechó" src="../assets/images/logonukislogin.png" />
+            </a>
+        </div>
+
+        <div nz-col nzSpan="24">
+            <div *ngIf="!selectedWichMethod" nz-row nzJustify="center" nzAlign="middle">
+                <nz-space nzSize='large'>
+                    <button *nzSpaceItem (click)="isRegisteredUser()">Já tenho cadastro</button>
+                </nz-space>
+            </div>
+
+            <div *ngIf="!selectedWichMethod" nz-row nzJustify="center" nzAlign="middle">
+                <nz-space nzSize='large'>
+                    <button *nzSpaceItem (click)="isNewUser()">Sou novo aqui</button>
+                </nz-space>
+            </div>
         </div>
 
         <ng-container #registeredUser *ngIf="registeredUser">
             <form nz-form [formGroup]="formUserLogin" (ngSubmit)="submit()" (keydown.enter)="submit()">
                 <div nz-row>
                     <div nz-col nzSpan="24" class="title">
-                        <p>LOGIN</p>
+                        <p>Faça login no Nuki's</p>
                     </div>
                     <div nz-col nzSpan="24">
                         <nz-form-item class="grid">
@@ -57,7 +70,7 @@
             <form nz-form [formGroup]="formNewUser" (ngSubmit)="submit()" (keydown.enter)="submit()">
                 <div nz-row>
                     <div nz-col nzSpan="24" class="title">
-                        <p>LOGIN</p>
+                        <p>Crie sua conta no Nuki's</p>
                     </div>
 
                     <div nz-col nzSpan="24">
@@ -127,9 +140,10 @@
                                 <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">CEP<span
                                         class="required-mark">*</span>
                                 </nz-form-label>
+
                                 <nz-form-control formGroupName="address" [nzErrorTip]="validations">
-                                    <input formControlName="zipCode" type="number" nz-input placeholder="Apenas números"
-                                        required />
+                                    <input formControlName="zipCode" pattern="([0-9]{8})" maxlength="8" minlength="8"
+                                        nz-input placeholder="Ex: 89001234" required />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>
@@ -148,6 +162,17 @@
 
                         <div nz-col nzSpan="6">
                             <nz-form-item class="grid">
+                                <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Complemento
+                                </nz-form-label>
+                                <nz-form-control formGroupName="address">
+                                    <input formControlName="addressDetails" nz-input placeholder="Casa/Apto..."
+                                        maxlength="50" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+
+                        <div nz-col nzSpan="6">
+                            <nz-form-item class="grid">
                                 <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Estado<span
                                         class="required-mark">*</span>
                                 </nz-form-label>
@@ -157,17 +182,6 @@
                                             [nzLabel]="uf">
                                         </nz-option>
                                     </nz-select>
-                                </nz-form-control>
-                            </nz-form-item>
-                        </div>
-
-                        <div nz-col nzSpan="6">
-                            <nz-form-item class="grid">
-                                <nz-form-label [nzNoColon]="true" nzNoColon="false" class="label">Complemento
-                                </nz-form-label>
-                                <nz-form-control formGroupName="address">
-                                    <input formControlName="addressDetails" nz-input placeholder="Casa/Apto..."
-                                        maxlength="50" />
                                 </nz-form-control>
                             </nz-form-item>
                         </div>
@@ -209,12 +223,13 @@
                 (click)="passwordVisible = !passwordVisible"></i>
         </ng-template>
     </div>
+</div>
 
-    <ng-template #validations let-control>
-        <ng-container *ngIf="control.hasError('maxlength')">O máximo de caracteres é
-            {{control.errors.maxlength.requiredLength}}
-        </ng-container>
-        <ng-container *ngIf="control.hasError('minlength')">O mínimo de caracteres é
-            {{control.errors.minlength.requiredLength}}</ng-container>
-        <ng-container *ngIf="control.hasError('required')">O campo é Requerido</ng-container>
-    </ng-template>
+<ng-template #validations let-control>
+    <ng-container *ngIf="control.hasError('maxlength')">O máximo de caracteres é
+        {{control.errors.maxlength.requiredLength}}
+    </ng-container>
+    <ng-container *ngIf="control.hasError('minlength')">O mínimo de caracteres é
+        {{control.errors.minlength.requiredLength}}</ng-container>
+    <ng-container *ngIf="control.hasError('required')">O campo é Requerido</ng-container>
+</ng-template>

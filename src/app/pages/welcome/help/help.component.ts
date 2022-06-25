@@ -63,9 +63,6 @@ export class HelpComponent implements OnInit, OnDestroy {
   }
 
   rateStore(vote: number) {
-
-    console.log(vote)
-
     const starModel = { ...this.starsHelpModel };
 
     starModel.votersCount++;
@@ -76,24 +73,17 @@ export class HelpComponent implements OnInit, OnDestroy {
       () => {
         this.starsHelpModel.starsAverage = starModel.starsAverage;
         this.disableVoting = true;
-        this.createBasicNotification();
+        this.notification
+          .success(
+            'Avaliação enviada :)',
+            'Sua opinião é muito importante para continuarmos evoluindo! Contate-nos se necessário.'
+          );
       },
       error => {
         this.notification.error('Oops!', error)
       }
     )
     this.subscriptions.push(subscription);
-  }
-
-  createBasicNotification(): void {
-    this.notification
-      .blank(
-        'Avaliação enviada :)',
-        'Sua opinião é muito importante para continuarmos evoluindo! Contate-nos se necessário.'
-      )
-      .onClick.subscribe(() => {
-        console.log('notification clicked!');
-      });
   }
 
   back(): void {

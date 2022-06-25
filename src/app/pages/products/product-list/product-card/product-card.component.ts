@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-// import { ProductModel } from '../../models/product.model';
 
 @Component({
   selector: 'app-product-card',
@@ -8,17 +7,21 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductCardComponent implements OnInit {
 
-  // public productsList: ProductModel[] = [];
-
   @Input() public productPrice = '';
   @Input() public productTitle = '';
   @Input() public productDescription = '';
   @Input() public productBrand = '';
+  @Input() public productSize = '';
   @Input() public productPhoto1 = '';
 
   constructor() { }
 
   ngOnInit(): void {
+    if (this.productSize === 'unico') {
+      this.productSize = '';
+    } else {
+      this.productSize = ' - ' + this.productSize;
+    }
   }
 
 }

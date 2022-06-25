@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 import { PurchaseRoutingModule } from './purchase-routing.module';
 import { PurchaseComponent } from './purchase/purchase.component';
 import { NgZorroAntdModule } from 'src/app/core/modules/ng-zorro-antd.module';
-import { PurchaseConfirmationComponent } from './confirmation/purchase-confirmation.component';
-import { CartComponent } from './cart/cart.component';
+import { ServerErrosPagesModule } from '../server-errors/serverErrosPages.module';
 
 @NgModule({
-  declarations: [PurchaseComponent, PurchaseConfirmationComponent, CartComponent],
+  declarations: [PurchaseComponent],
   imports: [
+    ServerErrosPagesModule,
     CommonModule,
     NgZorroAntdModule,
     PurchaseRoutingModule
   ],
-  exports: [PurchaseComponent, PurchaseConfirmationComponent]
+  exports: [PurchaseComponent]
 })
 export class PurchaseModule { }

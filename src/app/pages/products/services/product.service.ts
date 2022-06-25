@@ -4,7 +4,6 @@ import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { ProductModel } from '../models/product.model';
 import { BaseService } from 'src/app/core/services/base.service';
-import { ChatModel } from '../models/chat.model';
 
 @Injectable({
     providedIn: 'root'
@@ -38,6 +37,13 @@ export class ProductService extends BaseService {
 
     public getFilteredByActive(): Observable<ProductModel[]> {
         return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?active=true&_sort=id&_order=desc')
+            .pipe(
+                catchError(error => throwError(error.error.errors[0]))
+            );
+    }
+
+    public getFilteredByInactive(): Observable<ProductModel[]> {
+        return this.http.get<ProductModel[]>(this.UrlApiV1 + 'products?active=false')
             .pipe(
                 catchError(error => throwError(error.error.errors[0]))
             );
@@ -92,22 +98,6 @@ export class ProductService extends BaseService {
     public delete(id: string): Observable<ProductModel> {
         return this.http
             .delete(this.UrlApiV1 + 'products/' + id)
-            .pipe(
-                map(super.extractData),
-                catchError(error => throwError(error.error.errors[0]))
-            );
-    }
-
-    public getMessagesByProductId(productId: number): Observable<ChatModel[]> {
-        return this.http.get<ChatModel[]>(this.UrlApiV1 + 'chat?productId=' + productId)
-            .pipe(
-                catchError(error => throwError(error.error.errors[0]))
-            );
-    }
-
-    public sendMessage(model: ChatModel): Observable<ChatModel> {
-        return this.http
-            .put<ChatModel>(this.UrlApiV1 + 'chat/', model, super.httpJsonOptions)
             .pipe(
                 map(super.extractData),
                 catchError(error => throwError(error.error.errors[0]))

@@ -1,15 +1,17 @@
-export class OrdersUserModel {
-    orderId?: number;
+export class OrderModel {
+    id?: number;
     orderDate?: string;
     orderStatusRecived?: boolean;
     orderStatusProcessingPayment?: boolean;
     orderStatusPaymentOk?: boolean;
     orderStatusFinished?: boolean;
+    userId?: string;
     products?: OrderProductModel[];
 }
 
 export class OrderProductModel {
-    productId?: number;
-    productTitle?: string;
-    productPhoto?: string;
+    id?: string;
+    title?: string;
+    photo?: string;
+    priceTag?: string;
 }

@@ -1,142 +1,173 @@
-<ng-container *ngIf="loggedIn then templateLoggedInPurchase else templateLogInFirst">
-</ng-container>
+<ng-container *ngIf="activeProduct">
 
-<ng-template #templateLoggedInPurchase>
-    <div nz-row>
-        <div nz-col [nzSpan]="16" class="card-div">
-            <div class="mg-bottom">
-                <h3>Opa, quase lá!</h3>
-                <p class="texts">Que bom que você achou alguma peça legal, {{userName}}!
-                </p>
-                <p class="texts">
-                    Para confirmar a compra, precisamos da confirmação do pagamento, mas antes, confere se está tudo
-                    certinho
-                    com seus dados:
-                </p>
-            </div>
+    <ng-container *ngIf="!showConfirmationPage">
+        <ng-container *ngIf="loggedIn then templateLoggedInPurchase else templateLogInFirst">
+        </ng-container>
 
-            <h3>Produto</h3>
-
-            <div class="mg-bottom">
-                <div nz-row>
-                    <div nz-col nzSpan="6"> <img class="fit-img" nz-image width="150vh" height="150vh"
-                            [nzSrc]="productModel.photo1 || '../../../../assets/icons/photo-error.png'"
-                            alt="foto do produto" /></div>
-
-                    <div nz-col nzSpan="18" class="texts center">
-                        <p class="product-title">
-                            {{productModel.title}}
+        <ng-template #templateLoggedInPurchase>
+            <div nz-row>
+                <div nz-col [nzSpan]="16" class="card-div">
+                    <div class="mg-bottom">
+                        <h3>Opa, quase lá!</h3>
+                        <p class="texts">Que bom que você achou alguma peça legal, {{userName}}!
                         </p>
-                        <p>
-                            {{productModel.brand}}, tamanho {{productModel.size}}
+                        <p class="texts">
+                            Para confirmar a compra, precisamos da confirmação do pagamento, mas antes, confere se está
+                            tudo
+                            certinho
+                            com seus dados:
+                        </p>
+                    </div>
+
+                    <h3>Produto</h3>
+
+                    <div class="mg-bottom">
+                        <div nz-row>
+                            <div nz-col nzSpan="6"> <img class="fit-img" nz-image width="150vh" height="150vh"
+                                    [nzSrc]="productModel.photo1 || '../../../../assets/icons/photo-error.png'"
+                                    alt="foto do produto" /></div>
+
+                            <div nz-col nzSpan="18" class="texts center">
+                                <p class="product-title">
+                                    {{productModel.title}}
+                                </p>
+                                <p>
+                                    {{productModel.brand}}, tamanho {{productModel.size}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Endereço de entrega</h3>
+
+                    <div class="texts mg-bottom">
+                        <p>{{userModel.address?.street || ''}} nº {{userModel.address?.number || 0}},
+                            {{userModel.address?.neighborhood || ''}}</p>
+                        <p>CEP: {{userModel.address?.zipCode || ''}} ({{userModel.address?.city || ''}} -
+                            {{userModel.address?.state
+                            || ''}})
+                        </p>
+                    </div>
+
+                    <h3>Frete</h3>
+
+                    <div class="mg-bottom">
+                        <p class="texts">
+                            R$20,00
                         </p>
                     </div>
                 </div>
+
+                <div nz-col [nzSpan]="8" class="card-div">
+                    <h3>Pagamento</h3>
+
+                    <div class="mg-bottom">
+                        <div nz-row class="texts">
+                            <div nz-col nzSpan="8">Produto</div>
+                            <div nz-col nzSpan="8" class="dots-align">----------------</div>
+                            <div nz-col nzSpan="8" class="price-align">R$ {{productModel.priceTag}},00</div>
+                        </div>
+
+                        <div nz-row class="texts">
+                            <div nz-col nzSpan="8">Entrega</div>
+                            <div nz-col nzSpan="8" class="dots-align">----------------</div>
+                            <div nz-col nzSpan="8" class="price-align">R$ 20,00</div>
+                        </div>
+
+                        <div nz-row class="texts">
+                            <div nz-col nzSpan="8">Total a pagar</div>
+                            <div nz-col nzSpan="8" class="dots-align">----------------</div>
+                            <div nz-col nzSpan="8" class="price-align">R$ {{finalPrice}},00</div>
+                        </div>
+                    </div>
+
+                    <nz-collapse nzGhost nzAccordion>
+                        <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name"
+                            [nzActive]="panel.active">
+                            <p style="margin:0;">
+                                <ng-container *ngIf="panel.template ==0 then templatePix"></ng-container>
+                                <ng-container *ngIf="panel.template ==1 then templateTransferenciaBancaria">
+                                </ng-container>
+                            </p>
+                        </nz-collapse-panel>
+                    </nz-collapse>
+
+                    <ng-template #templatePix>
+                        <h3>PIX</h3>
+                        <p>Chave e-mail: nukibrecho@gmail.com</p>
+                        <p>Envie seu comprovante de pagamento aqui e assim que seu pagamento for confirmado, entraremos
+                            em contato para combinar envio ou retirada da compra :)</p>
+
+                        <form>
+                            <input id="filePix" class="upload" type="file" accept=".jpg, .jpeg, .png"
+                                (change)="confirmPaymentReceiptAttached()" style="display:none;">
+                            <label class="upload" for="filePix">
+                                <i style="font-size: 30px;" nz-icon nzType="upload" nzTheme="outline"></i>
+                            </label>
+                        </form>
+                    </ng-template>
+
+                    <ng-template #templateTransferenciaBancaria>
+                        <h3>Transferência Bancária</h3>
+                        <p>Banco: Banco Nukis</p>
+                        <p>Agência: 0001</p>
+                        <p>Conta: 1234567</p>
+                        <p>Dígito: 8</p>
+                        <p>Envie seu comprovante de pagamento aqui e assim que seu pagamento for confirmado, entraremos
+                            em contato para combinar envio ou retirada da compra :)</p>
+
+                        <form>
+                            <input id="filePix" class="upload" type="file" accept=".jpg, .jpeg, .png"
+                                (change)="confirmPaymentReceiptAttached()" style="display:none;">
+                            <label class="upload" for="filePix">
+                                <i style="font-size: 30px;" nz-icon nzType="upload" nzTheme="outline"></i>
+                            </label>
+                        </form>
+                    </ng-template>
+                </div>
+            </div>
+        </ng-template>
+
+        <ng-template #templateLogInFirst>
+            <p>Ops, parece que você não está logado no sistema :/</p>
+            <p>Para que seja possível efetuar sua compra, você precisa estar logado e aí sim fazer sua compra, bele?</p>
+            <a routerLink="/login">Entrar com minhas credenciais</a>
+        </ng-template>
+
+        <div nz-row nzJustify="center" nzAlign="middle" class="mt-btn-return">
+            <div nz-col nzSpan="12">
+                <button nz-button nzType="primary" (click)="back()">Voltar</button>
             </div>
 
-            <h3>Endereço de entrega</h3>
-
-            <div class="texts mg-bottom">
-                <p>{{userModel.address?.street || ''}} nº {{userModel.address?.number || 0}},
-                    {{userModel.address?.neighborhood || ''}}</p>
-                <p>CEP: {{userModel.address?.zipCode || ''}} ({{userModel.address?.city || ''}} -
-                    {{userModel.address?.state
-                    || ''}})
-                </p>
-            </div>
-
-            <h3>Frete</h3>
-
-            <div class="mg-bottom">
-                <p class="texts">
-                    R$20,00
-                </p>
+            <div class="button-enviar" nz-col nzSpan="12">
+                <button nz-button nzType="primary" [disabled]="!paymentReceiptAttached" (click)="buyProduct()"
+                    class="confirm-button">Confirmar
+                    compra</button>
             </div>
         </div>
+    </ng-container>
 
-        <div nz-col [nzSpan]="8" class="card-div">
-            <h3>Pagamento</h3>
+    <ng-container *ngIf="showConfirmationPage">
+        <div nz-row nzJustify="center" nzAlign="middle" class="center-confirm">
+            <div nz-col nzSpan="24">
+                <a routerLink="/welcome">
+                    <img class="hello-image" alt="logo brechó" src="../assets/images/logonukislogin.png" />
+                </a>
 
-            <div class="mg-bottom">
-                <div nz-row class="texts">
-                    <div nz-col nzSpan="8">produto</div>
-                    <div nz-col nzSpan="8" class="dots-align">----------------</div>
-                    <div nz-col nzSpan="8" class="price-align">R$ {{productModel.priceTag}},00</div>
-                </div>
+                <h3>Compra efetuada com sucesso!</h3>
 
-                <div nz-row class="texts">
-                    <div nz-col nzSpan="8">entrega</div>
-                    <div nz-col nzSpan="8" class="dots-align">----------------</div>
-                    <div nz-col nzSpan="8" class="price-align">R$ 20,00</div>
-                </div>
-
-                <div nz-row class="texts">
-                    <div nz-col nzSpan="8">total a pagar</div>
-                    <div nz-col nzSpan="8" class="dots-align">----------------</div>
-                    <div nz-col nzSpan="8" class="price-align">R$ {{finalPrice}},00</div>
-                </div>
-            </div>
-
-            <nz-collapse nzGhost nzAccordion>
-                <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name" [nzActive]="panel.active">
-                    <p style="margin:0;">
-                        <ng-container *ngIf="panel.template ==0 then templatePix"></ng-container>
-                        <ng-container *ngIf="panel.template ==1 then templateTransferenciaBancaria"></ng-container>
+                <div class="texts">
+                    <p>Você acaba de colaborar com a moda sustentável!</p>
+                    <p>Seu pagamento será processado e em breve te avisamos via e-mail sobre o status da sua compra :)
                     </p>
-                </nz-collapse-panel>
-            </nz-collapse>
-
-            <ng-template #templatePix>
-                <h3>PIX</h3>
-                <p>Chave e-mail: nukibrecho@gmail.com</p>
-                <p>Envie seu comprovante de pagamento aqui e assim que seu pagamento for confirmado, entraremos
-                    em contato para combinar envio ou retirada da compra :)</p>
-
-                <form>
-                    <input id="filePix" class="upload" type="file" accept=".jpg, .jpeg, .png"
-                        (change)="confirmPaymentReceiptAttached()" style="display:none;">
-                    <label class="upload" for="filePix">
-                        <i style="font-size: 30px;" nz-icon nzType="upload" nzTheme="outline"></i>
-                    </label>
-                </form>
-            </ng-template>
-
-            <ng-template #templateTransferenciaBancaria>
-                <h3>Transferência Bancária</h3>
-                <p>Dados da conta:</p>
-                <p>Banco: Banco Nukis</p>
-                <p>Agência: 0001</p>
-                <p>Conta: 1234567</p>
-                <p>Dígito: 8</p>
-                <p>Envie seu comprovante de pagamento aqui e assim que seu pagamento for confirmado, entraremos
-                    em contato para combinar envio ou retirada da compra :)</p>
-
-                <form>
-                    <input id="filePix" class="upload" type="file" accept=".jpg, .jpeg, .png"
-                        (change)="confirmPaymentReceiptAttached()" style="display:none;">
-                    <label class="upload" for="filePix">
-                        <i style="font-size: 30px;" nz-icon nzType="upload" nzTheme="outline"></i>
-                    </label>
-                </form>
-            </ng-template>
+                </div>
+                <button nz-button nzType="primary" (click)="goToOrders()">Meus pedidos</button>
+            </div>
         </div>
-    </div>
-</ng-template>
+    </ng-container>
 
-<ng-template #templateLogInFirst>
-    <p>Ops, parece que você não está logado no sistema :/</p>
-    <p>Para que seja possível efetuar sua compra, você precisa estar logado e aí sim fazer sua compra, bele?</p>
-    <a routerLink="/login">Entrar com minhas credenciais</a>
-</ng-template>
+</ng-container>
 
-<div nz-row nzJustify="center" nzAlign="middle" class="mt-btn-return">
-    <div nz-col nzSpan="12">
-        <button nz-button nzType="primary" (click)="back()">voltar</button>
-    </div>
-
-    <div class="button-enviar" nz-col nzSpan="12">
-        <button nz-button nzType="primary" routerLink="confirmation" [disabled]="!paymentReceiptAttached"
-            (click)="buyProduct()" class="confirm-button">confirmar
-            compra</button>
-    </div>
-</div>
+<ng-container *ngIf="!activeProduct">
+    <app-forbidden></app-forbidden>
+</ng-container>
