@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Installing dependencies
-        run: npm i
+        run: npm i --legacy-peer-deps
 
       - name: Deploying to Heroku
         uses: AkhileshNS/heroku-deploy@v3.12.12
