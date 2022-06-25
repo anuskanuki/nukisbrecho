@@ -16,6 +16,8 @@ jobs:
       #- name: Deploying
       #  run: git push heroku teste-deploy:main
 
+      - name: Pulling changes
+        run: git pull heroku teste-deploy:main
 
       - name: Deploying to Heroku
         uses: AkhileshNS/heroku-deploy@v3.12.12
