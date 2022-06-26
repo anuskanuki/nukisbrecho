@@ -85,6 +85,22 @@ export class ProductsListFilteredComponent implements OnInit, OnDestroy {
         this.subscriptions.push(subscriptionAccessories);
 
         break;
+      case 'all':
+        const subscriptionAll = this.productService.getFilteredByActive().subscribe(
+          response => {
+            if (response.length) {
+              this.productsList = response;
+            } else {
+              this.productsList = [];
+            }
+          },
+          error => {
+            this.notification.error('Oops!', error);
+          }
+        )
+        this.subscriptions.push(subscriptionAll);
+
+        break;
       default: const subscription = this.productService.getFilteredByActive().subscribe(
         response => {
           if (response.length) {

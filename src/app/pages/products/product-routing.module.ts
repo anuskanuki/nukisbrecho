@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'clothes', component: ProductsListFilteredComponent },
   { path: 'shoes', component: ProductsListFilteredComponent },
   { path: 'accessories', component: ProductsListFilteredComponent },
+  { path: 'all', component: ProductsListFilteredComponent },
   { path: 'list', component: ProductListComponent },//admin crud
   { path: ':id', component: ProductComponent }, //view product
   { path: 'form', component: ProductFormComponent }, //new product

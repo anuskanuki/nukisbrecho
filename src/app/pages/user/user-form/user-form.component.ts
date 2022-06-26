@@ -127,7 +127,10 @@ export class UserFormComponent implements OnInit, OnDestroy {
 
   public submitUpdateUser() {
     if (this.form.valid && this.form.dirty) {
-      const subscribeUpdateuser = this.userService.updateUser(this.authService.tokenData.nameid, this.form.value).subscribe(() => {
+      const updatedModel: UserModel = this.form.value;
+      updatedModel.isAdmin = this.authService.tokenData.isAdmin;
+
+      const subscribeUpdateuser = this.userService.updateUser(this.authService.tokenData.nameid, updatedModel).subscribe(() => {
         this.notification.success('Sucesso :)', 'Dados de perfil atualizados!');
         this.router.navigateByUrl('/welcome');
       },
