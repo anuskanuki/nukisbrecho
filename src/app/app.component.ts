@@ -42,11 +42,11 @@ export class AppComponent implements OnDestroy {
     authService.LoggedIn$.subscribe(loggedIn => {
       this.isLoggedIn = loggedIn;
       this.userData = this.authService.tokenData;
+      this.getProducts();
 
       if (this.authService.isLoggedIn()) {
         this.isAdmin = this.authService.tokenData.isAdmin;
         this.firstName = this.authService.tokenData.unique_name.split(' ')[0];
-        this.getProducts();
       }
     });
 
@@ -115,7 +115,6 @@ export class AppComponent implements OnDestroy {
           location.reload();
         }, 10);
       }
-
     }
   }
 

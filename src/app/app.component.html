@@ -67,7 +67,7 @@
             </li>
 
             <li nz-menu-item>
-              <nz-select nzPlaceHolder="Pesquisar prouto por título..." nzShowSearch nzAllowClear
+              <nz-select nzPlaceHolder="Pesquisar por título..." nzShowSearch nzAllowClear
                 [(ngModel)]="selectedProductSearchBar" (ngModelChange)="goToProduct()">
                 <nz-option nzAllowClear *ngFor="let product of productsList" [nzValue]="product"
                   [nzLabel]="product.title || 'erro ao carregar título'">

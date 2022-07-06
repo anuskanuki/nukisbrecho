@@ -816,6 +816,14 @@
       "image": "",
       "read": false,
       "id": 2
+    },
+    {
+      "title": "Nova pergunta recebida!",
+      "description": "O usuário @Usuário Genérico fez uma pergunta!",
+      "routeLinkTo": "/product/47",
+      "image": "",
+      "read": false,
+      "id": 3
     }
   ],
   "notifications": [],
@@ -851,6 +859,14 @@
       "answer": "",
       "userId": "8a611130-28fd-4583-8e76-04662d83b79c",
       "id": 1
+    },
+    {
+      "answering": false,
+      "productId": "47",
+      "question": "está disponível ainda?",
+      "answer": "",
+      "userId": "27abfcb7-35f7-4472-b6e3-96c0018b8b5e",
+      "id": 2
     }
   ],
   "likedProducts": {

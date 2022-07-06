@@ -85,7 +85,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.router.navigateByUrl('/welcome');
       },
         error => {
-          this.notification.error('Ops!', 'Ocorreu um erro, tente novamente.' + '\n' + error);
+          this.notification.error('Ops!', 'Ocorreu um erro, tente novamente.');
         });
       this.subscriptions.push(subscribeNewUser);
     }
@@ -97,7 +97,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.router.navigateByUrl('/welcome');
     },
       error => {
-        this.notification.error('Ops!', 'Confira suas credenciais.' + '\n' + error);
+        this.notification.error('Ops!', 'Credenciais incorretas ou usuário inativo.');
       });
     this.subscriptions.push(subscribe);
   }
